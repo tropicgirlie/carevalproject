@@ -15,7 +15,6 @@ export function Submit() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
   };
 
   return (
@@ -31,6 +30,12 @@ export function Submit() {
           <p className="text-xl text-slate-grey leading-relaxed max-w-3xl">
             Help build the leaderboard by submitting your model evaluation results. All submissions are manually reviewed to ensure scoring accuracy.
           </p>
+        </FadeIn>
+        <FadeIn delay={0.15}>
+          <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-teal-light/10 border border-brand-teal-light/20 text-sm text-brand-teal-light font-medium">
+            <span className="w-2 h-2 rounded-full bg-brand-teal-light animate-pulse" />
+            Active development — automated ingestion coming Q1 2025. Email submissions accepted now.
+          </div>
         </FadeIn>
       </div>
 
@@ -51,9 +56,18 @@ export function Submit() {
             >
               <CheckCircle2 className="w-16 h-16 text-sage-green mx-auto mb-4" />
             </motion.div>
-            <h2 className="text-3xl font-semibold text-deep-navy mb-3">Submission Received</h2>
-            <p className="text-slate-grey text-lg">
-              Thank you! Your results are under review and will appear on the leaderboard soon.
+            <h2 className="text-3xl font-semibold text-deep-navy mb-3">Thank you — almost there</h2>
+            <p className="text-slate-grey text-lg mb-6 max-w-lg mx-auto">
+              Automated submission is coming soon. In the meantime, please email your results directly — we review every submission manually.
+            </p>
+            <a
+              href="mailto:careval@momops.org?subject=CAREVAL%20Submission"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-deep-navy text-white rounded-xl font-medium hover:bg-deep-navy/90 transition-colors"
+            >
+              Send to careval@momops.org
+            </a>
+            <p className="text-sm text-slate-grey mt-6">
+              Attach your scores as a CSV or paste them in the email body. We aim to review within 5 working days.
             </p>
           </motion.div>
         ) : (

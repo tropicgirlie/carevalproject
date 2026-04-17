@@ -415,6 +415,55 @@ export function Home() {
         </FadeIn>
       </section>
 
+      {/* About / Research Context */}
+      <section className="space-y-6">
+        <FadeIn>
+          <h2 className="gradient-text-navy">About the Research</h2>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-gradient-to-br from-warm-grey/30 to-warm-grey/10 rounded-2xl border border-border/50 p-8 space-y-4">
+              <p className="text-sm font-semibold text-primary uppercase tracking-wider">
+                Who built this
+              </p>
+              <p className="text-deep-navy leading-relaxed">
+                CAREVAL is a research project by{' '}
+                <strong>Luana Micheau</strong>, a product designer and researcher
+                working at the intersection of care ethics and AI systems. It
+                extends the{' '}
+                <strong>MomOps framework</strong> — which identifies how
+                organisations systematically erase care infrastructure from
+                operational design — into AI evaluation.
+              </p>
+              <p className="text-slate-grey leading-relaxed text-sm">
+                The benchmark was developed through literature review of care
+                ethics and feminist HCI, analysis of 200+ AI system outputs, and
+                participatory design sessions with 30 caregivers who mapped
+                where AI failed them in practice.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-warm-grey/30 to-warm-grey/10 rounded-2xl border border-border/50 p-8 space-y-4">
+              <p className="text-sm font-semibold text-primary uppercase tracking-wider">
+                Why it matters now
+              </p>
+              <p className="text-deep-navy leading-relaxed">
+                As AI enters HR, healthcare, government, and education at
+                institutional scale, care-blind defaults become policy. A
+                benefits portal that times out during a school run. An HR tool
+                that flags a caregiver's non-linear career as a risk. A
+                healthcare app that guilt-trips a parent for missing a
+                medication reminder.
+              </p>
+              <p className="text-slate-grey leading-relaxed text-sm">
+                CAREVAL gives researchers, auditors, and product teams a shared
+                language and measurement tool to make this visible before it
+                becomes embedded.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
       {/* Get Started */}
       <section className="space-y-8">
         <FadeIn>

@@ -10,6 +10,8 @@ import {
   Lightbulb,
   Bot,
   Sparkles,
+  Search,
+  X,
 } from 'lucide-react';
 import {
   Tooltip,
@@ -430,11 +432,19 @@ function CopyButton({
 
 export function Prompts() {
   const [selectedDomain, setSelectedDomain] = useState<string>('All');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
-  const filteredPrompts =
-    selectedDomain === 'All'
-      ? prompts
-      : prompts.filter((p) => p.domain === selectedDomain);
+  const filteredPrompts = prompts.filter((p) => {
+    const matchesDomain = selectedDomain === 'All' || p.domain === selectedDomain;
+    const q = searchQuery.toLowerCase();
+    const matchesSearch =
+      !q ||
+      p.title.toLowerCase().includes(q) ||
+      p.promptText.toLowerCase().includes(q) ||
+      p.domain.toLowerCase().includes(q) ||
+      p.assumptions.some((a) => a.toLowerCase().includes(q));
+    return matchesDomain && matchesSearch;
+  });
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
@@ -445,20 +455,38 @@ export function Prompts() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="text-xl text-slate-grey mb-8 leading-relaxed max-w-3xl">
-            {prompts.length} research-validated prompts testing care
-            infrastructure erasure across five critical domains
+            {prompts.length} research-validated prompts testing care-infrastructure
+            erasure across five critical domains — growing toward 50
           </p>
         </FadeIn>
 
         {/* Filters */}
         <FadeIn delay={0.2}>
           <div className="bg-gradient-to-br from-warm-grey/20 to-warm-grey/10 rounded-2xl border border-border/50 p-6 md:p-8">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="text-sm font-semibold text-deep-navy">
-                Filter by domain:
-              </span>
-              <div className="flex-1 text-sm text-slate-grey">
-                Showing{' '}
+            <div className="flex flex-col gap-4 mb-4">
+              {/* Search */}
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-grey pointer-events-none" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search prompts by title, keyword, or domain…"
+                  className="w-full pl-9 pr-9 py-2.5 text-sm rounded-xl border border-border bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-grey hover:text-deep-navy transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+              {/* Count */}
+              <div className="flex items-center gap-2 text-sm text-slate-grey">
+                <span>Filter by domain:</span>
+                <span className="flex-1" />
                 <motion.span
                   key={filteredPrompts.length}
                   initial={{ opacity: 0, y: -10 }}
@@ -466,8 +494,8 @@ export function Prompts() {
                   className="inline-block font-semibold text-deep-navy"
                 >
                   {filteredPrompts.length}
-                </motion.span>{' '}
-                of {prompts.length} prompts
+                </motion.span>
+                <span>of {prompts.length} prompts</span>
               </div>
             </div>
             <div className="flex gap-3 flex-wrap mb-4">

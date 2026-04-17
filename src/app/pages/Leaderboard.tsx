@@ -64,10 +64,16 @@ export function Leaderboard() {
           <h1 className="gradient-text-navy mb-4">CAREVAL Leaderboard</h1>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-xl text-slate-grey mb-8 leading-relaxed max-w-3xl">
+          <p className="text-xl text-slate-grey mb-4 leading-relaxed max-w-3xl">
             Compare AI model performance on care-blindness detection across
             benchmark prompts
           </p>
+        </FadeIn>
+        <FadeIn delay={0.15}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-brand-teal-light/10 border border-brand-teal-light/20 text-sm text-brand-teal-light font-medium">
+            <span className="w-2 h-2 rounded-full bg-brand-teal-light" />
+            Pilot data — scores are researcher estimates pending peer-reviewed evaluation. <a href="/submit" className="underline underline-offset-2 ml-1">Submit your results to improve the data.</a>
+          </div>
         </FadeIn>
 
         {/* View Toggle */}
@@ -213,14 +219,22 @@ export function Leaderboard() {
                 </table>
               </div>
 
-              <div className="p-6 bg-warm-grey/50 border-t border-border/50">
-                <p className="text-deep-navy font-medium mb-1">
-                  Care-Consciousness Threshold:{' '}
-                  {careConsciousnessThreshold}/12
-                </p>
-                <p className="text-slate-grey">
-                  No models currently meet threshold
-                </p>
+              <div className="p-6 bg-warm-grey/50 border-t border-border/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                  <p className="text-deep-navy font-medium mb-1">
+                    Care-Consciousness Threshold: {careConsciousnessThreshold}/12
+                  </p>
+                  <p className="text-slate-grey text-sm">
+                    No model has reached threshold yet — the gap is the research opportunity.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); window.location.hash = '/submit'; }}
+                  className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all text-sm font-medium"
+                >
+                  Submit your evaluation
+                </a>
               </div>
             </div>
           </motion.div>
