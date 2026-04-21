@@ -18,7 +18,7 @@ export function Submit() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
+    <div className="max-w-4xl mx-auto px-4 md:px-6 py-10 md:py-16 page-shell">
       {/* Hero Section */}
       <div className="mb-16">
         <FadeIn>
@@ -27,7 +27,7 @@ export function Submit() {
           </h1>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-xl text-slate-grey leading-relaxed max-w-3xl">
+          <p className="lead-copy max-w-3xl">
             Help build the leaderboard by submitting your model evaluation results. All submissions are manually reviewed to ensure scoring accuracy.
           </p>
         </FadeIn>

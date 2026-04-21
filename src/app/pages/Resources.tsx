@@ -78,10 +78,10 @@ function downloadAllResources() {
 
 export function Resources() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-shell mx-4 md:mx-6 rounded-3xl">
       {/* Hero Section */}
-      <div className="bg-warm-grey/20 border-b border-border/30">
-        <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="bg-warm-grey/20 border-b border-border/30 rounded-t-3xl">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-16">
           <div className="max-w-2xl">
             <FadeIn>
               <div className="text-xs tracking-wider text-slate-grey mb-4 uppercase">
@@ -111,7 +111,7 @@ export function Resources() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         {/* Download Resources Section */}
         <section className="py-16 border-b border-border/30">
           <FadeIn>

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import { ArrowRight, Download, TrendingUp, FileText, BarChart3, Target } from 'lucide-react';
 
 export function LandingAlt() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen page-shell mx-4 md:mx-6 rounded-3xl">
       {/* Hero Section */}
-      <section className="border-b border-border/30">
-        <div className="max-w-6xl mx-auto px-6 py-20">
+      <section className="border-b border-border/30 rounded-t-3xl">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-14 md:py-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h1 className="text-5xl font-bold text-deep-navy mb-6 leading-tight">

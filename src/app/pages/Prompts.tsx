@@ -447,133 +447,73 @@ export function Prompts() {
   });
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
-      {/* Hero Section */}
-      <div className="mb-16">
-        <FadeIn>
-          <h1 className="gradient-text-navy mb-4">CAREVAL Benchmark Prompts</h1>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <p className="text-xl text-slate-grey mb-8 leading-relaxed max-w-3xl">
-            {prompts.length} research-validated prompts testing care-infrastructure
-            erasure across five critical domains — growing toward 50
-          </p>
-        </FadeIn>
+    <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-12 md:py-16 space-y-8">
+      <section className="space-y-6">
+        <div className="text-[11px] uppercase tracking-[0.14em] text-slate-grey bg-[#e8ebf5] inline-block px-3 py-1">
+          Prompt Repository v2.4
+        </div>
+        <h1 className="text-deep-navy max-w-[720px]">Benchmarking Compassion and Rigor in LLM Reasoning</h1>
+        <p className="max-w-[760px] text-slate-grey leading-relaxed">
+          The CAREVAL prompt library consists of 500+ expert-curated scenarios designed to evaluate large
+          language models across nuanced ethical, professional, and empathetic dimensions. Use the filters
+          below to browse by domain.
+        </p>
 
-        {/* Filters */}
-        <FadeIn delay={0.2}>
-          <div className="bg-gradient-to-br from-warm-grey/20 to-warm-grey/10 rounded-2xl border border-border/50 p-6 md:p-8">
-            <div className="flex flex-col gap-4 mb-4">
-              {/* Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-grey pointer-events-none" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search prompts by title, keyword, or domain…"
-                  className="w-full pl-9 pr-9 py-2.5 text-sm rounded-xl border border-border bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
-                />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-grey hover:text-deep-navy transition-colors"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                )}
+        <div className="flex flex-wrap gap-2 pt-3 border-b border-border/70 pb-5">
+          {domains.map((domain) => (
+            <button
+              key={domain}
+              onClick={() => setSelectedDomain(domain)}
+              className={`px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.1em] ${
+                selectedDomain === domain
+                  ? 'bg-deep-navy text-white'
+                  : 'bg-[#e9edf7] text-slate-grey hover:text-deep-navy'
+              }`}
+            >
+              {domain}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-4">
+        {filteredPrompts.slice(0, 3).map((prompt) => (
+          <article key={prompt.id} className="border border-border/70 bg-white rounded-md p-6">
+            <div className="flex items-start justify-between gap-4 mb-4">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="px-2 py-1 bg-[#e8ebf5] text-[11px] tracking-[0.1em] uppercase text-deep-navy font-semibold">
+                  ID: {prompt.id}
+                </span>
+                <span className="px-2 py-1 border border-border text-[11px] tracking-[0.1em] uppercase text-slate-grey">
+                  {prompt.domain}
+                </span>
               </div>
-              {/* Count */}
-              <div className="flex items-center gap-2 text-sm text-slate-grey">
-                <span>Filter by domain:</span>
-                <span className="flex-1" />
-                <motion.span
-                  key={filteredPrompts.length}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="inline-block font-semibold text-deep-navy"
-                >
-                  {filteredPrompts.length}
-                </motion.span>
-                <span>of {prompts.length} prompts</span>
-              </div>
-            </div>
-            <div className="flex gap-3 flex-wrap mb-4">
-              {domains.map((domain) => (
-                <motion.button
-                  key={domain}
-                  onClick={() => setSelectedDomain(domain)}
-                  className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all relative overflow-hidden ${
-                    selectedDomain === domain
-                      ? 'text-white shadow-soft'
-                      : 'border border-border hover:border-primary hover:bg-primary/5'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {selectedDomain === domain && (
-                    <motion.div
-                      layoutId="domain-filter"
-                      className="absolute inset-0 bg-primary rounded-xl"
-                      transition={{
-                        type: 'spring',
-                        stiffness: 400,
-                        damping: 30,
-                      }}
-                    />
-                  )}
-                  <span className="relative z-10">{domain}</span>
-                </motion.button>
-              ))}
-            </div>
-            <div className="flex items-center justify-between pt-4 border-t border-border/30">
-              <p className="text-xs text-slate-grey">
-                Each prompt includes scoring rubric, assumptions tested, and
-                reference responses
-              </p>
-              <motion.button
-                className="px-5 py-2.5 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all text-sm font-medium"
-                onClick={downloadAllPrompts}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
+                onClick={() => copyToClipboard(prompt.promptText)}
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.12em] text-deep-navy hover:text-primary"
               >
-                Download All
-              </motion.button>
+                <Copy className="w-3.5 h-3.5" />
+                Copy to Clipboard
+              </button>
             </div>
-          </div>
-        </FadeIn>
-      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 items-start">
-        {/* Prompts List */}
-        <div className="space-y-6">
-          <AnimatePresence mode="sync">
-            {filteredPrompts.map((prompt, i) => (
-              <PromptCard key={prompt.id} prompt={prompt} index={i} />
-            ))}
-          </AnimatePresence>
-        </div>
+            <blockquote className="border-l border-border pl-4 text-[30px] italic text-deep-navy/90 leading-[1.5] mb-4">
+              “{prompt.promptText}”
+            </blockquote>
 
-        {/* Sticky sidebar with interactive scorer */}
-        <div className="hidden lg:block sticky top-24">
-          <FadeIn direction="right" delay={0.3}>
-            <InteractiveScorer />
-            <div className="mt-4 bg-warm-grey/30 rounded-xl border border-border/50 p-4">
-              <div className="flex items-center gap-2 mb-2">
-                <Lightbulb className="w-3.5 h-3.5 text-primary" />
-                <p className="text-xs font-semibold text-deep-navy">
-                  Quick tip
-                </p>
-              </div>
-              <p className="text-[11px] text-slate-grey leading-relaxed">
-                Use the scorer while reading AI responses. Score each dimension
-                as you go. It builds intuition for spotting care-blindness
-                patterns.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </div>
+            <button className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.12em] text-deep-navy hover:text-primary">
+              <ChevronDown className="w-3.5 h-3.5" />
+              View Scoring Rubric & Reference
+            </button>
+          </article>
+        ))}
+      </section>
+
+      <section className="flex items-center justify-center gap-5 py-6">
+        <button className="w-8 h-8 border border-border/70 bg-white text-slate-grey hover:text-deep-navy">‹</button>
+        <p className="text-[12px] uppercase tracking-[0.12em] text-slate-grey">Page 1 of 24</p>
+        <button className="w-8 h-8 border border-border/70 bg-white text-slate-grey hover:text-deep-navy">›</button>
+      </section>
     </div>
   );
 }

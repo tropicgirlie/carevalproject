@@ -9,7 +9,6 @@ import { Leaderboard } from './pages/Leaderboard';
 import { Submit } from './pages/Submit';
 import { Resources } from './pages/Resources';
 import { License } from './pages/License';
-import { CommandPalette } from './components/CommandPalette';
 import { Menu, X } from 'lucide-react';
 import logoImage from 'figma:asset/af770bb6497312fe6818fc1e22f4a20cfba2af25.png';
 
@@ -34,38 +33,38 @@ function Navigation() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-      className="sticky top-0 z-50 glass border-b border-border/50"
+      className="sticky top-0 z-50 glass"
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
+        <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center">
             <motion.img
               src={logoImage}
               alt="CAREVAL Logo"
-              className="h-8"
+              className="h-6"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             />
           </Link>
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className="relative px-4 py-2 rounded-lg transition-colors"
+                className="relative py-2 transition-colors"
               >
                 {isActive(link.to) && (
                   <motion.div
                     layoutId="nav-active"
-                    className="absolute inset-0 bg-primary rounded-lg shadow-soft"
+                    className="absolute left-0 right-0 -bottom-[3px] h-[2px] bg-deep-navy"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
                 <span
-                  className={`relative z-10 transition-colors ${
+                  className={`relative z-10 text-[11px] font-medium tracking-[0.12em] uppercase transition-colors ${
                     isActive(link.to)
-                      ? 'text-primary-foreground'
+                      ? 'text-deep-navy'
                       : 'text-slate-grey hover:text-deep-navy'
                   }`}
                 >
@@ -73,9 +72,9 @@ function Navigation() {
                 </span>
               </Link>
             ))}
-            <div className="ml-2">
-              <CommandPalette />
-            </div>
+            <button className="ml-8 px-6 py-2 rounded-md bg-deep-navy text-white text-[11px] font-semibold tracking-[0.18em] uppercase hover:bg-deep-navy/90 transition-colors">
+              Sign In
+            </button>
           </div>
           {/* Mobile toggle */}
           <motion.button
@@ -117,7 +116,7 @@ function Navigation() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-            className="lg:hidden border-t border-border/50 bg-white/95 backdrop-blur-sm overflow-hidden"
+            className="lg:hidden border-t border-border/50 bg-[#f3f5fa] overflow-hidden"
           >
             <div className="px-6 py-4 space-y-1">
               {navLinks.map((link, i) => (
@@ -130,10 +129,10 @@ function Navigation() {
                   <Link
                     to={link.to}
                     onClick={() => setMobileOpen(false)}
-                    className={`block px-4 py-3 rounded-lg transition-all ${
+                    className={`block px-4 py-3 rounded-md text-[12px] font-semibold tracking-[0.12em] uppercase transition-all ${
                       isActive(link.to)
-                        ? 'bg-primary text-primary-foreground'
-                        : 'text-slate-grey hover:text-deep-navy hover:bg-warm-grey'
+                        ? 'bg-deep-navy text-white'
+                        : 'text-slate-grey hover:text-deep-navy hover:bg-white'
                     }`}
                   >
                     {link.label}
@@ -150,47 +149,17 @@ function Navigation() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border/50 bg-white/50 mt-24">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center space-y-4"
-        >
-          <p className="text-slate-grey leading-relaxed max-w-2xl mx-auto">
-            CAREVAL is an AI evaluation benchmark developed within the{' '}
-            <a
-              href="https://momops.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-secondary transition-colors font-medium"
-            >
-              MomOps
-            </a>{' '}
-            research programme by{' '}
-            <a
-              href="https://luana.systems"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-secondary transition-colors font-medium"
-            >
-              Luana Micheau
-            </a>
-            .
-          </p>
-          <p className="text-sm text-slate-grey">
-            Released under the{' '}
-            <Link
-              to="/license"
-              className="text-primary hover:text-secondary transition-colors font-medium"
-            >
-              CAREVAL Research Licence
-            </Link>{' '}
-            © 2024–2025
-          </p>
-        </motion.div>
+    <footer className="mt-20 border-t border-border/60">
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-8">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[11px] tracking-[0.12em] uppercase text-slate-grey">
+          <span className="font-semibold text-deep-navy tracking-[0.08em] text-xs">CAREVAL Research</span>
+          <span>© 2024 CAREVAL Research. All rights reserved.</span>
+          <div className="flex items-center gap-6">
+            <a href="#/resources" className="hover:text-deep-navy transition-colors">Citation Info</a>
+            <a href="#/resources" className="hover:text-deep-navy transition-colors">Contact</a>
+            <a href="https://momops.org" target="_blank" rel="noopener noreferrer" className="hover:text-deep-navy transition-colors">MomOps</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
@@ -226,7 +195,7 @@ function AnimatedRoutes() {
 
 function AppRoutes() {
   return (
-    <div className="min-h-screen bg-soft-ivory flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#f3f5fa]">
       <Navigation />
       <AnimatedRoutes />
       <Footer />

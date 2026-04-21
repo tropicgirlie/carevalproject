@@ -3,7 +3,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from '../components/motion';
 
 export function License() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
+    <div className="max-w-4xl mx-auto px-4 md:px-6 py-10 md:py-16 page-shell">
       <div className="mb-12">
         <FadeIn>
           <h1 className="gradient-text-navy mb-4">
@@ -11,7 +11,7 @@ export function License() {
           </h1>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="text-xl text-slate-grey">
+          <p className="lead-copy">
             Custom research licence for open, attributed use
           </p>
         </FadeIn>
