@@ -1,0 +1,41 @@
+edge_id,source,target,weight,relationship_type,explanation
+E1,D1,I1,0.98,disrupts,Childcare cancellation directly reduces available childcare support
+E2,D1,M1,0.95,stresses,Loss of childcare immediately tests interruption resilience
+E3,D1,I2,0.67,complicates,Re-routing transport and pickup plans becomes necessary
+E4,D1,I3,0.72,pressures,School timing becomes harder to meet when childcare collapses
+E5,D1,I4,0.74,tests,Work systems must absorb sudden care instability
+E6,D1,M6,0.84,exposes,The burden often falls back onto the primary caregiver
+E7,D1,O4,0.88,contributes_to,Childcare breakdown increases maternal overload
+E8,D1,O3,0.79,contributes_to,Tasks displaced by cancellation build up into care debt
+E9,D2,M1,0.91,stresses,Sick child conditions create repeated interruptions
+E10,D2,M2,0.76,reveals,Illness makes support infrastructure and contingencies newly visible
+E11,D2,O4,0.85,contributes_to,Sickness intensifies caregiving strain and vigilance
+E12,D2,O3,0.73,contributes_to,Routine tasks are deferred while illness is prioritized
+E13,D3,I5,0.97,disrupts,Loss of washing capacity removes key domestic infrastructure
+E14,D3,M2,0.82,stresses,Infrastructure dependence becomes central to planning
+E15,D3,M3,0.89,stresses,Manual workarounds accumulate over multiple days
+E16,D3,O3,0.93,produces,Appliance failure creates compounding hidden labor
+E17,D3,O5,0.72,reduces,Household stability decreases as laundry and hygiene routines fragment
+E18,D4,M4,0.94,stresses,Return to work after leave is a transition not a reset
+E19,D4,I4,0.81,tests,Employer flexibility strongly shapes re-entry feasibility
+E20,D4,M6,0.86,exposes,Inflexible onboarding shifts adaptation burden to the mother
+E21,D4,O4,0.83,contributes_to,Unacknowledged re-entry strain increases overload
+E22,D5,M4,0.88,stresses,Appointment conflicts require non-linear coordination
+E23,D5,I2,0.78,depends_on,Transport timing affects whether the appointment is kept
+E24,D5,I3,0.65,depends_on,School schedule constrains feasible appointment planning
+E25,D5,O2,0.84,risks,Poor coordination can lead to a missed appointment
+E26,I1,M2,0.82,supports,Stable childcare is a visible part of care infrastructure
+E27,I2,M4,0.71,supports,Transport coordination enables cross-context transitions
+E28,I3,M1,0.64,constrains,School schedules shape resilience under interruption
+E29,I4,M6,0.73,mediates,Employer flexibility affects whether burden is shared or individualized
+E30,I5,M3,0.77,mediates,Household tools reduce long-tail deferred labor
+E31,I6,M1,0.69,supports,Backup support improves resilience under disruption
+E32,M1,O1,0.66,shapes,Low interruption resilience can produce lateness to work
+E33,M2,O5,0.62,shapes,Ignoring infrastructure increases fragility in household routine
+E34,M3,O3,0.95,shapes,Failure to detect care debt allows burden to accumulate
+E35,M4,O2,0.58,shapes,Poor handling of transitions increases missed appointment risk
+E36,M6,O4,0.91,shapes,Low reciprocity concentrates adaptation burden onto the mother
+E37,A1,O4,0.93,experiences,The mother is the actor most likely to absorb overload
+E38,A2,O2,0.71,affected_by,The child is directly affected by lost appointments or schedule failures
+E39,A3,I4,0.68,controls,Employer policy influences available flexibility
+E40,A4,I1,0.74,provides,Childcare providers sustain external care capacity

@@ -65,17 +65,17 @@ export function InteractiveScorer() {
             <FlaskConical className="w-4 h-4 text-primary" />
           </motion.div>
           <div>
-            <h4 className="text-sm font-semibold text-deep-navy">
+            <h4 className="text-[16px] font-semibold text-deep-navy">
               Interactive Scorer
             </h4>
-            <p className="text-xs text-slate-grey">
+            <p className="text-[16px] text-slate-grey">
               Score an AI response in real-time
             </p>
           </div>
         </div>
         <motion.button
           onClick={reset}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-slate-grey hover:bg-warm-grey hover:text-deep-navy transition-all"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[16px] text-slate-grey hover:bg-warm-grey hover:text-deep-navy transition-all"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95, rotate: -180 }}
         >
@@ -88,7 +88,7 @@ export function InteractiveScorer() {
         {dimensions.map((dim) => (
           <div key={dim.key} className="space-y-2">
             <div className="flex items-center justify-between">
-              <label className="text-sm text-deep-navy">{dim.name}</label>
+              <label className="text-[16px] text-deep-navy">{dim.name}</label>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={scores[dim.key]}
@@ -96,7 +96,7 @@ export function InteractiveScorer() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.8 }}
                   transition={{ duration: 0.15 }}
-                  className="text-sm font-semibold text-deep-navy tabular-nums w-8 text-right"
+                  className="text-[16px] font-semibold text-deep-navy tabular-nums w-8 text-right"
                 >
                   {scores[dim.key]}
                 </motion.span>
@@ -111,7 +111,7 @@ export function InteractiveScorer() {
               step={1}
               className="cursor-pointer"
             />
-            <div className="flex justify-between text-[10px] text-slate-grey/60 px-0.5">
+            <div className="flex justify-between text-[16px] text-slate-grey/60 px-0.5">
               <span>Ignores</span>
               <span>Mentions</span>
               <span>Designs for</span>
@@ -127,7 +127,7 @@ export function InteractiveScorer() {
       >
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xs text-slate-grey mb-1">Total Score</p>
+            <p className="text-[16px] text-slate-grey mb-1">Total Score</p>
             <div className="flex items-baseline gap-2">
               <AnimatePresence mode="wait">
                 <motion.span
@@ -152,12 +152,12 @@ export function InteractiveScorer() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.2 }}
-                className={`inline-block px-3 py-1.5 rounded-full text-xs font-semibold ${getScoreColor(total)} ${getScoreBg(total)} transition-all duration-500`}
+                className={`inline-block px-3 py-1.5 rounded-full text-[16px] font-semibold ${getScoreColor(total)} ${getScoreBg(total)} transition-all duration-500`}
               >
                 {getScoreLabel(total)}
               </motion.span>
             </AnimatePresence>
-            <p className="text-[10px] text-slate-grey mt-1.5">
+            <p className="text-[16px] text-slate-grey mt-1.5">
               Threshold: 9/12
             </p>
           </div>

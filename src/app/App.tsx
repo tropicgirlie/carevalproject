@@ -9,6 +9,7 @@ import { Leaderboard } from './pages/Leaderboard';
 import { Submit } from './pages/Submit';
 import { Resources } from './pages/Resources';
 import { License } from './pages/License';
+import { RateResponse } from './pages/RateResponse';
 import { Menu, X } from 'lucide-react';
 import logoImage from 'figma:asset/af770bb6497312fe6818fc1e22f4a20cfba2af25.png';
 
@@ -18,6 +19,7 @@ const navLinks = [
   { to: '/prompts', label: 'Prompts' },
   { to: '/leaderboard', label: 'Leaderboard' },
   { to: '/submit', label: 'Submit' },
+  { to: '/rate', label: 'Rate' },
   { to: '/resources', label: 'Resources' },
   { to: '/license', label: 'License' },
 ];
@@ -62,7 +64,7 @@ function Navigation() {
                   />
                 )}
                 <span
-                  className={`relative z-10 text-[11px] font-medium tracking-[0.12em] uppercase transition-colors ${
+                  className={`relative z-10 text-[16px] font-medium tracking-[0.08em] uppercase transition-colors ${
                     isActive(link.to)
                       ? 'text-deep-navy'
                       : 'text-slate-grey hover:text-deep-navy'
@@ -72,7 +74,7 @@ function Navigation() {
                 </span>
               </Link>
             ))}
-            <button className="ml-8 px-6 py-2 rounded-md bg-deep-navy text-white text-[11px] font-semibold tracking-[0.18em] uppercase hover:bg-deep-navy/90 transition-colors">
+            <button className="ml-8 px-5 py-2.5 rounded-md bg-deep-navy text-white text-[16px] font-semibold tracking-[0.08em] uppercase whitespace-nowrap hover:bg-deep-navy/90 transition-colors">
               Sign In
             </button>
           </div>
@@ -129,7 +131,7 @@ function Navigation() {
                   <Link
                     to={link.to}
                     onClick={() => setMobileOpen(false)}
-                    className={`block px-4 py-3 rounded-md text-[12px] font-semibold tracking-[0.12em] uppercase transition-all ${
+                    className={`block px-4 py-3 rounded-md text-[16px] font-semibold tracking-[0.08em] uppercase transition-all ${
                       isActive(link.to)
                         ? 'bg-deep-navy text-white'
                         : 'text-slate-grey hover:text-deep-navy hover:bg-white'
@@ -151,8 +153,8 @@ function Footer() {
   return (
     <footer className="mt-20 border-t border-border/60">
       <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-8">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[11px] tracking-[0.12em] uppercase text-slate-grey">
-          <span className="font-semibold text-deep-navy tracking-[0.08em] text-xs">CAREVAL Research</span>
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[16px] tracking-[0.08em] uppercase text-slate-grey">
+          <span className="font-semibold text-deep-navy tracking-[0.08em] text-[16px]">CAREVAL Research</span>
           <span>© 2024 CAREVAL Research. All rights reserved.</span>
           <div className="flex items-center gap-6">
             <a href="#/resources" className="hover:text-deep-navy transition-colors">Citation Info</a>
@@ -185,6 +187,7 @@ function AnimatedRoutes() {
           <Route path="/prompts" element={<Prompts />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/submit" element={<Submit />} />
+          <Route path="/rate" element={<RateResponse />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/license" element={<License />} />
         </Routes>

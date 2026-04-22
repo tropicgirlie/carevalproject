@@ -32,21 +32,21 @@ export function LandingAlt() {
             
             {/* Stats Card */}
             <div className="bg-warm-grey/20 rounded-2xl border border-border/50 p-8">
-              <div className="text-xs tracking-wider text-slate-grey mb-4 uppercase">
+              <div className="text-[16px] tracking-wider text-slate-grey mb-4 uppercase">
                 Real-Life Use At
               </div>
               <div className="space-y-6">
                 <div className="flex items-center justify-between pb-4 border-b border-border/30">
-                  <div className="text-sm text-slate-grey">Fortune 500 Chatbot</div>
-                  <div className="text-xs text-primary font-medium bg-primary/10 px-3 py-1 rounded-full">LOW</div>
+                  <div className="text-[16px] text-slate-grey">Fortune 500 Chatbot</div>
+                  <div className="text-[16px] text-primary font-medium bg-primary/10 px-3 py-1 rounded-full">LOW</div>
                 </div>
                 <div className="flex items-center justify-between pb-4 border-b border-border/30">
-                  <div className="text-sm text-slate-grey">Open Source AI</div>
-                  <div className="text-xs text-secondary font-medium bg-secondary/10 px-3 py-1 rounded-full">MEDIUM</div>
+                  <div className="text-[16px] text-slate-grey">Open Source AI</div>
+                  <div className="text-[16px] text-secondary font-medium bg-secondary/10 px-3 py-1 rounded-full">MEDIUM</div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <div className="text-sm text-slate-grey">Premium AI Assistant</div>
-                  <div className="text-xs text-red-600 font-medium bg-red-100 px-3 py-1 rounded-full">HIGH</div>
+                  <div className="text-[16px] text-slate-grey">Premium AI Assistant</div>
+                  <div className="text-[16px] text-red-600 font-medium bg-red-100 px-3 py-1 rounded-full">HIGH</div>
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@ export function LandingAlt() {
       <section className="py-20 bg-warm-grey/10">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-12">
-            <div className="text-xs tracking-wider text-slate-grey mb-3 uppercase">
+            <div className="text-[16px] tracking-wider text-slate-grey mb-3 uppercase">
               At-a-glance metrics
             </div>
             <h2 className="text-4xl font-bold text-deep-navy mb-4">
@@ -74,30 +74,30 @@ export function LandingAlt() {
             <div className="bg-white rounded-xl border border-border/50 p-8">
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <div className="text-xs tracking-wider text-slate-grey mb-2 uppercase">
+                  <div className="text-[16px] tracking-wider text-slate-grey mb-2 uppercase">
                     Care Framework Failure Rate
                   </div>
-                  <div className="text-sm text-slate-grey mb-4">
+                  <div className="text-[16px] text-slate-grey mb-4">
                     Average Across Evaluated Models
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <span className="text-xs text-slate-grey/60">Median</span>
+                  <span className="text-[16px] text-slate-grey/60">Median</span>
                 </div>
               </div>
               
               <div className="mb-6">
                 <div className="text-6xl font-bold text-deep-navy mb-2">82%</div>
-                <div className="text-sm text-slate-grey mb-4">
+                <div className="text-[16px] text-slate-grey mb-4">
                   <span className="font-semibold text-deep-navy">Systemic Blindness</span>
                 </div>
-                <p className="text-sm text-slate-grey leading-relaxed">
+                <p className="text-[16px] text-slate-grey leading-relaxed">
                   AI systems fail to recognize care contexts in over 4 out of 5 prompts, treating caregiving as individual problems rather than structural realities.
                 </p>
               </div>
 
               <div className="pt-4 border-t border-border/30">
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center justify-between text-[16px]">
                   <span className="text-slate-grey">Lowest: 67% (Best Model)</span>
                   <span className="text-slate-grey/60">Highest: 94%</span>
                 </div>
@@ -108,10 +108,10 @@ export function LandingAlt() {
             <div className="bg-white rounded-xl border border-border/50 p-8">
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <div className="text-xs tracking-wider text-slate-grey mb-2 uppercase">
+                  <div className="text-[16px] tracking-wider text-slate-grey mb-2 uppercase">
                     Care Penalty Multiplier
                   </div>
-                  <div className="text-sm text-slate-grey mb-4">
+                  <div className="text-[16px] text-slate-grey mb-4">
                     Productivity Bias Impact
                   </div>
                 </div>
@@ -122,16 +122,16 @@ export function LandingAlt() {
               
               <div className="mb-6">
                 <div className="text-6xl font-bold text-deep-navy mb-2">3.5x</div>
-                <div className="text-sm text-slate-grey mb-4">
+                <div className="text-[16px] text-slate-grey mb-4">
                   <span className="font-semibold text-deep-navy">Amplified Burden</span>
                 </div>
-                <p className="text-sm text-slate-grey leading-relaxed">
+                <p className="text-[16px] text-slate-grey leading-relaxed">
                   AI responses place 3.5 times more adaptation burden on caregivers compared to non-care contexts, increasing rather than reducing systemic inequality.
                 </p>
               </div>
 
               <div className="pt-4 border-t border-border/30">
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center justify-between text-[16px]">
                   <span className="text-slate-grey">Range: 2.1x - 5.8x</span>
                   <span className="text-red-600 font-medium">Worsening Trend</span>
                 </div>
@@ -143,7 +143,7 @@ export function LandingAlt() {
           <div className="bg-white rounded-xl border border-border/50 p-8">
             <div className="mb-6">
               <h3 className="font-semibold text-deep-navy mb-2">Domain Failure Rates</h3>
-              <p className="text-sm text-slate-grey">
+              <p className="text-[16px] text-slate-grey">
                 Care-blindness severity varies by domain, but remains critically high across all sectors where caregiving contexts appear.
               </p>
             </div>
@@ -157,7 +157,7 @@ export function LandingAlt() {
                 { domain: 'Government Services', rate: 76, color: 'secondary' }
               ].map((item) => (
                 <div key={item.domain} className="flex items-center gap-4">
-                  <div className="w-32 text-sm text-slate-grey flex-shrink-0">{item.domain}</div>
+                  <div className="w-32 text-[16px] text-slate-grey flex-shrink-0">{item.domain}</div>
                   <div className="flex-1">
                     <div className="bg-warm-grey/30 rounded-full h-2 overflow-hidden">
                       <div 
@@ -166,7 +166,7 @@ export function LandingAlt() {
                       />
                     </div>
                   </div>
-                  <div className="w-12 text-sm font-semibold text-deep-navy text-right">{item.rate}%</div>
+                  <div className="w-12 text-[16px] font-semibold text-deep-navy text-right">{item.rate}%</div>
                 </div>
               ))}
             </div>
@@ -177,7 +177,7 @@ export function LandingAlt() {
       {/* What is Care-Blindness Section */}
       <section className="py-20 border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="text-xs tracking-wider text-slate-grey mb-4 uppercase">
+          <div className="text-[16px] tracking-wider text-slate-grey mb-4 uppercase">
             Definition
           </div>
           <h2 className="text-4xl font-bold text-deep-navy mb-8">
@@ -196,7 +196,7 @@ export function LandingAlt() {
       <section className="py-20 bg-warm-grey/10 border-t border-border/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="text-xs tracking-wider text-slate-grey mb-4 uppercase">
+            <div className="text-[16px] tracking-wider text-slate-grey mb-4 uppercase">
               Approach
             </div>
             <h2 className="text-4xl font-bold text-deep-navy mb-4">
@@ -214,7 +214,7 @@ export function LandingAlt() {
                 <FileText className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-semibold text-deep-navy mb-3">Eval Curation</h3>
-              <p className="text-sm text-slate-grey leading-relaxed">
+              <p className="text-[16px] text-slate-grey leading-relaxed">
                 We rigorously develop prompts capturing real-world care contexts (parenting, chronic illness, eldercare, disability support), explicitly testing how AI systems respond to caregiving situations vs. structurally similar non-care scenarios.
               </p>
             </div>
@@ -225,7 +225,7 @@ export function LandingAlt() {
                 <BarChart3 className="w-6 h-6 text-secondary" />
               </div>
               <h3 className="font-semibold text-deep-navy mb-3">Evaluation Metrics</h3>
-              <p className="text-sm text-slate-grey leading-relaxed">
+              <p className="text-[16px] text-slate-grey leading-relaxed">
                 Each prompt is scored using standardized rubrics on multiple dimensions: care recognition, structural vs. individual framing, interruption resilience, adaptive burden placement, and representation of care ethics principles.
               </p>
             </div>
@@ -236,7 +236,7 @@ export function LandingAlt() {
                 <Target className="w-6 h-6 text-sage-green" />
               </div>
               <h3 className="font-semibold text-deep-navy mb-3">Bias Detection</h3>
-              <p className="text-sm text-slate-grey leading-relaxed">
+              <p className="text-[16px] text-slate-grey leading-relaxed">
                 Using comparative scoring, we quantify biases by measuring divergent AI treatment of care vs. non-care contexts. Patterns reveal structural assumptions coded into models about productivity, autonomy, and whose time matters.
               </p>
             </div>
@@ -258,7 +258,7 @@ export function LandingAlt() {
       <section className="py-20 border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-12">
-            <div className="text-xs tracking-wider text-slate-grey mb-4 uppercase">
+            <div className="text-[16px] tracking-wider text-slate-grey mb-4 uppercase">
               Research
             </div>
             <h2 className="text-4xl font-bold text-deep-navy">
@@ -274,12 +274,12 @@ export function LandingAlt() {
                   <h3 className="font-semibold text-deep-navy mb-2">
                     The CAREVAL Framework: A New Standard for Evaluating Care-Blindness in AI
                   </h3>
-                  <p className="text-sm text-slate-grey mb-3">
+                  <p className="text-[16px] text-slate-grey mb-3">
                     L. Doe, K. Smith, R. Chen et al.
                   </p>
                 </div>
                 <div className="flex gap-2">
-                  <span className="text-xs text-slate-grey/60 bg-warm-grey/30 px-3 py-1 rounded-full">
+                  <span className="text-[16px] text-slate-grey/60 bg-warm-grey/30 px-3 py-1 rounded-full">
                     PREPRINT
                   </span>
                   <button className="p-2 hover:bg-warm-grey/30 rounded-lg transition-colors">
@@ -296,12 +296,12 @@ export function LandingAlt() {
                   <h3 className="font-semibold text-deep-navy mb-2">
                     Audit Report: LLMs and Care Work Valuation
                   </h3>
-                  <p className="text-sm text-slate-grey mb-3">
+                  <p className="text-[16px] text-slate-grey mb-3">
                     R. Williams, M. Johnson
                   </p>
                 </div>
                 <div className="flex gap-2">
-                  <span className="text-xs text-slate-grey/60 bg-warm-grey/30 px-3 py-1 rounded-full">
+                  <span className="text-[16px] text-slate-grey/60 bg-warm-grey/30 px-3 py-1 rounded-full">
                     PREPRINT
                   </span>
                   <button className="p-2 hover:bg-warm-grey/30 rounded-lg transition-colors">
@@ -324,7 +324,7 @@ export function LandingAlt() {
 
           {/* Link to Original Landing */}
           <div className="text-center pt-12 border-t border-border/30 mt-16">
-            <p className="text-sm text-slate-grey mb-3">Looking for a different layout?</p>
+            <p className="text-[16px] text-slate-grey mb-3">Looking for a different layout?</p>
             <Link 
               to="/"
               className="inline-flex items-center gap-2 px-6 py-3 bg-warm-grey/50 rounded-lg border border-border/50 text-deep-navy hover:bg-primary hover:text-white hover:border-primary transition-all font-medium"

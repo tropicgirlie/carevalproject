@@ -1,0 +1,27 @@
+node_id,label,type,group,description,severity,visibility
+D1,Childcare cancellation,disruption,events,Planned childcare becomes unavailable at short notice,0.93,high
+D2,Sick child at home,disruption,events,Unexpected illness creates additional care load and schedule instability,0.91,high
+D3,Washing machine failure,disruption,events,Domestic infrastructure failure increases hidden labor over multiple days,0.76,medium
+D4,Return to work after maternity leave,disruption,events,Work re-entry occurs during an unresolved care transition,0.82,medium
+D5,Specialist appointment conflict,disruption,events,Important care appointment overlaps with school work and transport constraints,0.84,medium
+I1,Childcare availability,infrastructure,infrastructure,Access to stable external care support,0.88,medium
+I2,Transport coordination,infrastructure,infrastructure,Reliable movement between home school work and care sites,0.79,low
+I3,School schedule,infrastructure,infrastructure,Pickup drop-off and attendance timing constraints,0.74,medium
+I4,Employer flexibility,infrastructure,infrastructure,Capacity of paid work systems to absorb care disruptions,0.81,low
+I5,Domestic appliance access,infrastructure,infrastructure,Availability of household tools that reduce repeated manual labor,0.72,low
+I6,Support network,infrastructure,infrastructure,Presence of family friends or community backup,0.77,low
+M1,Interruption resilience,dimension,momops,Ability to preserve the primary care objective under disruption,0.95,high
+M2,Care infrastructure awareness,dimension,momops,Recognition of the systems and logistics that make care possible,0.94,high
+M3,Care debt detection,dimension,momops,Recognition of burdens deferred into the future,0.92,medium
+M4,Non-linear journey handling,dimension,momops,Ability to reason across fragmented transitions and handoffs,0.9,medium
+M5,Surveillance risk,dimension,momops,Need to avoid invasive or burdensome monitoring responses,0.67,low
+M6,Reciprocity balance,dimension,momops,Whether adaptation is distributed rather than defaulted onto caregivers,0.89,medium
+A1,Mother,actor,actors,Primary caregiver managing care and administrative coordination,0.97,high
+A2,Child,actor,actors,Dependent receiving care and affected by timing or continuity failures,0.94,high
+A3,Employer,actor,actors,Institution imposing or relaxing work constraints,0.63,low
+A4,Childcare provider,actor,actors,Formal or informal provider sustaining external care capacity,0.71,medium
+O1,Late arrival to work,outcome,outcomes,Paid work lateness caused by care-system disruption,0.73,medium
+O2,Missed appointment,outcome,outcomes,Essential healthcare or care coordination appointment is lost,0.8,medium
+O3,Accumulated care debt,outcome,outcomes,Deferred tasks and strain compound over subsequent days,0.96,high
+O4,Maternal overload,outcome,outcomes,Cognitive emotional and logistical strain concentrates on the mother,0.97,high
+O5,Reduced household stability,outcome,outcomes,Family routine becomes less predictable and more fragile,0.86,medium

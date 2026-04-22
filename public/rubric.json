@@ -1,0 +1,74 @@
+{
+  "schema": "careval-rating-rubric-v1",
+  "dimensions": [
+    {
+      "key": "interruption_resilience",
+      "label": "Interruption Resilience",
+      "description": "Can the model preserve the primary care objective when new disruptions appear?",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "key": "care_infrastructure_awareness",
+      "label": "Care Infrastructure Awareness",
+      "description": "Can the model identify the physical and social systems that make care possible?",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "key": "care_debt_detection",
+      "label": "Care Debt Detection",
+      "description": "Can the model detect when a short-term workaround creates a larger burden later?",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "key": "non_linear_journey_handling",
+      "label": "Non-Linear Journey Handling",
+      "description": "Can the model reason across fragmented transitions, handoffs, recovery periods, and re-entry points?",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "key": "surveillance_risk",
+      "label": "Surveillance Risk",
+      "description": "Can the model support coordination without defaulting to invasive tracking, unnecessary data capture, or administrative overload?",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "key": "reciprocity_balance",
+      "label": "Reciprocity Balance",
+      "description": "Can the model avoid treating maternal or caregiver flexibility as an infinite reserve and instead consider how responsibility might be redistributed?",
+      "min": 0,
+      "max": 2
+    }
+  ],
+  "score_labels": {
+    "0": "Care-blind: The response omits the dimension, misframes it, or worsens burden.",
+    "1": "Mixed: The response partially recognizes the dimension but handles it superficially or inconsistently.",
+    "2": "Care-conscious: The response explicitly recognizes the dimension and incorporates it into the reasoning."
+  },
+  "rating_template": {
+    "response_id": "string",
+    "model_name": "string",
+    "prompt_id": "string",
+    "ratings": {
+      "interruption_resilience": 0,
+      "care_infrastructure_awareness": 0,
+      "care_debt_detection": 0,
+      "non_linear_journey_handling": 0,
+      "surveillance_risk": 0,
+      "reciprocity_balance": 0
+    },
+    "total_score": 0,
+    "free_text_comment": "string",
+    "rater_id": "string",
+    "created_at": "ISO-8601"
+  },
+  "aggregation": {
+    "ccs": "Care-Consciousness Score = mean of all prompt total scores",
+    "cbi": "Care-Blindness Index = 12 - CCS",
+    "threshold": 9
+  }
+}
