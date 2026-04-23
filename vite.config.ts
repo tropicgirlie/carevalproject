@@ -21,7 +21,7 @@ function figmaAssetsResolver(): Plugin {
 }
 
 export default defineConfig({
-  base: '/carevalproject/',
+  base: process.env.VERCEL ? '/' : '/carevalproject/',
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
     // Tailwind is not being actively used – do not remove them
