@@ -1,6 +1,8 @@
 import { FileText, Download, Book, Mail, ArrowRight, Code2, FlaskConical, GraduationCap, ExternalLink } from 'lucide-react';
 import { prompts } from '../data/prompts';
 
+const assetUrl = (filename: string) => `${import.meta.env.BASE_URL}${filename}`;
+
 function downloadScoringTemplate() {
   const csv = [
     '# CAREVAL SCORING TEMPLATE v1.0',
@@ -44,50 +46,6 @@ function downloadTestingGuide() {
   const a = document.createElement('a');
   a.href = url;
   a.download = 'careval-testing-guide.txt';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-}
-
-function downloadRubricJson() {
-  const rubric = {
-    schema: 'careval-rating-rubric-v1',
-    dimensions: [
-      { key: 'interruption_resilience', label: 'Interruption Resilience', min: 0, max: 2 },
-      { key: 'care_infrastructure_awareness', label: 'Care Infrastructure Awareness', min: 0, max: 2 },
-      { key: 'care_debt_detection', label: 'Care Debt Detection', min: 0, max: 2 },
-      { key: 'non_linear_journey_handling', label: 'Non-Linear Journey Handling', min: 0, max: 2 },
-      { key: 'surveillance_risk', label: 'Surveillance Risk', min: 0, max: 2 },
-      { key: 'reciprocity_balance', label: 'Reciprocity Balance', min: 0, max: 2 },
-    ],
-    score_labels: {
-      0: 'Care-blind: The response omits the dimension, misframes it, or worsens burden.',
-      1: 'Mixed: The response partially recognizes the dimension but handles it superficially or inconsistently.',
-      2: 'Care-conscious: The response explicitly recognizes the dimension and incorporates it into the reasoning.',
-    },
-    rating_template: {
-      response_id: 'string',
-      model_name: 'string',
-      prompt_id: 'string',
-      ratings: {
-        interruption_resilience: 0,
-        care_infrastructure_awareness: 0,
-        care_debt_detection: 0,
-        non_linear_journey_handling: 0,
-        surveillance_risk: 0,
-        reciprocity_balance: 0,
-      },
-      free_text_comment: 'string',
-      rater_id: 'string',
-      created_at: 'ISO-8601',
-    },
-  };
-  const blob = new Blob([JSON.stringify(rubric, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'careval-rubric.json';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -153,7 +111,7 @@ export function Resources() {
             <FileText className="w-4 h-4 text-deep-navy mb-3" />
             <h3 className="text-[16px] font-semibold text-deep-navy mb-2">Annotation rubric</h3>
             <p className="text-[16px] leading-5 text-slate-grey mb-4">Structured rating schema with 0–2 scoring per dimension and rating template.</p>
-            <button onClick={downloadRubricJson} className="text-[16px] uppercase tracking-[0.12em] text-deep-navy underline underline-offset-4 hover:text-primary">Download rubric.json</button>
+            <a href={assetUrl('rubric.json')} download className="text-[16px] uppercase tracking-[0.12em] text-deep-navy underline underline-offset-4 hover:text-primary">Download rubric.json</a>
           </div>
           <div className="border border-border/60 bg-white p-5">
             <FileText className="w-4 h-4 text-deep-navy mb-3" />
@@ -173,21 +131,21 @@ export function Resources() {
             <p className="text-[16px] leading-5 text-slate-grey mb-4">Structured data behind the visualization, including nodes, edges, and weighted links showing how one care disruption can cascade across multiple dimensions.</p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="/carevalproject/momops_interdependency_graph.json"
+                href={assetUrl('momops_interdependency_graph.json')}
                 download
                 className="text-[16px] uppercase tracking-[0.12em] text-deep-navy underline underline-offset-4 hover:text-primary"
               >
                 Download graph JSON
               </a>
               <a
-                href="/carevalproject/momops_graph_nodes.csv"
+                href={assetUrl('momops_graph_nodes.csv')}
                 download
                 className="text-[16px] uppercase tracking-[0.12em] text-deep-navy underline underline-offset-4 hover:text-primary"
               >
                 Download nodes CSV
               </a>
               <a
-                href="/carevalproject/momops_graph_edges.csv"
+                href={assetUrl('momops_graph_edges.csv')}
                 download
                 className="text-[16px] uppercase tracking-[0.12em] text-deep-navy underline underline-offset-4 hover:text-primary"
               >

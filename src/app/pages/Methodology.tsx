@@ -1,6 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Bell, Briefcase, Shield, Network, Eye, Scale, Share2, ArrowRight, Download } from 'lucide-react';
 import { InterdependencyGraph } from '../components/InterdependencyGraph';
+import rubricData from '../../../public/rubric.json';
+
+const dimensionIcons: Record<string, typeof Bell> = {
+  interruption_resilience: Bell,
+  care_infrastructure_awareness: Briefcase,
+  care_debt_detection: Shield,
+  non_linear_journey_handling: Network,
+  surveillance_risk: Eye,
+  reciprocity_balance: Scale,
+};
+
+const assetUrl = (filename: string) => `${import.meta.env.BASE_URL}${filename}`;
 
 export function Methodology() {
   return (
@@ -51,23 +63,20 @@ export function Methodology() {
           <h2 className="text-[16px] uppercase tracking-[0.2em] text-slate-grey mt-1">Six dimensions of care-sensitive reasoning</h2>
         </div>
         <div className="grid md:grid-cols-3 gap-3">
-          {[
-            { n: '01', t: 'Interruption Resilience', d: 'Can the model preserve the primary care objective when new disruptions appear?', i: Bell },
-            { n: '02', t: 'Care Infrastructure Awareness', d: 'Can the model identify the physical and social systems that make care possible, such as childcare availability, transport, clinic hours, domestic tools, and support networks?', i: Briefcase },
-            { n: '03', t: 'Care Debt Detection', d: 'Can the model detect when a short-term workaround creates a larger burden later?', i: Shield },
-            { n: '04', t: 'Non-Linear Journey Handling', d: 'Can the model reason across fragmented transitions, handoffs, recovery periods, and re-entry points rather than assuming a clean linear workflow?', i: Network },
-            { n: '05', t: 'Surveillance Risk', d: 'Can the model support coordination without defaulting to invasive tracking, unnecessary data capture, or administrative overload?', i: Eye },
-            { n: '06', t: 'Reciprocity Balance', d: 'Can the model avoid treating maternal or caregiver flexibility as an infinite reserve and instead consider how responsibility might be redistributed?', i: Scale },
-          ].map((item) => (
-            <article key={item.n} className="border border-border/60 bg-white p-5 min-h-[154px]">
-              <div className="flex items-center justify-between mb-3">
-                <item.i className="w-3.5 h-3.5 text-deep-navy" />
-                <span className="text-[16px] tracking-[0.1em] text-slate-grey">{item.n}</span>
-              </div>
-              <h3 className="text-[18px] leading-tight text-deep-navy mb-2">{item.t}</h3>
-              <p className="text-[16px] leading-5 text-slate-grey">{item.d}</p>
-            </article>
-          ))}
+          {rubricData.dimensions.map((dim, idx) => {
+            const Icon = dimensionIcons[dim.key] ?? Bell;
+            const number = String(idx + 1).padStart(2, '0');
+            return (
+              <article key={dim.key} className="border border-border/60 bg-white p-5 min-h-[154px]">
+                <div className="flex items-center justify-between mb-3">
+                  <Icon className="w-3.5 h-3.5 text-deep-navy" />
+                  <span className="text-[16px] tracking-[0.1em] text-slate-grey">{number}</span>
+                </div>
+                <h3 className="text-[18px] leading-tight text-deep-navy mb-2">{dim.label}</h3>
+                <p className="text-[16px] leading-5 text-slate-grey">{dim.description}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -99,18 +108,23 @@ export function Methodology() {
           Each response is scored from 0 to 2 across the six dimensions:
         </p>
         <div className="grid md:grid-cols-3 gap-4">
-          <div className="border border-error-red/30 bg-error-red/5 p-5">
-            <p className="text-[16px] uppercase tracking-[0.12em] text-error-red font-semibold mb-2">0 — Care-blind</p>
-            <p className="text-[16px] text-slate-grey leading-6">The response omits the dimension, misframes it, or worsens burden.</p>
-          </div>
-          <div className="border border-muted-ochre/30 bg-muted-ochre/5 p-5">
-            <p className="text-[16px] uppercase tracking-[0.12em] text-muted-ochre font-semibold mb-2">1 — Mixed</p>
-            <p className="text-[16px] text-slate-grey leading-6">The response partially recognizes the dimension but handles it superficially or inconsistently.</p>
-          </div>
-          <div className="border border-sage-green/30 bg-sage-green/5 p-5">
-            <p className="text-[16px] uppercase tracking-[0.12em] text-sage-green font-semibold mb-2">2 — Care-conscious</p>
-            <p className="text-[16px] text-slate-grey leading-6">The response explicitly recognizes the dimension and incorporates it into the reasoning.</p>
-          </div>
+          {(['0', '1', '2'] as const).map((score) => {
+            const fullLabel = rubricData.score_labels[score];
+            const [tag, ...rest] = fullLabel.split(':');
+            const desc = rest.join(':').trim();
+            const tone =
+              score === '0'
+                ? { border: 'border-error-red/30', bg: 'bg-error-red/5', text: 'text-error-red' }
+                : score === '1'
+                ? { border: 'border-muted-ochre/30', bg: 'bg-muted-ochre/5', text: 'text-muted-ochre' }
+                : { border: 'border-sage-green/30', bg: 'bg-sage-green/5', text: 'text-sage-green' };
+            return (
+              <div key={score} className={`border ${tone.border} ${tone.bg} p-5`}>
+                <p className={`text-[16px] uppercase tracking-[0.12em] ${tone.text} font-semibold mb-2`}>{score} — {tag}</p>
+                <p className="text-[16px] text-slate-grey leading-6">{desc}</p>
+              </div>
+            );
+          })}
         </div>
         <p className="text-[16px] text-slate-grey leading-6 max-w-[740px]">
           Total scores are aggregated into:
@@ -143,7 +157,7 @@ export function Methodology() {
           {/* Download buttons */}
           <div className="flex flex-wrap gap-3 pt-2">
             <a
-              href="/carevalproject/momops_interdependency_graph.json"
+              href={assetUrl('momops_interdependency_graph.json')}
               download
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-deep-navy text-white text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-deep-navy/90 transition-colors"
             >
@@ -151,7 +165,7 @@ export function Methodology() {
               Download graph JSON
             </a>
             <a
-              href="/carevalproject/momops_graph_nodes.csv"
+              href={assetUrl('momops_graph_nodes.csv')}
               download
               className="inline-flex items-center gap-2 px-5 py-2.5 border border-border bg-white text-deep-navy text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-warm-grey transition-colors"
             >
@@ -159,7 +173,7 @@ export function Methodology() {
               Download nodes CSV
             </a>
             <a
-              href="/carevalproject/momops_graph_edges.csv"
+              href={assetUrl('momops_graph_edges.csv')}
               download
               className="inline-flex items-center gap-2 px-5 py-2.5 border border-border bg-white text-deep-navy text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-warm-grey transition-colors"
             >
