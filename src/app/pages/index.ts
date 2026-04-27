@@ -4,3 +4,4 @@ export { Prompts } from './Prompts';
 export { Leaderboard } from './Leaderboard';
 export { Submit } from './Submit';
 export { Resources } from './Resources';
+export { Partner } from './Partner';

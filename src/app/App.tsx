@@ -8,6 +8,7 @@ import { Prompts } from './pages/Prompts';
 import { Leaderboard } from './pages/Leaderboard';
 import { Submit } from './pages/Submit';
 import { Resources } from './pages/Resources';
+import { Partner } from './pages/Partner';
 import { License } from './pages/License';
 import { RateResponse } from './pages/RateResponse';
 import { Menu, X } from 'lucide-react';
@@ -21,6 +22,7 @@ const navLinks = [
   { to: '/submit', label: 'Submit' },
   { to: '/rate', label: 'Rate' },
   { to: '/resources', label: 'Resources' },
+  { to: '/partner', label: 'Partner' },
   { to: '/license', label: 'License' },
 ];
 
@@ -189,6 +191,7 @@ function AnimatedRoutes() {
           <Route path="/submit" element={<Submit />} />
           <Route path="/rate" element={<RateResponse />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/partner" element={<Partner />} />
           <Route path="/license" element={<License />} />
         </Routes>
       </motion.div>
