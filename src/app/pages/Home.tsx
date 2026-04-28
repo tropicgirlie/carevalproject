@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { leaderboardData } from '../data/leaderboard';
 import { AlertTriangle, FlaskConical, Building2, Code2, ArrowRight, Eye, Shield } from 'lucide-react';
 
-const heroImage = `${import.meta.env.BASE_URL}hero.png`;
+const heroImage = `${import.meta.env.BASE_URL}hero.jpg`;
 
 export function Home() {
   const tableRows = leaderboardData.slice(0, 4);

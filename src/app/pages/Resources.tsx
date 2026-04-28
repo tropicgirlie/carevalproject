@@ -209,7 +209,7 @@ export function Resources() {
   title={CAREVAL: Care-Blindness Evaluation for AI Systems},
   author={Micheau, Luana},
   year={2024},
-  url={https://tropicgirlie.github.io/carevalproject/}
+  url={https://careval.luana.systems/}
 }`}
             </pre>
           </div>
@@ -217,7 +217,7 @@ export function Resources() {
             <p className="text-[16px] uppercase tracking-[0.12em] text-slate-grey mb-2">APA</p>
             <p className="text-[16px] text-slate-grey">
               Micheau, L. (2024). CAREVAL: Care-Blindness Evaluation for AI Systems.
-              Retrieved from https://tropicgirlie.github.io/carevalproject/
+              Retrieved from https://careval.luana.systems/
             </p>
           </div>
         </div>
