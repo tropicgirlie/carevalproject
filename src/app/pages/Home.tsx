@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { leaderboardData } from '../data/leaderboard';
 import { AlertTriangle, FlaskConical, Building2, Code2, ArrowRight, Eye, Shield } from 'lucide-react';
 
-const heroImage = `${import.meta.env.BASE_URL}hero.jpg`;
-
 export function Home() {
   const tableRows = leaderboardData.slice(0, 4);
   const providerByModel: Record<string, string> = {
@@ -17,46 +15,36 @@ export function Home() {
   return (
     <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-16 md:py-20 space-y-12 md:space-y-14">
       {/* Hero */}
-      <section className="space-y-10">
-        <div className="space-y-6 max-w-[760px]">
-          <span className="inline-flex px-3 py-1 bg-[#e8ebf5] text-[16px] font-semibold tracking-[0.14em] uppercase text-slate-grey">
-            Benchmark v1.05
-          </span>
-          <h1 className="text-deep-navy">Evaluating care-blindness in AI systems</h1>
-          <p className="text-slate-grey leading-relaxed">
-            CAREVAL is a benchmark for detecting when AI systems erase the
-            infrastructure of care: childcare, domestic labor, recovery,
-            household logistics, and other forms of social reproduction that
-            make work and daily life possible.
-          </p>
-          <div className="flex flex-wrap gap-3 pt-1">
-            <Link
-              to="/prompts"
-              className="px-5 py-3 bg-deep-navy text-white text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-deep-navy/90 transition-colors"
-            >
-              Start Benchmarking
-            </Link>
-            <Link
-              to="/methodology"
-              className="px-5 py-3 border border-border bg-white text-deep-navy text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-warm-grey transition-colors"
-            >
-              Read Methodology
-            </Link>
-            <Link
-              to="/rate"
-              className="px-5 py-3 border border-border bg-white text-deep-navy text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-warm-grey transition-colors"
-            >
-              Rate a Response
-            </Link>
-          </div>
-        </div>
-
-        <div className="border border-[#cad2ea] bg-[#dfe4f6] overflow-hidden">
-          <img
-            src={heroImage}
-            alt="CAREVAL clinical evidence layer and systematic erasure zone visualization"
-            className="w-full h-auto block"
-          />
+      <section className="space-y-6 max-w-[760px]">
+        <span className="inline-flex px-3 py-1 bg-[#e8ebf5] text-[16px] font-semibold tracking-[0.14em] uppercase text-slate-grey">
+          Benchmark v1.05
+        </span>
+        <h1 className="text-deep-navy">Evaluating care-blindness in AI systems</h1>
+        <p className="text-slate-grey leading-relaxed">
+          CAREVAL is a benchmark for detecting when AI systems erase the
+          infrastructure of care: childcare, domestic labor, recovery,
+          household logistics, and other forms of social reproduction that
+          make work and daily life possible.
+        </p>
+        <div className="flex flex-wrap gap-3 pt-1">
+          <Link
+            to="/prompts"
+            className="px-5 py-3 bg-deep-navy text-white text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-deep-navy/90 transition-colors"
+          >
+            Start Benchmarking
+          </Link>
+          <Link
+            to="/methodology"
+            className="px-5 py-3 border border-border bg-white text-deep-navy text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-warm-grey transition-colors"
+          >
+            Read Methodology
+          </Link>
+          <Link
+            to="/rate"
+            className="px-5 py-3 border border-border bg-white text-deep-navy text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-warm-grey transition-colors"
+          >
+            Rate a Response
+          </Link>
         </div>
       </section>
 
