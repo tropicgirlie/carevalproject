@@ -26,14 +26,14 @@ export function Home() {
             daily life possible.
           </p>
           <div className="flex flex-wrap gap-3 pt-1">
-            <Link to="/prompts" className="momops-button">
-              Start Benchmarking
+            <Link to="/audit" className="momops-button">
+              Run an Audit
+            </Link>
+            <Link to="/prompts" className="momops-button-secondary">
+              Browse Prompts
             </Link>
             <Link to="/methodology" className="momops-button-secondary">
               Read Methodology
-            </Link>
-            <Link to="/rate" className="momops-button-secondary">
-              Rate a Response
             </Link>
           </div>
         </div>

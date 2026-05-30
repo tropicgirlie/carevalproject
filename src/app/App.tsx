@@ -7,6 +7,7 @@ import { Methodology } from './pages/Methodology';
 import { Prompts } from './pages/Prompts';
 import { Leaderboard } from './pages/Leaderboard';
 import { Submit } from './pages/Submit';
+import { Audit } from './pages/Audit';
 import { Resources } from './pages/Resources';
 import { Partner } from './pages/Partner';
 import { License } from './pages/License';
@@ -19,6 +20,7 @@ const navLinks = [
   { to: '/methodology', label: 'Methodology' },
   { to: '/prompts', label: 'Prompts' },
   { to: '/leaderboard', label: 'Leaderboard' },
+  { to: '/audit', label: 'Audit' },
   { to: '/submit', label: 'Submit' },
   { to: '/rate', label: 'Rate' },
   { to: '/resources', label: 'Resources' },
@@ -190,6 +192,7 @@ function AnimatedRoutes() {
           <Route path="/methodology" element={<Methodology />} />
           <Route path="/prompts" element={<Prompts />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/audit" element={<Audit />} />
           <Route path="/submit" element={<Submit />} />
           <Route path="/rate" element={<RateResponse />} />
           <Route path="/resources" element={<Resources />} />
