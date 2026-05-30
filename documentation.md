@@ -208,6 +208,84 @@ Near-term product roadmap:
 5. Add PDF export.
 6. Add a `Use Cases` page for labs, policy teams, and care-sector organizations.
 
+## Local Audit Runner
+
+CAREVAL now has a file-based audit runner for maintaining the leaderboard without needing an admin dashboard yet.
+
+Default smoke test:
+
+```bash
+npm run audit:run
+```
+
+This reads:
+
+```text
+audit-config.json
+public/prompts.json
+```
+
+and writes:
+
+```text
+audits/runs/<date>-<label>/responses.json
+audits/runs/<date>-<label>/metadata.json
+```
+
+Draft score the run:
+
+```bash
+npm run audit:score -- audits/runs/<run-id>/responses.json
+```
+
+This writes one draft result per model:
+
+```text
+audits/results/<run-id>/<model-id>.json
+```
+
+Generate a candidate leaderboard:
+
+```bash
+npm run audit:publish -- audits/results/<run-id>/
+```
+
+This writes:
+
+```text
+audits/leaderboard.generated.ts
+```
+
+The generated leaderboard is intentionally not auto-published. Review the audit JSON first, then copy approved entries into `src/app/data/leaderboard.ts`.
+
+### Adding Real Model APIs
+
+Edit `audit-config.json` and replace or add models:
+
+```json
+{
+  "id": "gpt-5.4-pro",
+  "provider": "openai",
+  "apiModel": "gpt-5.4-pro",
+  "displayName": "GPT-5.4 Pro",
+  "version": "Mar 2026"
+}
+```
+
+Supported providers:
+
+- `mock`
+- `manual`
+- `openai` using `OPENAI_API_KEY`
+- `anthropic` using `ANTHROPIC_API_KEY`
+- `google` using `GOOGLE_API_KEY`
+
+Manual provider creates empty response slots that can be filled later.
+
+### Credibility Rule
+
+The runner can collect responses automatically and draft heuristic scores, but final leaderboard scores should remain human-reviewed. CAREVAL is evaluating invisible labour; the credibility of the benchmark depends on human judgment, not fully automated self-scoring.
+
 ## MomOps Relationship
 
 MomOps maps care as infrastructure. CAREVAL evaluates whether AI systems can see it.

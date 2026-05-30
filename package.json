@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "audit:run": "node scripts/run-audit.mjs",
+    "audit:score": "node scripts/score-audit.mjs",
+    "audit:publish": "node scripts/publish-leaderboard.mjs",
     "build": "vite build",
     "dev": "vite"
   },

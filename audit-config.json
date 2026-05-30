@@ -1,0 +1,27 @@
+{
+  "schema": "careval-audit-config-v1",
+  "runLabel": "core-public-smoke",
+  "promptSource": "public/prompts.json",
+  "promptIds": ["childcare_001", "maternity_001", "pediatric_001", "domestic_001", "postpartum_001"],
+  "temperature": 0.2,
+  "maxTokens": 700,
+  "models": [
+    {
+      "id": "mock-care-conscious",
+      "provider": "mock",
+      "displayName": "Mock Care-Conscious Model",
+      "version": "local-fixture"
+    },
+    {
+      "id": "mock-care-blind",
+      "provider": "mock",
+      "displayName": "Mock Care-Blind Model",
+      "version": "local-fixture"
+    }
+  ],
+  "scoring": {
+    "mode": "heuristic-draft",
+    "humanReviewRequired": true,
+    "threshold": 9
+  }
+}
