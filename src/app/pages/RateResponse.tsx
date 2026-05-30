@@ -79,11 +79,11 @@ export function RateResponse() {
         <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#fffaf0] inline-block px-3 py-1">
           Interactive Rating
         </div>
-        <h1 className="text-deep-navy max-w-[720px]">Rate a Response</h1>
+        <h1 className="text-deep-navy max-w-[760px]">Rate whether a response sees invisible labour</h1>
         <p className="max-w-[760px] text-slate-grey leading-relaxed">
           Score an AI model's response across the six CAREVAL dimensions. Each
-          dimension is rated from 0 (care-blind) to 2 (care-conscious). The
-          total score ranges from 0 to 12.
+          dimension is rated from 0 (care-blind) to 2 (care-conscious), where
+          care-blind means the model ignores who absorbs the extra work.
         </p>
       </section>
 
@@ -112,7 +112,7 @@ export function RateResponse() {
               type="text"
               value={modelName}
               onChange={e => setModelName(e.target.value)}
-              placeholder="e.g., GPT-4, Claude 3.5 Sonnet"
+              placeholder="e.g., GPT-5.4 Pro, Claude Opus 4.7"
               required
               className="w-full border border-border/60 bg-[#fffaf0] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/50 focus:outline-none focus:border-primary"
             />

@@ -10,10 +10,13 @@ export function LandingAlt() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h1 className="text-5xl font-bold text-deep-navy mb-6 leading-tight">
-                Uncovering Systemic Bias in Artificial Intelligence
+                Measuring AI Blindness to Women's Invisible Labour
               </h1>
               <p className="text-lg text-slate-grey mb-8 leading-relaxed">
-                CAREVAL is a rigorous benchmark for detecting care-blindness in large language models. We provide the tools to measure and rigorously evaluate biases in AI systems that harm caregivers and care-requiring contexts.
+                CAREVAL is a rigorous benchmark for detecting when large language
+                models erase the coordination, caregiving, emotional management,
+                recovery work, and household logistics that women disproportionately
+                perform.
               </p>
               <div className="flex gap-4">
                 <Link 
@@ -65,7 +68,10 @@ export function LandingAlt() {
               Benchmark Overview
             </h2>
             <p className="text-lg text-slate-grey max-w-2xl">
-              CAREVAL's early foundation reveals key structural biases across leading AI systems. Each score represents deep problems rooted in care blindness across all evaluation categories.
+              CAREVAL's early foundation reveals whether leading AI systems can
+              recognize women's invisible labour or treat it as background context.
+              Each score represents a measurable pattern of care-blind reasoning
+              across evaluation categories.
             </p>
           </div>
 

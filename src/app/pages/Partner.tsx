@@ -10,9 +10,10 @@ export function Partner() {
         </div>
         <h1 className="text-deep-navy max-w-[720px]">Partner with CAREVAL</h1>
         <p className="max-w-[760px] text-slate-grey leading-relaxed">
-          CAREVAL collaborates with AI labs, foundations, policy bodies, and care-sector
-          organisations on third-party evaluation of AI systems in care contexts. Every
-          engagement is structured to preserve the independence of the public leaderboard.
+          CAREVAL collaborates with AI labs, foundations, policy bodies, and
+          care-sector organisations on third-party evaluation of whether AI
+          systems recognize women's invisible labour. Every engagement is
+          structured to preserve the independence of the public leaderboard.
         </p>
         <div className="flex gap-3 pt-1">
           <a
@@ -69,18 +70,19 @@ export function Partner() {
             <FlaskConical className="w-4 h-4 text-deep-navy mb-3" />
             <h3 className="text-[16px] font-semibold text-deep-navy mb-2">Custom domain evaluations</h3>
             <p className="text-[16px] leading-5 text-slate-grey">
-              Bespoke prompt sets and rubrics for AI labs and product teams who need
-              third-party assessment of model behavior in care, health, or regulated
-              domains. Results published openly after any agreed embargo.
+              Bespoke prompt sets and rubrics for AI labs and product teams who
+              need third-party assessment of how model behavior handles care,
+              coordination, gendered burden, health, or regulated domains.
+              Results published openly after any agreed embargo.
             </p>
           </div>
           <div className="border border-border/60 bg-white p-5">
             <Landmark className="w-4 h-4 text-deep-navy mb-3" />
             <h3 className="text-[16px] font-semibold text-deep-navy mb-2">Research grants and policy work</h3>
             <p className="text-[16px] leading-5 text-slate-grey">
-              Foundation- and government-funded research on care-economy AI, methodology
-              development, and public-interest evaluation infrastructure. Open
-              deliverables, public methodology, citable outputs.
+              Foundation- and government-funded research on responsible AI,
+              women's invisible labour, care-economy AI, methodology
+              development, and public-interest evaluation infrastructure.
             </p>
           </div>
           <div className="border border-border/60 bg-white p-5">
@@ -88,8 +90,8 @@ export function Partner() {
             <h3 className="text-[16px] font-semibold text-deep-navy mb-2">Advisory and review</h3>
             <p className="text-[16px] leading-5 text-slate-grey">
               Methodology consultation, rubric design, and red-team support for
-              organisations building or deploying AI in care contexts. Structured as
-              defined-scope retainers.
+              organisations building or deploying AI in contexts where invisible
+              labour, caregiving, and coordination burden can be erased.
             </p>
           </div>
         </div>
@@ -123,9 +125,9 @@ export function Partner() {
           <div className="border border-border/60 bg-white p-5">
             <h3 className="text-[16px] font-semibold text-deep-navy mb-2">AI labs and frontier developers</h3>
             <p className="text-[16px] leading-5 text-slate-grey">
-              Safety, policy, and product teams commissioning third-party evaluation of
-              model behavior in care contexts to back up safety claims or inform
-              deployment decisions.
+              Safety, policy, and product teams commissioning third-party
+              evaluation of whether model behavior recognizes women's invisible
+              labour before deployment.
             </p>
           </div>
           <div className="border border-border/60 bg-white p-5">
@@ -139,14 +141,17 @@ export function Partner() {
             <h3 className="text-[16px] font-semibold text-deep-navy mb-2">Policy bodies and regulators</h3>
             <p className="text-[16px] leading-5 text-slate-grey">
               Standards bodies, regulators, and policy researchers who need eval
-              methodology and reference benchmarks for care-related AI deployments.
+              methodology and reference benchmarks for AI deployments touching
+              care, family logistics, health, public services, or workplace
+              accommodation.
             </p>
           </div>
           <div className="border border-border/60 bg-white p-5">
             <h3 className="text-[16px] font-semibold text-deep-navy mb-2">Care-sector organisations</h3>
             <p className="text-[16px] leading-5 text-slate-grey">
-              Childcare networks, eldercare providers, healthcare systems, and unions
-              evaluating AI tools that affect care workers and the people they support.
+              Childcare networks, eldercare providers, healthcare systems, and
+              unions evaluating AI tools that affect women, caregivers, care
+              workers, and the people they support.
             </p>
           </div>
         </div>

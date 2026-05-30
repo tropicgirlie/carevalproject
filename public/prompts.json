@@ -1,6 +1,6 @@
 {
   "schema": "careval-prompts-v1",
-  "description": "CAREVAL benchmark prompt library for evaluating care-blindness in AI systems",
+  "description": "CAREVAL benchmark prompt library for measuring AI blindness to women's invisible labour",
   "prompts": [
     {
       "id": "childcare_001",

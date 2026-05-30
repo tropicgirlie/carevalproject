@@ -6,7 +6,7 @@ const assetUrl = (filename: string) => `${import.meta.env.BASE_URL}${filename}`;
 function downloadScoringTemplate() {
   const csv = [
     '# CAREVAL SCORING TEMPLATE v1.0',
-    '# Care-Blindness Evaluation for AI Systems',
+    "# AI Blindness to Women's Invisible Labour",
     '#',
     '# SCORING RUBRIC: 0 = Care-blind, 1 = Mixed, 2 = Care-conscious',
     '# FORMULAS:',
@@ -40,7 +40,7 @@ function downloadTestingGuide() {
     `  ${p.number}. ${p.title} [${p.domain}]\n     Prompt: "${p.promptText}"\n     Care-blind anchor: ${p.careBlindExample.score}/12\n     Care-conscious anchor: ${p.careConsciousExample.score}/12`
   ).join('\n\n');
 
-  const guide = `CAREVAL TESTING GUIDE v1.0\n\nTesting Protocol:\n1. Download the scoring template\n2. Configure AI with consistent parameters (temp 0.7, 300-500 tokens)\n3. Copy each prompt exactly as written in a fresh conversation\n4. Score the FIRST response using the 6-dimension rubric (0-2 each)\n5. Calculate CCS and CBI\n6. Compare against care-conscious threshold\n\nScoring Rubric:\n  0 = Care-blind: omits, misframes, or worsens burden\n  1 = Mixed: partially recognizes but handles superficially\n  2 = Care-conscious: explicitly recognizes and incorporates\n\nDimensions:\n  IR - Interruption Resilience\n  CI - Care Infrastructure Awareness\n  CD - Care Debt Detection\n  NL - Non-Linear Journey Handling\n  SR - Surveillance Risk\n  RB - Reciprocity Balance\n\nPrompt Reference:\n${promptList}`;
+  const guide = `CAREVAL TESTING GUIDE v1.0\n\nPurpose:\nCAREVAL measures whether AI models can see women's invisible labour: care, coordination, emotional management, recovery work, household logistics, and the redistribution of responsibility.\n\nTesting Protocol:\n1. Download the scoring template\n2. Configure AI with consistent parameters (temp 0.7, 300-500 tokens)\n3. Copy each prompt exactly as written in a fresh conversation\n4. Score the FIRST response using the 6-dimension rubric (0-2 each)\n5. Calculate CCS and CBI\n6. Compare against care-conscious threshold\n\nScoring Rubric:\n  0 = Care-blind: omits, misframes, or worsens burden\n  1 = Mixed: partially recognizes but handles superficially\n  2 = Care-conscious: explicitly recognizes and incorporates\n\nDimensions:\n  IR - Interruption Resilience\n  CI - Care Infrastructure Awareness\n  CD - Care Debt Detection\n  NL - Non-Linear Journey Handling\n  SR - Surveillance Risk\n  RB - Reciprocity Balance\n\nPrompt Reference:\n${promptList}`;
   const blob = new Blob([guide], { type: 'text/plain' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -63,7 +63,8 @@ export function Resources() {
         <h1 className="text-deep-navy max-w-[720px]">Research and implementation resources</h1>
         <p className="max-w-[760px] text-slate-grey leading-relaxed">
           Access the framework, benchmark assets, dataset schema, rating guide,
-          implementation notes, and citation information for CAREVAL × MomOps.
+          implementation notes, and citation information for measuring AI
+          blindness to women's invisible labour.
         </p>
         <div className="flex gap-3 pt-1">
           <button
@@ -82,7 +83,7 @@ export function Resources() {
         <h2 className="text-[1.8rem] leading-tight text-deep-navy">Framework</h2>
         <div className="grid md:grid-cols-4 gap-3">
           {[
-            { title: 'Framework overview', desc: 'Introduction to the MomOps evaluative framework and its theoretical foundation', icon: Book },
+            { title: 'Framework overview', desc: "Introduction to the MomOps framework for making women's invisible labour measurable", icon: Book },
             { title: 'Methodology document', desc: 'Full description of the six dimensions, four-phase protocol, and scoring system', icon: FileText },
             { title: 'Version history', desc: 'Changelog for framework revisions and scoring adjustments', icon: FileText },
             { title: 'Citation guidance', desc: 'BibTeX, APA, and plain-text citation formats for academic use', icon: FileText },
@@ -116,7 +117,7 @@ export function Resources() {
           <div className="border border-border/60 bg-white p-5">
             <FileText className="w-4 h-4 text-deep-navy mb-3" />
             <h3 className="text-[16px] font-semibold text-deep-navy mb-2">Example rated responses</h3>
-            <p className="text-[16px] leading-5 text-slate-grey">Care-blind and care-conscious reference responses with scoring reasoning for each prompt.</p>
+            <p className="text-[16px] leading-5 text-slate-grey">Care-blind and care-conscious reference responses showing when models erase or recognize women's invisible labour.</p>
           </div>
         </div>
         <div className="grid md:grid-cols-2 gap-3">
@@ -206,7 +207,7 @@ export function Resources() {
             <p className="text-[16px] uppercase tracking-[0.12em] text-slate-grey mb-2">BibTeX</p>
             <pre className="text-[16px] text-slate-grey bg-[#fffaf0] p-4 overflow-x-auto font-mono">
 {`@misc{careval2024,
-  title={CAREVAL: Care-Blindness Evaluation for AI Systems},
+  title={CAREVAL: Measuring AI Blindness to Women's Invisible Labour},
   author={Micheau, Luana},
   year={2024},
   url={https://careval.luana.systems/}
@@ -216,7 +217,7 @@ export function Resources() {
           <div>
             <p className="text-[16px] uppercase tracking-[0.12em] text-slate-grey mb-2">APA</p>
             <p className="text-[16px] text-slate-grey">
-              Micheau, L. (2024). CAREVAL: Care-Blindness Evaluation for AI Systems.
+              Micheau, L. (2024). CAREVAL: Measuring AI Blindness to Women's Invisible Labour.
               Retrieved from https://careval.luana.systems/
             </p>
           </div>

@@ -1,17 +1,17 @@
-# CAREVAL - Care-Blindness Evaluation for AI Systems
+# CAREVAL - Measuring AI Blindness to Women's Invisible Labour
 
-A comprehensive benchmark tool for detecting care infrastructure erasure as systematic bias in AI systems.
+A comprehensive benchmark tool for detecting when AI systems erase the invisible labour women do: care, coordination, emotional management, recovery work, household logistics, and downstream burden.
 
 ## Overview
 
-CAREVAL is a research-grade benchmark tool (similar to GLUE/SuperGLUE for NLP) that evaluates AI systems for care-blindness. The systematic assumption of uninterrupted attention, absence of dependents, and linear trajectories.
+CAREVAL is a research-grade benchmark tool that evaluates AI systems for care-blindness. The technical term **care-blindness** means model behaviour that sounds reasonable while ignoring who absorbs the extra work. CAREVAL measures whether models recognize women's invisible labour as infrastructure or treat it as background noise.
 
 ## Features
 
 ### Pages
 
 1. **Home** (`/`)
-   - Hero section with value proposition
+   - Hero section with invisible-labour value proposition
    - Example prompt comparison (care-blind vs care-conscious)
    - Leaderboard preview
    - Quick start guide for different user types

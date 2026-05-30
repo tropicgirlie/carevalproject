@@ -102,7 +102,7 @@ export function Home() {
         <div>
           <h2 className="text-[1.95rem] md:text-[2.1rem] leading-tight text-deep-navy">Benchmark Cases</h2>
           <p className="momops-kicker mt-2">
-            Lived scenarios that expose care-blindness in AI outputs
+            Lived scenarios where invisible labour gets erased
           </p>
         </div>
         <div className="grid md:grid-cols-5 gap-3">
