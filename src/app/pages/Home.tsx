@@ -4,13 +4,6 @@ import { AlertTriangle, FlaskConical, Building2, Code2, ArrowRight, Eye, Shield 
 
 export function Home() {
   const tableRows = leaderboardData.slice(0, 4);
-  const providerByModel: Record<string, string> = {
-    'Claude 3.5 Sonnet': 'Anthropic',
-    'GPT-4': 'OpenAI',
-    'Gemini 1.5 Pro': 'Google',
-    'GPT-3.5': 'OpenAI',
-    'Llama 3.1': 'Meta',
-  };
 
   return (
     <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-16 md:py-24 space-y-14 md:space-y-18">
@@ -162,7 +155,7 @@ export function Home() {
               {tableRows.map((entry) => (
                 <tr key={entry.rank} className="border-b last:border-0 border-[#2f4f4f]/15">
                   <td className="py-4 text-deep-navy text-[16px]">{entry.model}</td>
-                  <td className="py-4 text-[16px] text-slate-grey">{providerByModel[entry.model] ?? '—'}</td>
+                  <td className="py-4 text-[16px] text-slate-grey">{entry.provider}</td>
                   <td className="py-4 text-right text-[16px] font-semibold text-deep-navy">
                     {entry.score.toFixed(2)}
                   </td>
