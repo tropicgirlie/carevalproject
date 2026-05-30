@@ -19,7 +19,7 @@ export function License() {
       {/* Copyright */}
       <section className="border border-border/60 bg-white p-6">
         <p className="text-[16px] text-deep-navy font-semibold mb-2">
-          CAREVAL © Luana Micheau, 2024–2025
+          CAREVAL © Luana Micheau, 2024-2026
         </p>
         <p className="text-[16px] text-slate-grey leading-6">
           This work is released under a <strong className="text-deep-navy">CAREVAL Research Use Licence</strong>.

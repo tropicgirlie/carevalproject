@@ -161,7 +161,7 @@ function Footer() {
       <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[14px] text-slate-grey">
           <span className="font-bold text-deep-navy tracking-[0.04em] text-[16px]">CAREVAL Research</span>
-          <span>© 2024 CAREVAL Research. All rights reserved.</span>
+          <span>© 2026 CAREVAL Research. All rights reserved.</span>
           <div className="flex items-center gap-6">
             <a href="#/resources" className="hover:text-deep-navy transition-colors">Citation Info</a>
             <a href="#/resources" className="hover:text-deep-navy transition-colors">Contact</a>
