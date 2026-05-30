@@ -76,7 +76,7 @@ export function RateResponse() {
     <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-12 md:py-16 space-y-10">
       {/* Hero */}
       <section className="space-y-6">
-        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#e8ebf5] inline-block px-3 py-1">
+        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#fffaf0] inline-block px-3 py-1">
           Interactive Rating
         </div>
         <h1 className="text-deep-navy max-w-[720px]">Rate a Response</h1>
@@ -114,7 +114,7 @@ export function RateResponse() {
               onChange={e => setModelName(e.target.value)}
               placeholder="e.g., GPT-4, Claude 3.5 Sonnet"
               required
-              className="w-full border border-border/60 bg-[#f4f6fb] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/50 focus:outline-none focus:border-primary"
+              className="w-full border border-border/60 bg-[#fffaf0] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/50 focus:outline-none focus:border-primary"
             />
           </div>
           <div className="border border-border/60 bg-white p-5 space-y-4">
@@ -124,7 +124,7 @@ export function RateResponse() {
               value={promptId}
               onChange={e => setPromptId(e.target.value)}
               placeholder="e.g., 1.1, childcare_001"
-              className="w-full border border-border/60 bg-[#f4f6fb] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/50 focus:outline-none focus:border-primary"
+              className="w-full border border-border/60 bg-[#fffaf0] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/50 focus:outline-none focus:border-primary"
             />
           </div>
         </section>
@@ -137,7 +137,7 @@ export function RateResponse() {
             onChange={e => setResponseText(e.target.value)}
             placeholder="Paste the AI model's response here for reference while rating..."
             rows={6}
-            className="w-full border border-border/60 bg-[#f4f6fb] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/50 focus:outline-none focus:border-primary leading-6"
+            className="w-full border border-border/60 bg-[#fffaf0] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/50 focus:outline-none focus:border-primary leading-6"
           />
         </section>
 
@@ -189,12 +189,12 @@ export function RateResponse() {
             onChange={e => setComment(e.target.value)}
             placeholder="Any reasoning notes, edge cases, or context for your ratings..."
             rows={4}
-            className="w-full border border-border/60 bg-[#f4f6fb] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/50 focus:outline-none focus:border-primary leading-6"
+            className="w-full border border-border/60 bg-[#fffaf0] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/50 focus:outline-none focus:border-primary leading-6"
           />
         </section>
 
         {/* Score summary */}
-        <section className="border border-border/60 bg-[#f4f6fb] p-6">
+        <section className="border border-border/60 bg-[#fffaf0] p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-[16px] uppercase tracking-[0.12em] text-slate-grey mb-1">Total Score</p>

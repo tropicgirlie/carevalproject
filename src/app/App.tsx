@@ -11,7 +11,7 @@ import { Resources } from './pages/Resources';
 import { Partner } from './pages/Partner';
 import { License } from './pages/License';
 import { RateResponse } from './pages/RateResponse';
-import { Menu, X } from 'lucide-react';
+import { ExternalLink, Menu, X } from 'lucide-react';
 import logoImage from 'figma:asset/af770bb6497312fe6818fc1e22f4a20cfba2af25.png';
 
 const navLinks = [
@@ -40,50 +40,52 @@ function Navigation() {
       className="sticky top-0 z-50 glass"
     >
       <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center">
             <motion.img
               src={logoImage}
               alt="CAREVAL Logo"
-              className="h-6"
+              className="h-6 sm:h-7"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             />
           </Link>
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className="relative py-2 transition-colors"
+                className={`relative px-3 py-2 text-[14px] font-bold tracking-[0.04em] transition-all ${
+                  isActive(link.to)
+                    ? 'bg-[#182727] text-[#fffaf0]'
+                    : 'text-deep-navy hover:bg-[#f0e8dc]'
+                }`}
               >
                 {isActive(link.to) && (
                   <motion.div
                     layoutId="nav-active"
-                    className="absolute left-0 right-0 -bottom-[3px] h-[2px] bg-deep-navy"
+                    className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-[#e75d42]"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
-                <span
-                  className={`relative z-10 text-[16px] font-medium tracking-[0.08em] uppercase transition-colors ${
-                    isActive(link.to)
-                      ? 'text-deep-navy'
-                      : 'text-slate-grey hover:text-deep-navy'
-                  }`}
-                >
-                  {link.label}
-                </span>
+                <span className="relative z-10">{link.label}</span>
               </Link>
             ))}
-            <button className="ml-8 px-5 py-2.5 rounded-md bg-deep-navy text-white text-[16px] font-semibold tracking-[0.08em] uppercase whitespace-nowrap hover:bg-deep-navy/90 transition-colors">
-              Sign In
-            </button>
+            <a
+              href="https://www.momops.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-3 flex items-center gap-1.5 border border-[#182727] bg-[#fffaf0] px-3 py-2 text-[14px] font-bold tracking-[0.04em] text-[#182727] shadow-[3px_3px_0_#182727] transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:bg-[#e75d42] hover:text-white hover:shadow-[2px_2px_0_#182727]"
+            >
+              MomOps
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
           </div>
           {/* Mobile toggle */}
           <motion.button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-warm-grey transition-colors"
+            className="lg:hidden border border-[#182727]/25 bg-[#fffaf0] p-2 hover:bg-warm-grey transition-colors"
             whileTap={{ scale: 0.9 }}
           >
             <AnimatePresence mode="wait">
@@ -120,7 +122,7 @@ function Navigation() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-            className="lg:hidden border-t border-border/50 bg-[#f3f5fa] overflow-hidden"
+            className="lg:hidden border-t border-[#182727]/20 bg-[#fffaf0] overflow-hidden"
           >
             <div className="px-6 py-4 space-y-1">
               {navLinks.map((link, i) => (
@@ -133,10 +135,10 @@ function Navigation() {
                   <Link
                     to={link.to}
                     onClick={() => setMobileOpen(false)}
-                    className={`block px-4 py-3 rounded-md text-[16px] font-semibold tracking-[0.08em] uppercase transition-all ${
+                    className={`block px-4 py-3 text-[16px] font-bold transition-all ${
                       isActive(link.to)
                         ? 'bg-deep-navy text-white'
-                        : 'text-slate-grey hover:text-deep-navy hover:bg-white'
+                        : 'text-deep-navy hover:bg-warm-grey'
                     }`}
                   >
                     {link.label}
@@ -153,10 +155,10 @@ function Navigation() {
 
 function Footer() {
   return (
-    <footer className="mt-20 border-t border-border/60">
+    <footer className="mt-20 border-t border-[#182727]/20 bg-[#fffaf0]/60">
       <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-8">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[16px] tracking-[0.08em] uppercase text-slate-grey">
-          <span className="font-semibold text-deep-navy tracking-[0.08em] text-[16px]">CAREVAL Research</span>
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[14px] text-slate-grey">
+          <span className="font-bold text-deep-navy tracking-[0.04em] text-[16px]">CAREVAL Research</span>
           <span>© 2024 CAREVAL Research. All rights reserved.</span>
           <div className="flex items-center gap-6">
             <a href="#/resources" className="hover:text-deep-navy transition-colors">Citation Info</a>
@@ -201,7 +203,7 @@ function AnimatedRoutes() {
 
 function AppRoutes() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#f3f5fa]">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
       <AnimatedRoutes />
       <Footer />

@@ -13,44 +13,53 @@ export function Home() {
   };
 
   return (
-    <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-16 md:py-20 space-y-12 md:space-y-14">
+    <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-16 md:py-24 space-y-14 md:space-y-18">
       {/* Hero */}
-      <section className="space-y-6 max-w-[760px]">
-        <span className="inline-flex px-3 py-1 bg-[#e8ebf5] text-[16px] font-semibold tracking-[0.14em] uppercase text-slate-grey">
-          Benchmark v1.05
-        </span>
-        <h1 className="text-deep-navy">Evaluating care-blindness in AI systems</h1>
-        <p className="text-slate-grey leading-relaxed">
-          CAREVAL is a benchmark for detecting when AI systems erase the
-          infrastructure of care: childcare, domestic labor, recovery,
-          household logistics, and other forms of social reproduction that
-          make work and daily life possible.
-        </p>
-        <div className="flex flex-wrap gap-3 pt-1">
-          <Link
-            to="/prompts"
-            className="px-5 py-3 bg-deep-navy text-white text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-deep-navy/90 transition-colors"
-          >
-            Start Benchmarking
-          </Link>
-          <Link
-            to="/methodology"
-            className="px-5 py-3 border border-border bg-white text-deep-navy text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-warm-grey transition-colors"
-          >
-            Read Methodology
-          </Link>
-          <Link
-            to="/rate"
-            className="px-5 py-3 border border-border bg-white text-deep-navy text-[16px] font-semibold tracking-[0.12em] uppercase hover:bg-warm-grey transition-colors"
-          >
-            Rate a Response
-          </Link>
+      <section className="grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(300px,0.65fr)] lg:items-end">
+        <div className="space-y-7 max-w-[840px]">
+          <span className="momops-badge">MomOps evaluation layer / v1.05</span>
+          <h1 className="text-deep-navy">Evaluating care-blindness in AI systems</h1>
+          <p className="max-w-[720px] text-[1.15rem] leading-8 text-slate-grey">
+            CAREVAL is the MomOps benchmark for detecting when AI systems erase
+            the infrastructure of care: childcare, domestic labor, recovery,
+            household logistics, and the social reproduction that makes work and
+            daily life possible.
+          </p>
+          <div className="flex flex-wrap gap-3 pt-1">
+            <Link to="/prompts" className="momops-button">
+              Start Benchmarking
+            </Link>
+            <Link to="/methodology" className="momops-button-secondary">
+              Read Methodology
+            </Link>
+            <Link to="/rate" className="momops-button-secondary">
+              Rate a Response
+            </Link>
+          </div>
+        </div>
+        <div className="momops-panel p-5 md:p-6">
+          <p className="momops-kicker mb-4">What CAREVAL measures</p>
+          <div className="space-y-4">
+            {[
+              ['01', 'Visible care infrastructure'],
+              ['02', 'Downstream burden transfer'],
+              ['03', 'Surveillance-heavy coordination'],
+              ['04', 'Non-linear household recovery'],
+            ].map(([number, label]) => (
+              <div key={number} className="flex items-center gap-4 border-t border-[#2f4f4f]/15 pt-4 first:border-t-0 first:pt-0">
+                <span className="grid h-9 w-9 shrink-0 place-items-center bg-[#182727] text-[13px] font-bold text-[#fffaf0]">
+                  {number}
+                </span>
+                <p className="text-[16px] font-bold leading-snug text-deep-navy">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Intro copy */}
-      <section className="border-y border-border/60 py-8">
-        <p className="max-w-[760px] text-slate-grey leading-relaxed">
+      <section className="border-y border-[#2f4f4f]/20 py-8">
+        <p className="max-w-[820px] text-[1.15rem] text-slate-grey leading-relaxed">
           Most AI benchmarks measure factual correctness, speed, or task
           completion. CAREVAL measures whether a model can recognize care as a
           real system of dependencies rather than background noise.
@@ -61,13 +70,13 @@ export function Home() {
       <section className="space-y-5">
         <div>
           <h2 className="text-[1.95rem] md:text-[2.1rem] leading-tight text-deep-navy">Detection Logic</h2>
-          <p className="text-[16px] tracking-[0.12em] uppercase text-slate-grey mt-1">
+          <p className="momops-kicker mt-2">
             How CAREVAL identifies care-blind vs. care-conscious reasoning
           </p>
         </div>
-        <div className="grid md:grid-cols-2 border border-border/60">
-          <div className="p-6 border-r border-border/60 bg-white">
-            <div className="flex items-center gap-2 text-[16px] font-semibold tracking-[0.12em] uppercase text-error-red mb-4">
+        <div className="grid md:grid-cols-2 border border-[#2f4f4f]/20 bg-[#fffaf0] shadow-[5px_5px_0_rgba(47,79,79,0.10)]">
+          <div className="p-6 border-r border-[#2f4f4f]/20">
+            <div className="flex items-center gap-2 text-[16px] font-bold tracking-[0.08em] uppercase text-error-red mb-4">
               <AlertTriangle className="w-3.5 h-3.5" />
               Care-blind response
             </div>
@@ -80,8 +89,8 @@ export function Home() {
             </div>
           </div>
 
-          <div className="p-6 bg-white">
-            <div className="flex items-center gap-2 text-[16px] font-semibold tracking-[0.12em] uppercase text-deep-navy mb-4">
+          <div className="p-6">
+            <div className="flex items-center gap-2 text-[16px] font-bold tracking-[0.08em] uppercase text-deep-navy mb-4">
               <Eye className="w-3.5 h-3.5" />
               Care-conscious response
             </div>
@@ -99,7 +108,7 @@ export function Home() {
       <section className="space-y-5">
         <div>
           <h2 className="text-[1.95rem] md:text-[2.1rem] leading-tight text-deep-navy">Benchmark Cases</h2>
-          <p className="text-[16px] tracking-[0.12em] uppercase text-slate-grey mt-1">
+          <p className="momops-kicker mt-2">
             Lived scenarios that expose care-blindness in AI outputs
           </p>
         </div>
@@ -111,8 +120,8 @@ export function Home() {
             { title: 'Domestic infrastructure failure', icon: AlertTriangle },
             { title: 'Postpartum coordination without surveillance creep', icon: Eye },
           ].map((item) => (
-            <div key={item.title} className="border border-border/60 bg-white p-5 min-h-[130px] flex flex-col justify-between">
-              <item.icon className="w-4 h-4 text-deep-navy mb-3" />
+            <div key={item.title} className="momops-panel p-5 min-h-[130px] flex flex-col justify-between">
+              <item.icon className="w-4 h-4 text-[#e75d42] mb-3" />
               <p className="text-[16px] leading-5 text-deep-navy font-medium">{item.title}</p>
             </div>
           ))}
@@ -121,15 +130,15 @@ export function Home() {
 
       {/* Leaderboard intro */}
       <section className="grid lg:grid-cols-[2fr_1fr] gap-4 md:gap-6">
-        <div className="border border-border/60 bg-white p-6 min-h-[340px]">
+        <div className="momops-panel p-6 min-h-[340px]">
           <div className="flex items-end justify-between mb-4">
             <div>
               <h3 className="text-[2rem] leading-tight text-deep-navy">Model Leaderboard</h3>
-              <p className="text-[16px] tracking-[0.12em] uppercase text-slate-grey mt-1">
+              <p className="momops-kicker mt-1">
                 Care-Consciousness Score (CCS)
               </p>
             </div>
-            <Link to="/leaderboard" className="text-[16px] tracking-[0.12em] uppercase text-deep-navy underline underline-offset-4">
+            <Link to="/leaderboard" className="text-[16px] font-bold tracking-[0.08em] uppercase text-deep-navy underline underline-offset-4">
               Full Rankings
             </Link>
           </div>
@@ -143,7 +152,7 @@ export function Home() {
 
           <table className="w-full text-left">
             <thead>
-              <tr className="text-[16px] tracking-[0.12em] uppercase text-slate-grey border-b border-border/70">
+              <tr className="text-[16px] tracking-[0.08em] uppercase text-slate-grey border-b border-[#2f4f4f]/25">
                 <th className="py-3">Model</th>
                 <th className="py-3">Provider</th>
                 <th className="py-3 text-right">CCS</th>
@@ -151,7 +160,7 @@ export function Home() {
             </thead>
             <tbody>
               {tableRows.map((entry) => (
-                <tr key={entry.rank} className="border-b last:border-0 border-border/40">
+                <tr key={entry.rank} className="border-b last:border-0 border-[#2f4f4f]/15">
                   <td className="py-4 text-deep-navy text-[16px]">{entry.model}</td>
                   <td className="py-4 text-[16px] text-slate-grey">{providerByModel[entry.model] ?? '—'}</td>
                   <td className="py-4 text-right text-[16px] font-semibold text-deep-navy">
@@ -164,7 +173,7 @@ export function Home() {
         </div>
 
         <div className="grid gap-3">
-          <Link to="/submit" className="bg-deep-navy text-white p-6 border border-deep-navy min-h-[106px] flex flex-col justify-between">
+          <Link to="/submit" className="momops-panel-strong p-6 min-h-[106px] flex flex-col justify-between transition-transform hover:translate-x-[2px] hover:translate-y-[2px]">
             <div className="space-y-2">
               <FlaskConical className="w-4 h-4" />
               <p className="text-2xl leading-tight">For Researchers</p>
@@ -175,7 +184,7 @@ export function Home() {
             </div>
           </Link>
 
-          <Link to="/methodology" className="bg-[#f7f8fc] border border-border/60 p-6 min-h-[106px] flex flex-col justify-between">
+          <Link to="/methodology" className="momops-panel p-6 min-h-[106px] flex flex-col justify-between">
             <div className="space-y-2">
               <Building2 className="w-4 h-4 text-deep-navy" />
               <p className="text-2xl leading-tight text-deep-navy">For Teams</p>
@@ -186,7 +195,7 @@ export function Home() {
             </div>
           </Link>
 
-          <Link to="/resources" className="bg-[#f7f8fc] border border-border/60 p-6 min-h-[106px] flex flex-col justify-between">
+          <Link to="/resources" className="momops-panel p-6 min-h-[106px] flex flex-col justify-between">
             <div className="space-y-2">
               <Code2 className="w-4 h-4 text-deep-navy" />
               <p className="text-2xl leading-tight text-deep-navy">For Developers</p>
@@ -200,21 +209,21 @@ export function Home() {
       </section>
 
       {/* KPI strip */}
-      <section className="border-y border-border/70 py-6 md:py-7 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <section className="border-y border-[#2f4f4f]/20 py-6 md:py-7 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div>
-          <p className="text-[16px] tracking-[0.12em] uppercase text-slate-grey mb-2">Responses Evaluated</p>
+          <p className="momops-kicker mb-2">Responses Evaluated</p>
           <p className="text-[2rem] leading-none text-deep-navy">50,000</p>
         </div>
         <div>
-          <p className="text-[16px] tracking-[0.12em] uppercase text-slate-grey mb-2">Framework</p>
+          <p className="momops-kicker mb-2">Framework</p>
           <p className="text-[2rem] leading-none text-deep-navy">MomOps × CAREVAL</p>
         </div>
         <div>
-          <p className="text-[16px] tracking-[0.12em] uppercase text-slate-grey mb-2">Annotation Mode</p>
+          <p className="momops-kicker mb-2">Annotation Mode</p>
           <p className="text-[1.4rem] leading-none text-deep-navy">Human rubric + aggregation</p>
         </div>
         <div>
-          <p className="text-[16px] tracking-[0.12em] uppercase text-slate-grey mb-2">Model Runners</p>
+          <p className="momops-kicker mb-2">Model Runners</p>
           <p className="text-[2rem] leading-none text-deep-navy">PyTorch / HF</p>
         </div>
       </section>

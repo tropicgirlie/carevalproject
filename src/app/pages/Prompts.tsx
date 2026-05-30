@@ -483,7 +483,7 @@ export function Prompts() {
     <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-12 md:py-16 space-y-8">
       {/* Header */}
       <section className="space-y-6">
-        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#e8ebf5] inline-block px-3 py-1">
+        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#fffaf0] inline-block px-3 py-1">
           Prompt Repository v2.4
         </div>
         <h1 className="text-deep-navy max-w-[720px]">Benchmark Prompts</h1>
@@ -501,7 +501,7 @@ export function Prompts() {
               className={`px-4 py-1.5 rounded-full text-[16px] font-semibold uppercase tracking-[0.1em] ${
                 selectedDomain === domain
                   ? 'bg-deep-navy text-white'
-                  : 'bg-[#e9edf7] text-slate-grey hover:text-deep-navy'
+                  : 'bg-[#ece7df] text-slate-grey hover:text-deep-navy'
               }`}
             >
               {domain}
@@ -523,7 +523,7 @@ export function Prompts() {
             <article key={c.id} className="border border-border/70 bg-white rounded-md p-6">
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="px-2 py-1 bg-[#e8ebf5] text-[16px] tracking-[0.1em] uppercase text-deep-navy font-semibold">
+                  <span className="px-2 py-1 bg-[#fffaf0] text-[16px] tracking-[0.1em] uppercase text-deep-navy font-semibold">
                     {c.id}
                   </span>
                   <h3 className="text-[16px] font-semibold text-deep-navy">{c.title}</h3>
@@ -561,7 +561,7 @@ export function Prompts() {
       </section>
 
       {/* Publishing note */}
-      <section className="border border-border/60 bg-[#f4f6fb] p-6 space-y-3">
+      <section className="border border-border/60 bg-[#fffaf0] p-6 space-y-3">
         <h3 className="text-deep-navy text-[16px] font-semibold">Download prompt packs</h3>
         <p className="text-[16px] text-slate-grey leading-6">
           Prompt packs are available as JSON and CSV for reuse in local or Hugging

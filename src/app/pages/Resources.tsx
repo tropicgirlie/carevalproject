@@ -57,7 +57,7 @@ export function Resources() {
     <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-12 md:py-16 space-y-12">
       {/* Hero */}
       <section className="space-y-6">
-        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#e8ebf5] inline-block px-3 py-1">
+        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#fffaf0] inline-block px-3 py-1">
           Supporting Materials
         </div>
         <h1 className="text-deep-navy max-w-[720px]">Research and implementation resources</h1>
@@ -204,7 +204,7 @@ export function Resources() {
         <div className="bg-white border border-border/50 p-6 space-y-5">
           <div>
             <p className="text-[16px] uppercase tracking-[0.12em] text-slate-grey mb-2">BibTeX</p>
-            <pre className="text-[16px] text-slate-grey bg-[#f4f6fb] p-4 overflow-x-auto font-mono">
+            <pre className="text-[16px] text-slate-grey bg-[#fffaf0] p-4 overflow-x-auto font-mono">
 {`@misc{careval2024,
   title={CAREVAL: Care-Blindness Evaluation for AI Systems},
   author={Micheau, Luana},

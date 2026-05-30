@@ -5,7 +5,7 @@ export function License() {
     <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-12 md:py-16 space-y-12">
       {/* Hero */}
       <section className="space-y-6">
-        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#e8ebf5] inline-block px-3 py-1">
+        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#fffaf0] inline-block px-3 py-1">
           Legal
         </div>
         <h1 className="text-deep-navy max-w-[720px]">CAREVAL Research Licence</h1>
@@ -98,7 +98,7 @@ export function License() {
       {/* Required attribution */}
       <section className="border border-border/60 bg-white p-6">
         <h2 className="text-[16px] font-semibold text-deep-navy mb-4">Required Attribution</h2>
-        <div className="bg-[#f4f6fb] p-5 border-l-4 border-primary">
+        <div className="bg-[#fffaf0] p-5 border-l-4 border-primary">
           <p className="font-mono text-[16px] text-deep-navy">
             "CAREVAL: Care-Blindness Evaluation Benchmark, Luana Micheau (MomOps), 2024"
           </p>
@@ -142,7 +142,7 @@ export function License() {
       </section>
 
       {/* Plain-language summary */}
-      <section className="border border-border/60 bg-[#f4f6fb] p-6">
+      <section className="border border-border/60 bg-[#fffaf0] p-6">
         <h3 className="text-[16px] font-semibold text-deep-navy mb-3">Plain-language summary</h3>
         <p className="text-[16px] text-slate-grey leading-6">
           CAREVAL is free to use for research and evaluation. You must credit the

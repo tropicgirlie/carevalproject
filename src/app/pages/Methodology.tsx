@@ -19,7 +19,7 @@ export function Methodology() {
     <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-12 md:py-16 space-y-16">
       {/* Hero */}
       <section className="space-y-6">
-        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#e8ebf5] inline-block px-3 py-1">
+        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#fffaf0] inline-block px-3 py-1">
           Framework Documentation v1.0.4
         </div>
         <h1 className="text-deep-navy max-w-[720px]">MomOps framework for evaluating care-blindness</h1>
