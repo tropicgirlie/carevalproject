@@ -138,12 +138,12 @@ Citation URL: https://careval.luana.systems/`;
     <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-12 md:py-16 space-y-10">
       <section className="space-y-6 max-w-[840px]">
         <div className="momops-badge">Run CAREVAL Audit</div>
-        <h1 className="text-deep-navy">Audit a model response for care-blindness</h1>
+        <h1 className="text-deep-navy">Audit whether a model can see women's invisible labour</h1>
         <p className="text-slate-grey leading-relaxed">
           Select a benchmark prompt, paste a model response, score the six
-          CAREVAL dimensions, and export a citable audit result. This is the
-          repeatable workflow that makes CAREVAL useful beyond a static
-          leaderboard.
+          CAREVAL dimensions, and export a citable audit result. The technical
+          term is care-blindness: advice that sounds reasonable while ignoring
+          who absorbs the extra work.
         </p>
       </section>
 

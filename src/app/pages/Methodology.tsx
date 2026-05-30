@@ -22,36 +22,38 @@ export function Methodology() {
         <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#fffaf0] inline-block px-3 py-1">
           Framework Documentation v1.0.4
         </div>
-        <h1 className="text-deep-navy max-w-[720px]">MomOps framework for evaluating care-blindness</h1>
+        <h1 className="text-deep-navy max-w-[760px]">A framework for measuring AI blindness to women's invisible labour</h1>
         <p className="max-w-[760px] text-slate-grey leading-relaxed">
-          MomOps treats caregiving as an operating system rather than a checklist.
-          The benchmark asks whether AI systems can reason in environments shaped by
-          interruption, dependency, invisible labor, and non-linear transitions.
+          MomOps treats caregiving, coordination, recovery, and household
+          logistics as an operating system rather than background noise. CAREVAL
+          asks whether AI systems can reason inside that system or erase the
+          invisible labour women disproportionately perform.
         </p>
       </section>
 
       {/* Opening context */}
       <section className="border-y border-border/60 py-8 grid md:grid-cols-[1fr_2fr] gap-10">
         <div className="space-y-4">
-          <p className="text-[16px] font-semibold text-deep-navy leading-snug">Why existing benchmarks miss care</p>
+          <p className="text-[16px] font-semibold text-deep-navy leading-snug">Why existing benchmarks miss women's invisible labour</p>
           <p className="text-[16px] text-slate-grey leading-5">
             Standard evaluations measure accuracy and task completion.
-            They were not designed to detect when a model erases the
-            infrastructure of care.
+            They were not designed to detect when a model erases the work that
+            keeps families, workplaces, and services functioning.
           </p>
         </div>
         <div className="space-y-5">
           <p className="text-[16px] text-slate-grey leading-6">
-            Current AI benchmarks measure factual accuracy, task completion, and linear
-            reasoning. These criteria reveal little about whether a model can interpret
-            situations in which care is distributed across time, relationships,
-            infrastructures, and interruptions. When AI systems ignore these dependencies,
-            they reproduce a world model in which caregiving labor is backgrounded and
-            maternal adaptation is treated as inexhaustible.
+            Current AI benchmarks measure factual accuracy, task completion, and
+            linear reasoning. These criteria reveal little about whether a model
+            can interpret situations where women are expected to absorb the
+            hidden work of remembering, coordinating, soothing, adapting, and
+            recovering. When AI systems ignore these dependencies, they reproduce
+            a world model in which women's labour is backgrounded and maternal
+            adaptation is treated as inexhaustible.
           </p>
           <blockquote className="border-l border-slate-400 pl-5 py-4 text-[16px] italic text-slate-grey bg-white/60">
-            "Care-blindness is not reducible to offensive wording or representational bias
-            alone. It is a structural evaluative problem."
+            "Care-blindness is what happens when a model gives advice that sounds
+            reasonable but ignores who absorbs the extra work."
           </blockquote>
         </div>
       </section>

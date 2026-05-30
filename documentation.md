@@ -1,6 +1,8 @@
 # CAREVAL Documentation
 
-CAREVAL is the MomOps evaluation layer for care-blindness in AI systems. It tests whether model outputs can recognize care infrastructure, downstream burden, surveillance risk, non-linear transitions, and the redistribution of responsibility.
+CAREVAL is the MomOps evaluation layer for measuring AI blindness to women's invisible labour. It tests whether model outputs can recognize care, coordination, recovery, emotional management, household logistics, downstream burden, surveillance risk, non-linear transitions, and the redistribution of responsibility.
+
+The technical term is **care-blindness**: what happens when a model gives advice that sounds reasonable but ignores who absorbs the extra work.
 
 The goal is not only to publish a leaderboard. The goal is to make CAREVAL a repeatable audit instrument that researchers, AI teams, policy groups, and care-sector organizations can run.
 
@@ -8,7 +10,7 @@ The goal is not only to publish a leaderboard. The goal is to make CAREVAL a rep
 
 CAREVAL answers one practical question:
 
-> Does this AI system erase care work, shift burden onto caregivers, or recommend coordination that becomes surveillance?
+> Does this AI system erase the invisible labour women do, shift burden onto caregivers, or recommend coordination that becomes surveillance?
 
 This makes CAREVAL relevant anywhere AI touches:
 
@@ -20,6 +22,12 @@ This makes CAREVAL relevant anywhere AI touches:
 - healthcare coordination
 - education and administrative support
 - AI assistants used for household or care planning
+
+Plain-language positioning:
+
+```text
+MomOps maps invisible labour. CAREVAL measures whether AI can see it.
+```
 
 ## What Makes CAREVAL Useful
 
@@ -180,7 +188,7 @@ Secondary audiences:
 Use this for early pilot outreach:
 
 ```text
-CAREVAL is an open evaluation framework for care-blindness in AI systems. It tests whether models recognize care infrastructure, downstream burden, surveillance risk, and non-linear household constraints.
+CAREVAL is an open evaluation framework for measuring AI blindness to women's invisible labour. It tests whether models recognize care infrastructure, coordination work, downstream burden, surveillance risk, and non-linear household constraints.
 
 I am looking for early reviewers and pilot users for the CAREVAL Core benchmark set. The workflow is simple: run the prompts, score outputs against the six-dimension rubric, and export a citable audit record.
 
@@ -214,7 +222,7 @@ CAREVAL tests whether AI systems can reason inside it.
 Commercial / partnership framing:
 
 ```text
-CAREVAL is the care-blindness evaluation layer for AI products used in family, health, education, workplace, and public-service contexts.
+CAREVAL is the invisible-labour evaluation layer for AI products used in family, health, education, workplace, and public-service contexts.
 ```
 
 ## Citation

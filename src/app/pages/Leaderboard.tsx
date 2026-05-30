@@ -26,9 +26,10 @@ export function Leaderboard() {
           <div>
             <h1 className="text-deep-navy max-w-[650px]">Model Leaderboard</h1>
             <p className="max-w-[620px] text-slate-grey leading-relaxed mt-3">
-              The model roster has been refreshed for 2026. Scores shown here are
-              provisional CAREVAL seed results until full exported audit records are
-              published for each model.
+              The model roster has been refreshed for 2026. CAREVAL scores ask
+              whether models recognize women's invisible labour or erase it as
+              background context. Results are provisional until full audit
+              records are published.
             </p>
           </div>
           <div className="flex gap-3">
@@ -49,9 +50,10 @@ export function Leaderboard() {
         <div className="border border-border/60 bg-white p-6 rounded-md">
           <h3 className="text-deep-navy text-[16px] font-semibold mb-3">What the score means</h3>
           <p className="text-[16px] text-slate-grey leading-6">
-            A higher score indicates that a model more consistently recognizes care
-            infrastructure, non-linear coordination, recovery, and burden
-            redistribution across benchmark scenarios.
+            A higher score indicates that a model more consistently recognizes
+            women's invisible labour: care infrastructure, non-linear
+            coordination, recovery, emotional management, and burden
+            redistribution.
           </p>
         </div>
         <div className="border border-border/60 bg-white p-6 rounded-md">

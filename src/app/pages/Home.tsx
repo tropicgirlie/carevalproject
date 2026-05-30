@@ -11,12 +11,11 @@ export function Home() {
       <section className="grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(300px,0.65fr)] lg:items-end">
         <div className="space-y-7 max-w-[840px]">
           <span className="momops-badge">MomOps evaluation layer / v1.05</span>
-          <h1 className="text-deep-navy">Evaluating care-blindness in AI systems</h1>
+          <h1 className="text-deep-navy">Measuring AI blindness to women's invisible labour</h1>
           <p className="max-w-[720px] text-[1.15rem] leading-8 text-slate-grey">
-            CAREVAL is the MomOps benchmark for detecting when AI systems erase
-            the infrastructure of care: childcare, domestic labor, recovery,
-            household logistics, and the social reproduction that makes work and
-            daily life possible.
+            CAREVAL tests whether models can see the coordination, caregiving,
+            emotional management, recovery work, and household logistics that
+            women disproportionately perform and that AI systems often erase.
           </p>
           <div className="flex flex-wrap gap-3 pt-1">
             <Link to="/audit" className="momops-button">
@@ -34,10 +33,10 @@ export function Home() {
           <p className="momops-kicker mb-4">What CAREVAL measures</p>
           <div className="space-y-4">
             {[
-              ['01', 'Visible care infrastructure'],
+              ['01', "Women's invisible labour"],
               ['02', 'Downstream burden transfer'],
-              ['03', 'Surveillance-heavy coordination'],
-              ['04', 'Non-linear household recovery'],
+              ['03', 'Emotional and coordination work'],
+              ['04', 'Household recovery under pressure'],
             ].map(([number, label]) => (
               <div key={number} className="flex items-center gap-4 border-t border-[#2f4f4f]/15 pt-4 first:border-t-0 first:pt-0">
                 <span className="grid h-9 w-9 shrink-0 place-items-center bg-[#182727] text-[13px] font-bold text-[#fffaf0]">
@@ -54,8 +53,8 @@ export function Home() {
       <section className="border-y border-[#2f4f4f]/20 py-8">
         <p className="max-w-[820px] text-[1.15rem] text-slate-grey leading-relaxed">
           Most AI benchmarks measure factual correctness, speed, or task
-          completion. CAREVAL measures whether a model can recognize care as a
-          real system of dependencies rather than background noise.
+          completion. CAREVAL measures whether a model recognizes women's
+          invisible labour as real infrastructure rather than background noise.
         </p>
       </section>
 
@@ -75,9 +74,9 @@ export function Home() {
             </div>
             <div className="border-l-2 border-error-red pl-4 text-[16px] leading-6 text-slate-grey space-y-3">
               <p>
-                A response that sounds analytically plausible but ignores care
-                infrastructure, downstream burden, or the redistribution of
-                labor.
+                A response that sounds analytically plausible but ignores who
+                absorbs the extra work: scheduling, soothing, remembering,
+                recovering, coordinating, and making systems function.
               </p>
             </div>
           </div>
@@ -89,8 +88,9 @@ export function Home() {
             </div>
             <div className="border-l-2 border-deep-navy pl-4 text-[16px] leading-6 text-slate-grey space-y-3">
               <p>
-                A response that recognizes hidden dependencies, uncertainty, and
-                the material conditions that sustain caregiving and participation.
+                A response that recognizes hidden dependencies, gendered labour,
+                uncertainty, and the material conditions that sustain caregiving
+                and participation.
               </p>
             </div>
           </div>

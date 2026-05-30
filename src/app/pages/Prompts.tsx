@@ -489,8 +489,9 @@ export function Prompts() {
         <h1 className="text-deep-navy max-w-[720px]">Benchmark Prompts</h1>
         <p className="max-w-[760px] text-slate-grey leading-relaxed">
           The benchmark uses shared scenario prompts so models can be compared on the
-          same care conditions. Prompts are designed to test reasoning under interruption,
-          invisible labor, institutional proxy bias, and ethical dependency.
+          same care conditions. Prompts are designed to test whether models recognize
+          women's invisible labour under interruption, institutional proxy bias, and
+          ethical dependency.
         </p>
 
         <div className="flex flex-wrap gap-2 pt-3 border-b border-border/70 pb-5">
