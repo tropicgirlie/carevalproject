@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Home } from './pages/Home';
@@ -9,9 +9,7 @@ import { Leaderboard } from './pages/Leaderboard';
 import { Submit } from './pages/Submit';
 import { Audit } from './pages/Audit';
 import { Resources } from './pages/Resources';
-import { Partner } from './pages/Partner';
 import { License } from './pages/License';
-import { RateResponse } from './pages/RateResponse';
 import { ExternalLink, Menu, X } from 'lucide-react';
 import logoImage from 'figma:asset/af770bb6497312fe6818fc1e22f4a20cfba2af25.png';
 
@@ -22,9 +20,7 @@ const navLinks = [
   { to: '/leaderboard', label: 'Leaderboard' },
   { to: '/audit', label: 'Audit' },
   { to: '/submit', label: 'Submit' },
-  { to: '/rate', label: 'Rate' },
   { to: '/resources', label: 'Resources' },
-  { to: '/partner', label: 'Partner' },
   { to: '/license', label: 'License' },
 ];
 
@@ -193,10 +189,10 @@ function AnimatedRoutes() {
           <Route path="/prompts" element={<Prompts />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/audit" element={<Audit />} />
+          <Route path="/rate" element={<Navigate to="/audit" replace />} />
           <Route path="/submit" element={<Submit />} />
-          <Route path="/rate" element={<RateResponse />} />
           <Route path="/resources" element={<Resources />} />
-          <Route path="/partner" element={<Partner />} />
+          <Route path="/partner" element={<Navigate to="/resources" replace />} />
           <Route path="/license" element={<License />} />
         </Routes>
       </motion.div>
