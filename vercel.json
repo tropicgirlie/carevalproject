@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/admin-data.js": {
+      "includeFiles": "api/_data/**"
+    }
+  }
+}
