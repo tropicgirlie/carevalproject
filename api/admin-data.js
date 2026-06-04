@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 function validateAdmin(request, response) {
@@ -19,7 +20,8 @@ function validateAdmin(request, response) {
 }
 
 async function readJson(relativePath) {
-  const body = await readFile(path.join(process.cwd(), relativePath), 'utf8');
+  const apiDir = path.dirname(fileURLToPath(import.meta.url));
+  const body = await readFile(path.join(apiDir, relativePath), 'utf8');
   return JSON.parse(body);
 }
 
@@ -33,8 +35,8 @@ export default async function handler(request, response) {
 
   try {
     const [queue, roster] = await Promise.all([
-      readJson('audits/review-queues/latest.json'),
-      readJson('admin/model-roster.json'),
+      readJson('_data/latest-review-queue.json'),
+      readJson('_data/model-roster.json'),
     ]);
 
     response.status(200).json({

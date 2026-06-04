@@ -140,6 +140,7 @@ const reviewQueue = {
 
 await writeJson(`audits/review-queues/${runId}.json`, reviewQueue);
 await writeJson('audits/review-queues/latest.json', reviewQueue);
+await writeJson('api/_data/latest-review-queue.json', reviewQueue);
 await writeJson('audits/review-queues/latest-manifest.json', {
   schema: 'careval-admin-review-manifest-v1',
   run_id: runId,
@@ -148,9 +149,17 @@ await writeJson('audits/review-queues/latest-manifest.json', {
   item_count: queueItems.length,
   review_status: 'pending_human_review',
 });
+await writeJson('api/_data/latest-review-manifest.json', {
+  schema: 'careval-admin-review-manifest-v1',
+  run_id: runId,
+  created_at: reviewQueue.created_at,
+  queue_path: 'api/_data/latest-review-queue.json',
+  item_count: queueItems.length,
+  review_status: 'pending_human_review',
+});
 
 console.log(`\nWrote run responses to audits/runs/${runId}/responses.json`);
 console.log(`Wrote draft model results to audits/results/${runId}/`);
 console.log(`Wrote human review queue to audits/review-queues/${runId}.json`);
-console.log('Updated audits/review-queues/latest.json for the admin page');
+console.log('Updated audits/review-queues/latest.json and api/_data/latest-review-queue.json for the admin page');
 console.log(`Next: review in the admin panel, then publish reviewed JSON.`);
