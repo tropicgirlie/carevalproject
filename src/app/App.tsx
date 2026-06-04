@@ -8,6 +8,7 @@ import { Prompts } from './pages/Prompts';
 import { Leaderboard } from './pages/Leaderboard';
 import { Submit } from './pages/Submit';
 import { Audit } from './pages/Audit';
+import { AdminReview } from './pages/AdminReview';
 import { Resources } from './pages/Resources';
 import { License } from './pages/License';
 import { ExternalLink, Menu, X } from 'lucide-react';
@@ -189,6 +190,7 @@ function AnimatedRoutes() {
           <Route path="/prompts" element={<Prompts />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/audit" element={<Audit />} />
+          <Route path="/admin" element={<AdminReview />} />
           <Route path="/rate" element={<Navigate to="/audit" replace />} />
           <Route path="/submit" element={<Submit />} />
           <Route path="/resources" element={<Resources />} />

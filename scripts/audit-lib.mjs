@@ -160,12 +160,41 @@ async function callGoogle(model, prompt, config) {
   return data.candidates?.[0]?.content?.parts?.map((part) => part.text ?? '').join('\n') ?? '';
 }
 
+async function callOpenRouter(model, prompt, config) {
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  if (!apiKey) throw new Error(`OPENROUTER_API_KEY is required for ${model.id}`);
+
+  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+      'HTTP-Referer': process.env.CAREVAL_SITE_URL ?? 'https://careval.luana.systems',
+      'X-Title': 'CAREVAL Audit Runner',
+    },
+    body: JSON.stringify({
+      model: model.apiModel ?? model.id,
+      messages: [{ role: 'user', content: buildAuditPrompt(prompt) }],
+      temperature: config.temperature ?? 0.2,
+      max_tokens: config.maxTokens ?? 700,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`OpenRouter request failed for ${model.id}: ${response.status} ${await response.text()}`);
+  }
+
+  const data = await response.json();
+  return data.choices?.[0]?.message?.content ?? '';
+}
+
 export async function callModel(model, prompt, config) {
   if (model.provider === 'mock') return mockResponse(model, prompt);
   if (model.provider === 'manual') return '';
   if (model.provider === 'openai') return callOpenAI(model, prompt, config);
   if (model.provider === 'anthropic') return callAnthropic(model, prompt, config);
   if (model.provider === 'google') return callGoogle(model, prompt, config);
+  if (model.provider === 'openrouter') return callOpenRouter(model, prompt, config);
   throw new Error(`Unsupported provider "${model.provider}" for model "${model.id}"`);
 }
 

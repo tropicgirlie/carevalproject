@@ -279,8 +279,64 @@ Supported providers:
 - `openai` using `OPENAI_API_KEY`
 - `anthropic` using `ANTHROPIC_API_KEY`
 - `google` using `GOOGLE_API_KEY`
+- `openrouter` using `OPENROUTER_API_KEY`
 
 Manual provider creates empty response slots that can be filled later.
+
+### Agent + Human Review Workflow
+
+CAREVAL should not publish fully automated scores as final benchmark results. Use the agent to create draft evidence, then review before publishing.
+
+Run a mock workflow:
+
+```bash
+npm run leaderboard:agent
+```
+
+Run a real multi-model workflow through OpenRouter:
+
+```bash
+OPENROUTER_API_KEY=... npm run leaderboard:agent -- audit-config.openrouter.example.json
+```
+
+The agent writes:
+
+```text
+audits/runs/<run-id>/responses.json
+audits/results/<run-id>/*.json
+audits/review-queues/<run-id>.json
+public/admin/latest-review-queue.json
+```
+
+Review:
+
+1. Open `#/admin` in the app.
+2. The latest generated queue loads automatically.
+3. Inspect each response if needed, adjust the six dimension scores, and click `Approve Agent Scores` if you agree with the draft.
+4. Click `Publish Leaderboard`.
+
+One-click publishing on Vercel requires server-side environment variables:
+
+```text
+GITHUB_TOKEN=...
+ADMIN_PUBLISH_TOKEN=...
+```
+
+`GITHUB_TOKEN` commits the reviewed leaderboard to `src/app/data/leaderboard.ts`, which triggers a Vercel redeploy from GitHub. `ADMIN_PUBLISH_TOKEN` is the publish passcode entered on `#/admin`; the serverless endpoint refuses publish requests without it.
+
+Local/offline fallback:
+
+```bash
+npm run leaderboard:publish-reviewed -- audits/review-queues/<run-id>.reviewed.json
+```
+
+The publish step refuses unreviewed queue items. It writes a candidate leaderboard to:
+
+```text
+audits/leaderboard.generated.ts
+```
+
+Copy approved entries into `src/app/data/leaderboard.ts` only after review.
 
 ### Credibility Rule
 

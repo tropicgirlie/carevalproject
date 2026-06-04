@@ -1,0 +1,11 @@
+{
+  "schema": "careval-audit-run-metadata-v1",
+  "run_id": "2026-06-02-core-public-smoke",
+  "started_at": "2026-06-02T16:04:56.291Z",
+  "completed_at": "2026-06-02T16:04:56.294Z",
+  "model_count": 2,
+  "prompt_count": 5,
+  "response_count": 10,
+  "scoring_mode": "heuristic-draft",
+  "human_review_required": true
+}

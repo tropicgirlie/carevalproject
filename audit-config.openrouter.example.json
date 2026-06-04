@@ -1,0 +1,57 @@
+{
+  "schema": "careval-audit-config-v1",
+  "runLabel": "frontier-model-review",
+  "promptSource": "public/prompts.json",
+  "promptIds": ["childcare_001", "maternity_001", "pediatric_001", "domestic_001", "postpartum_001"],
+  "temperature": 0.2,
+  "maxTokens": 700,
+  "models": [
+    {
+      "id": "openai/gpt-5.5-pro",
+      "provider": "openrouter",
+      "displayName": "GPT-5.5 Pro",
+      "version": "OpenRouter registry, Jun 2026"
+    },
+    {
+      "id": "anthropic/claude-opus-4.8",
+      "provider": "openrouter",
+      "displayName": "Claude Opus 4.8",
+      "version": "OpenRouter registry, Jun 2026"
+    },
+    {
+      "id": "google/gemini-3.5-flash",
+      "provider": "openrouter",
+      "displayName": "Gemini 3.5 Flash",
+      "version": "OpenRouter registry, Jun 2026"
+    },
+    {
+      "id": "x-ai/grok-4.3",
+      "provider": "openrouter",
+      "displayName": "Grok 4.3",
+      "version": "OpenRouter registry, Jun 2026"
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "provider": "openrouter",
+      "displayName": "DeepSeek V4 Pro",
+      "version": "OpenRouter registry, Jun 2026"
+    },
+    {
+      "id": "mistralai/mistral-large-2512",
+      "provider": "openrouter",
+      "displayName": "Mistral Large 3",
+      "version": "OpenRouter registry, Jun 2026"
+    },
+    {
+      "id": "meta-llama/llama-4-maverick",
+      "provider": "openrouter",
+      "displayName": "Llama 4 Maverick",
+      "version": "OpenRouter registry, Jun 2026"
+    }
+  ],
+  "scoring": {
+    "mode": "heuristic-draft",
+    "humanReviewRequired": true,
+    "threshold": 9
+  }
+}

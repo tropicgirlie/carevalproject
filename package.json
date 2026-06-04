@@ -7,6 +7,8 @@
     "audit:run": "node scripts/run-audit.mjs",
     "audit:score": "node scripts/score-audit.mjs",
     "audit:publish": "node scripts/publish-leaderboard.mjs",
+    "leaderboard:agent": "node scripts/agent-leaderboard.mjs",
+    "leaderboard:publish-reviewed": "node scripts/publish-reviewed-queue.mjs",
     "build": "vite build",
     "dev": "vite"
   },
