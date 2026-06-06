@@ -1,15 +1,22 @@
 {
-  "schema": "careval-human-review-queue-v1",
+  "schema": "careval-model-audit-result-v1",
   "run_id": "2026-06-06-openrouter-free-smoke",
-  "created_at": "2026-06-06T07:01:35.006Z",
-  "source_config": "audit-config.openrouter-free-smoke.json",
+  "created_at": "2026-06-06T07:01:35.005Z",
   "review_status": "pending_human_review",
-  "instructions": [
-    "Review each model response against the rubric.",
-    "Adjust dimension scores where the draft heuristic is wrong.",
-    "Set review_status to reviewed before publishing."
-  ],
-  "items": [
+  "human_review_required": true,
+  "model": {
+    "id": "openai/gpt-oss-120b:free",
+    "provider": "openrouter",
+    "display_name": "OpenAI GPT-OSS 120B",
+    "version": "OpenRouter free smoke"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 7.4,
+  "average_cbi": 4.6,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
     {
       "schema": "careval-prompt-audit-review-item-v1",
       "response_id": "openai-gpt-oss-120b-free-childcare_001",

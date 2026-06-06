@@ -1,0 +1,11 @@
+{
+  "schema": "careval-audit-run-metadata-v1",
+  "run_id": "2026-06-06-openrouter-free-smoke",
+  "started_at": "2026-06-06T06:56:29.481Z",
+  "completed_at": "2026-06-06T07:01:35.005Z",
+  "model_count": 1,
+  "prompt_count": 5,
+  "response_count": 5,
+  "scoring_mode": "heuristic-draft",
+  "human_review_required": true
+}
