@@ -1,0 +1,71 @@
+name: CAREVAL Model Audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Model roster to run
+        required: true
+        default: free
+        type: choice
+        options:
+          - free
+          - frontier
+
+permissions:
+  contents: write
+
+concurrency:
+  group: careval-model-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Select audit configuration
+        id: config
+        shell: bash
+        run: |
+          if [ "${{ inputs.mode }}" = "frontier" ]; then
+            echo "path=audit-config.openrouter.example.json" >> "$GITHUB_OUTPUT"
+          else
+            echo "path=audit-config.openrouter-free-smoke.json" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run CAREVAL model audit
+        run: npm run leaderboard:agent -- "${{ steps.config.outputs.path }}"
+
+      - name: Commit review queue
+        shell: bash
+        run: |
+          git config user.name "careval-audit-agent"
+          git config user.email "careval-audit-agent@users.noreply.github.com"
+          git add audits/runs audits/results audits/review-queues api/_data
+
+          if git diff --cached --quiet; then
+            echo "No audit changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Add CAREVAL ${{ inputs.mode }} audit results"
+          git pull --rebase origin main
+          git push origin HEAD:main

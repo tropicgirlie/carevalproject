@@ -1,5 +1,8 @@
 function summarize(ratings) {
-  const total = Object.values(ratings ?? {}).reduce((sum, value) => sum + Number(value || 0), 0);
+  const total = Object.values(ratings ?? {}).reduce((sum, value) => {
+    const score = Number(value);
+    return score >= 0 ? sum + score : sum;
+  }, 0);
   return {
     total_score: total,
     max_score: 12,
@@ -177,6 +180,19 @@ export default async function handler(request, response) {
     const unreviewed = queue.items.filter((item) => item.review_status !== 'reviewed');
     if (unreviewed.length > 0) {
       response.status(400).json({ error: `${unreviewed.length} item(s) are still pending human review.` });
+      return;
+    }
+
+    const incomplete = queue.items.filter((item) => {
+      const ratings = Object.values(item.ratings ?? {}).map(Number);
+      return !item.model_response?.trim()
+        || ratings.length !== 6
+        || ratings.some((score) => !Number.isInteger(score) || score < 0 || score > 2);
+    });
+    if (incomplete.length > 0) {
+      response.status(400).json({
+        error: `${incomplete.length} item(s) have failed or incomplete model evidence and must be rerun before publishing.`,
+      });
       return;
     }
 

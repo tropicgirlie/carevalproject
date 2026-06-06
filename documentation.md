@@ -287,6 +287,27 @@ Manual provider creates empty response slots that can be filled later.
 
 CAREVAL should not publish fully automated scores as final benchmark results. Use the agent to create draft evidence, then review before publishing.
 
+Production workflow:
+
+1. Open `#/admin` and sign in with the admin passcode.
+2. Choose `Free Smoke` for a low-cost test or `Frontier Models` for the full configured roster.
+3. Click `Run Audit`. The server starts the protected `CAREVAL Model Audit` GitHub Action.
+4. Open the run link or wait for the status to become complete. The action calls OpenRouter, drafts rubric scores, commits the review queue, and triggers a Vercel deployment.
+5. Refresh the admin review data, inspect each model and response, adjust scores where needed, and mark the items human reviewed.
+6. Click `Publish Leaderboard` only after all items have been reviewed.
+
+The required secrets are:
+
+```text
+GitHub Actions: OPENROUTER_API_KEY
+Vercel: ADMIN_PUBLISH_TOKEN
+Vercel: GITHUB_TOKEN
+```
+
+OpenRouter is used only by the GitHub Action. API keys are never sent to the browser.
+
+Local development and recovery workflow:
+
 Run a mock workflow:
 
 ```bash
@@ -305,7 +326,7 @@ The agent writes:
 audits/runs/<run-id>/responses.json
 audits/results/<run-id>/*.json
 audits/review-queues/<run-id>.json
-public/admin/latest-review-queue.json
+api/_data/latest-review-queue.json
 ```
 
 Review:
@@ -314,13 +335,6 @@ Review:
 2. The latest generated queue loads automatically.
 3. Inspect each response if needed, adjust the six dimension scores, and click `Approve Agent Scores` if you agree with the draft.
 4. Click `Publish Leaderboard`.
-
-One-click publishing on Vercel requires server-side environment variables:
-
-```text
-GITHUB_TOKEN=...
-ADMIN_PUBLISH_TOKEN=...
-```
 
 `GITHUB_TOKEN` commits the reviewed leaderboard to `src/app/data/leaderboard.ts`, which triggers a Vercel redeploy from GitHub. `ADMIN_PUBLISH_TOKEN` is the publish passcode entered on `#/admin`; the serverless endpoint refuses publish requests without it.
 

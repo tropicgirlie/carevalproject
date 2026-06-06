@@ -1,0 +1,21 @@
+{
+  "schema": "careval-audit-config-v1",
+  "runLabel": "openrouter-free-smoke",
+  "promptSource": "public/prompts.json",
+  "promptIds": ["childcare_001", "maternity_001", "pediatric_001", "domestic_001", "postpartum_001"],
+  "temperature": 0.2,
+  "maxTokens": 220,
+  "models": [
+    {
+      "id": "openai/gpt-oss-120b:free",
+      "provider": "openrouter",
+      "displayName": "OpenAI GPT-OSS 120B",
+      "version": "OpenRouter free smoke"
+    }
+  ],
+  "scoring": {
+    "mode": "heuristic-draft",
+    "humanReviewRequired": true,
+    "threshold": 9
+  }
+}

@@ -27,6 +27,14 @@ OPENROUTER_API_KEY=... npm run leaderboard:agent -- audit-config.openrouter.exam
 
 Then open `#/admin`. The latest generated queue loads automatically. Review the scores, click `Approve Agent Scores` if you agree, then click `Publish Leaderboard`.
 
+The production admin can also start the runner directly:
+
+1. Log in at `#/admin`.
+2. Select `Free Smoke` or `Frontier Models`.
+3. Click `Run Audit`.
+4. GitHub Actions runs OpenRouter, commits the review queue, and triggers Vercel.
+5. Refresh the admin data, review, then publish.
+
 For local/offline fallback, export reviewed JSON and publish with:
 
 ```bash

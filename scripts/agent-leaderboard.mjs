@@ -23,7 +23,13 @@ for (const model of config.models) {
   for (const prompt of prompts) {
     process.stdout.write(`Running ${model.displayName ?? model.id} / ${prompt.id}... `);
     const started = Date.now();
-    const responseText = await callModel(model, prompt, config);
+    let responseText = '';
+    let generationError = null;
+    try {
+      responseText = await callModel(model, prompt, config);
+    } catch (error) {
+      generationError = error instanceof Error ? error.message : 'Unknown model call failure';
+    }
     const durationMs = Date.now() - started;
     const responseId = `${slugify(model.id)}-${prompt.id}`;
     const response = {
@@ -48,24 +54,29 @@ for (const model of config.models) {
         temperature: config.temperature ?? null,
         max_tokens: config.maxTokens ?? null,
         duration_ms: durationMs,
+        error: generationError,
       },
     };
 
-    const ratings = draftScore(responseText);
+    const ratings = generationError
+      ? Object.fromEntries(prompt.dimensions?.length ? prompt.dimensions.map((dimension) => [dimension, -1]) : [])
+      : draftScore(responseText);
     const summary = summarizeRatings(ratings);
     const promptResult = {
       schema: 'careval-prompt-audit-review-item-v1',
       response_id: responseId,
       run_id: runId,
       created_at: new Date().toISOString(),
-      review_status: 'pending_human_review',
+      review_status: generationError ? 'run_failed' : 'pending_human_review',
       human_review_required: true,
       model: response.model,
       prompt: response.prompt,
       ratings,
       ...summary,
       model_response: responseText,
-      reviewer_notes: 'Draft heuristic score. Review and adjust before publishing.',
+      reviewer_notes: generationError
+        ? `Model call failed. ${generationError}`
+        : 'Draft heuristic score. Review and adjust before publishing.',
     };
 
     responses.push(response);
@@ -78,7 +89,7 @@ for (const model of config.models) {
       });
     }
     byModel.get(model.id).prompt_results.push(promptResult);
-    process.stdout.write('queued for review\n');
+    process.stdout.write(generationError ? 'failed, queued for review\n' : 'queued for review\n');
   }
 }
 

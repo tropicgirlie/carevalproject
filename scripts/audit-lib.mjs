@@ -164,28 +164,44 @@ async function callOpenRouter(model, prompt, config) {
   const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) throw new Error(`OPENROUTER_API_KEY is required for ${model.id}`);
 
-  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-      'HTTP-Referer': process.env.CAREVAL_SITE_URL ?? 'https://careval.luana.systems',
-      'X-Title': 'CAREVAL Audit Runner',
-    },
-    body: JSON.stringify({
-      model: model.apiModel ?? model.id,
-      messages: [{ role: 'user', content: buildAuditPrompt(prompt) }],
-      temperature: config.temperature ?? 0.2,
-      max_tokens: config.maxTokens ?? 700,
-    }),
-  });
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': process.env.CAREVAL_SITE_URL ?? 'https://careval.luana.systems',
+        'X-Title': 'CAREVAL Audit Runner',
+      },
+      body: JSON.stringify({
+        model: model.apiModel ?? model.id,
+        messages: [{ role: 'user', content: buildAuditPrompt(prompt) }],
+        temperature: config.temperature ?? 0.2,
+        max_tokens: config.maxTokens ?? 700,
+      }),
+    });
 
-  if (!response.ok) {
-    throw new Error(`OpenRouter request failed for ${model.id}: ${response.status} ${await response.text()}`);
+    if (response.ok) {
+      const data = await response.json();
+      return data.choices?.[0]?.message?.content ?? '';
+    }
+
+    const body = await response.text();
+    if (response.status === 429 && attempt < 3) {
+      let retryAfterSeconds = Number(response.headers.get('retry-after') ?? 8);
+      try {
+        retryAfterSeconds = Number(JSON.parse(body).error?.metadata?.retry_after_seconds ?? retryAfterSeconds);
+      } catch {
+        // Keep header/default retry interval.
+      }
+      await new Promise((resolve) => setTimeout(resolve, Math.max(1, retryAfterSeconds) * 1000));
+      continue;
+    }
+
+    throw new Error(`OpenRouter request failed for ${model.id}: ${response.status} ${body}`);
   }
 
-  const data = await response.json();
-  return data.choices?.[0]?.message?.content ?? '';
+  throw new Error(`OpenRouter request failed for ${model.id}`);
 }
 
 export async function callModel(model, prompt, config) {
@@ -218,7 +234,10 @@ export function draftScore(responseText) {
 }
 
 export function summarizeRatings(ratings) {
-  const total = Object.values(ratings).reduce((sum, value) => sum + Number(value || 0), 0);
+  const total = Object.values(ratings).reduce((sum, value) => {
+    const score = Number(value);
+    return score >= 0 ? sum + score : sum;
+  }, 0);
   return {
     total_score: total,
     max_score: 12,

@@ -47,6 +47,19 @@ interface ModelRoster {
   models: RosterModel[];
 }
 
+interface AuditRunStatus {
+  status: string;
+  conclusion?: string | null;
+  run?: {
+    id: number;
+    name: string;
+    created_at: string;
+    updated_at: string;
+    html_url: string;
+    head_sha: string;
+  } | null;
+}
+
 function downloadJson(filename: string, value: unknown) {
   const blob = new Blob([`${JSON.stringify(value, null, 2)}\n`], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
@@ -60,7 +73,10 @@ function downloadJson(filename: string, value: unknown) {
 }
 
 function summarize(ratings: Ratings) {
-  const total = Object.values(ratings).reduce((sum, value) => sum + Number(value || 0), 0);
+  const total = Object.values(ratings).reduce((sum, value) => {
+    const score = Number(value);
+    return score >= 0 ? sum + score : sum;
+  }, 0);
   return {
     total_score: total,
     max_score: 12,
@@ -71,8 +87,9 @@ function summarize(ratings: Ratings) {
 }
 
 function average(values: number[]) {
-  if (!values.length) return 0;
-  return values.reduce((sum, value) => sum + value, 0) / values.length;
+  const validValues = values.filter((value) => value >= 0);
+  if (!validValues.length) return 0;
+  return validValues.reduce((sum, value) => sum + value, 0) / validValues.length;
 }
 
 function scoreExplanation(score: number) {
@@ -91,6 +108,10 @@ export function AdminReview() {
   const [roster, setRoster] = useState<ModelRoster | null>(null);
   const [adminToken, setAdminToken] = useState(() => window.sessionStorage.getItem('careval-admin-token') ?? '');
   const [authenticated, setAuthenticated] = useState(false);
+  const [runMode, setRunMode] = useState<'free' | 'frontier'>('free');
+  const [auditStatus, setAuditStatus] = useState<AuditRunStatus>({ status: 'not_started', run: null });
+  const [auditMessage, setAuditMessage] = useState('');
+  const [startingAudit, setStartingAudit] = useState(false);
 
   const activeItem = queue?.items[activeIndex];
   const reviewedCount = queue?.items.filter((item) => item.review_status === 'reviewed').length ?? 0;
@@ -187,6 +208,57 @@ export function AdminReview() {
     setError('');
   };
 
+  const loadAuditStatus = async () => {
+    if (!adminToken.trim()) return;
+    try {
+      const response = await fetch('/api/audit-status', {
+        headers: { Authorization: `Bearer ${adminToken.trim()}` },
+        cache: 'no-store',
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error ?? 'Could not load audit status.');
+      setAuditStatus(result);
+      if (result.status === 'completed' && result.conclusion === 'success') {
+        setAuditMessage('Audit completed. Refresh review data after the Vercel deployment finishes.');
+      }
+    } catch (event) {
+      setAuditMessage(event instanceof Error ? event.message : 'Could not load audit status.');
+    }
+  };
+
+  const startAudit = async () => {
+    setStartingAudit(true);
+    setAuditMessage(`Requesting ${runMode} audit...`);
+    try {
+      const response = await fetch('/api/run-audit', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${adminToken.trim()}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ mode: runMode }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error ?? 'Could not start audit.');
+      setAuditMessage(result.message ?? 'Audit queued.');
+      setAuditStatus({ status: 'queued', run: null });
+      window.setTimeout(() => void loadAuditStatus(), 2500);
+    } catch (event) {
+      setAuditMessage(event instanceof Error ? event.message : 'Could not start audit.');
+    } finally {
+      setStartingAudit(false);
+    }
+  };
+
+  useEffect(() => {
+    if (!authenticated) return undefined;
+    void loadAuditStatus();
+    const interval = window.setInterval(() => void loadAuditStatus(), 15000);
+    return () => window.clearInterval(interval);
+    // Poll while the authenticated admin page is open.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [authenticated]);
+
   const updateItem = (index: number, updater: (item: ReviewItem) => ReviewItem) => {
     setQueue((current) => {
       if (!current) return current;
@@ -225,6 +297,11 @@ export function AdminReview() {
   };
 
   const markAllReviewed = () => {
+    const failedCount = queue?.items.filter((item) => item.review_status === 'run_failed').length ?? 0;
+    if (failedCount > 0) {
+      setPublishStatus(`${failedCount} failed response(s) must be rerun before the queue can be approved.`);
+      return;
+    }
     setQueue((current) => {
       if (!current) return current;
       return {
@@ -243,6 +320,13 @@ export function AdminReview() {
   };
 
   const markModelReviewed = (modelId: string) => {
+    const failedCount = queue?.items.filter(
+      (item) => item.model.id === modelId && item.review_status === 'run_failed'
+    ).length ?? 0;
+    if (failedCount > 0) {
+      setPublishStatus(`${failedCount} failed response(s) for this model must be rerun before approval.`);
+      return;
+    }
     setQueue((current) => {
       if (!current) return current;
       return {
@@ -426,6 +510,92 @@ export function AdminReview() {
             </button>
           </div>
         </div>
+      </section>
+
+      <section className="momops-panel p-5 space-y-5">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+          <div>
+            <p className="momops-kicker mb-2">Automated model runner</p>
+            <h2 className="text-[2rem] leading-tight text-deep-navy">Run a new CAREVAL audit</h2>
+            <p className="mt-2 max-w-[680px] text-[16px] leading-6 text-slate-grey">
+              GitHub Actions calls OpenRouter for every selected model and prompt,
+              drafts the scores, commits the review queue, and triggers a new
+              Vercel deployment. You approve the results afterwards.
+            </p>
+          </div>
+          <div className="min-w-[220px] border border-border bg-[#fffaf0] p-4">
+            <p className="momops-kicker mb-2">Latest job</p>
+            <p className="text-[18px] font-bold capitalize text-deep-navy">
+              {auditStatus.status.replaceAll('_', ' ')}
+            </p>
+            {auditStatus.conclusion && (
+              <p className="text-[15px] capitalize text-slate-grey">{auditStatus.conclusion}</p>
+            )}
+            {auditStatus.run?.html_url && (
+              <a
+                href={auditStatus.run.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex text-[14px] font-bold uppercase tracking-[0.1em] text-deep-navy underline underline-offset-4"
+              >
+                View GitHub Run
+              </a>
+            )}
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4 border-t border-border pt-5 md:flex-row md:items-end md:justify-between">
+          <div className="space-y-2">
+            <p className="momops-kicker">Run type</p>
+            <div className="inline-flex border border-[#182727] bg-[#fffaf0]">
+              <button
+                type="button"
+                onClick={() => setRunMode('free')}
+                className={`px-4 py-3 text-[14px] font-bold uppercase tracking-[0.08em] ${
+                  runMode === 'free' ? 'bg-[#182727] text-[#fffaf0]' : 'text-deep-navy'
+                }`}
+              >
+                Free Smoke
+              </button>
+              <button
+                type="button"
+                onClick={() => setRunMode('frontier')}
+                className={`border-l border-[#182727] px-4 py-3 text-[14px] font-bold uppercase tracking-[0.08em] ${
+                  runMode === 'frontier' ? 'bg-[#182727] text-[#fffaf0]' : 'text-deep-navy'
+                }`}
+              >
+                Frontier Models
+              </button>
+            </div>
+            <p className="max-w-[620px] text-[15px] text-slate-grey">
+              {runMode === 'free'
+                ? 'Runs the free GPT-OSS smoke model against all five CAREVAL prompts.'
+                : 'Runs all seven frontier models. OpenRouter credits are required and the current balance may be insufficient.'}
+            </p>
+          </div>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <button
+              type="button"
+              onClick={() => void loadAuditStatus()}
+              className="momops-button-secondary"
+            >
+              Refresh Status
+            </button>
+            <button
+              type="button"
+              onClick={() => void startAudit()}
+              disabled={startingAudit || auditStatus.status === 'in_progress' || auditStatus.status === 'queued'}
+              className={`momops-button ${
+                startingAudit || auditStatus.status === 'in_progress' || auditStatus.status === 'queued'
+                  ? 'pointer-events-none opacity-45'
+                  : ''
+              }`}
+            >
+              {startingAudit ? 'Starting...' : 'Run Audit'}
+            </button>
+          </div>
+        </div>
+        {auditMessage && <p className="text-[16px] text-slate-grey">{auditMessage}</p>}
       </section>
 
       {queue && (
