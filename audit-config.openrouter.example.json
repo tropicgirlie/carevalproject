@@ -7,9 +7,21 @@
   "maxTokens": 700,
   "models": [
     {
-      "id": "openai/gpt-5.5-pro",
+      "id": "z-ai/glm-5.2",
       "provider": "openrouter",
-      "displayName": "GPT-5.5 Pro",
+      "displayName": "GLM 5.2",
+      "version": "OpenRouter registry, Jun 2026"
+    },
+    {
+      "id": "anthropic/claude-fable-5",
+      "provider": "openrouter",
+      "displayName": "Claude Fable 5",
+      "version": "OpenRouter registry, Jun 2026"
+    },
+    {
+      "id": "openai/gpt-5.2-pro",
+      "provider": "openrouter",
+      "displayName": "GPT-5.2 Pro",
       "version": "OpenRouter registry, Jun 2026"
     },
     {
@@ -37,15 +49,9 @@
       "version": "OpenRouter registry, Jun 2026"
     },
     {
-      "id": "mistralai/mistral-large-2512",
+      "id": "mistralai/mistral-medium-3-5",
       "provider": "openrouter",
-      "displayName": "Mistral Large 3",
-      "version": "OpenRouter registry, Jun 2026"
-    },
-    {
-      "id": "meta-llama/llama-4-maverick",
-      "provider": "openrouter",
-      "displayName": "Llama 4 Maverick",
+      "displayName": "Mistral Medium 3.5",
       "version": "OpenRouter registry, Jun 2026"
     }
   ],

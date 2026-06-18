@@ -9,6 +9,7 @@
     "audit:publish": "node scripts/publish-leaderboard.mjs",
     "leaderboard:agent": "node scripts/agent-leaderboard.mjs",
     "leaderboard:publish-reviewed": "node scripts/publish-reviewed-queue.mjs",
+    "models:refresh": "node scripts/refresh-openrouter-models.mjs",
     "build": "vite build",
     "dev": "vite"
   },

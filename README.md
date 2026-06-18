@@ -30,10 +30,18 @@ Then open `#/admin`. The latest generated queue loads automatically. Review the 
 The production admin can also start the runner directly:
 
 1. Log in at `#/admin`.
-2. Select `Free Smoke` or `Frontier Models`.
+2. Enter an OpenRouter model ID such as `z-ai/glm-5.2`, or leave it blank and select `Free Smoke` or `Frontier Models`.
 3. Click `Run Audit`.
 4. GitHub Actions runs OpenRouter, commits the review queue, and triggers Vercel.
 5. Refresh the admin data, review, then publish.
+
+Refresh the local OpenRouter model catalog:
+
+```bash
+npm run models:refresh
+```
+
+CAREVAL keeps external benchmark sources in `api/_data/benchmark-sources.json`. Use those sources for context, pricing, speed, and broad capability signals; keep CAREVAL scores separate because they measure invisible labour and care reasoning.
 
 For local/offline fallback, export reviewed JSON and publish with:
 

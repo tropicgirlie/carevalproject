@@ -11,6 +11,14 @@ on:
         options:
           - free
           - frontier
+      model_id:
+        description: Optional OpenRouter model ID to run instead of a preset roster
+        required: false
+        type: string
+      display_name:
+        description: Optional display name for the custom model
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -44,8 +52,14 @@ jobs:
       - name: Select audit configuration
         id: config
         shell: bash
+        env:
+          CAREVAL_MODEL_ID: ${{ inputs.model_id }}
+          CAREVAL_DISPLAY_NAME: ${{ inputs.display_name }}
         run: |
-          if [ "${{ inputs.mode }}" = "frontier" ]; then
+          if [ -n "$CAREVAL_MODEL_ID" ]; then
+            path=$(node scripts/create-openrouter-config.mjs "$CAREVAL_MODEL_ID" "$CAREVAL_DISPLAY_NAME")
+            echo "path=$path" >> "$GITHUB_OUTPUT"
+          elif [ "${{ inputs.mode }}" = "frontier" ]; then
             echo "path=audit-config.openrouter.example.json" >> "$GITHUB_OUTPUT"
           else
             echo "path=audit-config.openrouter-free-smoke.json" >> "$GITHUB_OUTPUT"

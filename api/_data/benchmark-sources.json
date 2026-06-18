@@ -1,0 +1,49 @@
+{
+  "schema": "careval-external-benchmark-sources-v1",
+  "updated_at": "2026-06-18T00:00:00.000Z",
+  "sources": [
+    {
+      "name": "OpenRouter Models",
+      "url": "https://openrouter.ai/models",
+      "api_url": "https://openrouter.ai/api/v1/models",
+      "use_for": "Model availability, model IDs, pricing, context length, and provider metadata.",
+      "careval_interpretation": "Use this as the model catalog, not as a CAREVAL quality score."
+    },
+    {
+      "name": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/leaderboards/models",
+      "use_for": "General model quality, speed, price, latency, and context comparison.",
+      "careval_interpretation": "Useful external baseline for model capability and cost, but it does not evaluate invisible care labour."
+    },
+    {
+      "name": "LMArena / Arena",
+      "url": "https://arena.ai/leaderboard",
+      "use_for": "Crowdsourced pairwise human preference across chat, code, image, video, and agent arenas.",
+      "careval_interpretation": "Useful signal for user preference, but preference is not the same as care-conscious reasoning."
+    },
+    {
+      "name": "HELM",
+      "url": "https://crfm.stanford.edu/helm/latest/",
+      "use_for": "Transparent scenario-based academic evaluation across capabilities and safety dimensions.",
+      "careval_interpretation": "Methodological reference for broad, transparent evaluation design."
+    },
+    {
+      "name": "SWE-bench",
+      "url": "https://www.swebench.com/",
+      "use_for": "Software engineering task performance.",
+      "careval_interpretation": "Useful for coding strength only; not evidence of care awareness."
+    },
+    {
+      "name": "Hugging Face Open LLM Leaderboard",
+      "url": "https://huggingface.co/open-llm-leaderboard",
+      "use_for": "Open model reproducible benchmark artifacts and datasets.",
+      "careval_interpretation": "Useful mainly for open-weight models and reproducibility comparisons."
+    },
+    {
+      "name": "LiveBench",
+      "url": "https://livebench.ai/",
+      "use_for": "Contamination-resistant objective LLM evaluation.",
+      "careval_interpretation": "Useful as an objective benchmark reference; CAREVAL should remain a separate social-reasoning audit."
+    }
+  ]
+}

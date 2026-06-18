@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import rubricData from '../../../public/rubric.json';
+import benchmarkSourcesData from '../../../api/_data/benchmark-sources.json';
 
 type Ratings = Record<string, number>;
 
@@ -47,6 +48,17 @@ interface ModelRoster {
   models: RosterModel[];
 }
 
+interface OpenRouterModel {
+  id: string;
+  name: string;
+  created?: number | null;
+  context_length?: number | null;
+  pricing?: {
+    prompt?: string;
+    completion?: string;
+  } | null;
+}
+
 interface AuditRunStatus {
   status: string;
   conclusion?: string | null;
@@ -58,6 +70,13 @@ interface AuditRunStatus {
     html_url: string;
     head_sha: string;
   } | null;
+}
+
+interface BenchmarkSource {
+  name: string;
+  url: string;
+  use_for: string;
+  careval_interpretation: string;
 }
 
 function downloadJson(filename: string, value: unknown) {
@@ -112,6 +131,10 @@ export function AdminReview() {
   const [auditStatus, setAuditStatus] = useState<AuditRunStatus>({ status: 'not_started', run: null });
   const [auditMessage, setAuditMessage] = useState('');
   const [startingAudit, setStartingAudit] = useState(false);
+  const [customModelId, setCustomModelId] = useState('z-ai/glm-5.2');
+  const [customDisplayName, setCustomDisplayName] = useState('GLM 5.2');
+  const [modelCatalog, setModelCatalog] = useState<OpenRouterModel[]>([]);
+  const [loadingCatalog, setLoadingCatalog] = useState(false);
 
   const activeItem = queue?.items[activeIndex];
   const reviewedCount = queue?.items.filter((item) => item.review_status === 'reviewed').length ?? 0;
@@ -157,6 +180,7 @@ export function AdminReview() {
     const scoredIds = new Set(modelSummaries.map((summary) => summary.modelId));
     return roster.models.filter((model) => !scoredIds.has(model.id));
   }, [modelSummaries, roster]);
+  const benchmarkSources = benchmarkSourcesData.sources as BenchmarkSource[];
 
   const loadAdminData = async (token: string) => {
     setLoadingLatest(true);
@@ -208,6 +232,38 @@ export function AdminReview() {
     setError('');
   };
 
+  const expireSession = (message = 'Admin session expired. Log in again with the current passcode.') => {
+    window.sessionStorage.removeItem('careval-admin-token');
+    setAuthenticated(false);
+    setQueue(null);
+    setRoster(null);
+    setAuditStatus({ status: 'not_started', run: null });
+    setAuditMessage('');
+    setError(message);
+  };
+
+  const loadModelCatalog = async (query = '') => {
+    if (!adminToken.trim()) return;
+    setLoadingCatalog(true);
+    try {
+      const response = await fetch(`/api/model-catalog?q=${encodeURIComponent(query)}`, {
+        headers: { Authorization: `Bearer ${adminToken.trim()}` },
+        cache: 'no-store',
+      });
+      const result = await response.json().catch(() => ({}));
+      if (response.status === 401) {
+        expireSession();
+        return;
+      }
+      if (!response.ok) throw new Error(result.error ?? 'Could not load OpenRouter models.');
+      setModelCatalog(Array.isArray(result.models) ? result.models : []);
+    } catch (event) {
+      setAuditMessage(event instanceof Error ? event.message : 'Could not load OpenRouter models.');
+    } finally {
+      setLoadingCatalog(false);
+    }
+  };
+
   const loadAuditStatus = async () => {
     if (!adminToken.trim()) return;
     try {
@@ -216,6 +272,10 @@ export function AdminReview() {
         cache: 'no-store',
       });
       const result = await response.json().catch(() => ({}));
+      if (response.status === 401) {
+        expireSession();
+        return;
+      }
       if (!response.ok) throw new Error(result.error ?? 'Could not load audit status.');
       setAuditStatus(result);
       if (result.status === 'completed' && result.conclusion === 'success') {
@@ -227,8 +287,9 @@ export function AdminReview() {
   };
 
   const startAudit = async () => {
+    const modelId = customModelId.trim();
     setStartingAudit(true);
-    setAuditMessage(`Requesting ${runMode} audit...`);
+    setAuditMessage(modelId ? `Requesting CAREVAL audit for ${modelId}...` : `Requesting ${runMode} audit...`);
     try {
       const response = await fetch('/api/run-audit', {
         method: 'POST',
@@ -236,9 +297,17 @@ export function AdminReview() {
           Authorization: `Bearer ${adminToken.trim()}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ mode: runMode }),
+        body: JSON.stringify({
+          mode: runMode,
+          modelId,
+          displayName: customDisplayName.trim() || modelId,
+        }),
       });
       const result = await response.json().catch(() => ({}));
+      if (response.status === 401) {
+        expireSession();
+        return;
+      }
       if (!response.ok) throw new Error(result.error ?? 'Could not start audit.');
       setAuditMessage(result.message ?? 'Audit queued.');
       setAuditStatus({ status: 'queued', run: null });
@@ -253,6 +322,7 @@ export function AdminReview() {
   useEffect(() => {
     if (!authenticated) return undefined;
     void loadAuditStatus();
+    void loadModelCatalog('glm');
     const interval = window.setInterval(() => void loadAuditStatus(), 15000);
     return () => window.clearInterval(interval);
     // Poll while the authenticated admin page is open.
@@ -531,16 +601,6 @@ export function AdminReview() {
             {auditStatus.conclusion && (
               <p className="text-[15px] capitalize text-slate-grey">{auditStatus.conclusion}</p>
             )}
-            {auditStatus.run?.html_url && (
-              <a
-                href={auditStatus.run.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-flex text-[14px] font-bold uppercase tracking-[0.1em] text-deep-navy underline underline-offset-4"
-              >
-                View GitHub Run
-              </a>
-            )}
           </div>
         </div>
 
@@ -568,9 +628,11 @@ export function AdminReview() {
               </button>
             </div>
             <p className="max-w-[620px] text-[15px] text-slate-grey">
-              {runMode === 'free'
-                ? 'Runs the free GPT-OSS smoke model against all five CAREVAL prompts.'
-                : 'Runs all seven frontier models. OpenRouter credits are required and the current balance may be insufficient.'}
+              {customModelId.trim()
+                ? 'Runs the named OpenRouter model against the CAREVAL prompt set.'
+                : runMode === 'free'
+                  ? 'Runs the free GPT-OSS smoke model against all five CAREVAL prompts.'
+                  : 'Runs the configured frontier model roster. OpenRouter credits are required.'}
             </p>
           </div>
           <div className="flex flex-col gap-2 sm:flex-row">
@@ -595,7 +657,79 @@ export function AdminReview() {
             </button>
           </div>
         </div>
+
+        <div className="grid gap-4 border-t border-border pt-5 lg:grid-cols-[1fr_1fr_auto] lg:items-end">
+          <label className="space-y-2">
+            <span className="momops-kicker block">OpenRouter model ID</span>
+            <input
+              list="careval-openrouter-models"
+              value={customModelId}
+              onChange={(event) => {
+                const value = event.target.value;
+                setCustomModelId(value);
+                const match = modelCatalog.find((model) => model.id === value);
+                if (match) setCustomDisplayName(match.name.replace(/^[^:]+:\s*/, ''));
+              }}
+              placeholder="z-ai/glm-5.2"
+              className="w-full border border-border bg-[#fffaf0] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/55 focus:outline-none focus:border-primary"
+            />
+            <datalist id="careval-openrouter-models">
+              {modelCatalog.map((model) => (
+                <option key={model.id} value={model.id}>
+                  {model.name}
+                </option>
+              ))}
+            </datalist>
+          </label>
+          <label className="space-y-2">
+            <span className="momops-kicker block">Display name</span>
+            <input
+              value={customDisplayName}
+              onChange={(event) => setCustomDisplayName(event.target.value)}
+              placeholder="GLM 5.2"
+              className="w-full border border-border bg-[#fffaf0] px-4 py-3 text-[16px] text-deep-navy placeholder:text-slate-grey/55 focus:outline-none focus:border-primary"
+            />
+          </label>
+          <button
+            type="button"
+            onClick={() => void loadModelCatalog(customModelId)}
+            disabled={loadingCatalog}
+            className={`momops-button-secondary ${loadingCatalog ? 'pointer-events-none opacity-45' : ''}`}
+          >
+            {loadingCatalog ? 'Loading...' : 'Find Models'}
+          </button>
+        </div>
+        <p className="text-[15px] text-slate-grey">
+          Leave the model ID blank only when you want to run a preset roster. For a new model, paste the OpenRouter slug and run.
+        </p>
         {auditMessage && <p className="text-[16px] text-slate-grey">{auditMessage}</p>}
+      </section>
+
+      <section className="momops-panel p-5 space-y-4">
+        <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="momops-kicker mb-2">External benchmark context</p>
+            <h2 className="text-[2rem] leading-tight text-deep-navy">Compare, then score with CAREVAL</h2>
+          </div>
+          <p className="max-w-[520px] text-[16px] leading-6 text-slate-grey">
+            These sources help explain model capability, cost, preference, and speed. CAREVAL remains the care-consciousness score.
+          </p>
+        </div>
+        <div className="grid gap-3 md:grid-cols-2">
+          {benchmarkSources.slice(0, 6).map((source) => (
+            <a
+              key={source.name}
+              href={source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-border bg-[#fffaf0] p-4 transition-colors hover:border-[#182727]/50 hover:bg-white"
+            >
+              <span className="block text-[18px] font-bold text-deep-navy">{source.name}</span>
+              <span className="mt-2 block text-[15px] leading-5 text-slate-grey">{source.use_for}</span>
+              <span className="mt-3 block text-[14px] leading-5 text-slate-grey/80">{source.careval_interpretation}</span>
+            </a>
+          ))}
+        </div>
       </section>
 
       {queue && (

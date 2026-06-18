@@ -27,9 +27,16 @@ export default async function handler(request, response) {
   const repo = process.env.GITHUB_REPO ?? 'tropicgirlie/carevalproject';
   const branch = process.env.GITHUB_BRANCH ?? 'main';
   const mode = request.body?.mode === 'frontier' ? 'frontier' : 'free';
+  const modelId = String(request.body?.modelId ?? '').trim();
+  const displayName = String(request.body?.displayName ?? '').trim();
 
   if (!githubToken) {
     response.status(500).json({ error: 'GITHUB_TOKEN is not configured.' });
+    return;
+  }
+
+  if (modelId && !/^[a-z0-9._~:/-]+$/i.test(modelId)) {
+    response.status(400).json({ error: 'Model ID must be an OpenRouter slug such as z-ai/glm-5.2.' });
     return;
   }
 
@@ -46,7 +53,11 @@ export default async function handler(request, response) {
         },
         body: JSON.stringify({
           ref: branch,
-          inputs: { mode },
+          inputs: {
+            mode,
+            model_id: modelId,
+            display_name: displayName || modelId,
+          },
         }),
       }
     );
@@ -58,8 +69,11 @@ export default async function handler(request, response) {
     response.status(202).json({
       ok: true,
       mode,
+      model_id: modelId || null,
       status: 'queued',
-      message: `CAREVAL ${mode} audit requested.`,
+      message: modelId
+        ? `CAREVAL audit requested for ${displayName || modelId}.`
+        : `CAREVAL ${mode} audit requested.`,
     });
   } catch (error) {
     response.status(500).json({

@@ -148,6 +148,40 @@ Each month, publish a small update:
 - score table
 - notable regressions
 - one short commentary on the worst failure mode
+
+### 3. Track External Benchmarks Without Collapsing CAREVAL Into Them
+
+CAREVAL should compare models against external benchmark context, but the CAREVAL grade must remain separate.
+
+Use external benchmark sites for:
+
+- model availability and IDs: OpenRouter
+- broad capability, price, speed, and latency: Artificial Analysis
+- human preference signals: LMArena / Arena
+- transparent academic scenario evaluation: HELM
+- coding strength: SWE-bench
+- open-weight reproducibility: Hugging Face Open LLM Leaderboard
+- contamination-resistant objective testing: LiveBench
+
+The registry lives in:
+
+```text
+api/_data/benchmark-sources.json
+```
+
+The model catalog can be refreshed from OpenRouter:
+
+```bash
+npm run models:refresh
+```
+
+CAREVAL should use this as a comparison layer:
+
+```text
+External benchmark score = broad capability context
+CAREVAL score = care-consciousness score on invisible labour prompts
+Final interpretation = both signals shown side by side, not averaged into one universal truth
+```
 - downloadable CSV
 
 This creates a rhythm and gives people something to cite.
