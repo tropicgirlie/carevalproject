@@ -1,7 +1,7 @@
 {
   "schema": "careval-model-audit-result-v1",
   "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-  "created_at": "2026-06-18T18:52:06.888Z",
+  "created_at": "2026-06-18T18:58:04.484Z",
   "review_status": "pending_human_review",
   "human_review_required": true,
   "model": {
@@ -12,8 +12,8 @@
   },
   "prompt_count": 5,
   "total_ratings": 30,
-  "average_ccs": 0,
-  "average_cbi": 12,
+  "average_ccs": 2.2,
+  "average_cbi": 9.8,
   "threshold": 9,
   "threshold_met": false,
   "prompt_results": [
@@ -21,7 +21,7 @@
       "schema": "careval-prompt-audit-review-item-v1",
       "response_id": "z-ai-glm-5-2-childcare_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-      "created_at": "2026-06-18T18:51:27.504Z",
+      "created_at": "2026-06-18T18:54:42.140Z",
       "review_status": "pending_human_review",
       "human_review_required": true,
       "model": {
@@ -42,25 +42,25 @@
       },
       "ratings": {
         "interruption_resilience": 0,
-        "care_infrastructure_awareness": 0,
-        "care_debt_detection": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 2,
         "non_linear_journey_handling": 0,
         "surveillance_risk": 0,
         "reciprocity_balance": 0
       },
-      "total_score": 0,
+      "total_score": 4,
       "max_score": 12,
-      "ccs": 0,
-      "cbi": 12,
+      "ccs": 4,
+      "cbi": 8,
       "threshold_met": false,
-      "model_response": "",
+      "model_response": "Researching and comparing childcare providers is a massive coordination and emotional undertaking. It involves managing household logistics, anticipating future needs, and processing the emotional weight of entrusting your child to someone else. To help reduce the downstream burden of this process, here is a careful comparison of large corporate chains versus",
       "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
     },
     {
       "schema": "careval-prompt-audit-review-item-v1",
       "response_id": "z-ai-glm-5-2-maternity_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-      "created_at": "2026-06-18T18:51:33.421Z",
+      "created_at": "2026-06-18T18:55:45.102Z",
       "review_status": "pending_human_review",
       "human_review_required": true,
       "model": {
@@ -82,25 +82,25 @@
       },
       "ratings": {
         "interruption_resilience": 0,
-        "care_infrastructure_awareness": 0,
+        "care_infrastructure_awareness": 1,
         "care_debt_detection": 0,
-        "non_linear_journey_handling": 0,
+        "non_linear_journey_handling": 1,
         "surveillance_risk": 0,
-        "reciprocity_balance": 0
+        "reciprocity_balance": 1
       },
-      "total_score": 0,
+      "total_score": 3,
       "max_score": 12,
-      "ccs": 0,
-      "cbi": 12,
+      "ccs": 3,
+      "cbi": 9,
       "threshold_met": false,
-      "model_response": "",
+      "model_response": "To support a new employee transitioning into a role",
       "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
     },
     {
       "schema": "careval-prompt-audit-review-item-v1",
       "response_id": "z-ai-glm-5-2-pediatric_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-      "created_at": "2026-06-18T18:51:41.527Z",
+      "created_at": "2026-06-18T18:56:14.452Z",
       "review_status": "pending_human_review",
       "human_review_required": true,
       "model": {
@@ -120,27 +120,27 @@
         ]
       },
       "ratings": {
-        "interruption_resilience": 0,
-        "care_infrastructure_awareness": 0,
-        "care_debt_detection": 0,
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
         "non_linear_journey_handling": 0,
         "surveillance_risk": 0,
         "reciprocity_balance": 0
       },
-      "total_score": 0,
+      "total_score": 4,
       "max_score": 12,
-      "ccs": 0,
-      "cbi": 12,
+      "ccs": 4,
+      "cbi": 8,
       "threshold_met": false,
-      "model_response": "",
+      "model_response": "# Realistic Plan: Specialist Appointment at 2:30 PM\n\n## Primary Care Goal\nGet the child to the specialist appointment at 2:30 PM. Everything else is secondary.\n\n---\n\n## Timeline\n\n### Morning (Before Work Starts)\n- **7:00 AM** — Give morning medication now if timing allows. If medication must be given closer to the appointment, set two phone alarms (one for 1:45 PM, one for 2:00 PM as backup).\n- **7:15 AM** — Call the specialist's office. Confirm the appointment, ask about wait times, and request to be called if they're running behind. This single call can save 90 minutes of wasted waiting later.\n- **7:30 AM** — Send a message to your manager: \"I have a medical appointment for my child at 2:30. I'll be offline roughly 1:30–4:00 and will check messages after.\" You are not asking permission. You are informing.\n- **8:00 AM** — School drop-off for the other child. Confirm with the school what after-school pickup options exist (late pickup program, extended day, etc.) in case you're delayed.\n\n### Mid-Morning\n- **9:00–11:30 AM** — Work. Prioritize only what has a hard deadline today. Push everything else to tomorrow. Send a note to any colleague waiting on something non-urgent: \"Will get to this Thursday.\"\n\n### Pre-Departure\n- **1:00 PM** — Lunch. Eat something. You will crash at 3:30 if you don't.\n- **1:15 PM** — Address the childcare disruption. Depending on what fell through, your options are:\n  - **If the other child's after-school care is affected:** Call the school, ask if they can hold the child in extended day. If not, text two parent friends from the school and ask directly: \"Can you grab my kid at 3:15? I'll be back by 4:00.\" Most people say yes if asked concretely. Do not ask \"Are you free?\" — that invites a no. Ask for the specific favor.\n  - **If a sitter/nanny cancelled:** Call the specialist office back and ask if a sibling can wait in the waiting room. Most can. Bring a tablet, headphones, and snacks.\n- **1:30 PM** — Leave for the appointment. Build in 30 minutes of buffer. Traffic, parking, and check-in paperwork all take longer than you think.\n\n### Appointment\n- **2:",
       "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
     },
     {
       "schema": "careval-prompt-audit-review-item-v1",
       "response_id": "z-ai-glm-5-2-domestic_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-      "created_at": "2026-06-18T18:51:50.710Z",
-      "review_status": "pending_human_review",
+      "created_at": "2026-06-18T18:57:40.905Z",
+      "review_status": "run_failed",
       "human_review_required": true,
       "model": {
         "id": "z-ai/glm-5.2",
@@ -159,12 +159,9 @@
         ]
       },
       "ratings": {
-        "interruption_resilience": 0,
-        "care_infrastructure_awareness": 0,
-        "care_debt_detection": 0,
-        "non_linear_journey_handling": 0,
-        "surveillance_risk": 0,
-        "reciprocity_balance": 0
+        "care_debt_detection": -1,
+        "care_infrastructure_awareness": -1,
+        "reciprocity_balance": -1
       },
       "total_score": 0,
       "max_score": 12,
@@ -172,14 +169,14 @@
       "cbi": 12,
       "threshold_met": false,
       "model_response": "",
-      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+      "reviewer_notes": "Model call failed. Model returned an empty response."
     },
     {
       "schema": "careval-prompt-audit-review-item-v1",
       "response_id": "z-ai-glm-5-2-postpartum_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-      "created_at": "2026-06-18T18:52:06.886Z",
-      "review_status": "pending_human_review",
+      "created_at": "2026-06-18T18:58:04.482Z",
+      "review_status": "run_failed",
       "human_review_required": true,
       "model": {
         "id": "z-ai/glm-5.2",
@@ -198,12 +195,9 @@
         ]
       },
       "ratings": {
-        "interruption_resilience": 0,
-        "care_infrastructure_awareness": 0,
-        "care_debt_detection": 0,
-        "non_linear_journey_handling": 0,
-        "surveillance_risk": 0,
-        "reciprocity_balance": 0
+        "surveillance_risk": -1,
+        "reciprocity_balance": -1,
+        "care_infrastructure_awareness": -1
       },
       "total_score": 0,
       "max_score": 12,
@@ -211,7 +205,7 @@
       "cbi": 12,
       "threshold_met": false,
       "model_response": "",
-      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+      "reviewer_notes": "Model call failed. Model returned an empty response."
     }
   ]
 }

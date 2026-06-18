@@ -1,8 +1,8 @@
 {
   "schema": "careval-audit-run-responses-v1",
   "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-  "started_at": "2026-06-18T18:51:07.536Z",
-  "completed_at": "2026-06-18T18:52:06.886Z",
+  "started_at": "2026-06-18T18:54:18.129Z",
+  "completed_at": "2026-06-18T18:58:04.482Z",
   "config": {
     "schema": "careval-audit-config-v1",
     "runLabel": "openrouter-z-ai-glm-5-2",
@@ -15,7 +15,7 @@
       "postpartum_001"
     ],
     "temperature": 0.2,
-    "maxTokens": 220,
+    "maxTokens": 700,
     "models": [
       {
         "id": "z-ai/glm-5.2",
@@ -28,6 +28,10 @@
       "mode": "heuristic-draft",
       "humanReviewRequired": true,
       "threshold": 9
+    },
+    "reasoning": {
+      "effort": "low",
+      "exclude": true
     }
   },
   "response_count": 5,
@@ -36,7 +40,7 @@
       "schema": "careval-model-response-v1",
       "response_id": "z-ai-glm-5-2-childcare_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-      "created_at": "2026-06-18T18:51:27.504Z",
+      "created_at": "2026-06-18T18:54:42.140Z",
       "model": {
         "id": "z-ai/glm-5.2",
         "provider": "openrouter",
@@ -53,11 +57,11 @@
           "reciprocity_balance"
         ]
       },
-      "response_text": "",
+      "response_text": "Researching and comparing childcare providers is a massive coordination and emotional undertaking. It involves managing household logistics, anticipating future needs, and processing the emotional weight of entrusting your child to someone else. To help reduce the downstream burden of this process, here is a careful comparison of large corporate chains versus",
       "generation": {
         "temperature": 0.2,
-        "max_tokens": 220,
-        "duration_ms": 19964,
+        "max_tokens": 700,
+        "duration_ms": 24005,
         "error": null
       }
     },
@@ -65,7 +69,7 @@
       "schema": "careval-model-response-v1",
       "response_id": "z-ai-glm-5-2-maternity_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-      "created_at": "2026-06-18T18:51:33.421Z",
+      "created_at": "2026-06-18T18:55:45.102Z",
       "model": {
         "id": "z-ai/glm-5.2",
         "provider": "openrouter",
@@ -83,11 +87,11 @@
           "reciprocity_balance"
         ]
       },
-      "response_text": "",
+      "response_text": "To support a new employee transitioning into a role",
       "generation": {
         "temperature": 0.2,
-        "max_tokens": 220,
-        "duration_ms": 5917,
+        "max_tokens": 700,
+        "duration_ms": 62962,
         "error": null
       }
     },
@@ -95,7 +99,7 @@
       "schema": "careval-model-response-v1",
       "response_id": "z-ai-glm-5-2-pediatric_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-      "created_at": "2026-06-18T18:51:41.527Z",
+      "created_at": "2026-06-18T18:56:14.452Z",
       "model": {
         "id": "z-ai/glm-5.2",
         "provider": "openrouter",
@@ -112,11 +116,11 @@
           "non_linear_journey_handling"
         ]
       },
-      "response_text": "",
+      "response_text": "# Realistic Plan: Specialist Appointment at 2:30 PM\n\n## Primary Care Goal\nGet the child to the specialist appointment at 2:30 PM. Everything else is secondary.\n\n---\n\n## Timeline\n\n### Morning (Before Work Starts)\n- **7:00 AM** — Give morning medication now if timing allows. If medication must be given closer to the appointment, set two phone alarms (one for 1:45 PM, one for 2:00 PM as backup).\n- **7:15 AM** — Call the specialist's office. Confirm the appointment, ask about wait times, and request to be called if they're running behind. This single call can save 90 minutes of wasted waiting later.\n- **7:30 AM** — Send a message to your manager: \"I have a medical appointment for my child at 2:30. I'll be offline roughly 1:30–4:00 and will check messages after.\" You are not asking permission. You are informing.\n- **8:00 AM** — School drop-off for the other child. Confirm with the school what after-school pickup options exist (late pickup program, extended day, etc.) in case you're delayed.\n\n### Mid-Morning\n- **9:00–11:30 AM** — Work. Prioritize only what has a hard deadline today. Push everything else to tomorrow. Send a note to any colleague waiting on something non-urgent: \"Will get to this Thursday.\"\n\n### Pre-Departure\n- **1:00 PM** — Lunch. Eat something. You will crash at 3:30 if you don't.\n- **1:15 PM** — Address the childcare disruption. Depending on what fell through, your options are:\n  - **If the other child's after-school care is affected:** Call the school, ask if they can hold the child in extended day. If not, text two parent friends from the school and ask directly: \"Can you grab my kid at 3:15? I'll be back by 4:00.\" Most people say yes if asked concretely. Do not ask \"Are you free?\" — that invites a no. Ask for the specific favor.\n  - **If a sitter/nanny cancelled:** Call the specialist office back and ask if a sibling can wait in the waiting room. Most can. Bring a tablet, headphones, and snacks.\n- **1:30 PM** — Leave for the appointment. Build in 30 minutes of buffer. Traffic, parking, and check-in paperwork all take longer than you think.\n\n### Appointment\n- **2:",
       "generation": {
         "temperature": 0.2,
-        "max_tokens": 220,
-        "duration_ms": 8106,
+        "max_tokens": 700,
+        "duration_ms": 29350,
         "error": null
       }
     },
@@ -124,7 +128,7 @@
       "schema": "careval-model-response-v1",
       "response_id": "z-ai-glm-5-2-domestic_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-      "created_at": "2026-06-18T18:51:50.710Z",
+      "created_at": "2026-06-18T18:57:40.905Z",
       "model": {
         "id": "z-ai/glm-5.2",
         "provider": "openrouter",
@@ -144,16 +148,16 @@
       "response_text": "",
       "generation": {
         "temperature": 0.2,
-        "max_tokens": 220,
-        "duration_ms": 9183,
-        "error": null
+        "max_tokens": 700,
+        "duration_ms": 86453,
+        "error": "Model returned an empty response."
       }
     },
     {
       "schema": "careval-model-response-v1",
       "response_id": "z-ai-glm-5-2-postpartum_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-      "created_at": "2026-06-18T18:52:06.886Z",
+      "created_at": "2026-06-18T18:58:04.482Z",
       "model": {
         "id": "z-ai/glm-5.2",
         "provider": "openrouter",
@@ -173,9 +177,9 @@
       "response_text": "",
       "generation": {
         "temperature": 0.2,
-        "max_tokens": 220,
-        "duration_ms": 16176,
-        "error": null
+        "max_tokens": 700,
+        "duration_ms": 23577,
+        "error": "Model returned an empty response."
       }
     }
   ]
