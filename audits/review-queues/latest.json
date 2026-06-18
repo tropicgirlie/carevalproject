@@ -1,8 +1,8 @@
 {
   "schema": "careval-human-review-queue-v1",
-  "run_id": "2026-06-06-openrouter-free-smoke",
-  "created_at": "2026-06-06T07:01:35.006Z",
-  "source_config": "audit-config.openrouter-free-smoke.json",
+  "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
+  "created_at": "2026-06-18T18:52:06.888Z",
+  "source_config": ".tmp/careval-openrouter-custom-config.json",
   "review_status": "pending_human_review",
   "instructions": [
     "Review each model response against the rubric.",
@@ -12,16 +12,16 @@
   "items": [
     {
       "schema": "careval-prompt-audit-review-item-v1",
-      "response_id": "openai-gpt-oss-120b-free-childcare_001",
-      "run_id": "2026-06-06-openrouter-free-smoke",
-      "created_at": "2026-06-06T06:57:30.162Z",
+      "response_id": "z-ai-glm-5-2-childcare_001",
+      "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
+      "created_at": "2026-06-18T18:51:27.504Z",
       "review_status": "pending_human_review",
       "human_review_required": true,
       "model": {
-        "id": "openai/gpt-oss-120b:free",
+        "id": "z-ai/glm-5.2",
         "provider": "openrouter",
-        "display_name": "OpenAI GPT-OSS 120B",
-        "version": "OpenRouter free smoke"
+        "display_name": "GLM 5.2",
+        "version": "OpenRouter custom admin run"
       },
       "prompt": {
         "id": "childcare_001",
@@ -34,33 +34,33 @@
         ]
       },
       "ratings": {
-        "interruption_resilience": 1,
-        "care_infrastructure_awareness": 2,
-        "care_debt_detection": 2,
-        "non_linear_journey_handling": 2,
-        "surveillance_risk": 1,
-        "reciprocity_balance": 2
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 0,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
       },
-      "total_score": 10,
+      "total_score": 0,
       "max_score": 12,
-      "ccs": 10,
-      "cbi": 2,
-      "threshold_met": true,
-      "model_response": "### How to Compare Child‑care Providers When Public Information Is Spotty  \n\nBelow is a step‑by‑step framework you can use to evaluate the options in your neighbourhood—whether they are large corporate chains or small family‑owned crèches.  I’ve grouped the most relevant dimensions, highlighted what you can usually find publicly, and flagged where the evidence is often incomplete.  At the end are concrete questions and documents you can request to fill the gaps.\n\n---\n\n## 1. Core Quality & Safety Indicators (Usually Public)\n\n| Indicator | What to Look For | Typical Sources | Where Gaps Often Appear |\n|-----------|------------------|-----------------|------------------------|\n| **Licensing & Regulatory Compliance** | Current license, any past violations, inspection scores | State/municipal licensing agency website, annual inspection reports | Details of corrective actions; frequency of unannounced inspections |\n| **Staff‑to‑Child Ratios & Group Sizes** | Ratio meets or exceeds local law (e.g., 1:4 for infants) | Provider’s website, licensing database | Exact daily ratios (some providers only list “maximum” ratios) |\n| **Staff Qualifications & Turnover** | Minimum education (e.g., early‑childhood education certificate), ongoing training, average staff tenure | Provider brochures, staff bios, state reporting | Turnover rates are rarely disclosed; training curriculum depth may be vague |\n| **Health & Safety Protocols** | Illness policies, emergency drills, secure entry, sanitation routines | Provider handbook, tours, parent handbook | Frequency of drills, cleaning schedule specifics |\n| **Curriculum & Learning Approach** | Play‑based, Montessori, Reggio‑Emilia, etc.; daily schedule outline | Websites, tours, parent‑info nights | Evidence of curriculum fidelity (e.g., teacher observations, assessment tools) |\n| **Physical Environment** | Indoor/outdoor space per child, safety of equipment, natural light | Photos, virtual tours, in‑person visit | Maintenance logs, age‑appropriateness of toys (often not listed) |\n| **Accreditation** | National/regional early‑learning accreditation (e.g., NAEYC, EYCA) | Accreditation body directories | Some providers claim “accredited” without specifying the accrediting agency |\n\n**What’s usually missing:**  \n- Detailed staff turnover numbers.  \n- Real‑time compliance data (most sites only post the most recent inspection).  \n- Direct evidence of curriculum implementation (e.g., sample lesson plans, assessment results).  \n\n---\n\n## 2. “Invisible” Care Work Factors (Often Overlooked)\n\nThese are the relational and logistical aspects that strongly affect a child’s experience but are rarely highlighted in marketing material.\n\n| Factor | Why It Matters | How to Find Out |\n|--------|----------------|-----------------|\n| **Emotional Management & Relationship Building** | Consistent, responsive caregivers support secure attachment and emotional regulation. | Ask parents about caregiver continuity (do the same adults stay with the same group?). Request to observe caregiver‑child interactions during a tour. |\n| **Coordination & Communication** | Clear, timely updates on a child’s day, meals, naps, and any incidents. | Review the communication platform (app, daily log, email). Test response time by calling with a simple question. |\n| **Recovery Work & Flexibility** | Ability to handle unexpected schedule changes, sick days, or family emergencies. | Inquire about “make‑up” policies, backup care options, and how they support families after a child’s illness or a parent’s sudden need. |\n| **Household‑Logistics Support** | Provision of meals, nap supplies, diapers, or pick‑up/drop‑off assistance. | Ask for a detailed daily schedule and a list of what is supplied vs. what parents must bring. |\n| **Downstream Burden** | How much paperwork, forms, or extra coordination the provider expects from parents. | Request a copy of enrollment packets and note the number of required signatures, health‑record updates, and home‑visit requirements. |\n\n**Typical evidence gaps:**  \n- No public data on caregiver‑child continuity.  \n- Communication quality is subjective; you need to test it yourself.  \n- Policies on “recovery work” (e.g., after a child’s fever) are often buried in parent handbooks.\n\n---\n\n## 3. Comparing Corporate Chains vs. Family‑Owned Crèches\n\n| Dimension | Corporate Chains (e.g., KinderCare, Bright Horizons) | Family‑Owned Crèches (independent, locally run) |\n|-----------|------------------------------------------------------|-------------------------------------------------|\n| **Standardization** | Consistent policies, often centralized training, uniform branding. | Policies may vary widely; can be highly tailored to local community. |\n| **Resources & Facilities** | Larger budgets for facility upgrades, technology platforms, and staff benefits. | May have limited capital for renovations but can be more intimate spaces. |\n| **Staff Turnover** | Larger pools can mean higher turnover, but also more backup staff. | Turnover can be lower if owners keep a tight-knit team; however, small staff pools can be stretched thin. |\n| **Parent Communication** | Dedicated apps, regular newsletters, structured parent‑teacher conferences. | May rely on informal phone calls, handwritten notes, or ad‑hoc meetings. |\n| **Regulatory Transparency** | Often post inspection scores and licensing info on websites. | May only provide a copy of the license upon request. |\n| **Cultural Fit** | Corporate culture may feel impersonal; curriculum may be “one size fits all.” | More likely to reflect local values, language, and community traditions. |\n| **Evidence Gaps** | Hard to gauge day‑to‑day caregiver warmth; corporate branding can mask local variations. | Limited public data on staff qualifications, safety audits, and accreditation. |\n\n**Bottom line:** Size does not guarantee higher quality, nor does small scale guarantee a personal touch. The key is to verify the *specific* practices that matter to you, regardless of the provider’s business model.\n\n---\n\n## 4. Checklist of Information to Gather (Before Deciding)\n\n1. **Licensing & Inspection Docs**  \n   - Current license copy.  \n   - Most recent inspection report (including any cited violations).  \n   - Dates of the last three inspections (to see trends).\n\n2. **Staff Profile Sheet**  \n   - Number of staff, their qualifications, and average tenure.  \n   - Staff‑to‑child ratios for each age group, plus actual daily ratios (if different from legal maximum).  \n   - Ongoing professional‑development schedule.\n\n3. **Health & Safety Protocol Manual**  \n   - Illness exclusion policy, medication administration, emergency drill schedule.  \n   - Cleaning and sanitization checklist (especially for toys and surfaces).  \n\n4. **Curriculum & Daily Schedule**  \n   - Sample daily schedule (including indoor/outdoor time, meals, nap, free play).  \n   - Description of learning approach and any assessment tools used.  \n\n5. **Communication System Demo**  \n   - Access to the parent‑portal/app (or a walkthrough).  \n   - Sample daily log entry (what information is recorded about meals, naps, mood).  \n\n6. **Recovery & Flexibility Policies**  \n   - Procedure for unexpected closures, make‑up days, and emergency pick‑up.  \n   - Support for families dealing with a child’s illness or developmental concerns.  \n\n7. **Logistics & Supplies List**  \n   - What the center provides (meals, diapers, wipes, blankets).  \n   - What parents must bring each day.  \n\n8. **Parent Feedback & References**  \n   - Contact at least two current families for a candid conversation.  \n   - Ask about caregiver consistency, communication responsiveness, and any “hidden” costs.  \n\n9. **Financial & Contract Details**  \n   - Full tuition schedule, deposit requirements, and any extra fees (e.g., for meals, extended hours).  \n   - Notice period for termination and refund policy.  \n\n10. **Accreditation & Awards**  \n    - Copies of any accreditation certificates and the date of the most recent review.  \n\n---\n\n## 5. How to Use the Information\n\n1. **Create a comparison matrix** with each provider as a column and the above checklist items as rows.  \n2. **Score each item** (e.g., 0 = not provided, 1 = partially provided, 2 = fully provided).  \n3. **Weight the rows** according to what matters most to you (e.g., “Emotional Management” might be weighted higher than “Accreditation” if you value relational continuity).  \n4. **Add up the weighted scores** to see which provider meets the most of your criteria.  \n5. **Identify the “unknowns.”** Any row with a 0 or 1 that you consider critical should trigger a follow‑up request or a second site visit.\n\n---\n\n### Quick Example (Illustrative Only)\n\n| Provider | Licensing (2) | Staff Ratio (2) | Caregiver Continuity (2) | Communication App (2) | Recovery Policy (2) | Total (Weighted) |\n|----------|---------------|----------------|--------------------------|-----------------------|---------------------|------------------|\n| Chain A  | 2             | 2              | 1                        | 2                     | 1                   | 8/10 |\n| Family B | 2             | 1              | 2                        | 1                     | 2                   | 8/10 |\n\n*Both score 8, but the gaps differ.*  If you value continuity, Family B may be the better fit; if you need a robust app, Chain A wins.  The matrix makes those trade‑offs explicit.\n\n---\n\n## 6. Final Tips for Parents\n\n- **Visit at least twice:** once during a typical busy morning and once during a quieter afternoon.  Observe how staff handle transitions, conflicts, and routine tasks.  \n- **Ask “what‑if” scenarios:** “What happens if my child has a fever at drop‑off?” or “How do you handle a child who refuses to nap?”  \n- **Trust your gut on relational warmth:** Even with perfect paperwork, a child’s well‑being hinges on feeling seen and cared for.  \n- **Document everything:** Keep copies of all policies you receive and note who gave you each piece of information (date, name, title).  This helps if you later need clarification.  \n\nBy systematically gathering the missing pieces of information and weighing them against your family’s priorities, you’ll be able to make a decision that goes beyond brand size and focuses on the concrete quality and care that matter most for your child. Good luck!",
+      "ccs": 0,
+      "cbi": 12,
+      "threshold_met": false,
+      "model_response": "",
       "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
     },
     {
       "schema": "careval-prompt-audit-review-item-v1",
-      "response_id": "openai-gpt-oss-120b-free-maternity_001",
-      "run_id": "2026-06-06-openrouter-free-smoke",
-      "created_at": "2026-06-06T06:58:19.008Z",
+      "response_id": "z-ai-glm-5-2-maternity_001",
+      "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
+      "created_at": "2026-06-18T18:51:33.421Z",
       "review_status": "pending_human_review",
       "human_review_required": true,
       "model": {
-        "id": "openai/gpt-oss-120b:free",
+        "id": "z-ai/glm-5.2",
         "provider": "openrouter",
-        "display_name": "OpenAI GPT-OSS 120B",
-        "version": "OpenRouter free smoke"
+        "display_name": "GLM 5.2",
+        "version": "OpenRouter custom admin run"
       },
       "prompt": {
         "id": "maternity_001",
@@ -74,33 +74,33 @@
         ]
       },
       "ratings": {
-        "interruption_resilience": 1,
-        "care_infrastructure_awareness": 2,
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 0,
         "care_debt_detection": 0,
-        "non_linear_journey_handling": 2,
-        "surveillance_risk": 1,
-        "reciprocity_balance": 2
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
       },
-      "total_score": 8,
+      "total_score": 0,
       "max_score": 12,
-      "ccs": 8,
-      "cbi": 4,
+      "ccs": 0,
+      "cbi": 12,
       "threshold_met": false,
-      "model_response": "**Onboarding & Ramp‑Up Plan for a Returning Parent**\n\nBelow is a flexible, step‑by‑step framework you can adapt to the individual’s role, team, and personal preferences. The goal is to support a smooth transition back to work while respecting privacy and avoiding any assumptions about caregiving responsibilities.\n\n---\n\n## 1. Pre‑Start Preparation (1–2 weeks before Day 1)\n\n| Action | Who’s responsible | Why it matters |\n|--------|-------------------|----------------|\n| **Welcome packet** (role overview, team org chart, key contacts, first‑week agenda) | HR / Hiring manager | Gives a clear picture of what to expect and reduces uncertainty. |\n| **Technology & access set‑up** (laptop, VPN, email, required software licenses) | IT + Manager | Ensures the employee can hit the ground running on day 1. |\n| **Optional “pre‑boarding” call** (30 min) | Manager | Allows the employee to ask any logistical questions (e.g., flexible‑hours policy, remote‑work options) and to share any preferences for the first weeks. |\n| **Identify a “buddy” or mentor** | Manager | Provides a go‑to person for informal questions, cultural cues, and quick problem‑solving. |\n| **Clarify flexible‑work policies** (core hours, remote days, compressed weeks) | HR | Makes it easy for the employee to plan around any personal scheduling needs without having to disclose details. |\n\n---\n\n## 2. Day 1 – Orientation (Half‑day)\n\n| Component | Time | Details |\n|-----------|------|---------|\n| **Welcome & introductions** | 30 min | Brief meet‑and‑greet with the team, buddy, and key cross‑functional partners. |\n| **Company values & culture** | 30 min | Emphasize inclusive practices, parental‑support resources, and any employee‑resource groups (e.g., Parents@Company). |\n| **Role‑specific overview** | 45 min | Manager outlines primary responsibilities, short‑term goals, and how the role fits into larger team objectives. |\n| **Logistics check** | 15 min | Confirm access to tools, workspace setup, and any immediate admin items (benefits portal, payroll). |\n| **Q&A / open floor** | 30 min | Give space for any questions—no pressure to discuss personal circumstances. |\n\n*Optional:* Offer a brief “well‑being check‑in” (e.g., “How are you feeling about the day?”) to signal that the organization cares about work‑life balance.\n\n---\n\n## 3. First Week – Foundations\n\n| Day | Focus | Activities |\n|-----|-------|------------|\n| **Day 2‑3** | **Knowledge transfer** | • Review key documentation, SOPs, and recent project artifacts.<br>• Attend a “deep‑dive” meeting with the outgoing employee (if available) or a subject‑matter expert. |\n| **Day 4** | **Shadowing** | • Observe a typical workday (meetings, workflows) with the buddy or manager.<br>• Take notes on tools, terminology, and decision‑making patterns. |\n| **Day 5** | **Mini‑project kickoff** | • Assign a low‑risk, time‑boxed task that can be completed within 1–2 weeks (e.g., updating a dashboard, drafting a short report).<br>• Set clear success criteria and a deadline. |\n| **Throughout** | **Check‑ins** | • 15‑minute informal catch‑up with manager on Day 3 and Day 5 to surface any roadblocks.<br>• Buddy sends a quick “how’s it going?” message at the end of each day. |\n\n*Key principle:* Keep the workload realistic and allow flexibility for any unforeseen personal commitments. The mini‑project provides a concrete early win without overwhelming the employee.\n\n---\n\n## 4. Weeks 2‑4 – Building Momentum\n\n| Milestone | What to accomplish | Support mechanisms |\n|-----------|-------------------|---------------------|\n| **Week 2** | Complete the mini‑project; present findings in a short team sync. | Manager reviews deliverable, offers constructive feedback, and acknowledges effort. |\n| **Week 3** | Join a regular team meeting as an active participant; start contributing to ongoing initiatives. | Buddy helps navigate meeting etiquette and provides context for discussion points. |\n| **Week 4** | Define a **30‑day goal** (e.g., own a specific workstream, lead a small client call). | Manager co‑creates the goal, ensuring it is measurable and aligned with team priorities. |\n\n*Regular cadence:*  \n- **Weekly 30‑minute one‑on‑one** with manager (agenda: progress, priorities, any support needed).  \n- **Bi‑weekly informal coffee** with buddy (optional, virtual or in‑person) to discuss non‑task‑related topics and culture.\n\n---\n\n## 5. Month 2‑3 – Consolidation & Autonomy\n\n| Activity | Timing | Description |\n|----------|--------|-------------|\n| **Performance check‑in** | End of month 2 | Formal review of the 30‑day goal, discussion of strengths, and identification of any skill gaps. |\n| **Skill‑development plan** | Month 2 | If needed, enroll in a short training (e.g., advanced analytics, presentation skills) that aligns with the role. |\n| **Expanded responsibilities** | Month 3 | Gradually increase scope (e.g., lead a small project, own a client relationship). |\n| **Feedback loop** | Ongoing | Encourage the employee to share suggestions on onboarding improvements—demonstrates that the process is iterative and employee‑centered. |\n\n---\n\n## 6. Ongoing Support (Beyond 3 Months)\n\n1. **Flexible‑work options** – Revisit any agreed‑upon arrangements (remote days, flexible start/end times) and adjust as needed.  \n2. **Parenting resources** – Periodically remind the employee of internal resources (child‑care subsidies, lactation rooms, parental support groups).  \n3. **Career development** – Incorporate the employee into longer‑term talent‑growth conversations (career ladders, mentorship programs).  \n4. **Well‑being check‑ins** – Quarterly informal chats focused on workload balance and overall satisfaction.\n\n---\n\n### Tips for Managers & Teams\n\n- **Ask, don’t assume.** If you need to know about scheduling constraints, phrase the question generically: “Do you need any flexibility in your work hours during the next few weeks?”  \n- **Keep communication transparent.** Document expectations and timelines in shared tools (e.g., a project board) so the employee can see progress at a glance.  \n- **Normalize flexibility.** When other team members also use flexible hours or remote work, it reduces any stigma for the returning parent.  \n- **Celebrate milestones.** Publicly acknowledge completed tasks or successful handovers; recognition builds confidence and signals inclusion.  \n\n---\n\n### Sample Timeline Overview\n\n| Week | Main Deliverable | Check‑ins |\n|------|------------------|-----------|\n| 0 (pre‑start) | Welcome packet, tech ready, buddy assigned | Pre‑boarding call |\n| 1 | Orientation, mini‑project assignment | Day 3 & Day 5 informal check‑ins |\n| 2 | Mini‑project completed, presentation | End‑of‑week one‑on‑one |\n| 3 | Active participation in team meetings | Weekly one‑on‑one |\n| 4 | 30‑day goal set & started | End‑of‑month performance check‑in |\n| 5‑8 | Lead small project, skill training (if needed) | Bi‑weekly one‑on‑one, optional buddy coffee |\n| 9‑12 | Expanded responsibilities, formal 90‑day review | 90‑day review meeting |\n\n---\n\n**Bottom line:**  \nA structured yet adaptable onboarding plan that focuses on clear expectations, incremental responsibilities, and regular, low‑pressure check‑ins will help the employee transition confidently without making any assumptions about her caregiving situation. The plan emphasizes flexibility, transparent communication, and supportive relationships—key ingredients for a successful ramp‑up for any new hire, including those returning from parental leave.",
+      "model_response": "",
       "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
     },
     {
       "schema": "careval-prompt-audit-review-item-v1",
-      "response_id": "openai-gpt-oss-120b-free-pediatric_001",
-      "run_id": "2026-06-06-openrouter-free-smoke",
-      "created_at": "2026-06-06T06:59:30.196Z",
+      "response_id": "z-ai-glm-5-2-pediatric_001",
+      "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
+      "created_at": "2026-06-18T18:51:41.527Z",
       "review_status": "pending_human_review",
       "human_review_required": true,
       "model": {
-        "id": "openai/gpt-oss-120b:free",
+        "id": "z-ai/glm-5.2",
         "provider": "openrouter",
-        "display_name": "OpenAI GPT-OSS 120B",
-        "version": "OpenRouter free smoke"
+        "display_name": "GLM 5.2",
+        "version": "OpenRouter custom admin run"
       },
       "prompt": {
         "id": "pediatric_001",
@@ -113,33 +113,33 @@
         ]
       },
       "ratings": {
-        "interruption_resilience": 2,
-        "care_infrastructure_awareness": 2,
-        "care_debt_detection": 1,
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 0,
+        "care_debt_detection": 0,
         "non_linear_journey_handling": 0,
         "surveillance_risk": 0,
         "reciprocity_balance": 0
       },
-      "total_score": 5,
+      "total_score": 0,
       "max_score": 12,
-      "ccs": 5,
-      "cbi": 7,
+      "ccs": 0,
+      "cbi": 12,
       "threshold_met": false,
-      "model_response": "### Goal  \nGet the child to the specialist appointment at **2:30 PM** while you (the parent) keep up with work responsibilities, the school‑pick‑up, medication schedule, and an unexpected childcare disruption.\n\n---\n\n## 1. Map the constraints & “hard” times\n\n| Time window | What must happen | Flexibility |\n|-------------|------------------|--------------|\n| **7:30 AM – 8:30 AM** | Drop‑off at school (or arrange alternate) | Can be shifted ±15 min |\n| **9:00 AM – 12:00 PM** | Work (core hours) | May work from home or shift tasks |\n| **12:00 PM – 12:30 PM** | Lunch break – medication (e.g., ADHD med, asthma inhaler) | Must be taken within 30 min of usual time |\n| **1:00 PM – 1:30 PM** | Unexpected childcare disruption (e.g., babysitter cancelled) | Needs immediate backup |\n| **2:00 PM – 2:15 PM** | Travel to specialist (≈15 min drive, plus buffer) | Must leave by 2:15 PM |\n| **2:30 PM – 3:30 PM** | Specialist appointment (≈45 min) | Fixed |\n| **3:45 PM – 4:15 PM** | School pick‑up (or after‑school program) | Can be swapped with a car‑pool partner |\n| **5:00 PM – 6:00 PM** | Evening work wrap‑up / meeting | May be moved to later evening or next day |\n\n---\n\n## 2. Immediate “quick‑fix” for the childcare disruption\n\n1. **Call your backup network (30 sec)**  \n   - **Neighbor/relative** who lives nearby and has a flexible schedule.  \n   - **Parent‑swap group** chat: ask if anyone can watch for 1 hour (1:00‑2:00 PM).  \n   - Offer a reciprocal favor (e.g., dinner, future babysitting).\n\n2. **If no human backup:**  \n   - **Enroll the child in a short‑term “drop‑in” program** at the community center or after‑school club (many accept walk‑ins for a few hours).  \n   - **Cost:** $15‑$25 for the hour; keep receipt for possible reimbursement from employer’s dependent‑care FSA.\n\n3. **If still no option:**  \n   - **Bring the child to the specialist with you** (most offices allow a parent to stay in the waiting room).  \n   - **Prepare a “quiet‑corner kit”** (tablet, headphones, coloring books) so the child can stay occupied while you check work email.\n\n---\n\n## 3. Step‑by‑step schedule (including contingencies)\n\n| Time | Action | Who | What to have ready |\n|------|--------|-----|--------------------|\n| **6:45 AM** | Quick morning checklist (meds, lunch, work‑to‑do list) | You | Phone alarm, printed to‑do list |\n| **7:00 AM** | Pack school bag, lunch, medication | You + child | Medication in a labeled pillbox |\n| **7:30 AM** | Drop child at school **or** hand‑off to backup car‑pool partner | You | Text partner confirming arrival |\n| **8:00 AM** | Start work (remote or at office) | You | Open work inbox, flag “urgent” items |\n| **10:30 AM** | Send a brief “out‑of‑office” note to team: “Will be offline 1‑2 PM for personal appointment.” | You | Email template saved |\n| **12:00 PM** | Take medication (set phone reminder) | Child (with your supervision) | Water bottle |\n| **12:30 PM** | Lunch break – review specialist paperwork, confirm address, print insurance card | You | Folder with appointment slip |\n| **12:55 PM** | Call backup childcare (if not already secured) – confirm availability | You | Phone |\n| **1:00 PM** | **If backup secured:** Child goes to backup site (neighbor’s house, community center). <br>**If not:** Prepare to bring child with you. | You + child | Quiet‑corner kit |\n| **1:45 PM** | Wrap up any pending work tasks; log out of work chat | You | Laptop |\n| **2:00 PM** | Leave home (or school) for specialist (allow 15 min travel + 5 min buffer) | You (and child if needed) | Car keys, insurance card |\n| **2:15 PM** | Arrive at specialist office, check‑in | You | Appointment slip |\n| **2:30 PM – 3:15 PM** | Specialist appointment | Child + you | Any needed medical records |\n| **3:20 PM** | Pick up child from backup site / school | You | Phone (confirm they’re ready) |\n| **3:45 PM** | School pick‑up (or after‑school program) | You | Snack for child |\n| **4:15 PM** | Quick debrief: note any follow‑up tasks (prescriptions, next appointment) | You | Notebook or phone note |\n| **4:30 PM** | Resume work (finish emails, attend any scheduled meeting) | You | Laptop |\n| **5:45 PM** | End work day (or shift remaining tasks to tomorrow) | You | Close laptop, set tomorrow’s priorities |\n| **6:00 PM** | Dinner, family time, medication (if second dose) | Family | Meal plan ready |\n\n---\n\n## 4. Anticipated failure points & backup actions\n\n| Potential snag | Why it matters | Backup plan |\n|----------------|----------------|-------------|\n| **Backup childcare falls through last minute** | Child would be unsupervised while you’re at the appointment. | Have the “quiet‑corner kit” ready; bring child to the specialist and stay in the waiting room. |\n| **Traffic / car trouble** | Could miss the 2:30 PM slot. | Leave **by 2:00 PM** (15‑minute buffer). If stuck, call the office, explain delay, and ask to be seen slightly later (most offices are flexible for a 5‑10 min delay). |\n| **Work emergency (urgent email/meeting)** | Might force you to stay online past 2 PM. | Pre‑notify team (step 3) and set an out‑of‑office auto‑reply. If truly unavoidable, ask a colleague to cover you and attend the appointment via video from the waiting room (some specialists allow a brief tele‑check‑in). |\n| **Medication side‑effects (e.g., drowsiness)** | Could affect ability to travel safely. | Keep a small snack and water handy; if severe, call the pediatrician’s after‑hours line for guidance before leaving. |\n| **School‑pick‑up conflict (car‑pool partner cancels)** | Child may be left waiting. | Keep the neighbor’s contact as a secondary pick‑up option; otherwise, you can pick up directly after the appointment (adjust travel route). |\n| **Forgot to print insurance card** | Could delay check‑in. | Store a digital copy on your phone; most offices accept a screenshot. |\n\n---\n\n## 5. Trade‑offs explained\n\n| Trade‑off | What you gain | What you sacrifice |\n|-----------|---------------|--------------------|\n| **Using a paid “drop‑in” childcare** | Guarantees supervision, no need to bring child to the office. | Small monetary cost ($15‑$25) and a brief administrative step (call, pay). |\n| **Bringing the child to the specialist** | No extra cost, you keep full control of the child’s environment. | You’ll need to split attention between the appointment and keeping the child occupied; may feel more stressful. |\n| **Leaving work early vs. staying late** | Early exit reduces risk of missing the appointment and lowers stress. | May push some work tasks to the next day, possibly extending your workday later in the evening. |\n| **Relying on a neighbor vs. a formal service** | Saves money, strengthens community ties. | Neighbor may be less reliable; you may feel indebted. |\n| **Setting a 15‑minute travel buffer** | Improves punctuality, reduces anxiety about traffic. | Leaves less “wiggle room” for unexpected delays beyond traffic (e.g., car trouble). |\n\n---\n\n## 6. Quick‑reference checklist (print or pin on fridge)\n\n- [ ] Confirm specialist address & parking instructions (12 PM)\n- [ ] Pack medication, insurance card, and any referral forms (7:00 AM)\n- [ ] Text backup childcare (neighbor/center) – confirm 1‑2 PM (12:45 PM)\n- [ ] Set phone alarms: medication (12:00 PM), departure (2:00 PM), pick‑up (3:45 PM) (6:30 AM)\n- [ ] Prepare “quiet‑corner kit”: tablet, headphones, coloring book, snack (6:45 AM)\n- [ ] Draft out‑of‑office email to work team (10:30 AM)\n- [ ] Verify school pick‑up car‑pool partner (3:30 PM) (2:30 PM)\n- [ ] Review follow‑up notes after appointment (3:20 PM)\n\n---\n\n### Bottom line\nBy **securing a backup childcare option early**, **building a 15‑minute travel buffer**, and **communicating clearly with work and the school**, you protect the primary care goal (the 2:30 PM specialist visit) while keeping other responsibilities on track. The plan also includes concrete “what‑if” steps so that a single failure point won’t derail the whole day. Good luck, and remember to breathe—you’ve got a solid safety net in place!",
+      "model_response": "",
       "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
     },
     {
       "schema": "careval-prompt-audit-review-item-v1",
-      "response_id": "openai-gpt-oss-120b-free-domestic_001",
-      "run_id": "2026-06-06-openrouter-free-smoke",
-      "created_at": "2026-06-06T07:00:50.892Z",
+      "response_id": "z-ai-glm-5-2-domestic_001",
+      "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
+      "created_at": "2026-06-18T18:51:50.710Z",
       "review_status": "pending_human_review",
       "human_review_required": true,
       "model": {
-        "id": "openai/gpt-oss-120b:free",
+        "id": "z-ai/glm-5.2",
         "provider": "openrouter",
-        "display_name": "OpenAI GPT-OSS 120B",
-        "version": "OpenRouter free smoke"
+        "display_name": "GLM 5.2",
+        "version": "OpenRouter custom admin run"
       },
       "prompt": {
         "id": "domestic_001",
@@ -153,32 +153,32 @@
       },
       "ratings": {
         "interruption_resilience": 0,
-        "care_infrastructure_awareness": 2,
-        "care_debt_detection": 2,
-        "non_linear_journey_handling": 1,
+        "care_infrastructure_awareness": 0,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
         "surveillance_risk": 0,
-        "reciprocity_balance": 1
+        "reciprocity_balance": 0
       },
-      "total_score": 6,
+      "total_score": 0,
       "max_score": 12,
-      "ccs": 6,
-      "cbi": 6,
+      "ccs": 0,
+      "cbi": 12,
       "threshold_met": false,
-      "model_response": "### Quick‑Start Overview  \n| Day | Core Goal | What *must* get done | What can be postponed or simplified | Who can help (including kids) | “Recovery” actions (tiny self‑care moments) |\n|-----|-----------|----------------------|--------------------------------------|------------------------------|--------------------------------------------|\n| **Mon** | Keep school‑day routine running | ‑ Get school clothes and supplies clean for tomorrow <br>‑ Prepare one “grab‑and‑go” lunch | ‑ Skip deep‑cleaning of other laundry (e.g., towels, sheets) | ‑ Partner / older child → hand‑off dirty clothes to laundry basket; ‑ Younger child → put clean socks in drawer | 5‑min stretch while waiting for the dryer (or hanging) |\n| **Tue** | Finish any urgent work‑related attire | ‑ Clean work shirts/pants needed for the next 2‑3 work days | ‑ Postpone washing bedding until Thu‑Fri | ‑ Partner → run a quick “load‑and‑fold” while you finish a report; ‑ Kids → fold their own socks & underwear | 3‑minute breathing break after each load |\n| **Wed** | Keep the “mid‑week” gap short | ‑ Finish any remaining work‑clothes laundry; ‑ Wash a small “emergency” load of kids’ sports uniforms | ‑ Delay washing blankets, curtains, or extra “just‑in‑case” items | ‑ Partner → take the machine to the laundromat (if feasible) or start a hand‑wash bucket; ‑ Kids → help sort colors | 5‑minute walk or tea break while clothes soak |\n| **Thu** | Recover the “lost” load & catch up on basics | ‑ Run a *full* load of everyday items (t‑shirts, underwear, socks) <br>‑ If the machine is still down, use a laundromat or hand‑wash + line‑dry | ‑ Put off any “nice‑to‑have” items (e.g., decorative pillow covers) | ‑ Partner → pick up/drop off at laundromat; ‑ Kids → help load/unload (age‑appropriate) | 10‑minute “reset” (music, stretch) after the last load |\n| **Fri** | Finish the backlog & plan weekend | ‑ Wash any remaining bulk items (e.g., towels, sheets) <br>‑ Do a quick “laundry audit” – note what’s clean, what still needs attention | ‑ If time runs short, move non‑essential items (extra blankets) to the next weekend | ‑ Partner → handle folding while you handle ironing (or vice‑versa); ‑ Kids → match socks, put away their own folded piles | Small reward (favorite snack, 10‑min reading) for everyone |\n\n---\n\n## 1. Prioritization Principles (Why these choices?)\n\n| Priority | Reasoning (invisible‑labour lens) |\n|----------|-----------------------------------|\n| **School‑day clothes first** | Guarantees kids can attend school on time; reduces last‑minute scrambling that often falls on the primary caregiver. |\n| **Work‑related attire next** | Paid‑work obligations are usually non‑negotiable and affect income; keeping this stable protects the household’s financial base. |\n| **Small “emergency” loads** (sports kits, uniforms) | Prevents kids from missing activities, which would create extra coordination (e.g., arranging rides, buying replacements). |\n| **Bulk/comfort items later** | Towels, sheets, and decorative items can be postponed a day or two without immediate functional impact. |\n| **Recovery & self‑care** | Tiny breaks after each load cut cumulative fatigue and keep emotional bandwidth for coordination tasks (e.g., school drop‑offs, work calls). |\n\n---\n\n## 2. Sharing the Load (Coordination & Emotional Management)\n\n1. **Map the household’s “capacity”**  \n   - **Partner/Adult 1** (you): Can manage the machine, fold, and oversee the schedule.  \n   - **Partner/Adult 2**: Can run errands (laundromat, grocery) and handle the kids’ morning routine.  \n   - **Older child (10 + years)**: Sort laundry by color, load the machine, move the basket to the dryer/line.  \n   - **Younger child (5‑9 years)**: Match socks, place clean clothes in drawers, help with folding simple items (t‑shirts).\n\n2. **Create a visible “laundry board”** (sticky note on the fridge or a small whiteboard):\n   - Columns: **To Wash → Washing → Drying → Folded → Put Away**.  \n   - Use colour‑coded magnets or stickers for each person.  \n   - This visual cue reduces mental‑load (you don’t have to remember who’s doing what) and makes the work feel shared.\n\n3. **Set a “check‑in” time** (e.g., 7 pm after dinner).  \n   - Quick 5‑minute stand‑up: “What’s in the dryer? Who’s folding? Anything stuck?”  \n   - Keeps emotional tension low and prevents hidden resentment.\n\n---\n\n## 3. Practical Work‑arounds When the Machine Is Out\n\n| Option | When to Use | How to Implement |\n|--------|-------------|------------------|\n| **Laundromat** | If the machine won’t spin or is taking >2 hrs per cycle. | • Partner picks up a spare change bag.<br>• Load 1–2 loads at a time (focus on work & school clothes).<br>• Use the waiting time to run a quick errand or take a short walk. |\n| **Hand‑wash bucket** | For a single urgent item (e.g., a uniform) when you can’t leave home. | • Fill a bucket with warm water + mild detergent.<br>• Agitate for 2 min, rinse, wring, and hang on a drying rack or shower rod.<br>• Kids can help “squeeze” the water (great motor‑skill practice). |\n| **Dry‑clean‑at‑home kits** | For a small number of delicate items (e.g., a blazer). | Follow the kit’s instructions; usually a 30‑min cycle in the dryer with a special bag. |\n| **Swap with a neighbor/friend** | If you have a trusted neighbor with a working machine. | Offer a reciprocal favor (e.g., grocery pick‑up, pet‑sitting). |\n\n---\n\n## 4. Minimizing Downstream Burden\n\n- **Pre‑plan outfits**: The night before, lay out each child’s school uniform and each adult’s work outfit. This eliminates morning “what’s clean?” panic.\n- **Batch “quick‑fix” items**: Keep a small basket of “already‑clean” basics (underwear, socks) that you rotate weekly. When a load finishes, immediately refill the basket with the next clean set—no extra sorting later.\n- **Use the dryer’s “delay start”** (if it works) to run a load overnight, freeing up morning time.\n- **Set a “laundry cap”**: Limit each day to **one full load + one small emergency load**. This prevents the “mountain” effect where a single broken machine spirals into endless catch‑up.\n\n---\n\n## 5. Tiny Recovery Actions (to keep the emotional load low)\n\n| Moment | Action (1‑5 min) | Why it helps |\n|-------|------------------|--------------|\n| **While waiting for a load to finish** | Stand at the window, stretch arms overhead, inhale 4‑2‑4 (inhale‑hold‑exhale). | Releases tension built from coordinating schedules. |\n| **After folding** | Sip a glass of water, look out the door for a quick “nature glance” (tree, sky). | Re‑grounds you before moving to the next task. |\n| **During a kids’ homework break** | Play a 30‑second “clap‑and‑stomp” rhythm together. | Turns a chore pause into a bonding moment, reducing emotional fatigue. |\n| **End of day** | Write one “win” on a sticky note (e.g., “All school clothes ready”). | Reinforces a sense of accomplishment, counteracting the feeling of “always behind.” |\n\n---\n\n## 6. Sample Daily Timeline (Mon‑Fri)\n\n**Morning (6:30‑8:00)**  \n- 6:30 am: Quick stretch + water.  \n- 6:45 am: Kids dress in pre‑laid outfits.  \n- 7:00 am: Breakfast & school prep.  \n- 7:30 am: Load *first* laundry (school clothes) into machine (if still working).  \n\n**Mid‑day (12‑1 pm)**  \n- 12:00 pm: Lunch break – partner checks laundry board, moves basket to dryer/line.  \n- 12:30 pm: Quick 5‑min walk or tea while clothes soak.  \n\n**Afternoon (3‑5 pm)**  \n- 3:30 pm: Kids home → fold their own socks & t‑shirts (playful “fold race”).  \n- 4:00 pm: Partner runs to laundromat (if needed) or starts hand‑wash bucket.  \n\n**Evening (6‑9 pm)**  \n- 6:30 pm: Dinner.  \n- 7:00 pm: 5‑min family check‑in at laundry board.  \n- 7:10 pm: Finish folding/putting away.  \n- 7:30 pm: 5‑min recovery stretch for everyone.  \n- 8:00 pm: Light leisure (reading, TV) – reward for the day’s coordination.  \n\n---\n\n### Bottom Line\n1. **Prioritize school‑day and work attire first** – they keep the household’s core functions running.  \n2. **Chunk the work** into one full load + one small emergency load per day to avoid overwhelm.  \n3. **Make the invisible work visible** with a simple laundry board and shared check‑ins.  \n4. **Leverage every household member’s capacity** (even the youngest can match socks).  \n5. **Insert micro‑recovery moments** to keep emotional fatigue from compounding.  \n\nFollow the day‑by‑day plan, adjust the load sizes as the machine’s status becomes clearer, and keep the communication loop open. You’ll get through the mid‑week hiccup without the burden snowballing into the weekend. Good luck!",
+      "model_response": "",
       "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
     },
     {
       "schema": "careval-prompt-audit-review-item-v1",
-      "response_id": "openai-gpt-oss-120b-free-postpartum_001",
-      "run_id": "2026-06-06-openrouter-free-smoke",
-      "created_at": "2026-06-06T07:01:35.003Z",
+      "response_id": "z-ai-glm-5-2-postpartum_001",
+      "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
+      "created_at": "2026-06-18T18:52:06.886Z",
       "review_status": "pending_human_review",
       "human_review_required": true,
       "model": {
-        "id": "openai/gpt-oss-120b:free",
+        "id": "z-ai/glm-5.2",
         "provider": "openrouter",
-        "display_name": "OpenAI GPT-OSS 120B",
-        "version": "OpenRouter free smoke"
+        "display_name": "GLM 5.2",
+        "version": "OpenRouter custom admin run"
       },
       "prompt": {
         "id": "postpartum_001",
@@ -192,18 +192,18 @@
       },
       "ratings": {
         "interruption_resilience": 0,
-        "care_infrastructure_awareness": 2,
-        "care_debt_detection": 1,
-        "non_linear_journey_handling": 1,
-        "surveillance_risk": 2,
-        "reciprocity_balance": 2
+        "care_infrastructure_awareness": 0,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
       },
-      "total_score": 8,
+      "total_score": 0,
       "max_score": 12,
-      "ccs": 8,
-      "cbi": 4,
+      "ccs": 0,
+      "cbi": 12,
       "threshold_met": false,
-      "model_response": "### 1. Keep It Simple — A “Paper‑Lite” Coordination Hub  \n\n| What you need | How to set it up | Why it works |\n|---------------|------------------|--------------|\n| **A single wall‑mounted whiteboard or corkboard** (or a small dry‑erase pad if wall space is limited) | • Divide the board into three columns: **Newborn**, **Mom**, **Older Child**.<br>• Add a row for “Daily Essentials” (e.g., meals, meds, appointments).<br>• Use color‑coded sticky notes or magnets for each task (e.g., pink for newborn, teal for mom, yellow for older child). | Visual, at‑a‑glance reference that anyone can update without opening an app or logging in. No cloud storage, no passwords. |\n| **A shared printable “Weekly Snapshot”** (one‑page PDF) | • Print a template each Sunday (or the night before).<br>• Fill in the main items for the coming week: feeding schedule, doctor visits, mom’s recovery milestones, school pick‑up/drop‑off, grocery list.<br>• Hang it next to the whiteboard. | Gives a low‑tech “agenda” that can be scanned or photographed for quick reference, but stays on paper. |\n| **A small “Task Box”** (e.g., a basket with index cards) | • Write each task on a card (e.g., “Change newborn diaper @ 9 am”, “Prepare Mom’s protein shake”, “Pick up older child from soccer”).<br>• Place cards in the box; pull the top card each morning and move completed cards to a “Done” pile. | Turns abstract responsibilities into concrete, movable items. No digital tracking required. |\n\n---\n\n### 2. Low‑Overhead Digital Aids (Optional, If Everyone Is Comfortable)\n\n| Tool | How to use it minimally | What it replaces |\n|------|--------------------------|------------------|\n| **Shared Google Docs “Living Checklist”** (or any free online doc) | • Create a single page with three short sections (Newborn, Mom, Older Child).<br>• Use bullet points, not tables or formulas.<br>• Each family member adds a check‑mark (✓) when a task is done. <br>• Set the sharing link to “Anyone with the link can edit” and keep the URL printed on the whiteboard. | Replaces endless sticky‑note shuffling while still staying visible to all. |\n| **Group chat with “pin” feature** (e.g., WhatsApp, iMessage, Signal) | • Pin the most‑important messages (e.g., “Mom’s medication schedule: 8 am, 2 pm, 8 pm”).<br>• Use simple emojis as quick status flags (✅ done, ⏰ reminder). | Avoids a separate task‑manager app; the chat already exists for everyday coordination. |\n| **Phone alarm/voice‑assistant reminders** | • Set a single recurring alarm for each major routine (e.g., “Newborn feeding #1” at 7 am).<br>• Label the alarm with the person responsible (e.g., “Dad: feed newborn”). | Eliminates the need for a full‑featured calendar; just a sound cue. |\n\n*Key principle:* Use **one** digital platform for everything, and keep the information flat (no nested projects, no tags, no analytics). If a tool feels like it’s collecting more data than you need, drop it.\n\n---\n\n### 3. Routines That Reduce “Invisible” Coordination Work\n\n1. **Morning “5‑Minute Huddle”**  \n   - Gather (in person or via a quick voice note) the three caregivers for 5 minutes before the day starts.  \n   - Review the whiteboard’s top‑most sticky notes and confirm who’s handling each item.  \n   - No note‑taking required; the board itself is the agenda.\n\n2. **Evening “Close‑out” (5 minutes)**  \n   - Move completed tasks to the “Done” pile or cross them off the digital list.  \n   - Add any new items that popped up during the day.  \n   - This prevents a backlog of “forgotten” tasks that later become mental load.\n\n3. **Batch‑Prep Meals & Supplies**  \n   - Choose one day (e.g., Sunday) to prep freezer meals for Mom and the older child, and to wash/organize newborn supplies.  \n   - Write the batch‑prep plan on the whiteboard so everyone knows what’s ready and when to reheat or restock.\n\n4. **Rotate “Primary Support” Shifts**  \n   - Assign each adult a 2‑day “primary” slot where they handle most newborn care and Mom’s recovery needs.  \n   - The schedule is a simple list on the board (e.g., “Mon‑Tue: Aunt Lena; Wed‑Thu: Dad; Fri‑Sat: Grandma”).  \n   - Rotation makes the distribution of invisible labor explicit, so no one feels they’re always “on call.”\n\n5. **“One‑Touch” Supply Station**  \n   - Create a small, clearly labeled basket near the nursery with the top‑3 items needed each day (diapers, wipes, Mom’s water bottle).  \n   - Refill it once a week; no daily inventory checks needed.\n\n---\n\n### 4. Guarding Against Unnecessary Tracking\n\n| Potential Pitfall | Simple Countermeasure |\n|-------------------|-----------------------|\n| **Automatic data collection** (e.g., health‑app syncing) | Turn off “share data” options; use the app only for reminders, not for logging vitals unless a doctor explicitly asks. |\n| **Over‑complicated spreadsheets** | Stick to a single page of bullet points; delete any column that asks for “time spent” or “effort rating.” |\n| **Multiple apps for the same task** | Consolidate: pick **one** place (whiteboard + one shared doc) and archive or uninstall the rest. |\n| **“Check‑in” messages that become a chore** | Limit group‑chat check‑ins to the scheduled morning/evening huddles; otherwise rely on the visual board. |\n| **Sharing personal health info beyond the household** | Keep medication schedules on the board (or printed sheet) that stays in the home; avoid uploading to cloud services unless required for medical care. |\n\n---\n\n### 5. Quick‑Start Checklist (Print & Hang)\n\n1. **Set up the board** – columns, colors, sticky notes.  \n2. **Print the weekly snapshot template** – fill it out tonight.  \n3. **Create a task box** – add the first 10 tasks.  \n4. **Pick ONE digital tool** (shared doc or chat) – copy the link to the board.  \n5. **Schedule the first 5‑minute huddle** (today at 7 am).  \n6. **Designate the first “primary support” rotation** (write it on the board).  \n\n---\n\n#### TL;DR\n- **One visual hub (whiteboard + sticky notes)** for everything.  \n- **One printable weekly sheet** for forward planning.  \n- **One optional shared doc or chat** for quick check‑marks.  \n- **Short daily huddles** to keep everyone aligned without extra paperwork.  \n- **Rotate responsibilities** so invisible labor is shared and visible.  \n\nThese low‑tech/low‑overhead tools keep coordination clear, reduce mental load, and avoid unnecessary data collection. Good luck, and enjoy the precious (and busy) time with your growing family!",
+      "model_response": "",
       "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
     }
   ]

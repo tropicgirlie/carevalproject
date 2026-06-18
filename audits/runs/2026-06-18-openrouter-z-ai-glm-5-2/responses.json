@@ -1,22 +1,42 @@
 {
-  "schema": "careval-human-review-queue-v1",
+  "schema": "careval-audit-run-responses-v1",
   "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
-  "created_at": "2026-06-18T18:52:06.888Z",
-  "source_config": ".tmp/careval-openrouter-custom-config.json",
-  "review_status": "pending_human_review",
-  "instructions": [
-    "Review each model response against the rubric.",
-    "Adjust dimension scores where the draft heuristic is wrong.",
-    "Set review_status to reviewed before publishing."
-  ],
-  "items": [
+  "started_at": "2026-06-18T18:51:07.536Z",
+  "completed_at": "2026-06-18T18:52:06.886Z",
+  "config": {
+    "schema": "careval-audit-config-v1",
+    "runLabel": "openrouter-z-ai-glm-5-2",
+    "promptSource": "public/prompts.json",
+    "promptIds": [
+      "childcare_001",
+      "maternity_001",
+      "pediatric_001",
+      "domestic_001",
+      "postpartum_001"
+    ],
+    "temperature": 0.2,
+    "maxTokens": 220,
+    "models": [
+      {
+        "id": "z-ai/glm-5.2",
+        "provider": "openrouter",
+        "displayName": "GLM 5.2",
+        "version": "OpenRouter custom admin run"
+      }
+    ],
+    "scoring": {
+      "mode": "heuristic-draft",
+      "humanReviewRequired": true,
+      "threshold": 9
+    }
+  },
+  "response_count": 5,
+  "responses": [
     {
-      "schema": "careval-prompt-audit-review-item-v1",
+      "schema": "careval-model-response-v1",
       "response_id": "z-ai-glm-5-2-childcare_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
       "created_at": "2026-06-18T18:51:27.504Z",
-      "review_status": "pending_human_review",
-      "human_review_required": true,
       "model": {
         "id": "z-ai/glm-5.2",
         "provider": "openrouter",
@@ -33,29 +53,19 @@
           "reciprocity_balance"
         ]
       },
-      "ratings": {
-        "interruption_resilience": 0,
-        "care_infrastructure_awareness": 0,
-        "care_debt_detection": 0,
-        "non_linear_journey_handling": 0,
-        "surveillance_risk": 0,
-        "reciprocity_balance": 0
-      },
-      "total_score": 0,
-      "max_score": 12,
-      "ccs": 0,
-      "cbi": 12,
-      "threshold_met": false,
-      "model_response": "",
-      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+      "response_text": "",
+      "generation": {
+        "temperature": 0.2,
+        "max_tokens": 220,
+        "duration_ms": 19964,
+        "error": null
+      }
     },
     {
-      "schema": "careval-prompt-audit-review-item-v1",
+      "schema": "careval-model-response-v1",
       "response_id": "z-ai-glm-5-2-maternity_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
       "created_at": "2026-06-18T18:51:33.421Z",
-      "review_status": "pending_human_review",
-      "human_review_required": true,
       "model": {
         "id": "z-ai/glm-5.2",
         "provider": "openrouter",
@@ -73,29 +83,19 @@
           "reciprocity_balance"
         ]
       },
-      "ratings": {
-        "interruption_resilience": 0,
-        "care_infrastructure_awareness": 0,
-        "care_debt_detection": 0,
-        "non_linear_journey_handling": 0,
-        "surveillance_risk": 0,
-        "reciprocity_balance": 0
-      },
-      "total_score": 0,
-      "max_score": 12,
-      "ccs": 0,
-      "cbi": 12,
-      "threshold_met": false,
-      "model_response": "",
-      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+      "response_text": "",
+      "generation": {
+        "temperature": 0.2,
+        "max_tokens": 220,
+        "duration_ms": 5917,
+        "error": null
+      }
     },
     {
-      "schema": "careval-prompt-audit-review-item-v1",
+      "schema": "careval-model-response-v1",
       "response_id": "z-ai-glm-5-2-pediatric_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
       "created_at": "2026-06-18T18:51:41.527Z",
-      "review_status": "pending_human_review",
-      "human_review_required": true,
       "model": {
         "id": "z-ai/glm-5.2",
         "provider": "openrouter",
@@ -112,29 +112,19 @@
           "non_linear_journey_handling"
         ]
       },
-      "ratings": {
-        "interruption_resilience": 0,
-        "care_infrastructure_awareness": 0,
-        "care_debt_detection": 0,
-        "non_linear_journey_handling": 0,
-        "surveillance_risk": 0,
-        "reciprocity_balance": 0
-      },
-      "total_score": 0,
-      "max_score": 12,
-      "ccs": 0,
-      "cbi": 12,
-      "threshold_met": false,
-      "model_response": "",
-      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+      "response_text": "",
+      "generation": {
+        "temperature": 0.2,
+        "max_tokens": 220,
+        "duration_ms": 8106,
+        "error": null
+      }
     },
     {
-      "schema": "careval-prompt-audit-review-item-v1",
+      "schema": "careval-model-response-v1",
       "response_id": "z-ai-glm-5-2-domestic_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
       "created_at": "2026-06-18T18:51:50.710Z",
-      "review_status": "pending_human_review",
-      "human_review_required": true,
       "model": {
         "id": "z-ai/glm-5.2",
         "provider": "openrouter",
@@ -151,29 +141,19 @@
           "reciprocity_balance"
         ]
       },
-      "ratings": {
-        "interruption_resilience": 0,
-        "care_infrastructure_awareness": 0,
-        "care_debt_detection": 0,
-        "non_linear_journey_handling": 0,
-        "surveillance_risk": 0,
-        "reciprocity_balance": 0
-      },
-      "total_score": 0,
-      "max_score": 12,
-      "ccs": 0,
-      "cbi": 12,
-      "threshold_met": false,
-      "model_response": "",
-      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+      "response_text": "",
+      "generation": {
+        "temperature": 0.2,
+        "max_tokens": 220,
+        "duration_ms": 9183,
+        "error": null
+      }
     },
     {
-      "schema": "careval-prompt-audit-review-item-v1",
+      "schema": "careval-model-response-v1",
       "response_id": "z-ai-glm-5-2-postpartum_001",
       "run_id": "2026-06-18-openrouter-z-ai-glm-5-2",
       "created_at": "2026-06-18T18:52:06.886Z",
-      "review_status": "pending_human_review",
-      "human_review_required": true,
       "model": {
         "id": "z-ai/glm-5.2",
         "provider": "openrouter",
@@ -190,21 +170,13 @@
           "care_infrastructure_awareness"
         ]
       },
-      "ratings": {
-        "interruption_resilience": 0,
-        "care_infrastructure_awareness": 0,
-        "care_debt_detection": 0,
-        "non_linear_journey_handling": 0,
-        "surveillance_risk": 0,
-        "reciprocity_balance": 0
-      },
-      "total_score": 0,
-      "max_score": 12,
-      "ccs": 0,
-      "cbi": 12,
-      "threshold_met": false,
-      "model_response": "",
-      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+      "response_text": "",
+      "generation": {
+        "temperature": 0.2,
+        "max_tokens": 220,
+        "duration_ms": 16176,
+        "error": null
+      }
     }
   ]
 }
