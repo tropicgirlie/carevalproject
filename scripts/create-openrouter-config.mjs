@@ -13,6 +13,11 @@ const config = await readJson(templatePath);
 const outputPath = '.tmp/careval-openrouter-custom-config.json';
 
 config.runLabel = `openrouter-${slugify(id)}`;
+config.maxTokens = Math.max(Number(config.maxTokens ?? 0), 700);
+config.reasoning = {
+  effort: 'low',
+  exclude: true,
+};
 config.models = [
   {
     id,

@@ -27,6 +27,9 @@ for (const model of config.models) {
     let generationError = null;
     try {
       responseText = await callModel(model, prompt, config);
+      if (!responseText.trim()) {
+        throw new Error('Model returned an empty response.');
+      }
     } catch (error) {
       generationError = error instanceof Error ? error.message : 'Unknown model call failure';
     }

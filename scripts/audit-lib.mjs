@@ -178,12 +178,18 @@ async function callOpenRouter(model, prompt, config) {
         messages: [{ role: 'user', content: buildAuditPrompt(prompt) }],
         temperature: config.temperature ?? 0.2,
         max_tokens: config.maxTokens ?? 700,
+        ...(config.reasoning ? { reasoning: config.reasoning } : {}),
       }),
     });
 
     if (response.ok) {
       const data = await response.json();
-      return data.choices?.[0]?.message?.content ?? '';
+      const message = data.choices?.[0]?.message;
+      if (typeof message?.content === 'string') return message.content;
+      if (Array.isArray(message?.content)) {
+        return message.content.map((part) => part.text ?? part.content ?? '').join('\n');
+      }
+      return message?.reasoning ?? data.choices?.[0]?.text ?? '';
     }
 
     const body = await response.text();
