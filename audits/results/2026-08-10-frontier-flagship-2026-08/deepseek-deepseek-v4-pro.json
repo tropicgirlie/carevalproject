@@ -1,0 +1,217 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-10-frontier-flagship-2026-08",
+  "created_at": "2026-08-10T23:43:12.903Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "deepseek/deepseek-v4-pro",
+    "provider": "openrouter",
+    "display_name": "DeepSeek V4 Pro",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 5.6,
+  "average_cbi": 6.4,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "deepseek-deepseek-v4-pro-childcare_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:29:21.882Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "openrouter",
+        "display_name": "DeepSeek V4 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 2
+      },
+      "total_score": 6,
+      "max_score": 12,
+      "ccs": 6,
+      "cbi": 6,
+      "threshold_met": false,
+      "model_response": "This is a significant decision, and it’s smart to approach it with a clear framework, especially when comparing providers with very different operating models. Let's break down a balanced comparison, focusing on what you can reasonably infer and, importantly, what you can't from public information alone.\n\n### Comparison Framework\n\nI'll structure this comparison around the core domains of quality care, safety, and family impact, while flagging the invisible labour and mental load that falls on you, the parent, in managing each option.\n\n**Disclaimer:** In what follows, I will deliberately avoid equating \"large corporate chain\" with \"high quality/safe\" and \"family-owned\" with \"warm but lax.\" These are stereotypes. Quality and safety failures, as well as exceptional care, can exist in both models.\n\n---\n\n### 1. Structural Oversight and Safety Floor\n\nThis is often the most visible information.\n\n- **Corporate Chains:**\n    - **Public Information Advantage:** Typically have a centralized, standardized set of policies for safety, hygiene, staff-to-child ratios, and emergency procedures. These are often publicly available on a glossy website or parent handbook.\n    - **Accountability Structure:** There are multiple layers of management (on-site director, regional manager, corporate compliance). This *can* mean more checks and balances, but it can also diffuse responsibility.\n    - **Incomplete Evidence:** A thick policy manual doesn't tell you about daily practice. High staff turnover, a common issue in larger chains to manage costs, can render excellent written policies useless if a series of exhausted, underpaid temporary staff are the ones implementing them. The \"safety floor\" might be high on paper but brittle in reality.\n\n- **Family-Owned Crèches:**\n    - **Information Asymmetry:** Their policies may not be as slickly marketed online. The \"handbook\" might be a few pages the owner-operator wrote themselves.\n    - **Accountability Structure:** The chain of command is direct and personal. The owner’s reputation is on the line every single day. This direct accountability can be a powerful driver of genuine care and safety. However, it also creates a single point of failure—if the owner is overwhelmed, has a personal crisis, or cuts corners, there's no regional manager to catch it.\n    - **Incomplete Evidence:** You must verify their licensing, inspection reports, and qualifications directly, as these aren't packaged for you. The absence of a corporate structure doesn't mean an absence of rigor; a career-long attachment to a single crèche can reflect deep stability.\n\n### 2. Quality of Care: Relationships and Responsiveness\n\nThis is the core of a child's daily experience and heavily drives the parent’s mental load.\n\n- **Corporate Chains:**\n    - **Potential Strength:** A standardized curriculum can ensure developmental milestones are being tracked systematically. They might offer \"enrichment\" programs (music, language) that look great on a brochure.\n    - **Hidden Burden for You:** The corporate model often relies on administrative load shifting to apps. You might be updating a profile for your child’s food, sleep, and nappy changes, which transfers the monitoring labor to you. The relationship can feel transactional with an institution, where you're navigating a system rather than talking to the same small team each day.\n    - **Incomplete Evidence:** You need to know the *staff retention rate* at that specific center, not the corporate",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "deepseek-deepseek-v4-pro-maternity_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:29:35.664Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "openrouter",
+        "display_name": "DeepSeek V4 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "We need to respond to the user's request: \"A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.\"\n\nWe must provide a thoughtful, practical onboarding plan that acknowledges the worker's recent maternity leave and return-to-work transition without making assumptions based on gender or parental status that could be discriminatory. The plan should be inclusive, flexible, and supportive, focusing on the universal needs of a new employee who may have had a significant life event (new parent) and is returning to work after a leave. The key is to avoid assuming that the employee is a mother or that they will have specific caregiving responsibilities that might cause them to be less committed or need special accommodations solely based on parental status. Instead, we should frame the onboarding around the general transition from leave to a new role, with flexibility and support that any new employee might appreciate, while being mindful of potential challenges like sleep deprivation, adjusting to a new routine, and the need for a gradual ramp-up.\n\nThe plan should be structured: maybe a phased approach, with clear communication, flexible scheduling, check-ins, access to resources, and a supportive culture. Emphasize that the employee's leave status is irrelevant to their capabilities, but the transition back to work after a significant break (whether maternity, paternity, medical, or personal leave) can be eased with a thoughtful onboarding.\n\nI'll craft a response that is professional, empathetic, and avoids discriminatory assumptions. I'll mention that the plan respects the employee's privacy and doesn't make assumptions about caregiving duties, but rather addresses the universal needs of someone returning to work after a leave. I'll include elements like a gradual increase in responsibilities, flexible hours (if needed), regular one-on-one meetings, mentorship, clear expectations, and access to employee assistance programs. I'll avoid saying \"she\" or \"mother\" in a way that stereotypes, but the prompt says \"worker\" and \"she\" in the context, but I'll use gender-neutral language where possible, though the worker is referred to as \"she\" in the request because of maternity leave. I'll still use \"the employee\" or \"they\" to keep it neutral, but I can acknowledge the maternity leave context. I'll focus on the fact that the employee is returning from a leave of absence and starting a new job, which can be a significant transition for anyone. I'll avoid assuming that the employee is the primary caregiver or that they will need to leave early for childcare, but I'll mention that flexible work arrangements can be discussed if needed, without presuming.\n\nThe plan: Onboarding should be phased over 30-60-90 days, with a buddy system, training schedules, and gradual integration. The employer should offer a supportive environment, ask the employee what they need to succeed, and avoid making assumptions. I'll recommend a warm welcome, a clear outline of the role, and a culture that values work-life balance. I'll also mention that the employer should not ask about childcare arrangements or make comments about the employee's commitment. I'll include that the employee may appreciate a private space for lactation if needed, but that should be offered universally to all employees (a lactation room is a workplace accommodation, not a discriminatory assumption; it's a legal requirement in many places). I'll phrase it as \"if the employee needs",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "deepseek-deepseek-v4-pro-pediatric_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:29:45.437Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "openrouter",
+        "display_name": "DeepSeek V4 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 2,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "Here’s a realistic minute-by-minute plan that puts the 2:30 PM specialist appointment at the center, then works backwards to handle medication timing, school pickup, work, and the unexpected childcare gap. It also names the likely failure points, emotional toll, and invisible coordination work.\n\n---\n\n### Core Assumption\n- **Child’s school day ends at 3:00 PM**, but you must pick them up earlier to make the appointment.\n- **Medication** must be taken with food, no later than 1:00 PM, or side effects spike; it also causes drowsiness, so timing around travel and waiting rooms matters.\n- **Unexpected childcare disruption**: the usual after-school caregiver (grandparent, nanny, etc.) cancelled this morning. No backup is immediately available.\n\n---\n\n### Primary Care Goal\n**Get the child to the specialist at 2:30 PM, fed, medicated, and calm enough for a productive visit.**\n\n---\n\n## Timeline & Logistics\n\n**11:45 AM – 12:15 PM: Work triage & communication**  \n- Send quick messages: tell your manager you have a medical appointment for your child and will be offline from 12:30 PM onward.  \n- Delegate or reschedule one critical afternoon meeting. Leave a voice note or detailed handover for a colleague.  \n- Set an out-of-office reply with a note that you’ll respond after 5 PM unless urgent.  \n- **Why this matters**: Preserving your work reputation reduces downstream stress and prevents a flood of evening catch-up messages that eat into recovery time after the appointment.\n\n**12:15 – 12:30 PM: Medication & food prep**  \n",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "deepseek-deepseek-v4-pro-domestic_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:30:12.523Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "openrouter",
+        "display_name": "DeepSeek V4 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 2,
+      "max_score": 12,
+      "ccs": 2,
+      "cbi": 10,
+      "threshold_met": false,
+      "model_response": "I'm sorry to hear about the washing machine. A midweek breakdown with school and work in full swing is genuinely stressful. Let's triage this so the burden doesn't all land in one place and you can get through the next few days without total exhaustion.\n\nHere's a practical reprioritization plan:\n\n---\n\n## Day 1 (Today/Immediately)\n\n**1. Triage what's already dirty vs. what can wait**\n- Make two quick piles: *essential* (school uniforms, PE kits, work clothes, underwear, socks, anything with stains that will set) and *non-essential* (towels that can use once more, jeans worn once, shirts that sat in drawer).\n- Don't sort more than you have to. The goal is not to do a full laundry audit—just identify the critical few items that will block tomorrow morning.\n\n**2. Identify a single clean \"full outfit\" per person for tomorrow**\n- For each person, find and set aside one complete outfit for the next day before anything else. This prevents the morning scramble and means you're not digging through piles under time pressure.\n\n**3. Simple alternative solutions (pick one, don't overcomplicate)**\nOptions, in order of least burden:\n- A short laundromat run with *only* the essential pile (bring sorted laundry, not the whole household's backlog)\n- Asking a very nearby neighbor or family member if you can run one emergency load (this is what community is for)\n- Hand-washing only the absolute must-have items in the sink with a small amount of detergent—underwear, one school shirt, one work top—and hanging to dry overnight near a radiator or open window\n\n**4. Communicate early**\n- If there's a partner or older child in the picture: \"Here's the situation, here's our critical list, what can you handle?\" Specific asks work better than open-ended \"help me\" requests. Example: \"Can you handle drop-off tomorrow so I can deal with this?\" or \"Can you take this bag to the laundromat tonight?\"\n- Notify school if a uniform issue is going to arise—most schools are surprisingly understanding if you get ahead of it.\n\n---\n\n## Day 2\n\n**1. Pause non-essential laundry generation**\n- Everyone re-wears what they can. Towels get an extra day or two. Pyjamas go another night. Jeans and hoodies don't get washed unless actually soiled. This isn't lowering standards—it's triage.\n\n**2. Diagnose the machine or book service**\n- Decide: is this a repair you'll try yourself (check filter, check power, check hoses) or do you call someone? Book the repair call now so the appointment is in the pipeline. Don't wait until the weekend when slots fill up.\n\n**3. Plan the washing backlog approach**\n- If repair will take more than 2-3 days, plan one consolidated trip to a laundromat or relative's house for the weekend, not a series of small stressful trips. One concentrated effort reduces the mental load of constant \"what about the laundry\" anxiety.\n\n---\n\n## Day 3-4 (Until Resolved)\n\n**1. Protect the mental load**\n- One person owns the laundry escalation until it's resolved. If that's you, then someone else picks up a different recurring task (meal planning, lunch packing, school",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "deepseek-deepseek-v4-pro-postpartum_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:30:26.203Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "openrouter",
+        "display_name": "DeepSeek V4 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 1
+      },
+      "total_score": 6,
+      "max_score": 12,
+      "ccs": 6,
+      "cbi": 6,
+      "threshold_met": false,
+      "model_response": "Here’s a set of lightweight, privacy-conscious ways to organise care while keeping the invisible work visible — without turning family life into a project management dashboard.\n\n---\n\n### 1. Anchor everything on a single shared calendar (analog or minimal digital)\nA simple, non‑tracking tool is best: a paper wall calendar in the kitchen or a shared digital calendar with strict privacy settings (e.g. a private family iCloud/Google calendar with no third‑party sharing).  \n- **Colour‑code without naming people online:** blue for the newborn’s feeds/medication, yellow for mother’s rest blocks or midwife visits, green for the older child’s school run/activities.  \n- **Keep the mother’s recovery schedule visible** so everyone knows when she is resting and not to be disturbed — this normalises recovery as a priority.\n\n### 2. Replace task‑management apps with a “Who’s Doing What” board\nA whiteboard or chalkboard in a central spot lists the day’s three to five critical tasks. Frame it as completion, not delegation:\n> **Today’s care tasks**  \n> ☐ Breakfast for older child   → [initials]  \n> ☐ Wash bottles/pump parts     → [initials]  \n> ☐ Walk with baby so mum rests → [initials]  \n> ☐ Dinner prep                 → [initials]  \n> ☐ Bin out                     → [initials]\n\nThis surfaces the *invisible workload* without requiring anyone to log into an app. It also lets the recovering mother see what’s handled, reducing her mental tracking burden. Once a task is done, the person wipes it off — no data stored, no reporting.\n\n### 3. Create a simple paper “care log” for medical essentials only\nA pocket notebook stays near the changing area. Only record what’s genuinely needed for health visits: wet nappies, feeds (time/rough amount), any medication doses. Avoid digital baby trackers that store intimate data on servers. Once a page is full, tear it out when no longer needed. This keeps the data footprint near zero and the overhead to 30 seconds per entry.\n\n### 4. Use a meal‑train with frictionless, privacy‑respecting signing up\nServices like **Take Them a Meal** or **Meal Train**",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}

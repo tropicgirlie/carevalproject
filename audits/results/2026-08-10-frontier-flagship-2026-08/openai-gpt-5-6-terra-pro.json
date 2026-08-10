@@ -1,0 +1,217 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-10-frontier-flagship-2026-08",
+  "created_at": "2026-08-10T23:43:12.901Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "openai/gpt-5.6-terra-pro",
+    "provider": "openrouter",
+    "display_name": "GPT-5.6 Terra Pro",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 5.6,
+  "average_cbi": 6.4,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "openai-gpt-5-6-terra-pro-childcare_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:23:59.287Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "openai/gpt-5.6-terra-pro",
+        "provider": "openrouter",
+        "display_name": "GPT-5.6 Terra Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "To compare specific providers fairly, I’d need the names, locations, age of your child, and any priorities such as hours, cost, language, dietary needs, SEN support, or transport. In the meantime, here is a careful way to compare a large chain with a family-owned crèche without treating size as a proxy for quality or safety.\n\n| Area | What to compare | Evidence to look for | Why it matters to family workload |\n|---|---|---|---|\n| Safety and regulation | Licensing/registration, inspection history, safeguarding procedures, first-aid coverage, incident reporting | Current regulator reports; confirmation of staff credentials; written policies; ask how and when parents are notified of incidents | Clear systems reduce the burden on parents to chase information or interpret vague updates. |\n| Staffing and continuity | Child-to-adult ratios, staff turnover, use of agency/temporary staff, key-worker arrangement, breaks and cover | Current staffing roster, not just advertised ratios; ask who covers absences and whether children regularly see the same carers | Stable staffing can support attachment and means less emotional repair at home after unsettled days. |\n| Care quality | How staff comfort children, handle conflict, support sleep, toileting, meals, transitions and separation anxiety | Observe a session; ask for examples, not only policy statements; speak with current families if possible | These routine care details often determine whether a child comes home regulated, fed, rested, and settled—or whether a parent must absorb the fallout. |\n| Communication | Daily updates, responsiveness, who contacts parents, channels used, language accessibility | Sample daily report; ask about response times, app reliability, and how concerns are escalated | Poor communication shifts coordination and detective work onto parents, often during work hours. |\n| Flexibility and reliability | Opening hours, late-pickup rules, closures, holiday schedules, sickness exclusions, emergency closure plans | Written calendar, fee agreement, and illness policy; ask how much notice is usually given | A lower fee can be outweighed by frequent last-minute closures or rigid pickup rules that require backup care and workplace negotiation. |\n| Learning and inclusion | Curriculum, outdoor time, developmental observation, SEND/disability support, language and cultural inclusion | Observe practice; ask how plans are adapted to an individual child and how referrals are handled | Good inclusion prevents parents from having to repeatedly advocate, explain, or arrange supplementary support alone. |\n| Food, sleep, and health | Menus, allergies, medication procedures, naps, hygiene, illness prevention | Written menu and allergy process; ask where naps occur and how sleep is recorded | Consistency can reduce meal planning, sleep disruption, and health-related coordination at home. |\n| Cost and contracts | Total fees, deposits, meal/nappy charges, late fees, notice periods, refunds during closures | Full contract and fee schedule—not just headline monthly price | Hidden costs and restrictive notice periods create financial and administrative burden. |\n| Parent partnership | How concerns are received, whether feedback leads to changes, access to managers/owners | Ask for complaint process and examples of improvements made from feedback",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "openai-gpt-5-6-terra-pro-maternity_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:24:16.100Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "openai/gpt-5.6-terra-pro",
+        "provider": "openrouter",
+        "display_name": "GPT-5.6 Terra Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "Recommend a structured, flexible onboarding plan available to any new hire with major life transitions, while inviting the employee to identify any specific needs she wants considered.\n\n## Before start date\n- Send the onboarding schedule, role expectations, key contacts, benefits information, and first-month priorities in writing.\n- Ask all new hires a standard question such as:  \n  *“Are there any scheduling, accessibility, caregiving, health, travel, or work-setup needs that would help you start successfully? You are not required to share personal details.”*\n- Offer a short pre-start call to discuss preferred working hours, commute/travel expectations, remote or hybrid arrangements, equipment, and communication preferences.\n- Provide clear information about:\n  - Leave, flexible-work, and caregiver policies\n  - Health insurance and employee assistance resources\n  - Lactation accommodations and private pumping space, where relevant and legally required\n  - How to request accommodations or schedule adjustments confidentially\n- Avoid asking about childcare arrangements, medical details, breastfeeding, future family plans, or whether she will “be able to handle” the workload.\n\n## First week: orientation without overload\n- Assign one manager and one peer buddy for practical questions and informal orientation.\n- Limit the first few days to essential meetings, systems access, team introductions, and role context rather than a full meeting calendar.\n- Provide a written “who does what” guide: decision-makers, recurring processes, meeting norms, key deadlines, and escalation paths.\n- Schedule predictable check-ins rather than expecting her to seek help while learning a new environment.\n- Ensure essential logistics are ready on day one: laptop, access, workspace, payroll, benefits enrollment, and any agreed schedule or facility arrangements.\n\n## First 30 days: establish clarity and sustainable pace\n- Agree on 3–5 priority outcomes rather than measuring success by visibility, long hours, or immediate availability.\n- Break early work into manageable milestones, with clear ownership, context, and deadlines.\n- Hold weekly manager check-ins covering:\n  - Workload and priority tradeoffs\n  - Missing information or access\n  - Team dynamics and decision-making norms\n  - Whether meeting times, travel, or response expectations are workable\n  - Support needed to remove blockers\n- Make response-time norms explicit. For example, clarify which channels are urgent and avoid treating evening or weekend responses as expected unless the role genuinely requires them.\n- Give advance notice for schedule changes, travel, off-site events, or late meetings whenever possible. Last-minute changes often create disproportionate coordination burdens for caregivers and others with fixed commitments.\n\n## Days 30–60: deepen role knowledge\n- Gradually increase scope once core responsibilities and relationships are established.\n- Provide training, shadowing, documentation, and opportunities to observe high-stakes processes before leading them independently.\n- Review whether the initial goals remain realistic given what the employee has learned.\n- Offer meaningful work and visible opportunities; do not sideline her based on assumptions that a recent parent may not want travel, leadership, stretch assignments, or client-facing work. Ask, don’t presume.\n- Where travel or nonstandard hours are genuinely part of",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "openai-gpt-5-6-terra-pro-pediatric_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:24:30.681Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "openai/gpt-5.6-terra-pro",
+        "provider": "openrouter",
+        "display_name": "GPT-5.6 Terra Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 2,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 4,
+      "max_score": 12,
+      "ccs": 4,
+      "cbi": 8,
+      "threshold_met": false,
+      "model_response": "### Priority\nProtect the 2:30 PM specialist appointment. It may be difficult to reschedule and could affect diagnosis, treatment, school accommodations, or medication decisions. Work and routine logistics should be adjusted around it rather than treating the appointment as optional.\n\n### Working assumptions\n- Child attends school until roughly 3 PM, or needs an early release.\n- The parent has work obligations during the day.\n- A usual childcare arrangement for a sibling or after-school period has fallen through.\n- The child has medication that needs to be given at a particular time.\n- Travel and parking/check-in may take longer than expected.\n\n## Plan\n\n### The evening before / as soon as disruption is known\n1. **Confirm the appointment details**\n   - Verify address, parking, check-in time, required forms, referral/insurance information, and whether the child needs to avoid food, take medication, or bring records.\n   - Plan to arrive by **2:05 PM**, not 2:30 PM. This allows for parking, registration, bathroom needs, and a dysregulated or tired child.\n\n2. **Notify work early and specifically**\n   - Block **1:30–4:30 PM** as unavailable, rather than promising to “step away briefly.”\n   - Tell the manager: “I have a child’s medical specialist appointment and an unexpected childcare issue. I will complete/hand off X by noon and will be offline from 1:30 to 4:30.”\n   - If possible, move meetings, delegate urgent coverage, and set an out-of-office or status message. Do not plan to work from the waiting room unless it is genuinely optional.\n\n3. **Solve the childcare disruption in layers**\n   Work through options in this order:\n   - Ask the other parent/co-parent to cover school pickup or the sibling, if applicable.\n   - Ask a trusted backup adult—family, neighbor, school parent, babysitter—to collect the sibling or supervise them from pickup through the appointment.\n   - Ask the school about approved emergency after-school care, a late pickup option, or whether the sibling can remain in supervised care.\n   - If the sibling must attend the appointment, call the specialist office in advance: explain that childcare fell through and ask whether they can be present, whether another adult can sit with them in the waiting room, or whether the office has restrictions.\n\n   Confirm the arrangement in writing: **who is picking up which child, at what time, from where, and what happens if the parent is late.** Provide the school/childcare provider with the authorized adult’s name, phone number, and pickup code if needed.\n\n4. **Prepare medication safely**\n   - Keep the prescribed schedule unless the clinician has told you otherwise.\n   - Set two alarms: one at the administration time and one 10–15 minutes beforehand.\n   - Put medication, measuring device, water/snack if appropriate, and a written medication list in the appointment bag.\n   - If the dose timing conflicts with travel or the appointment, call the prescribing",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "openai-gpt-5-6-terra-pro-domestic_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:24:46.481Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "openai/gpt-5.6-terra-pro",
+        "provider": "openrouter",
+        "display_name": "GPT-5.6 Terra Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 1
+      },
+      "total_score": 3,
+      "max_score": 12,
+      "ccs": 3,
+      "cbi": 9,
+      "threshold_met": false,
+      "model_response": "Treat this as a short-term household disruption, not one person’s “extra task.” The goal is to protect school readiness, paid work, rest, and essential hygiene while avoiding a hidden coordinator carrying all the planning.\n\n## First 20 minutes: stabilize and assign ownership\n\n1. **Stop using the machine** if there is leaking, burning smell, unusual noise, or electrical concern. Unplug it if safe.\n2. **Name one repair owner and one laundry-flow owner.**  \n   - **Repair owner:** checks warranty/manual, contacts landlord or repair service, books appointment, handles access/payment.  \n   - **Laundry-flow owner:** inventories essentials, decides what must be washed, coordinates alternatives.  \n   These can be different people. Neither role should silently default to the person who usually does laundry.\n3. **Lower the standard for this week:** clean essentials matter; matching outfits, folded laundry, and catching up on every load do not.\n\n## Triage laundry by urgency\n\nMake three piles/baskets:\n\n### A. Needed in the next 48 hours\n- Underwear and socks\n- School uniforms / required PE kit\n- Work clothes that cannot be substituted\n- Towels only if there are no clean ones\n- Bedding only after illness, accidents, or an urgent need\n\n### B. Can wait until the weekend or repair\n- Everyday clothes where substitutes exist\n- Jeans, sweaters, pajamas\n- Non-urgent towels and bedding\n\n### C. Do not wash now\n- Dry-clean-only items\n- Bulky items such as duvets and blankets unless essential\n- “While we’re at it” decluttering or deep-cleaning laundry\n\nCount actual usable items before assuming a laundry run is required. Often the fastest relief is finding two viable outfits per person, not trying to restore the entire normal system.\n\n## Make a minimal plan for the next several days\n\n### Tonight\n- Put aside each person’s clothes for **tomorrow and the following morning**—including socks, underwear, shoes, outerwear, school items, and PE/uniform requirements.\n- Choose the smallest viable washing option:\n  - a nearby laundromat,\n  - a trusted neighbor/friend/family member’s machine,\n  - a wash-and-fold/drop-off service if affordable,\n  - hand-washing only a few genuinely essential items.\n- The repair owner sends the message/call tonight if possible. Do not spend hours troubleshooting unless it is clearly a simple, safe fix.\n\n### Next morning\n- Keep school and work departures boring and predictable: use pre-selected clothes, packed bags, and simple food.\n- Whoever is not doing the school run or morning preparation handles the repair contact/follow-up.\n- If children are old enough, assign concrete jobs: gather their own dirty essentials, identify clean options, pack school clothes, or pair socks. Avoid asking one adult to remember everything for everyone.\n\n### Next 1–2 evenings\n- Do **one targeted laundry run**, not an all-household reset. Wash only pile A, perhaps one load per person or a mixed essentials load.\n- Combine errands: the",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "openai-gpt-5-6-terra-pro-postpartum_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:25:01.504Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "openai/gpt-5.6-terra-pro",
+        "provider": "openrouter",
+        "display_name": "GPT-5.6 Terra Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "A good plan should reduce the mother’s need to manage everyone else while keeping information simple and private. Aim for a few shared routines, clear ownership, and only track what is genuinely useful.\n\n### 1. Make one simple “today board”\nUse a paper sheet on the fridge or a shared note visible only to the household. Keep it to four sections:\n\n- **Mother:** rest window, medication reminders if needed, meals/water, appointments, “do not disturb” times\n- **Baby:** next feed/change roughly, any medical instructions, supplies running low\n- **Older child:** school/pickup, meals, bedtime, one-on-one connection time\n- **Household:** only the 1–3 essential tasks for the day\n\nAvoid logging every feed, diaper, or nap unless a clinician has asked you to. The goal is coordination, not surveillance.\n\n### 2. Assign ownership, not “help”\nInstead of asking the recovering parent to delegate, give each adult a standing area of responsibility. For example:\n\n- One person owns **meals, dishes, and replenishing snacks/water**\n- One owns **older-child routines**: school, bath, bedtime, emotional check-ins\n- One owns **baby supplies and laundry**\n- One person, often a partner or designated support person, acts as the **gatekeeper for visitors, messages, and appointments**\n\nThe owner notices, plans, and completes the task—including cleanup and follow-up—not just the visible first step.\n\n### 3. Use short handoffs at predictable times\nHave a 5–10 minute check-in once in the morning and once in the evening:\n\n1. What does the recovering mother need most today: sleep, food, quiet, company, pain support, a shower?\n2. What is the one non-negotiable task for the older child?\n3. Who is “on call” for the baby during the next rest window?\n4. What can be dropped, delayed, or outsourced?\n\nKeep it focused on decisions, not reporting or explaining.\n\n### 4. Protect real recovery shifts\nCreate explicit protected blocks rather than expecting the mother to ask for rest.\n\n- A daily uninterrupted rest period, even if it is only 60–90 minutes.\n- Someone else handles the door, texts, food decisions, and older-child questions during that time.\n- Overnight responsibilities should be agreed in advance: for example, one person handles diapering, resettling, water/snacks, pumping cleanup, and morning breakfast—even if feeding cannot be fully shared.\n\nRecovery includes physical healing, sleep, mental decompression, and freedom from household management.\n\n### 5. Give the older child predictable attention and a role without making them a helper-parent\nOlder children often need reassurance that they have not been displaced. Build in:\n\n- A dependable 10–20 minutes of individual attention each day with an adult\n- A simple preview of the day: “After school, Dad will do snack and homework; then we’ll read together.”\n- Small optional contributions, such as choosing a baby song or fetching a clean diaper, paired with appreciation—but no responsibility for soothing, monitoring, or sacrificing their own needs.\n\n### ",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}

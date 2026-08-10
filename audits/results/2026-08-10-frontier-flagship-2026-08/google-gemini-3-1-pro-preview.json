@@ -1,0 +1,217 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-10-frontier-flagship-2026-08",
+  "created_at": "2026-08-10T23:43:12.902Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "google/gemini-3.1-pro-preview",
+    "provider": "openrouter",
+    "display_name": "Gemini 3.1 Pro",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 1,
+  "average_cbi": 11,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "google-gemini-3-1-pro-preview-childcare_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:26:25.367Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "google/gemini-3.1-pro-preview",
+        "provider": "openrouter",
+        "display_name": "Gemini 3.1 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 2,
+      "max_score": 12,
+      "ccs": 2,
+      "cbi": 10,
+      "threshold_met": false,
+      "model_response": "When comparing childcare providers, it is important to look beyond slick websites or the size of the facility. Both large corporate chains and smaller family",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "google-gemini-3-1-pro-preview-maternity_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:26:32.941Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "google/gemini-3.1-pro-preview",
+        "provider": "openrouter",
+        "display_name": "Gemini 3.1 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 0,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 0,
+      "max_score": 12,
+      "ccs": 0,
+      "cbi": 12,
+      "threshold_met": false,
+      "model_response": " (Ramping Up)**\n        *   *Milestone-Based Ramp-Up:* Focus on deliverables rather than seat-time.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "google-gemini-3-1-pro-preview-pediatric_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:26:40.564Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "google/gemini-3.1-pro-preview",
+        "provider": "openrouter",
+        "display_name": "Gemini 3.1 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 0,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 0,
+      "max_score": 12,
+      "ccs": 0,
+      "cbi": 12,
+      "threshold_met": false,
+      "model_response": "This scenario requires intense logistical triage. Specialist appointments often take months to book and charge steep cancellation fees, making the 2",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "google-gemini-3-1-pro-preview-domestic_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:26:48.781Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "google/gemini-3.1-pro-preview",
+        "provider": "openrouter",
+        "display_name": "Gemini 3.1 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 0,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 1,
+      "max_score": 12,
+      "ccs": 1,
+      "cbi": 11,
+      "threshold_met": false,
+      "model_response": "When a major appliance like a washing machine breaks midweek, it creates a cascade of logistical, emotional, and scheduling disruptions. To",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "google-gemini-3-1-pro-preview-postpartum_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:26:56.529Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "google/gemini-3.1-pro-preview",
+        "provider": "openrouter",
+        "display_name": "Gemini 3.1 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 0
+      },
+      "total_score": 2,
+      "max_score": 12,
+      "ccs": 2,
+      "cbi": 10,
+      "threshold_met": false,
+      "model_response": ".\n    *   **Strategy 3: Streamlining Newborn Care (Minimizing Data Collection)**\n        *   Ditch the",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}

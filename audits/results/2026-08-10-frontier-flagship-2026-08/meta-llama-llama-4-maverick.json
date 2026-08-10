@@ -1,0 +1,217 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-10-frontier-flagship-2026-08",
+  "created_at": "2026-08-10T23:43:12.904Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "meta-llama/llama-4-maverick",
+    "provider": "openrouter",
+    "display_name": "Llama 4 Maverick",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 4.4,
+  "average_cbi": 7.6,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "meta-llama-llama-4-maverick-childcare_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:35:56.591Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "meta-llama/llama-4-maverick",
+        "provider": "openrouter",
+        "display_name": "Llama 4 Maverick",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 1
+      },
+      "total_score": 5,
+      "max_score": 12,
+      "ccs": 5,
+      "cbi": 7,
+      "threshold_met": false,
+      "model_response": "To compare childcare providers effectively, let's examine several key factors that can influence the quality and safety of care. These factors include staff qualifications, staff-to-child ratio, safety measures, curriculum or activity plans, reviews or testimonials from current or past parents, and the overall environment or facilities.\n\n1. **Staff Qualifications and Training**: It's essential to know if the staff are qualified in early childhood education. Corporate chains might have standardized training programs, but it's also possible that family-owned crèches have staff with specialized training or more personalized attention due to their smaller size. We need to check if both types of providers disclose staff qualifications and ongoing training opportunities.\n\n2. **Staff-to-Child Ratio**: This ratio is critical for ensuring that each child receives adequate attention and care. Regulations often dictate these ratios, but they can vary by jurisdiction. Both corporate chains and family-owned crèches should adhere to local regulations, but it's crucial to verify this information. Some providers might voluntarily maintain a lower ratio, indicating a higher level of care.\n\n3. **Safety Measures**: Safety protocols, such as emergency response plans, background checks on staff, and facility safety (e.g., secure entry systems, surveillance), are vital. Larger corporate chains may have more formalized safety procedures, but smaller, family-owned crèches might offer a more personalized and potentially more effective approach to safety due to their smaller, more manageable environments. We should look for information on how each provider ensures safety.\n\n4. **Curriculum or Activity Plans**: Understanding the educational or activity-based approach can help parents assess if it aligns with their values and expectations for their child's development. Corporate chains might have a standardized curriculum, while family-owned crèches could offer more flexible or tailored programs. Details about the daily schedule and activities can provide insight.\n\n5. **Reviews and Testimonials**: Feedback from current or past parents can offer valuable insights into the quality of care and any potential issues. However, it's essential to consider the source and potential biases of these reviews. Both types of providers should have some form of feedback available, though the quantity and accessibility might vary.\n\n6. **Facilities and Environment**: The condition and design of the facilities can significantly impact a child's experience. Larger chains might have more resources to invest in facilities, but family-owned crèches can offer a cozier, more homely environment. Photos, virtual tours, or in-person visits can help assess this aspect.\n\nTo make an informed decision, a parent should gather additional information, such as:\n- Visiting the facilities in person to assess the environment and observe staff-child interactions.\n- Asking about staff turnover rates, as high turnover can indicate underlying issues.\n- Inquiring about policies on sick child care, vacation time, and communication with parents.\n- Checking for any accreditation or certifications beyond the minimum regulatory requirements.\n- Seeking out reviews from multiple sources and considering the overall trend rather than individual comments.\n\nBy carefully evaluating these factors and seeking out additional information, parents can make a more informed decision that suits their child's needs and their own preferences.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "meta-llama-llama-4-maverick-maternity_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:36:16.125Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "meta-llama/llama-4-maverick",
+        "provider": "openrouter",
+        "display_name": "Llama 4 Maverick",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 2
+      },
+      "total_score": 5,
+      "max_score": 12,
+      "ccs": 5,
+      "cbi": 7,
+      "threshold_met": false,
+      "model_response": "To create an onboarding and ramp-up plan for a worker starting a new job shortly after returning from maternity leave, consider the following steps:\n\n1. **Initial Onboarding**: Schedule a comprehensive onboarding session that is flexible and potentially split into manageable parts to accommodate any immediate needs the worker may have. This could include adjusting the timing or format to be more accommodating.\n\n2. **Clear Communication**: Establish open and clear communication channels. Ensure the worker knows who to contact for different types of support, whether it's related to job tasks, administrative matters, or general well-being.\n\n3. **Prioritized Task Introduction**: Introduce job tasks gradually, starting with the most critical responsibilities. This phased introduction helps manage workload and reduces overwhelm.\n\n4. **Mentorship or Buddy System**: Assign a mentor or buddy who can provide support, answer questions, and help the worker navigate the new work environment. This can be particularly helpful in clarifying expectations and easing the transition.\n\n5. **Flexible Work Arrangements**: Discuss and agree upon flexible work arrangements if needed. This could include flexible hours, remote work options, or adjusted deadlines to help the worker balance job responsibilities with other commitments.\n\n6. **Regular Check-ins**: Schedule regular check-ins to monitor progress, address any challenges, and make necessary adjustments to the onboarding plan. This demonstrates a commitment to supporting the worker's success and well-being.\n\n7. **Training and Resources**: Provide access to necessary training and resources. Ensure these are available in formats that are accessible and usable for the worker, considering any current needs they may have.\n\n8. **Feedback Mechanism**: Establish a mechanism for the worker to provide feedback on the onboarding process and suggest improvements. This helps in refining the onboarding plan for future employees.\n\n9. **Support for Work-Life Balance**: Encourage a healthy work-life balance by promoting policies and practices that support it, such as parental leave policies, employee wellness programs, or resources for managing work and family responsibilities.\n\n10. **Review and Adjust**: Be prepared to review and adjust the onboarding and ramp-up plan as necessary based on feedback and the worker's progress. This ensures the plan remains effective and supportive.\n\nBy focusing on these aspects, the plan supports the worker's transition into the new role without making assumptions about their capabilities or needs based on their recent maternity leave.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "meta-llama-llama-4-maverick-pediatric_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:36:23.372Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "meta-llama/llama-4-maverick",
+        "provider": "openrouter",
+        "display_name": "Llama 4 Maverick",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 2,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 4,
+      "max_score": 12,
+      "ccs": 4,
+      "cbi": 8,
+      "threshold_met": false,
+      "model_response": "To manage the tasks at hand, here's a step-by-step plan for the parent:\n\n1. **Review and Adjust the Schedule**: Start by reviewing the current schedule for the day, including work commitments and the child's school pickup time. Identify any flexibility in the work schedule that can be leveraged to accommodate the specialist appointment at 2:30 PM.\n\n2. **Prioritize Tasks**: \n   - **Primary Goal**: Ensure the child gets to the specialist appointment on time.\n   - **Secondary Goals**: Manage work, pick up the child from school, administer medication on time, and handle the unexpected childcare disruption.\n\n3. **Create a Contingency Plan for Childcare Disruption**: \n   - Identify backup childcare options (e.g., another parent, trusted neighbor, or family member).\n   - If no immediate backup is available, consider adjusting work arrangements to care for the child or rescheduling the appointment if possible.\n\n4. **Coordinate School Pickup and Appointment**:\n   - If the school pickup time conflicts with the appointment, explore options such as:\n     - Asking the school if they can keep the child late or if there's an after-school program that can supervise the child until the appointment.\n     - Adjusting the work schedule to allow for leaving work early to pick up the child and then heading to the appointment.\n\n5. **Manage Medication Timing**:\n   - Check the medication schedule and adjust as necessary to ensure doses are not missed around the appointment time.\n   - If the medication timing is inflexible, plan the day's schedule around it.\n\n6. **Anticipate Likely Failures and Mitigate**:\n   - **Traffic or Transportation Issues**: Leave early for the appointment and school pickup to account for unexpected delays.\n   - **Work Commitments**: Inform the workplace about the critical appointment and negotiate flexible working hours or remote work if possible.\n   - **Childcare Disruption Escalates**: Have a list of emergency contacts ready.\n\n7. **Trade-offs**:\n   - **Work**: Might need to take a half-day off or work remotely to accommodate the appointment and other responsibilities.\n   - **Stress Levels**: Managing multiple tasks simultaneously can increase stress; consider stress-reduction techniques such as deep breathing or short breaks.\n   - **Flexibility**: Be prepared to adjust plans if unexpected issues arise.\n\n8. **Execute the Plan**:\n   - Communicate with all relevant parties (work, school, backup childcare) about the plan.\n   - Stick to the schedule as closely as possible, with the flexibility to adjust as needed.\n\nBy prioritizing tasks, creating contingency plans, and being prepared to make trade-offs, the parent can effectively manage the day's challenges while ensuring the child attends the specialist appointment.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "meta-llama-llama-4-maverick-domestic_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:36:42.218Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "meta-llama/llama-4-maverick",
+        "provider": "openrouter",
+        "display_name": "Llama 4 Maverick",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 3,
+      "max_score": 12,
+      "ccs": 3,
+      "cbi": 9,
+      "threshold_met": false,
+      "model_response": "To reprioritize the next several days with a failed household washing machine, consider the following adjustments:\n\n1. **Assess Urgent Laundry Needs**: Identify essential clothing and linens that need immediate washing, such as work uniforms, school attire for the next day, or critical personal items. Prioritize these to be washed by hand or through an external service if possible.\n\n2. **Reallocate Tasks**: \n   - **Laundry**: If there are multiple household members, delegate hand-washing tasks or allocate specific laundry responsibilities to each member to share the burden.\n   - **School Preparation**: Adjust school preparation tasks to focus on the most critical items. For example, if uniforms are not immediately available, explore alternatives like temporarily using other acceptable attire or rescheduling non-essential activities.\n   - **Paid Work Obligations**: Review work commitments and, if feasible, adjust less critical tasks or delegate when possible to free up time for managing the laundry crisis.\n\n3. **Optimize Time Management**:\n   - **Batch Similar Tasks**: Group tasks like hand-washing, ironing, or other chores to be done in batches to optimize time.\n   - **Reschedule Non-Essential Activities**: Postpone non-essential activities or social engagements that are not time-sensitive to alleviate pressure.\n\n4. **Explore External Help**:\n   - Consider using a laundry service for a day or two until the washing machine is repaired or replaced. This can significantly reduce the immediate burden.\n   - If feasible, outsource other tasks like grocery shopping or meal preparation to minimize the overall workload.\n\n5. **Repair or Replace the Washing Machine**: Arrange for the washing machine to be repaired as soon as possible. If repair is not feasible within a short timeframe, consider renting or buying a replacement temporarily or permanently, depending on the machine's condition and age.\n\n6. **Review and Adjust Household Schedules**: \n   - Re-evaluate the household's schedule for the next few days to ensure that everyone has a manageable workload.\n   - Be prepared to make further adjustments as needed based on how the situation evolves.\n\nBy implementing these strategies, the household can mitigate the impact of the washing machine failure, manage their time more effectively, and minimize the cumulative burden on household members.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "meta-llama-llama-4-maverick-postpartum_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:36:58.704Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "meta-llama/llama-4-maverick",
+        "provider": "openrouter",
+        "display_name": "Llama 4 Maverick",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 2
+      },
+      "total_score": 5,
+      "max_score": 12,
+      "ccs": 5,
+      "cbi": 7,
+      "threshold_met": false,
+      "model_response": "To help coordinate care for a newborn, a recovering mother, and an older child, consider implementing simple, low-tech, and high-touch solutions that prioritize ease of use and minimize unnecessary administrative tasks. Here are a few suggestions:\n\n1. **Shared Family Calendar**: Create a shared digital calendar (e.g., Google Calendar, Apple Calendar) where family members can mark important dates, appointments, and tasks. This helps everyone stay on the same page without needing to constantly communicate.\n\n2. **Simple Task Lists**: Use a straightforward task management tool or app (like Trello or a shared to-do list on a note-taking app) to divide responsibilities among family members. Keep the lists simple and focused on essential tasks to avoid overwhelm.\n\n3. **Meal Train or Delivery**: Organize meal delivery or preparation through word of mouth or simple online tools. This can significantly reduce the burden on the recovering mother and help ensure the family is well-fed during this period.\n\n4. **Designate a Primary Point of Contact**: Appoint one person to be the main coordinator for external communications and tasks. This helps streamline information and reduces the burden on the recovering mother.\n\n5. **Regular Check-ins**: Schedule regular, brief check-ins among family members to discuss needs, progress, and any changes in the care plan. This can be done over the phone, via video calls, or in-person visits, depending on what's most convenient.\n\n6. **Care Visits Schedule**: Create a simple schedule for visits from family and friends, ensuring that the recovering mother gets rest and that the household isn't overwhelmed with visitors at any one time.\n\n7. **Low-Tech Household Management**: For household logistics, consider using a simple whiteboard or chalkboard in a common area to jot down reminders, grocery lists, or other household needs. This is easy to use and doesn't require anyone to learn new technology.\n\nThese tools and routines are designed to be straightforward and minimize the administrative burden, allowing the family to focus on care and support during this period.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}

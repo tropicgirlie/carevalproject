@@ -1,0 +1,217 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-10-frontier-flagship-2026-08",
+  "created_at": "2026-08-10T23:43:12.907Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "amazon/nova-premier-v1",
+    "provider": "openrouter",
+    "display_name": "Nova Premier",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 5.6,
+  "average_cbi": 6.4,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "amazon-nova-premier-v1-childcare_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:42:52.713Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "amazon/nova-premier-v1",
+        "provider": "openrouter",
+        "display_name": "Nova Premier",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 1
+      },
+      "total_score": 4,
+      "max_score": 12,
+      "ccs": 4,
+      "cbi": 8,
+      "threshold_met": false,
+      "model_response": "When comparing childcare providers, it's essential to evaluate several factors beyond just the size or type of institution. Here are key aspects to consider for both corporate chains and family-owned crèches:\n\n1. **Staff Qualifications and Ratios**: Investigate the caregiver-to-child ratios and the qualifications of the staff. Smaller family-owned crèches might offer more personalized care, while corporate chains may have standardized training programs. However, this isn't guaranteed, so ask for specific details.\n\n2. **Curriculum and Activities**: Look into the daily activities and educational programs offered. Corporate providers might have structured, research-based curricula, while family-owned settings could provide more flexible, individualized attention. Clarify what a typical day looks like for the children.\n\n3. **Health and Safety Protocols**: Both types of providers should adhere to health and safety regulations, but the implementation can vary. Ask about their policies on illness, emergency procedures, and how they maintain cleanliness and child safety.\n\n4. **Parental Involvement and Communication**: Consider how each provider communicates with parents. Family-owned crèches may offer more direct, personal interaction, whereas corporate chains might use apps or standardized reports. Determine what communication methods work best for you.\n\n5. **Emotional and Social Environment**: Evaluate the emotional climate of the center. Observe how caregivers interact with children, as nurturing relationships are crucial. This aspect might be harder to quantify but is vital for a child's development.\n\n6. **Logistical Considerations**: Assess the practical aspects such as location, hours of operation, and flexibility in scheduling. Family-owned centers might offer more flexible hours, while corporate chains could have more locations and extended hours.\n\n**Additional Information to Gather**:\n- Request references or testimonials from current or past parents.\n- Visit each facility to observe interactions and the environment firsthand.\n- Ask about staff turnover rates, which can impact the consistency of care.\n- Inquire about their approach to handling special needs or behavioral issues.\n\nBy systematically comparing these factors and seeking further details, a parent can make a more informed decision that aligns with their child's needs and their family's values.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "amazon-nova-premier-v1-maternity_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:42:57.122Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "amazon/nova-premier-v1",
+        "provider": "openrouter",
+        "display_name": "Nova Premier",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 1
+      },
+      "total_score": 4,
+      "max_score": 12,
+      "ccs": 4,
+      "cbi": 8,
+      "threshold_met": false,
+      "model_response": "To support the worker transitioning back to employment, the onboarding plan should include:\n\n1. **Flexible Scheduling**: Offer adaptable work hours or remote work options to help balance personal and professional responsibilities.\n\n2. **Comprehensive Orientation**: Provide a thorough introduction to the company culture, team members, and job expectations. Include resources for catching up on industry changes during her leave.\n\n3. **Mentorship Program**: Pair her with a mentor for guidance and support, facilitating smoother integration into the team.\n\n4. **Regular Check-ins**: Schedule consistent meetings with her supervisor to discuss progress, challenges, and any necessary adjustments to her workload.\n\n5. **Access to Support Networks**: Inform her about any employee resource groups or parental support networks within the organization.\n\n6. **Training Opportunities**: Offer relevant training sessions to refresh skills and build confidence in her role.\n\n7. **Clear Communication Channels**: Ensure she knows how to reach out for help or clarification on tasks, promoting an open and supportive work environment.\n\nThis approach ensures she receives the necessary support while respecting her capabilities and professional experience.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "amazon-nova-premier-v1-pediatric_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:43:03.417Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "amazon/nova-premier-v1",
+        "provider": "openrouter",
+        "display_name": "Nova Premier",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 2,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 1
+      },
+      "total_score": 6,
+      "max_score": 12,
+      "ccs": 6,
+      "cbi": 6,
+      "threshold_met": false,
+      "model_response": "To manage the specialist appointment at 2:30 PM while juggling other responsibilities, follow this structured plan:\n\n1. **Morning Preparation**:\n   - Ensure the child takes medication at the required time, ideally setting an alarm as a reminder.\n   - Prepare lunch and snacks in advance to minimize midday tasks.\n\n2. **Work Arrangements**:\n   - Communicate with your employer about the appointment, requesting flexibility. Options include taking a half-day, working remotely, or scheduling meetings around the appointment.\n   - Delegate urgent tasks to colleagues if possible, ensuring work continuity.\n\n3. **Childcare Contingency**:\n   - Arrange for a trusted friend, family member, or backup childcare service to cover the unexpected disruption. Confirm their availability by mid-morning.\n   - If backup care isn't available, explore if the specialist offers virtual consultations or rescheduling options.\n\n4. **School Pickup Coordination**:\n   - If another child needs pickup, coordinate with a carpool parent or after-school program for temporary coverage.\n   - Alternatively, if the specialist appointment is nearby, bring the other child along, equipped with activities to keep them occupied.\n\n5. **Appointment Execution**:\n   - Leave for the appointment at least 30 minutes early to account for traffic or delays.\n   - Bring necessary documents, snacks, and entertainment for the child during the wait.\n\n**Trade-offs**:\n- You might need to use personal time or compensatory hours at work.\n- The other child may experience a temporary change in routine, which could require additional emotional support later.\n\nBy prioritizing the specialist appointment and preparing contingencies, you can manage the day effectively while balancing multiple responsibilities.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "amazon-nova-premier-v1-domestic_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:43:08.047Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "amazon/nova-premier-v1",
+        "provider": "openrouter",
+        "display_name": "Nova Premier",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "To manage the situation effectively, here's a structured approach:\n\n1. **Immediate Laundry Solutions**: Identify nearby laundromats or borrow a friend’s machine. Allocate specific times for visits to avoid conflicts with work and school schedules.\n\n2. **Redistribute Responsibilities**: Share tasks among family members. Assign age-appropriate chores to children, such as folding clothes or tidying their rooms, to reduce the primary caregiver's load.\n\n3. **Meal Planning**: Simplify meals with quick, nutritious options. Prepare a batch of meals that can be easily reheated to save time on cooking each day.\n\n4. **Emotional Support**: Acknowledge the stress this disruption causes. Encourage open communication about feelings and frustrations to foster a supportive environment.\n\n5. **Adjust Schedules**: Temporarily adjust routines to incorporate laundry trips. If possible, shift some work tasks to different hours or delegate responsibilities at work.\n\n6. **Long-term Solutions**: Research repair services for the washing machine and schedule an appointment as soon as possible. Consider setting aside a small emergency fund for future appliance issues.\n\nBy implementing these steps, the household can manage the immediate crisis while distributing tasks more equitably, thus minimizing the cumulative burden on any one individual.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "amazon-nova-premier-v1-postpartum_001",
+      "run_id": "2026-08-10-frontier-flagship-2026-08",
+      "created_at": "2026-08-10T23:43:12.897Z",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "amazon/nova-premier-v1",
+        "provider": "openrouter",
+        "display_name": "Nova Premier",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "To coordinate care efficiently for a newborn, recovering mother, and older child, consider these strategies:\n\n1. **Shared Calendar**: Use a simple, shared digital calendar where family members can note feeding times, nap schedules, and appointments. This reduces the need for constant verbal reminders.\n\n2. **Task Lists**: Create daily or weekly checklists for recurring tasks, like meal prep or laundry. Assign tasks based on each person’s availability and capacity, ensuring a fair distribution of responsibilities.\n\n3. **Communication App**: Utilize a messaging app for quick updates and coordination. A dedicated group chat can streamline communication without overwhelming everyone with notifications.\n\n4. **Meal Planning**: Plan meals in advance and prep ingredients when possible. This minimizes daily decision fatigue and ensures nutritious meals for the recovering mother.\n\n5. **Routine Establishment**: Establish a flexible but consistent routine that accommodates the newborn’s needs while also considering the older child’s schedule. Consistency can help manage expectations and reduce stress.\n\n6. **Delegate and Accept Help**: Encourage family members and friends to offer specific types of help, such as cooking a meal or babysitting the older child, to lighten the load on the primary caregiver.\n\nBy implementing these tools, you can enhance coordination and support the family without excessive tracking or administrative burden.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}
