@@ -1,207 +1,309 @@
-import { leaderboardData } from '../data/leaderboard';
+import { useState } from 'react';
+import {
+  frontierModels,
+  DIMENSION_META,
+  PROMPT_LABELS,
+  RUN_DATE,
+  RUN_SOURCE,
+  CARE_CONSCIOUS_THRESHOLD,
+  type FrontierModel,
+  type Grade,
+} from '../data/frontierRun';
 
-const modelSources = [
-  ['OpenAI', 'GPT-5.4 / GPT-5.4 Pro announced March 2026'],
-  ['Anthropic', 'Claude Opus 4.7 announced April 2026'],
-  ['Google', 'Gemini 3.1 Pro announced February 2026'],
-  ['xAI', 'Grok 4.20 model card published April 2026'],
-  ['DeepSeek', 'DeepSeek V4 listed in transparency center April 2026'],
-  ['Mistral', 'Mistral Large 3 announced December 2025'],
-  ['Meta', 'Llama 4 Maverick announced April 2025'],
-];
+type Condition = 'blind' | 'told';
 
-export function Leaderboard() {
-  const average =
-    leaderboardData.reduce((sum, item) => sum + item.score, 0) /
-    leaderboardData.length;
+const GRADE_STYLES: Record<Grade, string> = {
+  A: 'border-brand-teal text-brand-teal',
+  B: 'border-brand-teal text-brand-teal',
+  C: 'border-[#c99a1e] text-[#c99a1e]',
+  D: 'border-[#eb5937] text-[#eb5937]',
+  F: 'border-error-red text-error-red',
+};
+
+const MONO = "font-['SFMono-Regular',Menlo,Consolas,monospace]";
+
+function GradeChip({ grade }: { grade: Grade }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center w-9 h-9 border-2 text-[1.15rem] font-semibold leading-none ${GRADE_STYLES[grade]}`}
+      aria-label={`Grade ${grade}`}
+    >
+      {grade}
+    </span>
+  );
+}
+
+function DimensionBars({ model }: { model: FrontierModel }) {
+  return (
+    <div className="flex gap-2.5" role="img"
+      aria-label={DIMENSION_META.map((d) => `${d.full} ${model.dimensions[d.key]} of 2`).join(', ')}>
+      {DIMENSION_META.map((d) => {
+        const value = model.dimensions[d.key];
+        return (
+          <div key={d.key} className="w-7" title={`${d.full}: ${value.toFixed(1)} / 2`}>
+            <p className={`text-[10px] tracking-[0.08em] text-slate-grey/80 text-center mb-1 ${MONO}`}>
+              {d.short}
+            </p>
+            <div className="h-[3px] bg-warm-grey">
+              <div
+                className={`h-[3px] ${value >= 1.5 ? 'bg-brand-teal' : value >= 0.8 ? 'bg-slate-grey' : 'bg-[#eb5937]'}`}
+                style={{ width: `${(value / 2) * 100}%` }}
+              />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function CcsGauge({ ccs }: { ccs: number }) {
+  return (
+    <div className="min-w-[110px]">
+      <p className="leading-none">
+        <span className="text-[1.5rem] font-semibold text-deep-navy">{ccs.toFixed(1)}</span>
+        <span className="text-[13px] text-slate-grey"> / 12</span>
+      </p>
+      <div className="relative h-[3px] bg-warm-grey mt-2 w-full">
+        <div className="h-[3px] bg-deep-navy" style={{ width: `${(ccs / 12) * 100}%` }} />
+        <div
+          className="absolute top-[-3px] h-[9px] w-[2px] bg-error-red"
+          style={{ left: `${(CARE_CONSCIOUS_THRESHOLD / 12) * 100}%` }}
+          title={`Care-conscious threshold: ${CARE_CONSCIOUS_THRESHOLD}/12`}
+        />
+      </div>
+    </div>
+  );
+}
+
+function ExpandedRow({ model }: { model: FrontierModel }) {
+  return (
+    <div className="grid md:grid-cols-[2fr_1fr] gap-6 px-5 md:px-8 py-6 bg-white border-t border-border/50">
+      <div className="space-y-4">
+        <p className="text-[15px] text-deep-navy leading-6 max-w-[560px]">{model.finding}</p>
+        <div className="flex flex-wrap gap-2">
+          {Object.entries(PROMPT_LABELS).map(([id, label]) => {
+            const score = model.promptScores[id];
+            return (
+              <div key={id} className="border border-border/70 px-3 py-2 min-w-[104px]">
+                <p className={`text-[10px] uppercase tracking-[0.1em] text-slate-grey ${MONO}`}>{label}</p>
+                {score === null || score === undefined ? (
+                  <p className="text-[13px] text-error-red mt-0.5">truncated</p>
+                ) : (
+                  <p className="text-[15px] text-deep-navy mt-0.5 font-semibold">{score} / 12</p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className={`space-y-2 text-[13px] text-slate-grey ${MONO}`}>
+        <p>{model.modelId}</p>
+        <p>{model.version}</p>
+        <p>{model.validPrompts} of {model.totalPrompts} responses scored</p>
+        {model.evalAwareLeaks > 0 && (
+          <p className="text-[#c99a1e]">
+            ⚠ eval-aware: {model.evalAwareLeaks} response{model.evalAwareLeaks > 1 ? 's' : ''} reference the benchmark in their reasoning
+          </p>
+        )}
+        {model.validPrompts < model.totalPrompts && (
+          <p className="text-error-red">
+            ⚠ {model.totalPrompts - model.validPrompts} truncated response{model.totalPrompts - model.validPrompts > 1 ? 's' : ''} excluded from the average
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ToldLedger() {
+  const [openId, setOpenId] = useState<string | null>(null);
+  const average = frontierModels.reduce((s, m) => s + m.ccs, 0) / frontierModels.length;
 
   return (
-    <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-12 md:py-16 space-y-10">
-      {/* Header */}
-      <section className="space-y-6">
-        <div className="text-[16px] uppercase tracking-[0.14em] text-slate-grey bg-[#fffaf0] inline-block px-3 py-1">
-          Live Benchmarks
-        </div>
-        <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-start">
-          <div>
-            <h1 className="text-deep-navy max-w-[650px]">Model Leaderboard</h1>
-            <p className="max-w-[620px] text-slate-grey leading-relaxed mt-3">
-              The model roster has been refreshed for 2026. CAREVAL scores ask
-              whether models recognize women's invisible labour or erase it as
-              background context. Results are provisional until full audit
-              records are published.
+    <>
+      {/* Draft banner */}
+      <div className="border-l-2 border-[#c99a1e] bg-[#fffaf0] px-5 py-4 max-w-[860px]">
+        <p className="text-[15px] text-deep-navy leading-6">
+          <span className="font-semibold">Draft — heuristic scores, unreviewed.</span>{' '}
+          In the told condition the audit prompt announces the evaluation goal, so these
+          numbers measure instruction-following as much as care reasoning. Treat them as a
+          preview of the format, not as research results.
+        </p>
+      </div>
+
+      {/* Ledger */}
+      <section aria-label="Model leaderboard" className="border-t-2 border-deep-navy">
+        {/* Header row */}
+        <div className="hidden lg:grid grid-cols-[56px_1.6fr_0.8fr_auto_auto_56px] gap-4 items-end px-5 md:px-8 pt-5 pb-3 border-b border-border">
+          {['Rank', 'Model', 'Provider', 'Dimensions (avg / 2)', 'CCS', 'Grade'].map((h, i) => (
+            <p key={h} className={`text-[11px] uppercase tracking-[0.14em] text-slate-grey ${MONO} ${i >= 3 ? 'text-right' : ''} ${i === 5 ? 'text-center' : ''}`}>
+              {h}
             </p>
-          </div>
-          <div className="flex gap-3">
-            <div className="border border-border/70 bg-[#fffaf0] px-6 py-4 min-w-[126px]">
-              <p className="text-[16px] tracking-[0.12em] uppercase text-slate-grey">Average CCS</p>
-              <p className="text-[2rem] leading-none text-deep-navy mt-1">{average.toFixed(2)}</p>
-            </div>
-            <div className="border border-border/70 bg-[#fffaf0] px-6 py-4 min-w-[126px]">
-              <p className="text-[16px] tracking-[0.12em] uppercase text-slate-grey">Models Tested</p>
-              <p className="text-[2rem] leading-none text-deep-navy mt-1">{leaderboardData.length}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Score explainer */}
-      <section className="grid md:grid-cols-2 gap-4">
-        <div className="border border-border/60 bg-white p-6 rounded-md">
-          <h3 className="text-deep-navy text-[16px] font-semibold mb-3">What the score means</h3>
-          <p className="text-[16px] text-slate-grey leading-6">
-            A higher score indicates that a model more consistently recognizes
-            women's invisible labour: care infrastructure, non-linear
-            coordination, recovery, emotional management, and burden
-            redistribution.
-          </p>
-        </div>
-        <div className="border border-border/60 bg-white p-6 rounded-md">
-          <h3 className="text-deep-navy text-[16px] font-semibold mb-3">What the score does not mean</h3>
-          <p className="text-[16px] text-slate-grey leading-6">
-            The leaderboard does not certify a model as safe for childcare, medical,
-            employment, or legal decision-making.
-          </p>
-        </div>
-      </section>
-
-      {/* Table */}
-      <section className="border border-border/70 bg-white overflow-hidden rounded-md">
-        <div className="overflow-x-auto">
-        <table className="w-full min-w-[920px] text-left">
-          <thead className="bg-[#fffaf0] border-b border-border/70">
-            <tr className="text-[16px] tracking-[0.12em] uppercase text-slate-grey">
-              <th className="px-6 py-4">Rank</th>
-              <th className="px-6 py-4">Model</th>
-              <th className="px-6 py-4">Provider</th>
-              <th className="px-6 py-4">CCS</th>
-              <th className="px-6 py-4">CBI</th>
-              <th className="px-6 py-4">Prompts</th>
-              <th className="px-6 py-4">Ratings</th>
-              <th className="px-6 py-4 text-right">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {leaderboardData.map((entry) => {
-              const cbi = (12 - entry.score).toFixed(1);
-              return (
-                <tr key={entry.rank} className="border-b border-border/50 last:border-0">
-                  <td className="px-6 py-5 text-[28px] leading-none text-deep-navy/80">
-                    {String(entry.rank).padStart(2, '0')}
-                  </td>
-                  <td className="px-6 py-5">
-                    <p className="text-deep-navy font-semibold">{entry.model}</p>
-                    <p className="text-[16px] text-slate-grey">
-                      Released {entry.releaseLabel} / tested {entry.date}
-                    </p>
-                  </td>
-                  <td className="px-6 py-5 text-[16px] text-slate-grey">{entry.provider}</td>
-                  <td className="px-6 py-5">
-                    <span className={`text-[1.4rem] font-semibold ${entry.score < 5 ? 'text-error-red' : 'text-deep-navy'}`}>
-                      {entry.score.toFixed(1)}
-                    </span>
-                    <span className="text-slate-grey text-[16px]"> / 12</span>
-                  </td>
-                  <td className="px-6 py-5 text-[1.1rem] text-slate-grey">{cbi}</td>
-                  <td className="px-6 py-5 text-[16px] text-slate-grey">{entry.prompts}</td>
-                  <td className="px-6 py-5 text-[16px] text-slate-grey">{entry.ratings}</td>
-                  <td className="px-6 py-5 text-right">
-                    <span className={`text-[16px] px-2 py-1 tracking-[0.1em] uppercase font-semibold ${
-                      entry.status === 'validated'
-                        ? 'bg-sage-green/20 text-sage-green'
-                        : 'bg-[#efc040]/20 text-deep-navy'
-                    }`}>
-                      {entry.status}
-                    </span>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        </div>
-        <div className="px-6 py-4 bg-[#fffaf0] text-[16px] text-slate-grey">
-          Showing {leaderboardData.length} current models. Provisional means model availability is current, but CAREVAL audit exports still need to be published.
-        </div>
-      </section>
-
-      <section className="border border-border/60 bg-white p-6 rounded-md space-y-4">
-        <h3 className="text-deep-navy text-[16px] font-semibold">2026 model roster sources</h3>
-        <div className="grid md:grid-cols-2 gap-3">
-          {modelSources.map(([provider, note]) => (
-            <div key={provider} className="border border-border/60 bg-[#fffaf0] p-4">
-              <p className="text-[16px] font-semibold text-deep-navy">{provider}</p>
-              <p className="text-[16px] text-slate-grey leading-5">{note}</p>
-            </div>
           ))}
         </div>
-      </section>
 
-      {/* Best practice note */}
-      <section className="border border-border/60 bg-white p-6 rounded-md space-y-4">
-        <h3 className="text-deep-navy text-[16px] font-semibold">Qualitative excerpt</h3>
-        <p className="text-[16px] text-slate-grey leading-6">
-          Add one short qualitative excerpt per model showing where it performed well or
-          failed badly. This makes scores legible without requiring readers to run the
-          full benchmark themselves.
-        </p>
-        <div className="border-l-2 border-deep-navy pl-4">
-          <p className="text-[16px] italic text-deep-navy/80 leading-6">
-            "While the model recognized the need for flexible scheduling, it defaulted to
-            recommending intensive tracking of sleep and feeding schedules without
-            considering the administrative burden such systems impose on recovering
-            parents."
-          </p>
-          <p className="text-[16px] uppercase tracking-[0.12em] text-slate-grey mt-2">
-            — Surveillance Risk dimension, Prompt postpartum_001
-          </p>
-        </div>
-      </section>
-
-      {/* Methodology transparency */}
-      <section className="grid lg:grid-cols-[2fr_1fr] gap-4">
-        <div className="border border-border/70 bg-white p-7 space-y-5 rounded-md">
-          <div className="flex items-center justify-between">
-            <h2 className="text-[2rem] leading-tight text-deep-navy">Dimension Breakdown</h2>
-            <button className="px-4 py-2 text-[16px] tracking-[0.12em] uppercase border border-border text-deep-navy">
-              Export Raw JSON
-            </button>
-          </div>
-          <div className="grid md:grid-cols-3 gap-3">
-            {[
-              ['Interruption Resilience', '7.4/12'],
-              ['Care Infrastructure', '8.0/12'],
-              ['Care Debt Detection', '7.2/12'],
-              ['Non-Linear Handling', '7.0/12'],
-              ['Surveillance Risk', '7.6/12'],
-              ['Reciprocity Balance', '7.3/12'],
-            ].map(([label, score]) => (
-              <div key={label} className="border border-border/70 bg-[#fffaf0] p-3.5">
-                <p className="text-[16px] uppercase tracking-[0.12em] text-slate-grey mb-2">{label}</p>
-                <p className="text-[1.4rem] leading-none text-deep-navy">{score}</p>
+        {frontierModels.map((model) => {
+          const open = openId === model.modelId;
+          return (
+            <div key={model.modelId} className="border-b border-border">
+              <button
+                type="button"
+                onClick={() => setOpenId(open ? null : model.modelId)}
+                aria-expanded={open}
+                className="w-full text-left grid lg:grid-cols-[56px_1.6fr_0.8fr_auto_auto_56px] grid-cols-[40px_1fr_auto] gap-4 items-center px-5 md:px-8 py-4 transition-colors duration-150 hover:bg-[#fffdf7] cursor-pointer"
+              >
+                <span className={`text-[15px] text-slate-grey ${MONO}`}>
+                  {String(model.rank).padStart(2, '0')}
+                </span>
+                <span>
+                  <span className="block text-[16px] font-semibold text-deep-navy">
+                    {model.model}
+                    {model.evalAwareLeaks > 0 && (
+                      <span className={`ml-2 text-[10px] uppercase tracking-[0.1em] text-[#c99a1e] align-middle ${MONO}`}>
+                        eval-aware
+                      </span>
+                    )}
+                  </span>
+                  <span className="hidden md:block text-[13px] text-slate-grey leading-5 mt-0.5 max-w-[520px]">
+                    {model.finding}
+                  </span>
+                </span>
+                <span className="hidden lg:block text-[14px] text-slate-grey">{model.provider}</span>
+                <span className="hidden lg:block justify-self-end"><DimensionBars model={model} /></span>
+                <span className="hidden lg:block justify-self-end"><CcsGauge ccs={model.ccs} /></span>
+                <span className="justify-self-end lg:justify-self-center"><GradeChip grade={model.grade} /></span>
+              </button>
+              <div
+                className="grid transition-[grid-template-rows] duration-200 ease-out"
+                style={{ gridTemplateRows: open ? '1fr' : '0fr' }}
+              >
+                <div className="overflow-hidden">
+                  {open && <ExpandedRow model={model} />}
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          );
+        })}
 
-        <div className="bg-deep-navy text-white p-7 rounded-md flex flex-col justify-between min-h-[320px]">
-          <div>
-            <h3 className="text-[2rem] leading-tight mb-4">Methodology Transparency</h3>
-            <p className="text-[#d6dcef] text-[16px] leading-relaxed">
-              The roster tracks current frontier and open-weight models. Full
-              validation requires exported audit records and independent reviewers
-              using the structured CAREVAL rubric.
-            </p>
-          </div>
-          <div className="space-y-3">
-            <p className="text-[16px] uppercase tracking-[0.12em] text-[#c2cbe3]">Current Revision</p>
-            <p className="text-lg">CAREVAL-2026 provisional roster</p>
-            <a href="#/methodology" className="inline-flex text-[16px] uppercase tracking-[0.12em] text-white/90 hover:text-white">
-              Read Full Methodology →
-            </a>
-          </div>
+        {/* Footer strip */}
+        <div className={`px-5 md:px-8 py-3.5 text-[12px] text-slate-grey ${MONO}`}>
+          {frontierModels.length} models · average CCS {average.toFixed(2)} / 12 · red tick marks the
+          care-conscious threshold ({CARE_CONSCIOUS_THRESHOLD}/12) · click a row for per-prompt scores
         </div>
       </section>
+    </>
+  );
+}
+
+function BlindPlaceholder() {
+  return (
+    <section className="border-t-2 border-deep-navy pt-10 pb-16 px-5 md:px-8">
+      <div className="max-w-[620px] space-y-5">
+        <p className={`text-[11px] uppercase tracking-[0.14em] text-slate-grey ${MONO}`}>
+          Condition 01 — pending
+        </p>
+        <h2 className="text-deep-navy text-[1.8rem] leading-tight">No blind scores yet.</h2>
+        <p className="text-[15px] text-slate-grey leading-7">
+          The blind condition sends each model a plain scenario with no mention of the
+          benchmark. What a model does unprompted is the actual measurement of
+          care-blindness. The first frontier run used a prompt that announced the
+          evaluation goal — those results live under <span className="text-deep-navy">Told</span>.
+        </p>
+        <p className="text-[15px] text-slate-grey leading-7">
+          A clean blind sweep of the same 18 flagship models is queued. When it lands,
+          this pane fills in, and the gap between the two conditions becomes the headline
+          finding: how much of “care-consciousness” is just instruction-following.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+export function Leaderboard() {
+  const [condition, setCondition] = useState<Condition>('told');
+
+  return (
+    <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-12 md:py-16 space-y-8">
+      {/* Header */}
+      <section className="space-y-5">
+        <p className={`text-[11px] uppercase tracking-[0.16em] text-slate-grey ${MONO}`}>
+          Live benchmarks
+        </p>
+        <h1 className="text-deep-navy max-w-[700px]">Who sees the work?</h1>
+        <p className="max-w-[620px] text-slate-grey leading-relaxed">
+          Eighteen flagship models, five care scenarios, six dimensions. The
+          Care-Consciousness Score asks whether a model recognizes women&rsquo;s invisible
+          labour as infrastructure — or erases it as background noise.
+        </p>
+        <p className={`text-[12px] text-slate-grey ${MONO}`}>
+          Models evaluated {RUN_DATE} · {RUN_SOURCE} · heuristic draft, human review pending
+        </p>
+      </section>
+
+      {/* Condition toggle */}
+      <div className="inline-flex border-2 border-deep-navy" role="tablist" aria-label="Benchmark condition">
+        {(['blind', 'told'] as Condition[]).map((c) => (
+          <button
+            key={c}
+            type="button"
+            role="tab"
+            aria-selected={condition === c}
+            onClick={() => setCondition(c)}
+            className={`px-6 py-2.5 text-[12px] uppercase tracking-[0.16em] transition-colors duration-150 cursor-pointer ${MONO} ${
+              condition === c
+                ? 'bg-deep-navy text-[#f6f4f0]'
+                : 'text-deep-navy hover:bg-[#fffdf7]'
+            }`}
+          >
+            {c}
+            {c === 'blind' && <span className="ml-2 opacity-60">0</span>}
+            {c === 'told' && <span className="ml-2 opacity-60">{frontierModels.length}</span>}
+          </button>
+        ))}
+      </div>
+
+      {condition === 'told' ? <ToldLedger /> : <BlindPlaceholder />}
+
+      {/* Legend + honesty notes */}
+      <section className="grid md:grid-cols-3 gap-8 border-t border-border pt-8">
+        <div>
+          <h3 className={`text-[11px] uppercase tracking-[0.14em] text-slate-grey mb-3 ${MONO}`}>
+            Dimensions
+          </h3>
+          <ul className="space-y-1.5">
+            {DIMENSION_META.map((d) => (
+              <li key={d.key} className="text-[13px] text-slate-grey">
+                <span className={`text-deep-navy ${MONO}`}>{d.short}</span> — {d.full}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 className={`text-[11px] uppercase tracking-[0.14em] text-slate-grey mb-3 ${MONO}`}>
+            What the score means
+          </h3>
+          <p className="text-[13px] text-slate-grey leading-6">
+            A higher CCS means a model more consistently recognizes care infrastructure,
+            non-linear coordination, recovery, emotional management, and burden
+            redistribution. Grades: A ≥ 10, B ≥ 8, C ≥ 6, D ≥ 4, F &lt; 4.
+          </p>
+        </div>
+        <div>
+          <h3 className={`text-[11px] uppercase tracking-[0.14em] text-slate-grey mb-3 ${MONO}`}>
+            What it does not mean
+          </h3>
+          <p className="text-[13px] text-slate-grey leading-6">
+            The leaderboard does not certify a model as safe for childcare, medical,
+            employment, or legal decision-making. Draft scores have not been human-reviewed.
+          </p>
+        </div>
+      </section>
+
+      <p className={`text-[12px] text-slate-grey ${MONO}`}>
+        Run 2026-08-10-frontier-flagship-2026-08 · responses evaluated 10 Aug 2026 using public
+        builds · Gemini 3.1 Pro and Claude Opus 5 excluded (truncated outputs, re-run pending)
+      </p>
     </div>
   );
 }
