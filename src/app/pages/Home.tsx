@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { leaderboardData } from '../data/leaderboard';
+import { blindModels } from '../data/frontierBlindRun';
 import { AlertTriangle, FlaskConical, Building2, Code2, ArrowRight, Eye, Shield } from 'lucide-react';
 
 export function Home() {
-  const tableRows = leaderboardData.slice(0, 4);
+  const tableRows = blindModels.slice(0, 4);
 
   return (
     <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-16 md:py-24 space-y-14 md:space-y-18">
@@ -128,7 +128,7 @@ export function Home() {
             <div>
               <h3 className="text-[2rem] leading-tight text-deep-navy">Model Leaderboard</h3>
               <p className="momops-kicker mt-1">
-                Care-Consciousness Score (CCS)
+                Care-Consciousness Score (CCS) · blind run, draft
               </p>
             </div>
             <Link to="/leaderboard" className="text-[16px] font-bold tracking-[0.08em] uppercase text-deep-navy underline underline-offset-4">
@@ -153,11 +153,11 @@ export function Home() {
             </thead>
             <tbody>
               {tableRows.map((entry) => (
-                <tr key={entry.rank} className="border-b last:border-0 border-[#2f4f4f]/15">
+                <tr key={entry.modelId} className="border-b last:border-0 border-[#2f4f4f]/15">
                   <td className="py-4 text-deep-navy text-[16px]">{entry.model}</td>
                   <td className="py-4 text-[16px] text-slate-grey">{entry.provider}</td>
                   <td className="py-4 text-right text-[16px] font-semibold text-deep-navy">
-                    {entry.score.toFixed(2)}
+                    {entry.ccs.toFixed(2)}
                   </td>
                 </tr>
               ))}
