@@ -1,10 +1,12 @@
 {
   "schema": "careval-audit-config-v1",
-  "runLabel": "frontier-flagship-2026-08",
+  "runLabel": "frontier-flagship-blind",
+  "condition": "blind",
   "promptSource": "public/prompts.json",
   "promptIds": ["childcare_001", "maternity_001", "pediatric_001", "domestic_001", "postpartum_001"],
   "temperature": 0.2,
-  "maxTokens": 700,
+  "maxTokens": 2000,
+  "reasoning": { "exclude": true },
   "models": [
     {
       "id": "openai/gpt-5.6-terra-pro",

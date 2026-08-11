@@ -40,6 +40,7 @@ for (const model of config.models) {
       response_id: responseId,
       run_id: runId,
       created_at: new Date().toISOString(),
+      condition: config.condition,
       model: {
         id: model.id,
         provider: model.provider,
@@ -70,6 +71,7 @@ for (const model of config.models) {
       response_id: responseId,
       run_id: runId,
       created_at: new Date().toISOString(),
+      condition: config.condition,
       review_status: generationError ? 'run_failed' : 'pending_human_review',
       human_review_required: true,
       model: response.model,
@@ -111,6 +113,7 @@ await writeJson(`audits/runs/${runId}/metadata.json`, {
   run_id: runId,
   started_at: startedAt,
   completed_at: new Date().toISOString(),
+  condition: config.condition,
   model_count: config.models.length,
   prompt_count: prompts.length,
   response_count: responses.length,
@@ -143,6 +146,7 @@ const reviewQueue = {
   run_id: runId,
   created_at: new Date().toISOString(),
   source_config: configPath,
+  condition: config.condition,
   review_status: 'pending_human_review',
   instructions: [
     'Review each model response against the rubric.',

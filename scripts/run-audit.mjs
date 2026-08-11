@@ -19,6 +19,7 @@ for (const model of config.models) {
       schema: 'careval-model-response-v1',
       run_id: runId,
       created_at: new Date().toISOString(),
+      condition: config.condition,
       model: {
         id: model.id,
         provider: model.provider,
@@ -57,6 +58,7 @@ await writeJson(`audits/runs/${runId}/metadata.json`, {
   run_id: runId,
   started_at: startedAt,
   completed_at: new Date().toISOString(),
+  condition: config.condition,
   model_count: config.models.length,
   prompt_count: prompts.length,
   response_count: responses.length,

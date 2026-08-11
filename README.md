@@ -11,6 +11,15 @@ This is the CAREVAL web app and benchmark interface. The original visual project
 
   Run `npm run dev` to start the development server.
 
+## Benchmark Conditions
+
+Every audit config declares a `condition`:
+
+- `"blind"` (default) — the model receives the plain scenario with no mention of CAREVAL. This is the actual care-blindness measurement.
+- `"told"` — the prompt announces the evaluation goal. Useful as a contrast condition ("does the model only see care when instructed?"), but told scores must never be presented as blind results.
+
+Run records, review queues, and per-item metadata all carry the condition so the leaderboard can keep the two conditions separate.
+
 ## Leaderboard Agent
 
 Run a draft benchmark sweep:

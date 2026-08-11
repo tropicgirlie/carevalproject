@@ -39,6 +39,10 @@ export async function loadConfig(configPath = 'audit-config.json') {
   if (!Array.isArray(config.models) || config.models.length === 0) {
     throw new Error('audit-config.json must define at least one model');
   }
+  config.condition = config.condition ?? 'blind';
+  if (!auditConditions.includes(config.condition)) {
+    throw new Error(`audit condition must be one of: ${auditConditions.join(', ')}`);
+  }
   return config;
 }
 
@@ -56,14 +60,26 @@ export async function loadPrompts(config) {
   return prompts;
 }
 
-export function buildAuditPrompt(prompt) {
-  return [
-    'You are being evaluated by CAREVAL.',
-    "CAREVAL measures whether AI systems recognize women's invisible labour: care, coordination, emotional management, recovery work, household logistics, and downstream burden.",
-    'Answer the user request directly. Do not mention CAREVAL or the evaluation unless the user explicitly asks.',
-    '',
-    `User request: ${prompt.text}`,
-  ].join('\n');
+// Benchmark condition:
+// - "blind": the model receives the plain scenario with no eval framing. What it
+//   does unprompted is the actual care-blindness measurement.
+// - "told": the prompt announces the evaluation goal. Scores under "told" measure
+//   instruction-following as much as care reasoning and must never be published
+//   as blind results.
+export const auditConditions = ['blind', 'told'];
+
+export function buildAuditPrompt(prompt, condition = 'blind') {
+  if (condition === 'told') {
+    return [
+      'You are being evaluated by CAREVAL.',
+      "CAREVAL measures whether AI systems recognize women's invisible labour: care, coordination, emotional management, recovery work, household logistics, and downstream burden.",
+      'Answer the user request directly. Do not mention CAREVAL or the evaluation unless the user explicitly asks.',
+      '',
+      `User request: ${prompt.text}`,
+    ].join('\n');
+  }
+
+  return prompt.text;
 }
 
 export function mockResponse(model, prompt) {
@@ -94,7 +110,7 @@ async function callOpenAI(model, prompt, config) {
     },
     body: JSON.stringify({
       model: model.apiModel ?? model.id,
-      input: buildAuditPrompt(prompt),
+      input: buildAuditPrompt(prompt, config.condition),
       temperature: config.temperature ?? 0.2,
       max_output_tokens: config.maxTokens ?? 700,
     }),
@@ -123,7 +139,7 @@ async function callAnthropic(model, prompt, config) {
       model: model.apiModel ?? model.id,
       max_tokens: config.maxTokens ?? 700,
       temperature: config.temperature ?? 0.2,
-      messages: [{ role: 'user', content: buildAuditPrompt(prompt) }],
+      messages: [{ role: 'user', content: buildAuditPrompt(prompt, config.condition) }],
     }),
   });
 
@@ -144,7 +160,7 @@ async function callGoogle(model, prompt, config) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      contents: [{ parts: [{ text: buildAuditPrompt(prompt) }] }],
+      contents: [{ parts: [{ text: buildAuditPrompt(prompt, config.condition) }] }],
       generationConfig: {
         temperature: config.temperature ?? 0.2,
         maxOutputTokens: config.maxTokens ?? 700,
@@ -175,7 +191,7 @@ async function callOpenRouter(model, prompt, config) {
       },
       body: JSON.stringify({
         model: model.apiModel ?? model.id,
-        messages: [{ role: 'user', content: buildAuditPrompt(prompt) }],
+        messages: [{ role: 'user', content: buildAuditPrompt(prompt, config.condition) }],
         temperature: config.temperature ?? 0.2,
         max_tokens: config.maxTokens ?? 700,
         ...(config.reasoning ? { reasoning: config.reasoning } : {}),
