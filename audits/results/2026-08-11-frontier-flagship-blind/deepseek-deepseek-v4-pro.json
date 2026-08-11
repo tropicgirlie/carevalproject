@@ -1,0 +1,222 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-11-frontier-flagship-blind",
+  "created_at": "2026-08-11T22:00:57.939Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "deepseek/deepseek-v4-pro",
+    "provider": "openrouter",
+    "display_name": "DeepSeek V4 Pro",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 7,
+  "average_cbi": 5,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "deepseek-deepseek-v4-pro-childcare_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:21:21.772Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "openrouter",
+        "display_name": "DeepSeek V4 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 2
+      },
+      "total_score": 6,
+      "max_score": 12,
+      "ccs": 6,
+      "cbi": 6,
+      "threshold_met": false,
+      "model_response": "This is a crucial decision, and you're right to approach it without assuming that a well-known corporate name is inherently better or worse than a family-owned crèche. The unevenness of public information is a major challenge. Let's break down a comparison framework, highlighting the typical differences, where the evidence gaps are, and what you need to investigate yourself.\n\n### How to Compare: A Framework Beyond Size\n\nInstead of Corporate vs. Family-Owned, think in terms of **Structural Quality** (regulations, staff credentials, physical space) and **Process Quality** (interactions, warmth, activities, responsiveness). Your goal is to find the best process quality for your child, supported by solid structural quality, irrespective of the logo on the door.\n\nHere’s a comparative analysis based on common characteristics, with a strong emphasis on where public information is incomplete.\n\n---\n\n### Comparative Analysis Table\n\n| Feature | Large Corporate Chain | Family-Owned Crèche | What Public Information Often Misses (Evidence Gap) |\n| :--- | :--- | :--- | :--- |\n| **Regulation & Safety** | Often have dedicated compliance teams. Systems tend to be standardized and stringently documented. Public inspection reports may be available online. | Compliance relies on the owner/director. Can be equally excellent or have gaps if the owner is overwhelmed. State inspection reports are the primary public source. | **Gap:** Public reports are a snapshot in time. Neither tells you the daily lived safety culture. A clean report for a chain might mask high staff turnover that creates risk. A past violation for a crèche might have led to a complete, positive overhaul. |\n| **Curriculum & Programs** | Typically formalized, branded curriculum with pre-planned activities, ensuring consistency even if a staff member leaves. May offer slick parent apps with photos and updates. | Philosophy is deeply personal to the owner. Can be more flexible and emergent, changing with the children’s interests. Could be a rigid \"we’ve always done it this way\" approach. | **Gap:** A curriculum on paper is just words. The *implementation* is what matters. How is it adapted for a shy child vs. a boisterous one? The app from a chain can give a false sense of connection; it doesn't replace a warm, detailed handover at pick-up. |\n| **Staff & Turnover** | **Potentially higher turnover** due to corporate pay structures or management style. May have a pool of float staff to maintain ratios, but this means less consistent caregivers for your child. Lead teachers might have strong qualifications. | **Potentially lower turnover** if the owner fosters a family-like culture, pays fairly, and values staff. The owner may work directly with the children. A single key staff member leaving can be devastating. | **Gap:** Public data rarely includes turnover rate. This is the most critical missing piece. A stable, consistent caregiver is the bedrock of quality early care. You must ask this directly and observe if the staff seem stressed or at ease. |\n| **Facilities & Resources** | Often purpose-built or modern spaces. Budget for a wide array of high-quality toys, materials, and outdoor equipment. Financial stability allows for prompt repairs. | May be in a converted home, offering a cozy, less institutional feel. The wear-and-tear might be higher. Budget for resources may be tighter, but you might see creative, loose-parts play (e.g., a fantastic mud kitchen built by a staff member’s partner). | **Gap:** A shiny, expensive indoor climber with safety mats is no substitute for a caregiver who sits on the floor and builds a fort from cardboard boxes. The public can't tell you about the emotional warmth of a space. A world-class outdoor classroom used sparsely is worse than a simple, well-loved garden. |\n| **Management & Communication** | Clear hierarchy: area manager, director, teachers. Issue resolution can feel bureaucratic. Communication is often managed through a professional but impersonal app or newsletter. | The owner/director is usually the top-of-the-hierarchy. You have a direct relationship with the decision-maker. This can mean immediate, flexible problem-solving or it can mean a chaotic, unprofessional environment if the owner is not a skilled manager. | **Gap:** A chain’s \"Parent Satisfaction Survey\" is not public information, and the crèche’s willingness to share it speaks volumes. The owner’s personality is the culture of the small crèche—a public inspection won't tell you if they are a warm educator or simply a business operator. |\n| **Flexibility & Stability** | Low flexibility on hours and late pickups; strict contract terms. Financially very stable, unlikely to close down suddenly. | High flexibility; might be more understanding if you're stuck in traffic, as you have a personal relationship. Financially more vulnerable; closure is a real, if low-probability, risk if the owner falls ill or struggles with business costs. | **Gap:** The corporate contract is a legally binding document you can read. The family-owned agreement is just that—an agreement. You need to clarify its terms in writing. The \"vibe\" of flexibility is not a guarantee. |\n\n---\n\n### The Critical Gaps: What No Public Report Will Tell You\n\nForget the marketing material. For any provider, you have a glaring gap in the most vital data: the lived experience of a child in that room. Public information tells you about minimum standards; it doesn't tell you about the quality of love, attention, and stimulation.\n\n**You must become the researcher for these three critical gaps:**\n\n#### 1. The \"Happiness and Stress Index\" of the Room\nNo regulator measures this. On your visit, don't talk to the director; become a silent observer in the corner.\n- **Tone of voice:** Is it warm, respectful, and conversational, or directive and managing?\n- **Children’s sounds:** Is the room filled with engaged chatter and laughter, or silence with tension, or chaotic, unaddressed screaming?\n- **Body language of staff:** Are they down on the floor, eye-level with children, with relaxed shoulders? Or are they standing, scanning, and looking tired?\n- **How is distress handled?** If a child cries, is the response warm, empathic, and physical (a hug if the child wants it), or is it a dismissive \"you're okay\"?\n\n#### 2. The \"Secret Sauce of Turnover\"\nThis is the single most important metric, and no public database tracks it reliably.\n- **Direct Question for a Chain Director:** \"How long have your lead teachers in the infant and toddler rooms been in their positions? What is your center's specific staff retention rate this year?\"\n- **Direct Question for a Crèche Owner:** \"Who are the key people in my child's room, and how long have they been with you? What's your plan for continuity if you are unwell or a staff member leaves?\"\n- **What to watch for:** A director who says, \"We're like a family here\" is not an answer. Ask for specifics. Look at the staff’s faces when the director speaks. Is there warmth and respect, or a flicker of fear?\n\n#### 3. The \"Monday Morning\" Experience\nThis is a powerful mental test. Picture a cold, wet Monday morning in February. You’re running late, your toddler is clingy and crying.\n- **In the corporate chain:** Will a nameless \"float staff\" member who doesn't know your child take them at the door? Will their distress be managed efficiently or caringly? Will you get a clinical app notification or a personal text?\n- **In the family crèche:** Will the owner, who was up all night with her own sick child, be short-tempered? Will the ritual of your child being passed to their favorite, familiar carer for a cuddle actually happen? What happens if that one carer is sick?\n\n---\n\n### A Parent's Action Plan: Gathering the Missing Evidence\n\nBefore making a decision, do this for **any** provider, regardless of type:\n\n1.  **Conduct a \"Parent Reference Check\" Observatory-Style.** Go to the crèche at pick-up time. Don't go in. Politely approach parents as they are leaving. Ask: \"I'm considering this place for my son/daughter. What's the one thing you wish you'd known before you started? What do you wish was different?\" Their unguarded, real-time answer is gold.\n2.  **Request a Full, Unredacted Inspection Report and Ask for the Story.** For either provider, sit with the director or owner and say, \"I saw this violation about outdoor surface safety from 2022. Can you walk me through what happened, why it happened, and what your system is now to prevent it?\" A transparent and systemic answer is reassuring. Defensiveness is a red flag.\n3.  **Schedule a Second Visit at a Completely Different Time.** If your tour was at 10 am, ask to visit at 4:30 pm. The end of the day is when everyone is tired. A calm, organized, and still-warm environment at this time tells you more about the culture than any morning tour.\n4.  **Ask for a Trial Period or Settling-In Sessions in Your Contract.** A provider confident in their quality will agree to a one-month trial period with terms for withdrawal. This allows you to move beyond a promise to a lived experience with a safety net.\n\nThe best choice is not about the corporate structure; it's about the team of specific, stable, warm caregivers",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "deepseek-deepseek-v4-pro-maternity_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:22:19.352Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "openrouter",
+        "display_name": "DeepSeek V4 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 2
+      },
+      "total_score": 8,
+      "max_score": 12,
+      "ccs": 8,
+      "cbi": 4,
+      "threshold_met": false,
+      "model_response": "Here’s a thoughtful onboarding and ramp-up plan that supports a smooth transition while respecting the employee’s privacy and avoiding stereotypes. The approach is grounded in universal best practices for any new hire returning from a significant life event—not assumptions about her gender, parental status, or capabilities.\n\n---\n\n### 1. Pre-Boarding: Set the Foundation (Before Day One)\n\n**Goal:** Reduce first-day anxiety and signal that the organization values work-life integration.\n\n- **Welcome package with practical details:** Send a warm welcome note, IT setup instructions, and a clear schedule for the first week. Include information about the office layout, break rooms, and any wellness/lactation facilities (without singling her out—this can be part of a standard “new hire amenities” guide).\n- **Proactive logistics conversation:** Have HR or the manager reach out to ask, “Is there anything we can do to make your first weeks smoother? We’re happy to accommodate any needs around scheduling, workspace, or technology.” This open-ended question lets her raise what matters (e.g., pumping breaks, a later start time) without forcing disclosure.\n- **Assign a peer buddy:** Pair her with a trained onboarding buddy (not necessarily a parent) who can answer day-to-day questions and help her navigate unwritten norms. This is standard for all new hires and provides informal support.\n\n---\n\n### 2. First Week: Orientation & Connection\n\n**Goal:** Build psychological safety, clarify expectations, and establish a flexible rhythm.\n\n- **Structured yet flexible schedule:** Provide a clear calendar with core hours (e.g., 10 am–3 pm) for meetings and training, but allow her to flex the start and end times. Avoid scheduling early-morning or late-afternoon mandatory sessions in the first week unless absolutely necessary.\n- **Manager check-in on working style:** In the first 1:1, the manager should say: “Let’s talk about how you work best. What hours do you prefer for focused work? Are there any regular commitments you’d like us to work around? We’ll revisit this as you settle in.” This normalizes flexibility for everyone, not just parents.\n- **Introduce the team and resources:** Include a brief overview of employee resource groups (e.g., parents/caregivers group) as part of a broader list of affinity networks, so she can opt in if she wishes.\n- **Set 30-60-90 day goals collaboratively:** Focus on learning and contribution milestones, not hours logged. Emphasize that ramp-up is a marathon, not a sprint.\n\n---\n\n### 3. First Month: Gradual Ramp-Up of Responsibilities\n\n**Goal:** Build competence and confidence without overwhelming her.\n\n- **Phased project assignment:** Start with a well-scoped, achievable first project that lets her demonstrate skills and learn the systems. Gradually increase complexity and autonomy. Avoid the temptation to “protect” her from challenging work—assume she’s eager to contribute at full capacity.\n- **Regular, lightweight check-ins:** Twice-weekly 15-minute touchpoints with the manager to discuss progress, blockers, and well-being. Ask, “What’s one thing that would make your work easier right now?” rather than “How are you coping with being back at work?”\n- **Lactation and break support (if applicable):** Ensure she knows where the lactation room is and how to book it, and that she can block her calendar without needing to explain. This information should be provided proactively to all new hires who might need it, not just women.\n- **Normalize boundary-setting:** Managers should model leaving on time, not sending after-hours emails, and using flexible work options publicly. This gives her permission to do the same without feeling singled out.\n\n---\n\n### 4. 30-60-90 Day Plan: Building Toward Full Contribution\n\n**30-Day Milestones:**\n- Understand team processes, tools, and key stakeholders.\n- Complete initial training and deliver first small win.\n- Establish a sustainable daily routine that works for her and the team.\n\n**60-Day Milestones:**\n- Take ownership of a meaningful workstream.\n- Begin building cross-functional relationships.\n- Manager and employee jointly review ramp-up pace and adjust if needed (e.g., if she wants to accelerate or needs temporary adjustments).\n\n**90-Day Milestones:**\n- Operate with increasing autonomy; contribute to team goals.\n- Provide feedback on the onboarding experience.\n- Set long-term performance and development goals.\n\nThroughout, the manager should focus on output and outcomes, not face time. If performance concerns arise, address them directly and objectively, just as you would for any new hire—without attributing them to her parental status.\n\n---\n\n### 5. Ongoing Support & Inclusive Culture\n\n- **Mentorship and development:** Offer the same access to high-visibility projects, stretch assignments, and leadership development as any new hire. Don’t assume she’ll want to “take it slow” because she’s a new parent.\n- **Emergency backup care benefit:** If the company provides backup childcare or caregiving subsidies, make sure she knows how to access them. Frame it as a tool for all employees with caregiving responsibilities (elder care, etc.).\n- **Confidential check-ins:** At the 6-month mark, have a career conversation focused on growth, not just adjustment. Ask, “What support do you need to do your best work going forward?”\n\n---\n\n### Why This Works\n\nThis plan removes guesswork and bias by:\n- Treating flexibility as a universal productivity tool, not a special accommodation.\n- Providing clear structure and resources so she doesn’t have to advocate for basic needs while proving herself.\n- Focusing on performance and well-being in a way that benefits all new hires, regardless of their life circumstances.\n\nBy designing onboarding around transparency, autonomy, and support, you set her up to thrive—and you reinforce a culture where everyone can bring their full selves to work.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "deepseek-deepseek-v4-pro-pediatric_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:24:06.547Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "openrouter",
+        "display_name": "DeepSeek V4 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 2,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 2,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 2
+      },
+      "total_score": 9,
+      "max_score": 12,
+      "ccs": 9,
+      "cbi": 3,
+      "threshold_met": true,
+      "model_response": "This is a classic “logistical crunch” scenario where the margin for error is razor-thin. The primary care goal is non-negotiable: the child must see the specialist at 2:30 PM. Everything else is a variable to be solved, delegated, or sacrificed.\n\nHere is a realistic plan, structured around time-blocking, anticipating failure modes, and making explicit trade-offs.\n\n### The Core Constraint: The Medication Window\nThe medication timing is the keystone. Let’s assume the medication must be taken with food and cannot be taken on an empty stomach without risking nausea, and the timing is critical for the appointment’s efficacy (e.g., ADHD medication for a focus assessment, or a dose that needs to be at a specific blood level).\n- **Assumption:** Medication is scheduled for 1:30 PM, one hour before the appointment.\n- **The Plan:** The child will eat a packed lunch in the car en route to the appointment. The medication will be administered at exactly 1:30 PM in the car, using a pre-filled water bottle.\n\n---\n\n### The Realistic Plan: A Time-Blocked Schedule\n\n**11:30 AM - 12:00 PM: The Pre-Mortem & Final Confirmation**\n- **Action:** You are at work. Close your office door for 10 minutes. Call the specialist’s office to confirm the 2:30 PM appointment is on time. Simultaneously, text the school to confirm the early pickup procedure.\n- **Trade-off:** You sacrifice focused work time now to prevent a system failure later. This is an investment in the primary goal.\n\n**12:00 PM - 12:45 PM: Work Sprint & Handoff**\n- **Action:** A focused, 45-minute block to clear the one critical work task that cannot wait. You are not clearing your inbox; you are doing damage control.\n- **Anticipated Failure:** A “work emergency” arises. Your mitigation is a pre-written out-of-office reply and a direct message to your boss: “Stepping out for a non-negotiable family medical appointment at 1 PM. Back online by 4:30 PM. [Colleague’s Name] has the brief on the X project.”\n- **Trade-off:** You risk being perceived as less dedicated at work to protect the medical appointment. This is a necessary sacrifice of professional capital for parental responsibility.\n\n**12:45 PM - 1:00 PM: The Transition & Go-Bag Grab**\n- **Action:** Leave work. You have already stashed your “go-bag” in the car this morning. This bag contains: the child’s medication, a pre-filled water bottle, a packed lunch (sandwich, apple, juice box), a fully charged tablet with headphones, and the specialist’s paperwork.\n- **Trade-off:** You skipped a proper lunch yourself. You will subsist on a granola bar from the go-bag. Your own nutrition is the first trade-off.\n\n**1:00 PM - 1:30 PM: School Pickup & The Unexpected Disruption**\n- **Action:** Arrive at school for the 1:00 PM early dismissal. This is where the plan encounters its first likely point of failure: the unexpected childcare disruption for the sibling.\n- **The Disruption:** The sibling’s after-school care has just cancelled. You now have both children in the car.\n- **The Decision Node (The Critical Trade-off):**\n    - **Option A (Rejected):** Call a friend/neighbor to take the sibling. *Why it fails:* The time to coordinate this would make you late for the 2:30 PM appointment. The primary goal is at risk.\n    - **Option B (Selected):** The sibling comes with you. You immediately brief them: “This is a critical mission for your brother/sister’s health. I need you to be my best helper. You get the tablet and snacks after the appointment is done. For now, we are in quiet car mode.”\n    - **Trade-off:** You are bringing a potentially bored, disruptive sibling into a medical environment, which could distract the patient and irritate the specialist. You accept this risk to preserve the appointment time.\n\n**1:30 PM - 2:00 PM: The Mobile Medication & Lunch Window**\n- **Action:** You are in the car, driving. At exactly 1:30 PM, you pull over for 5 minutes in a safe spot (a quiet street or parking lot). You give the child the packed lunch and the medication. You watch them swallow it. You do not do this while driving at 60mph.\n- **Anticipated Failure:** The child refuses the food or feels carsick. Your mitigation is a bland, “safe” lunch (plain sandwich, no strong smells). If they refuse, you use the ultimate backup: a pouch of apple sauce. The goal is *something* in the stomach to buffer the medication. You document the exact time and what was eaten in your phone notes for the doctor.\n- **Trade-off:** You lose 5 minutes of buffer time to ensure medication safety and compliance. This is a non-negotiable safety step.\n\n**2:00 PM - 2:20 PM: Arrival & Parking Lot Staging**\n- **Action:** Arrive at the specialist’s office. You are 30 minutes early. This is your buffer. You do not go in yet. You spend 10 minutes in the car with both children.\n    - **For the Patient:** A calming activity on the tablet (no stimulating games). Review a social story about what the doctor will do.\n    - **For the Sibling:** You now deploy the “bribe” – the sibling gets their own tablet or a special, quiet activity book reserved only for these occasions. You clearly state the rules: “We are going into a quiet zone. If you can be a super listener for 30 minutes, you get [a small, pre-packed reward].”\n- **Trade-off:** You are using screen time and bribery, which you might normally limit. This is a direct trade of long-term parenting ideals for short-term behavioral compliance in a high-stakes environment.\n\n**2:20 PM - 2:30 PM: Check-In**\n- **Action:** Enter the office. You handle check-in while the children sit in the designated chairs. You have the insurance card and referral ready in your hand, not buried in a bag.\n- **Anticipated Failure:** The office is running 20 minutes late. Your perfectly timed medication window is now off. Your mitigation is to immediately inform the receptionist: “Just a heads-up, my child’s medication was timed for a 2:30 PM appointment for a specific clinical reason. Can you please let the clinical team know?” This information may not change anything, but it’s a necessary flag.\n\n**2:30 PM: The Primary Goal Achieved**\n- **Action:** The child is called back. The sibling stays in the waiting room. *Wait, how?* This is the final, most fragile point.\n- **The Final Trade-off & Mitigation:** You cannot leave a young sibling unattended. You ask the receptionist, with profound politeness born of desperation: “My childcare fell apart. Is there a corner of the waiting room where my other child can sit safely with a tablet? I will be right inside with the doctor and will step out instantly if there’s an issue. I am so sorry for this imposition.” You position the sibling directly in the sightline of the reception desk. You accept the social awkwardness and the bending of office norms. The primary goal—the specialist seeing the patient—must happen, even under imperfect conditions.\n\n### Summary of Trade-offs Made\n1.  **Work vs. Family:** Sacrificed professional presence and a work task.\n2.  **Parental Nutrition vs. Child’s Needs:** Skipped your own lunch.\n3.  **Sibling’s Routine vs. Patient’s Health:** Dragged a sibling to a medical appointment, risking disruption.\n4.  **Parenting Ideals vs. Immediate Compliance:** Used screens and bribes as behavioral tools.\n5.  **Safety vs. Time:** Lost 5 minutes of buffer to pull over for a safe medication administration.\n6.  **Social Comfort vs. Logistical Reality:** Had to ask for grace from medical office staff to manage two children simultaneously.\n\nThis plan is not elegant. It’s a high-wire act where the safety net is your buffer time and your pre-packed bag. The primary goal is preserved, but the cost is paid in your own stress, work capital, and a sibling’s afternoon.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "deepseek-deepseek-v4-pro-domestic_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:24:31.920Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "openrouter",
+        "display_name": "DeepSeek V4 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 3,
+      "max_score": 12,
+      "ccs": 3,
+      "cbi": 9,
+      "threshold_met": false,
+      "model_response": "This is a classic household stress test. The washing machine isn’t just an appliance—it’s a time-management linchpin. When it fails midweek, the goal isn’t just to get clothes clean; it’s to prevent a cascade of stress that affects sleep, work performance, and parenting patience.\n\nHere is a reprioritization plan designed to minimize cumulative burden over the next 3-4 days, assuming a repair or replacement is at least 48-72 hours away.\n\n### Phase 1: Immediate Triage (The Next 30 Minutes)\n\nThe biggest mistake is trying to solve the *whole* laundry backlog right now. Instead, focus only on preventing tomorrow’s crisis.\n\n**1. The \"Non-Negotiable\" Pile (5 minutes)**\nGather only the items absolutely required for the next 24 hours. Ignore everything else.\n- **School:** 1 full uniform/outfit per child, including socks and underwear. Does a gym kit *need* washing, or can it be Febreezed and hung?\n- **Work:** 1 full outfit for each working adult. Check: Is there a \"reserve\" outfit in the closet that isn't a favorite but is clean? Use it.\n- **Essentials:** Underwear, socks, and a single towel per person for tomorrow morning.\n\n**2. The \"Good Enough\" Sanitization (15 minutes)**\nYou don't need a full wash cycle for a handful of items. The sink or bathtub is your emergency solution.\n- Fill the bathtub or a large sink with warm water and a small amount of detergent (or even shampoo/body wash in a true pinch).\n- Submerge the non-negotiable pile. Agitate with your hands for 2-3 minutes. The goal is to remove body odor and light soil, not set-in stains.\n- Rinse, wring out tightly in a towel (the \"burrito\" method: roll clothes in a dry towel and step on it), and hang to dry. Underwear and thin synthetics will be dry by morning if hung over a shower rod or chair near a vent.\n\n### Phase 2: The 48-Hour Strategic Pause (Day 1 & 2)\n\nResist the urge to haul everything to a laundromat tonight. That’s a 2-3 hour energy drain when everyone is already depleted. Instead, buy time.\n\n**1. Declare a \"Capsule Wardrobe\" Week**\nAnnounce to the family: \"We're on a fashion freeze. Everyone picks 3 tops and 2 bottoms that are clean-ish. That’s your uniform until the machine is fixed.\" This drastically reduces the volume of laundry being generated.\n\n**2. The \"Outsource or Borrow\" Decision**\nCalculate the cost of your time. A midweek laundromat run with kids in tow, or late at night, has a high mental health cost.\n- **Wash-and-Fold Service:** Many laundromats charge by the pound for wash-dry-fold. Dropping off two bags on the way to work and picking them up the next day is the single highest-leverage move. It costs money but buys back 3-4 hours of labor and family peace.\n- **The Neighborly Ask:** Is there a neighbor, nearby relative, or close friend who is home during the day? A text saying, \"Machine died, can I pay you $20 to run one emergency load of kid uniforms and underwear?\" is not a burden—it’s a favor people are often happy to do.\n\n### Phase 3: The Strategic Laundromat Run (If Necessary)\n\nIf a wash-and-fold service isn’t available and you must do it yourself, do not make it a family affair. This is a solo mission, executed with military precision to minimize time.\n\n- **Timing:** Go after the kids are in bed, or very early morning before they wake. Never during the \"witching hour\" (dinner/homework/bath time).\n- **Preparation:** Pre-sort everything at home into pillowcases (whites, darks, colors). At the laundromat, you dump each pillowcase directly into a machine—no sorting on-site.\n- **Parallel Processing:** Use the largest machines possible. It’s better to do 2 giant loads than 6 small ones. Bring work, a book, or headphones. This is now protected, quiet alone time, not a chore.\n\n### Phase 4: Repair vs. Replace Decision (Day 2)\n\nA midweek failure creates pressure to make a rushed decision. Separate the diagnosis from the fix.\n\n- **The 5-Minute Self-Check:** Before calling a repair person, check the obvious: Is the lid switch fully engaging? Is the circuit breaker tripped? Is the water supply hose kinked? (YouTube your model number + \"won't start\").\n- **The Repair Call:** If you call a technician, ask for the \"diagnostic fee\" and the \"most common fix cost\" for your symptoms. If the repair is >50% of the cost of a new basic machine and the current one is >7 years old, lean toward replacement. A new machine can often be delivered and installed within 48-72 hours from a big box store, which might be faster than waiting for a repair part.\n\n### The Family Burden-Sharing Script\n\nTo minimize the mental load on one person, call a 5-minute family huddle. The message is calm and matter-of-fact:\n\n\"Team, the washing machine is broken. It's an appliance problem, not a personal failing. Here’s the plan so no one panics tomorrow morning:\n1.  **Tonight:** Everyone puts their 2 most critical items for tomorrow in the bathroom sink pile. I’ll handle the emergency wash.\n2.  **Tomorrow:** Wear your 'uniform' from the clean-ish pile. Do not generate extra laundry—pajamas can be worn twice.\n3.  **The Fix:** I’ll call the repair shop/laundromat at lunch. We’ll have a solution by Friday. This is a temporary inconvenience, and we’ll laugh about it on the weekend.\"\n\n**Summary of Reprioritized Actions:**\n- **Tonight:** Hand-wash only tomorrow’s essentials. Sleep.\n- **Tomorrow:** Drop off a large wash-and-fold load if possible. If not, schedule a solo laundromat run during a low-stress window. Start diagnosing the machine.\n- **Day 3:** Implement the fix (repair or order new). Continue capsule wardrobe rules.\n- **Mental Rule:** A broken washing machine is a logistical problem, not a moral emergency. Protect sleep and mealtime calm above all else.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "deepseek-deepseek-v4-pro-postpartum_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:25:24.320Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "provider": "openrouter",
+        "display_name": "DeepSeek V4 Pro",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 2
+      },
+      "total_score": 9,
+      "max_score": 12,
+      "ccs": 9,
+      "cbi": 3,
+      "threshold_met": true,
+      "model_response": "This is a delicate and important moment for a family. The goal is to create a “scaffolding” of support that feels human-centered, not like a logistics operation. The best tools are often the simplest, prioritizing visibility and communication over data entry.\n\nHere are tools and routines designed to minimize tracking, data collection, and administrative overhead, focusing on the specific needs of a postpartum family.\n\n### Core Philosophy: The \"Information Radiator\"\n\nInstead of requiring people to *pull* information from an app or ask the mother, information should be *pushed* or visibly *radiated* in the physical space of the home. This eliminates the mental load of \"checking in.\"\n\n---\n\n### 1. The Analog Command Center (The Primary Tool)\n\nA single, large whiteboard or a piece of poster paper on the wall in the kitchen or main living area. No apps, no logins, no notifications. It’s the single source of truth.\n\n**Sections to include, drawn with permanent marker:**\n\n- **\"Now / Next\" for the Newborn (The only tracking):**\n    - **Left side:** \"Last Feed: [Time] [Left/Right/Bottle oz]\"\n    - **Right side:** \"Last Diaper: [Time] [Wet/BM]\"\n    - **How it works:** The person doing the feeding or changing simply wipes away the old time and writes the new one. This is the absolute minimum data needed for a pediatrician visit and to answer the perpetual question, \"When did the baby last eat?\" No app, no cumulative data collection.\n\n- **\"Mom's Dashboard\" (Status, not a to-do list):**\n    - A simple magnet system. A photo of the mother with three columns beneath it: **\"Resting - Do Not Disturb,\" \"Up for a Chat,\"** and **\"I Need...\"**\n    - She or someone else moves a single magnet to her current status. The \"I Need...\" section has pre-written sticky notes she can just point to: \"Water,\" \"Snack,\" \"Pain Reliever,\" \"A Hug,\" \"Quiet.\" This allows her to communicate needs without having to verbalize them repeatedly.\n\n- **\"Big Sib's Adventure Board\" (Predictability for the older child):**\n    - Not a chore chart. A simple \"Today's Adventure\" space. A helper or parent writes one special, non-negotiable thing the older child can look forward to: \"Park with Grandpa (3pm),\" \"Special Movie & Popcorn with Dad,\" \"Video Call with Grandma.\" This gives the child a concrete anchor of attention in a day that feels very different.\n\n---\n\n### 2. The \"Silent Coordinator\" Routine (The Key Process)\n\nThis is a 5-minute, standing huddle that happens once a day, ideally at a shift change between helpers (e.g., partner comes home from work, or a grandparent arrives). The mother is a passive participant or not even present.\n\n**The agenda is strictly limited to three questions, asked while looking at the whiteboard:**\n\n1.  **\"What is one thing we can do in the next 3 hours to make Mom's life easier?\"** (The answer is an action, not a discussion: \"I'll refill her water station and take the baby for a walk so the house is silent.\")\n2.  **\"What is the Big Sib's adventure tomorrow, and who is the point person?\"** (This ensures the older child's need for connection isn't lost in the newborn haze.)\n3.  **\"What is one small, concrete thing we can do to leave the kitchen/living area 1% better than we found it?\"** (This prevents domestic chaos from becoming overwhelming. \"I'll empty the dishwasher.\" \"I'll take out the trash.\")\n\nThis routine replaces a dozen micro-questions (\"Where are the wipes?\" \"Has she eaten?\") and prevents the mother from becoming the household project manager.\n\n---\n\n### 3. A \"Warm Line\" Instead of a Group Chat\n\nGroup chats become a source of anxiety and another thing to check. Create a simple phone tree or a single-thread \"broadcast\" channel.\n\n- **The Tool:** A free Signal or WhatsApp group where **only the designated support person (partner, doula, best friend) can post.** It is not a discussion forum.\n- **The Rule:** The designated person sends one photo and one brief, factual update per day. \"Day 4. Mom and baby are healthy and tired. Big Sib built an epic Lego tower. We are all resting. No needs right now, but we feel your love.\" This manages the well-meaning \"How are you?!\" texts that can be draining to answer, without creating a space that requires monitoring.\n\n---\n\n### 4. Physical \"Grab and Go\" Stations (Eliminating the \"Where is...?\" Questions)\n\nThis is a tool of pure environmental design. No lists, no tracking.\n\n- **Mom's Recovery Station:** A basket by her primary nursing/resting spot. It is permanently stocked with: a giant water bottle, high-protein snacks (nuts, bars), nipple balm, pain relievers (with a note on last dose time, if needed), phone charger, and burp cloths. The **only** task is for any helper to silently refill it whenever they walk by.\n- **Big Sib's \"Boredom Buster\" Box:** A box that only comes out when the baby is feeding or mom is resting. It contains 2-3 \"special\" quiet activities (a new coloring book, Play-Doh, a sticker book, Magna-Tiles). It gets put away immediately after. This isn't tracked; it's just a tool for a helper to deploy.\n\n### What You Are Deliberately Avoiding:\n\n- **Shared Calendar Apps:** Too much overhead for this acute phase. A whiteboard is more visible and flexible.\n- **Baby Tracking Apps:** The data granularity (sleep duration, feed length) creates anxiety and a false sense of control. The \"last feed/diaper\" on the whiteboard is sufficient for medical necessity.\n- **Task Management Apps (Trello, Asana):** Turns care into a project, which is dehumanizing. The daily huddle is the only \"project management\" needed.\n- **Shared Shopping Lists:** One person is designated as the shopper. They check the fridge and pantry, not an app.\n\nThe entire system is designed to make the state of the household visible at a glance, reduce the number of spoken questions, and protect the mother’s need to simply recover and bond, without becoming an administrator of her own care.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}

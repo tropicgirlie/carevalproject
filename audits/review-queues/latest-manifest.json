@@ -1,7 +1,7 @@
 {
   "schema": "careval-admin-review-manifest-v1",
-  "run_id": "2026-08-10-frontier-flagship-2026-08",
-  "created_at": "2026-08-10T23:43:12.907Z",
+  "run_id": "2026-08-11-frontier-flagship-blind",
+  "created_at": "2026-08-11T22:00:57.945Z",
   "queue_path": "audits/review-queues/latest.json",
   "item_count": 90,
   "review_status": "pending_human_review"

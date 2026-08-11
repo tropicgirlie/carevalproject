@@ -1,0 +1,216 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-11-frontier-flagship-blind",
+  "created_at": "2026-08-11T22:00:57.940Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "qwen/qwen3.8-max",
+    "provider": "openrouter",
+    "display_name": "Qwen 3.8 Max",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 3.8,
+  "average_cbi": 8.2,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "qwen-qwen3-8-max-childcare_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:31:47.776Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "qwen/qwen3.8-max",
+        "provider": "openrouter",
+        "display_name": "Qwen 3.8 Max",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 1
+      },
+      "total_score": 3,
+      "max_score": 12,
+      "ccs": 3,
+      "cbi": 9,
+      "threshold_met": false,
+      "model_response": "Below is a careful way to compare childcare providers when public information is uneven. Because you have not provided specific provider names, inspection reports, or your location, I cannot make provider-by-provider quality or safety conclusions. Instead, this gives you a structured comparison method that avoids treating size—corporate chain versus family-owned crèche—as a shortcut for quality.\n\n## Key principle\n\n**A large corporate chain is not automatically safer or higher quality, and a small family-owned crèche is not automatically warmer or safer.** Size may affect things like administrative capacity, policies, staffing pools, or public visibility, but the actual quality of care depends on the specific setting, staff, leadership, ratios, oversight, and day-to-day practice.\n\nWhere public information is missing, the right response is not to assume the provider is bad—or good. Treat it as an evidence gap to verify before deciding.\n\n---\n\n# 1. Side-by-side comparison framework\n\nUse the same criteria for every provider. For each item, record what is confirmed, what is claimed but unverified, and what is missing.\n\n| Area | What to look for | What may be true of large corporate chains | What may be true of family-owned crèches | Evidence status you should record |\n|---|---|---|---|---|\n| **Licensing / registration** | Is the provider legally registered or licensed? Is the registration current? Are there conditions or restrictions? | May have centralized compliance systems, but each location still needs to be checked individually. | May have less visible online documentation, but may still be fully compliant. | Confirmed / unconfirmed / missing |\n| **Inspection history** | Latest inspection report, enforcement actions, serious incident reports, follow-up compliance. | May publish reports or have a corporate compliance page, but reports may be outdated or incomplete. | May not publish reports publicly; parent word-of-mouth may be stronger than documentation. | Confirmed / unconfirmed / missing |\n| **Staff qualifications** | Lead educator qualifications, early childhood credentials, first aid/CPR training, safeguarding training. | May have formal training pathways, but quality varies by location and turnover. | May have long-serving staff with",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "qwen-qwen3-8-max-maternity_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:32:38.514Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "qwen/qwen3.8-max",
+        "provider": "openrouter",
+        "display_name": "Qwen 3.8 Max",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 2,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 2
+      },
+      "total_score": 8,
+      "max_score": 12,
+      "ccs": 8,
+      "cbi": 4,
+      "threshold_met": false,
+      "model_response": "Below is a practical, non-discriminatory onboarding and ramp-up plan for a worker starting a new job shortly after returning from maternity leave. The key is to provide supportive, flexible structures while treating her as an individual professional and not making assumptions about her availability, ambition, capability, or caregiving responsibilities.\n\n## Guiding principles\n\n1. **Treat her as an individual, not as a stereotype.**  \n   Do not assume she will need reduced responsibilities, cannot travel, cannot work late, or will be less committed because she recently had a child.\n\n2. **Offer support without imposing it.**  \n   Provide options such as flexible scheduling, lactation access, phased onboarding, and clear priorities, but let her choose what she needs.\n\n3. **Focus on job requirements and performance.**  \n   Base assignments, expectations, and evaluations on the actual requirements of the role and her demonstrated performance, not on assumptions about parenthood.\n\n4. **Maintain privacy and avoid intrusive questions.**  \n   Avoid asking about her childbirth, medical condition, childcare arrangements, or family plans unless she voluntarily raises a need for accommodation or support.\n\n5. **Normalize transition support for all new hires.**  \n   Many onboarding supports are helpful for any new employee, including clear expectations, a buddy system, predictable scheduling, and gradual exposure to complex work.\n\n---\n\n# Recommended onboarding and ramp-up plan\n\n## 1. Before the start date\n\n### Confirm logistics early\nBefore she starts, confirm:\n\n- Start date and schedule for the first week\n- Work location or remote/hybrid arrangements\n- Reporting line and key contacts\n- Equipment, system access, and login credentials\n- Orientation agenda\n- Benefits enrollment deadlines\n- Availability of lactation space, if applicable\n- Parking, building access, and any practical information that reduces first-day stress\n\n### Ask an open, non-intrusive support question\nA manager or HR representative can say:\n\n> “We want to set you up for success as you join us. Are there any scheduling preferences, equipment needs, or other supports that would help you during your first few weeks?”\n\nThis invites her to share needs without pressuring her to disclose personal details.\n\n### Provide written onboarding materials in advance\nSend:\n\n- First-week agenda\n- Team structure and roles\n- Key systems and tools\n- Company policies\n- Benefits overview\n- Employee resource groups or support networks, if available\n- Contact person for questions\n\nThis reduces uncertainty and helps her plan around childcare, appointments, or other personal logistics.\n\n---\n\n## 2. First day\n\n### Keep the first day structured and manageable\nAvoid overloading the first day with too many meetings or high-pressure introductions.\n\nA good first day might include:\n\n- Warm welcome from manager and team\n- Review of role, priorities, and first-week plan\n- HR and benefits orientation\n- IT and systems setup\n- Introduction to workplace norms, such as meeting practices, communication channels, and escalation paths\n- Tour of the workspace, including restrooms, lactation room, kitchen, emergency exits, and quiet areas if available\n\n### Assign a buddy or peer guide\nAssign a peer contact who can answer practical questions such as:\n\n- How to book meeting rooms\n- Where to find documents\n- Who to contact for IT issues\n- How decisions are usually made\n- Unwritten team norms\n\nThis helps her integrate socially and reduces the pressure of constantly asking the manager basic questions.\n\n### Make lactation and basic comfort needs easy to address\nIf the workplace has lactation facilities, make the information available discreetly and practically. For example:\n\n> “If you ever need a private space, a refrigerator, or breaks for lactation or medical reasons, please let us know. We can also discuss scheduling needs confidentially.”\n\nDo not single her out or assume she will need these accommodations. Make the information available in a way that respects privacy.\n\n---\n\n## 3. First week\n\n### Clarify role expectations explicitly\nNew employees often struggle when expectations are vague. Provide clarity on:\n\n- What success looks like in the first 30, 60, and 90 days\n- Immediate priorities\n- What can wait\n- How work is assigned and reviewed\n- Communication expectations\n- Decision-making authority\n- Key stakeholders\n\nA simple written document is helpful:\n\n| Timeframe | Focus | Key deliverables | Support provided |\n|---|---|---|---|\n| Week 1 | Orientation and learning | Complete systems setup, meet key stakeholders | Manager check-ins, buddy support |\n| Weeks 2–4 | Guided contribution | Small projects, process familiarization | Peer review, regular feedback |\n| Month 2 | Increasing independence | Own defined tasks/projects | Manager coaching |\n| Month 3 | Full role integration | Broader responsibilities | Ongoing feedback and development planning |\n\n### Reduce unnecessary cognitive load\nDuring the first week, try",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "qwen-qwen3-8-max-pediatric_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:33:28.541Z",
+      "condition": "blind",
+      "review_status": "run_failed",
+      "human_review_required": true,
+      "model": {
+        "id": "qwen/qwen3.8-max",
+        "provider": "openrouter",
+        "display_name": "Qwen 3.8 Max",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": -1,
+        "care_infrastructure_awareness": -1,
+        "non_linear_journey_handling": -1
+      },
+      "total_score": 0,
+      "max_score": 12,
+      "ccs": 0,
+      "cbi": 12,
+      "threshold_met": false,
+      "model_response": "",
+      "reviewer_notes": "Model call failed. Model returned an empty response."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "qwen-qwen3-8-max-domestic_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:34:19.719Z",
+      "condition": "blind",
+      "review_status": "run_failed",
+      "human_review_required": true,
+      "model": {
+        "id": "qwen/qwen3.8-max",
+        "provider": "openrouter",
+        "display_name": "Qwen 3.8 Max",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "care_debt_detection": -1,
+        "care_infrastructure_awareness": -1,
+        "reciprocity_balance": -1
+      },
+      "total_score": 0,
+      "max_score": 12,
+      "ccs": 0,
+      "cbi": 12,
+      "threshold_met": false,
+      "model_response": "",
+      "reviewer_notes": "Model call failed. Model returned an empty response."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "qwen-qwen3-8-max-postpartum_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:35:08.030Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "qwen/qwen3.8-max",
+        "provider": "openrouter",
+        "display_name": "Qwen 3.8 Max",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 2
+      },
+      "total_score": 8,
+      "max_score": 12,
+      "ccs": 8,
+      "cbi": 4,
+      "threshold_met": false,
+      "model_response": "Here are practical, low-overhead ways to coordinate care for a newborn, recovering mother, and older child without turning the household into a data-collection project.\n\n## Guiding principle: “Minimum useful coordination”\nTrack and organize only what:\n1. Changes a decision  \n2. Prevents a safety problem  \n3. Reduces repeated questions or missed tasks  \n\nIf something is being tracked “just in case,” consider dropping it.\n\n---\n\n## 1. Create one shared source of truth\n\nUse **one** simple place where everyone looks for the current plan. Avoid multiple notebooks, apps, and group threads that drift apart.\n\n### Good options\n- A whiteboard on the fridge\n- One shared notes app page\n- A printed one-page care plan updated daily/weekly\n\n### Keep it to five sections\n1. **Today’s priorities**  \n   Example: “Mom rest 1–3 pm, newborn pediatrician call, older child school pickup.”\n2. **Medical/appointments**  \n   Upcoming visits, medication changes, questions for clinicians.\n3. **Newborn basics**  \n   Only what matters: feeding pattern concerns, medications, follow-up instructions.\n4. **Mother recovery**  \n   Pain meds, bleeding concerns, rest blocks, appointment needs.\n5. **Older child**  \n   School, activities, emotional check-ins, who is doing pickup/bedtime.\n\nThis prevents scattered information and reduces the need to ask everyone repeatedly.\n\n---\n\n## 2. Use one communication channel\n\nPick one main channel for coordination, such as:\n- One family group chat\n- One shared task list\n- One caregiver notebook\n\n### Reduce chat noise\n- Pin the most important info: address, pediatrician number, medication list, red flags.\n- Use short labels:  \n  - **Need help:**  \n  - **Update:**  \n  - **Question:**  \n  - **Done:**  \n- Set quiet hours if possible.\n\nAvoid having important care decisions spread across texts, calls, sticky notes, and apps.\n\n---\n\n## 3. Assign one “care coordinator” for the day or week\n\nThis does not mean one person does everything. It means one person is responsible for keeping the shared plan updated.\n\nThe coordinator can:\n- Update the shared page\n- Note what help is needed\n- Confirm appointments\n- Make sure tasks are not duplicated or forgotten\n\nThis reduces repeated check-ins and administrative burden.\n\n---\n\n## 4. Use a simple task system instead of constant texting\n\nA lightweight task list is often better than repeated messages.\n\n### Useful categories\n- Feeding support\n- Laundry\n- Meals\n- School/childcare transport\n- Grocery/pharmacy\n- Cleaning\n- Watching older child\n- Giving mother a rest block\n\n### Keep it simple\nUse one of these:\n- A shared checklist app\n- A paper sheet on the fridge\n- A meal/help signup sheet for relatives and friends\n\nThe key is: **people choose tasks instead of asking, “What can I do?” every time.**\n\n---\n\n## 5. Track only what is clinically or practically useful\n\nAvoid excessive logging unless a clinician specifically asks for it.\n\n### For the newborn, usually enough to note:\n- Feeding concerns: poor latch, very frequent feeding, vomiting, concern about intake\n- Wet/dirty diaper concerns if dehydration is a worry\n- Fever or illness symptoms\n- Medication or supplement doses, if prescribed\n- Appointment questions\n\n### For the mother, enough to note:\n- Heavy bleeding, fever, worsening pain, severe headache, vision changes\n- Mood concerns, anxiety, intrusive thoughts, feeling unsafe\n- Medication timing if needed\n- Rest and hydration patterns only if they are affecting recovery\n\n### For the older child, enough to note:\n- Changes in sleep, behavior, school refusal, regression\n- Who is handling routines\n- Any emotional support needs\n\nUse checkboxes or short phrases rather than long narratives.\n\n---\n\n## 6. Use a short handoff routine\n\nWhen caregivers switch shifts, use a 2–3 minute handoff instead of a long report.\n\n### Simple handoff format\n- **What changed?**  \n  “Baby fed at 2, slept 40 minutes, Mom took ibuprofen.”\n- **What needs to happen next?**  \n  “Older child needs snack and homework check.”\n- **Anything concerning?**  \n  “Baby seems hungrier than usual; watch next feed.”\n\nThis keeps communication fast and useful.\n\n---\n\n## 7. Build predictable daily anchors\n\nRoutines reduce the need for constant decision-making.\n\n### Example daily structure\n**Morning**\n- Confirm today’s priorities\n- Check medications/appointments\n- Assign one person to older child routine\n\n**Midday**\n- Protected rest block for mother\n- Newborn feeding support as needed\n- Older child gets one predictable connection activity\n\n**Evening**\n- Prepare for night: diapers, water, snacks, phone chargers\n- Review next day’s appointments\n- Quick family check-in\n\nPredictability reduces administrative load because fewer things need to be negotiated each time.\n\n---\n\n## 8. Make “rest blocks” explicit for the mother\n\nInstead of vaguely saying “Mom should rest,” schedule it.\n\nExample:\n- 1:00–3:00 pm: Mother rests; Partner handles newborn and older child\n- 8:00–10:00 pm: Mother sleeps; another caregiver handles one feeding if appropriate\n\nClear blocks reduce confusion and prevent everyone from assuming someone else is covering things.\n\n---\n\n## 9. Give the older child a simple routine and role\n\nOlder children often do better when they",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}

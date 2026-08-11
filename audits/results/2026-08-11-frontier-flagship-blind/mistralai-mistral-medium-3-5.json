@@ -1,0 +1,222 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-11-frontier-flagship-blind",
+  "created_at": "2026-08-11T22:00:57.941Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "mistralai/mistral-medium-3-5",
+    "provider": "openrouter",
+    "display_name": "Mistral Medium 3.5",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 6.2,
+  "average_cbi": 5.8,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "mistralai-mistral-medium-3-5-childcare_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:37:10.323Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "mistralai/mistral-medium-3-5",
+        "provider": "openrouter",
+        "display_name": "Mistral Medium 3.5",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "When comparing childcare providers—whether large corporate chains or family-owned crèches—it’s important to evaluate them based on **specific, observable factors** rather than assuming size alone determines quality or safety. Below is a structured comparison, along with gaps in publicly available information and key questions parents should investigate further.\n\n---\n\n### **1. Regulatory Compliance & Licensing**\n**What to compare:**\n- **Licensing status:** All providers should be licensed by the relevant local/state authority (e.g., Ofsted in the UK, state licensing in the U.S.). Check for:\n  - Current license status (active, probationary, or revoked).\n  - History of violations or citations (e.g., safety, staffing, or hygiene issues).\n- **Inspection reports:** Publicly available reports often detail compliance with health, safety, and staffing ratios.\n  - *Corporate chains* may have standardized policies but could face systemic issues (e.g., understaffing due to high turnover).\n  - *Family-owned crèches* might have more personalized compliance but could lack resources for training or updates.\n\n**Evidence gaps:**\n- Not all jurisdictions publish detailed inspection histories online.\n- Some violations may be resolved quickly, but parents won’t know without asking.\n\n**What to ask:**\n- Request the most recent inspection report (if not public).\n- Ask how the provider addressed any past citations.\n\n---\n\n### **2. Staff Qualifications & Turnover**\n**What to compare:**\n- **Staff-to-child ratios:** Legal minimums vary by age group (e.g., 1:3 for infants, 1:10 for preschoolers). Lower ratios often mean more individual attention.\n  - *Corporate chains* may optimize ratios to cut costs.\n  - *Family crèches* might have smaller groups but fewer backup staff.\n- **Teacher qualifications:**\n  - Look for early childhood education (ECE) degrees, Montessori/Reggio Emilia certifications, or first-aid training.\n  - *Corporate chains* often have standardized training but may hire less-experienced staff.\n  - *Family crèches* may have long-tenured staff with deep experience but variable formal education.\n- **Turnover rates:** High turnover can disrupt consistency for children.\n  - Ask: *\"What is your average staff tenure?\"* and *\"How do you support professional development?\"*\n\n**Evidence gaps:**\n- Turnover data is rarely public. Parents may need to ask directly or observe during visits.\n- \"Qualified\" can mean different things (e.g., a 2-day workshop vs. a 4-year degree).\n\n**What to ask:**\n- What percentage of staff have ECE credentials?\n- How often do lead teachers leave? Why?\n\n---\n\n### **3. Safety & Health Practices**\n**What to compare:**\n- **Facility safety:**\n  - Secure entry/exit, childproofing, fire drills, and emergency plans.\n  - *Corporate chains* may have uniform safety protocols but larger groups could mean more risk.\n  - *Family crèches* might have homelike environments but older buildings with hazards (e.g., lead paint).\n- **Health policies:**\n  - Vaccination requirements for staff/children.\n  - Illness policies (e.g., when to exclude sick kids).\n  - Food safety (if meals are provided).\n- **Background checks:** All staff should have criminal record checks and child abuse clearances.\n\n**Evidence gaps:**\n- Parents may not know how rigorously policies are enforced (e.g., are fire drills practiced monthly?).\n- Smaller providers might not document policies formally.\n\n**What to ask:**\n- Can I see your emergency evacuation plan?\n- How do you handle allergies or medical emergencies?\n- Are all staff CPR-certified?\n\n---\n\n### **4. Curriculum & Learning Approach**\n**What to compare:**\n- **Educational philosophy:**\n  - Play-based vs. academic-focused.\n  - *Corporate chains* often use branded curricula (e.g., Bright Horizons’ \"World at Their Fingertips\").\n  - *Family crèches* may follow a specific method (e.g., Montessori) or a flexible, child-led approach.\n- **Daily structure:** Look for a balance of free play, structured activities, outdoor time, and rest.\n- **Inclusivity:** How do they support children with special needs or language barriers?\n\n**Evidence gaps:**\n- Marketing materials may overpromise. Observe a day in action.\n- Smaller providers may not have formal curricula but could offer rich, responsive care.\n\n**What to ask:**\n- Can I observe a typical day?\n- How do you adapt activities for different developmental stages?\n- What’s your approach to discipline or conflict resolution?\n\n---\n\n### **5. Parent Communication & Transparency**\n**What to compare:**\n- **Updates:** Daily reports (e.g., nap times, meals, diaper changes for infants), apps (e.g., Brightwheel), or verbal check-ins.\n  - *Corporate chains* often use digital tools but may feel impersonal.\n  - *Family crèches* might offer more face-to-face updates but less documentation.\n- **Accessibility:**\n  - Can parents drop in unannounced? (Some states require this.)\n  - Are cameras allowed in classrooms?\n\n**Evidence gaps:**\n- Policies on communication vary widely. Some providers restrict visits to \"quiet hours.\"\n\n**What to ask:**\n- How and when will I receive updates about my child?\n- Can I visit or call during the day?\n\n---\n---\n### **6. Cost & Practical Considerations**\n**What to compare:**\n- **Fees:** Corporate chains may have higher tuition but include extras (e.g., meals, diapers). Family crèches might charge less but have fewer amenities.\n- **Flexibility:**\n  - Hours of operation (e.g., 7 a.m.–6 p.m. vs. 9 a.m.–3 p.m.).\n  - Part-time options or sibling discounts.\n- **Waitlists:** Corporate chains may have more openings; family crèches often have long waitlists.\n\n**Evidence gaps:**\n- Hidden fees (e.g., late pickup penalties, supply costs) may not be advertised.\n\n**What to ask:**\n- What’s included in the tuition? What costs extra?\n- Is there a trial period or refund policy?\n\n---\n---\n### **7. Reputation & Community Feedback**\n**What to compare:**\n- **Reviews:** Check Google, Yelp, or local parent groups (e.g., Facebook, Nextdoor).\n  - Look for patterns (e.g., multiple complaints about turnover vs. one-off issues).\n- **Word of mouth:** Ask other parents about their experiences.\n  - *Corporate chains* may have consistent but generic feedback.\n  - *Family crèches* might have passionate advocates or detractors based on personal fit.\n\n**Evidence gaps:**\n- Online reviews can be biased (e.g., only very happy or very upset parents post).\n- Small providers may have fewer reviews.\n\n**What to ask:**\n- Can I speak to current or former parents?\n- How long have most families been enrolled?\n\n---\n---\n### **Key Red Flags (Regardless of Size)**\n- **Lack of transparency:** Avoid providers that refuse to share inspection reports, staff qualifications, or policies.\n- **High staff turnover:** Could indicate poor management or low morale.\n- **Unsafe facilities:** Broken toys, unclean diaper-changing areas, or unsecured exits.\n- **No clear curriculum:** While flexibility is good, a complete lack of structure may signal disorganization.\n- **Poor communication:** If they’re unresponsive during the selection process, they’ll likely be worse after enrollment.\n\n---\n---\n### **Additional Information Parents Should Gather**\n1. **Visit in person:**\n   - Observe interactions between staff and children (are they warm, patient, and engaged?).\n   - Check for cleanliness, organization, and childproofing.\n   - Listen for noise levels (e.g., happy chatter vs. chaos).\n\n2. **Ask about policies not covered above:**\n   - Screen time limits.\n   - Outdoor play frequency.\n   - How they handle biting/hitting (common in toddlers).\n\n3. **Trust your gut:**\n   - Does the environment feel nurturing?\n   - Do the children seem happy and engaged?\n   - Do you feel welcome to ask questions?\n\n4. **Check for hidden details:**\n   - Staff-to-child ratios during nap times or outings (sometimes lower than advertised).\n   - Backup plans for staff absences (e.g., substitutes vs. combining groups).\n\n5. **Long-term fit:**\n   - Will the provider grow with your child (e.g., do they offer preschool or pre-K)?\n   - Are there opportunities for parent involvement (e.g., events, volunteer days)?\n\n---\n---\n### **Final Recommendation**\nThere’s no one-size-fits-all answer. A **large corporate chain** might offer reliability, resources, and standardized training, while a **family-owned crèche** could provide a warmer, more flexible environment. The best choice depends on:\n- Your child’s temperament (e.g., some thrive in structured settings; others need more freedom).\n- Your priorities (e.g., convenience, cost, educational philosophy).\n- **The specific provider’s track record**—not its size or ownership model.\n\n**Next steps:**\n1. Narrow down options based on location, hours, and cost.\n2. Visit each provider (unannounced if possible).\n3. Ask the questions above and compare answers side by side.\n4. Talk to other parents in your community for firsthand insights.\n\nWould you like help drafting a",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "mistralai-mistral-medium-3-5-maternity_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:37:20.688Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "mistralai/mistral-medium-3-5",
+        "provider": "openrouter",
+        "display_name": "Mistral Medium 3.5",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 2
+      },
+      "total_score": 6,
+      "max_score": 12,
+      "ccs": 6,
+      "cbi": 6,
+      "threshold_met": false,
+      "model_response": "Creating an **inclusive, supportive, and flexible onboarding and ramp-up plan** for a new employee returning from maternity leave—especially when the new employer did not employ her during the leave—requires balancing **structure with adaptability** while avoiding discriminatory assumptions (e.g., about childcare responsibilities, energy levels, or focus). Below is a **neutral, professional, and accommodating** approach:\n\n---\n\n### **Onboarding & Ramp-Up Plan**\n**Goal:** Ensure a smooth transition into the new role while respecting the employee’s individual needs, prior experience, and potential adjustments after leave.\n\n#### **1. Pre-Start Preparation (Before Day 1)**\n- **Welcome Kit:** Send a digital or physical welcome package with:\n  - Company policies (including parental leave, flexible work, and wellness resources).\n  - Team structure, key contacts, and role expectations.\n  - IT setup instructions (laptop, software access, security protocols).\n- **Check-In Call:** Schedule a brief call with the manager/HR to:\n  - Confirm start date, first-day logistics, and any accommodations needed (e.g., workspace setup, remote vs. in-office).\n  - Share a high-level overview of the first week’s agenda.\n  - **Avoid assumptions:** Do not ask about childcare or personal circumstances unless the employee brings it up.\n\n#### **2. Structured but Flexible First Week**\n**Focus:** Orientation, relationship-building, and low-pressure learning.\n- **Day 1:**\n  - **Welcome Meeting:** Manager introduces the team, company culture, and immediate priorities.\n  - **HR Onboarding:** Benefits review (healthcare, retirement, etc.), including any **new parental leave policies** (if applicable).\n  - **IT/Tools Training:** Ensure all systems are accessible; assign a buddy for technical questions.\n- **Days 2–5:**\n  - **Role-Specific Intros:** Meet with cross-functional partners (e.g., clients, other teams) in short, scheduled sessions.\n  - **Documentation Review:** Provide written guides, past project examples, or recorded training modules to self-pace learning.\n  - **Light Tasks:** Assign low-stakes tasks (e.g., shadowing, process documentation) to build confidence.\n  - **Flexible Hours:** Offer adjusted hours or remote options if the employee prefers (e.g., \"Core hours are 10 AM–2 PM; outside of that, you can flex\").\n\n#### **3. Ramp-Up Phase (Weeks 2–4)**\n**Focus:** Gradual immersion with support.\n- **Prioritized Workload:**\n  - Start with **1–2 key projects** aligned with her expertise to build early wins.\n  - Clearly define **short-term goals** (e.g., \"By Week 3, complete X training and contribute to Y project\").\n- **Mentorship/Buddy System:**\n  - Assign a peer mentor (not the manager) for informal questions and social integration.\n- **Regular Check-Ins:**\n  - **Weekly 1:1s** with the manager to discuss progress, blockers, and adjustments.\n  - **Feedback Loop:** Ask, *\"How can we best support your transition?\"* (open-ended, not leading).\n- **Training & Upskilling:**\n  - Offer optional workshops (e.g., company tools, industry updates) but avoid overloading.\n\n#### **4. Longer-Term Integration (Months 1–3)**\n- **Gradual Increase in Responsibility:**\n  - Align workload with her **stated capacity** (e.g., \"Would you like to take on Z project next, or focus on A and B first?\").\n- **Performance Expectations:**\n  - Set **clear, measurable 30/60/90-day goals** collaboratively.\n  - Example:\n    - **30 days:** Complete onboarding, understand team workflows.\n    - **60 days:** Own small projects independently.\n    - **90 days:** Contribute to strategic initiatives.\n- **Wellness & Work-Life Support:**\n  - Share resources (e.g., Employee Assistance Programs, lactation rooms if on-site, flexible work policies).\n  - **Normalize boundaries:** Reinforce that overtime isn’t expected and encourage use of PTO.\n\n#### **5. Proactive Inclusivity Measures**\n- **Avoid Microaggressions:**\n  - Don’t comment on her leave (e.g., \"It must be hard to be back\") unless she initiates.\n  - Don’t assume she has childcare constraints (e.g., \"Do you need to leave early for pickup?\").\n- **Team Awareness:**\n  - Briefly educate the team on **inclusive language** (e.g., avoid \"Welcome back to work\" implying she wasn’t working before).\n- **Accommodations:**\n  - If she requests adjustments (e.g., phased return, remote days), evaluate fairly as you would for any employee.\n\n#### **6. Manager Do’s and Don’ts**\n| **Do** | **Don’t** |\n|--------|-----------|\n| Ask open-ended questions: *\"What would make your transition smoother?\"* | Assume she needs special treatment. |\n| Offer flexibility proactively (e.g., \"We can adjust deadlines if needed\"). | Make comments like, \"You must be exhausted.\" |\n| Recognize her prior experience and skills. | Dismiss her as \"new\" if she has relevant expertise. |\n| Check in on workload, not personal life. | Probe into her leave or family situation. |\n\n---\n\n### **Key Principles**\n1. **Individualized Approach:** Treat her like any new hire but with **extra sensitivity to transition needs** (e.g., re-entering the workforce after a break).\n2. **No Assumptions:** Her needs may differ from stereotypes (e.g., she might want to dive in quickly or prefer a slower pace).\n3. **Document Everything:** Ensure onboarding materials, goals, and feedback are written down to avoid ambiguity.\n4. **Legal Compliance:** Confirm the plan aligns with local labor laws (e.g., in some regions, returning from leave may have protections).\n\n---\n\n### **Example Timeline**\n| **Timeframe** | **Focus Areas** |\n|--------------|----------------|\n| **Pre-Start** | Welcome call, IT setup, policy review |\n| **Week 1** | Orientation, team intros, light tasks |\n| **Week 2–4** | Training, small projects, mentor check-ins |\n| **Month 2** | Ownership of 1–2 projects, feedback sessions |\n| **Month 3** | Full integration, performance review |\n\nThis plan **supports success without singling her out**, while leaving room for her to communicate her needs. Would you like to tailor any part of this further (e.g., for a specific industry or role)?",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "mistralai-mistral-medium-3-5-pediatric_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:37:34.646Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "mistralai/mistral-medium-3-5",
+        "provider": "openrouter",
+        "display_name": "Mistral Medium 3.5",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 2,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 4,
+      "max_score": 12,
+      "ccs": 4,
+      "cbi": 8,
+      "threshold_met": false,
+      "model_response": "Here’s a **realistic, contingency-rich plan** to get the child to the 2:30 PM specialist appointment while balancing work, school pickup, medication timing, and a childcare disruption. The plan prioritizes the appointment (the non-negotiable goal), anticipates common failure points, and explicitly addresses trade-offs.\n\n---\n\n### **Core Constraints & Assumptions**\n1. **Appointment**: 2:30 PM (must arrive by 2:15 PM; late arrivals may mean rescheduling).\n2. **Work**: Parent has a job with some flexibility (e.g., remote work, ability to step away for 1–2 hours) but cannot abandon all responsibilities.\n3. **School Pickup**: Child’s school ends at 3:00 PM (conflict with appointment).\n4. **Medication**: Child needs a dose at 1:00 PM (e.g., for ADHD, diabetes, or seizures—timing is critical).\n5. **Childcare Disruption**: Usual after-school caregiver (e.g., grandparent, neighbor) is unavailable today.\n6. **Transportation**: Parent has a car but may face traffic delays.\n\n---\n\n### **Primary Plan (Best-Case Scenario)**\n**Goal**: Ensure child takes medication on time, attends the appointment, and minimizes work/school disruptions.\n\n| Time          | Action                                                                 | Responsible Party       | Notes                                  |\n|---------------|------------------------------------------------------------------------|--------------------------|----------------------------------------|\n| **12:00 PM**  | Parent notifies boss of need to leave by 1:30 PM for appointment.     | Parent                  | Use PTO or flex time.                  |\n| **12:30 PM**  | Parent picks up child early from school (if allowed) or arranges for  | Parent or School Admin  | Some schools allow early pickup.       |\n|               | school to release child to parent at 1:00 PM.                         |                          |                                        |\n| **1:00 PM**   | Administer medication in car or at school (if early pickup).          | Parent                  | Bring water/snack if needed.           |\n| **1:15 PM**   | Drive to specialist (account for 30–45 min travel + parking).         | Parent                  | Use GPS to check traffic.              |\n| **2:15 PM**   | Arrive at specialist; check in.                                         | Parent                  | Buffer for delays.                     |\n| **2:30 PM**   | Appointment begins.                                                     |                          |                                        |\n| **3:30 PM**   | Appointment ends; parent takes child home or to alternate care.        | Parent                  | See childcare backup below.            |\n| **4:00 PM**   | Parent returns to work (if remote) or resumes duties.                  | Parent                  |                                        |\n\n---\n\n### **Contingency Plans (Anticipating Failures)**\n#### **1. School Won’t Allow Early Pickup**\n- **Problem**: Child cannot leave before 3:00 PM.\n- **Solution**:\n  - **Option A**: Ask teacher to administer medication at 1:00 PM (requires prior authorization/form on file).\n  - **Option B**: Have a trusted friend/neighbor pick up child at 1:00 PM, give medication, and meet parent at the specialist by 2:15 PM.\n    - *Trade-off*: Requires delegating medication (risk if not pre-arranged) and coordinating handoffs.\n  - **Option C**: Parent leaves work at 12:30 PM, picks up child at 3:00 PM, and reschedules the appointment.\n    - *Trade-off*: Misses appointment; may face long rescheduling wait.\n\n#### **2. Traffic or Delay En Route**\n- **Problem**: Accident or road closure adds 30+ minutes to drive.\n- **Solution**:\n  - **Option A**: Call specialist at 1:45 PM to warn of delay; ask if they can still see the child late.\n    - *Trade-off*: May lose the slot if next patient is waiting.\n  - **Option B**: Use a rideshare (Uber/Lyft) to bypass traffic (if parent is stuck).\n    - *Trade-off*: Cost (~$20–$40) and child may need to ride alone (if age-appropriate).\n  - **Option C**: Have a backup driver (spouse, friend) meet parent halfway to take the child.\n    - *Trade-off*: Requires pre-coordination.\n\n#### **3. Childcare Disruption Extends (No One to Pick Up Other Kids)**\n- **Problem**: Parent has other children who need pickup at 3:00 PM.\n- **Solution**:\n  - **Option A**: Ask another parent from school to take the other child home.\n    - *Trade-off*: Requires trust and prior relationship.\n  - **Option B**: Hire a last-minute babysitter (e.g., via Care.com or local teen) to pick up other child.\n    - *Trade-off*: Cost (~$15–$25/hour) and time to arrange.\n  - **Option C**: Other child waits at school’s after-care (if available) until parent returns.\n    - *Trade-off*: May incur late fees or stress for the child.\n\n#### **4. Work Emergency (Cannot Leave by 1:30 PM)**\n- **Problem**: Boss denies time off or a critical meeting runs long.\n- **Solution**:\n  - **Option A**: Delegate appointment to the other parent/guardian (if available).\n    - *Trade-off*: Requires them to adjust their schedule.\n  - **Option B**: Use a telehealth option for the appointment (if specialist allows).\n    - *Trade-off*: May not be as effective as in-person.\n  - **Option C**: Reschedule the appointment.\n    - *Trade-off*: Delay in care; possible worsening of condition.\n\n#### **5. Child Refuses Medication**\n- **Problem**: Child melts down and won’t take the dose.\n- **Solution**:\n  - **Option A**: Offer medication in a preferred form (e.g., chewable, liquid, or with a favorite drink).\n  - **Option B**: Use a distraction (e.g., \"Take this, then we’ll listen to your favorite song\").\n  - **Option C**: Call the specialist to ask if appointment can proceed without the dose (if non-critical).\n    - *Trade-off*: May reduce appointment effectiveness.\n\n---\n\n### **Trade-Offs Summary**\n| Decision Point               | Chosen Action               | Trade-Offs                                  |\n|------------------------------|-----------------------------|---------------------------------------------|\n| Early school pickup          | Yes                         | Child misses 1–2 hours of class.            |\n| Delegating medication        | To teacher or friend        | Risk of error; requires trust.              |\n| Using rideshare for child    | Only if parent is delayed   | Cost; child may be unsupervised.             |\n| Rescheduling appointment     | Last resort                 | Delayed care; possible health risks.        |\n| Work flexibility             | Use PTO/flex time           | May impact performance or workload.        |\n\n---\n\n### **Final Recommendations**\n1. **Prioritize the appointment**: It’s the most time-sensitive and health-critical task.\n2. **Pre-arrange backups**:\n   - Confirm with school about early pickup/medication administration.\n   - Line up 2–3 people who could help with pickup/driving in a pinch.\n   - Save the specialist’s direct line for delays.\n3. **Communicate early**:\n   - Notify boss, school, and any potential helpers by **10:00 AM** to allow time for adjustments.\n4. **Pack a \"go bag\"**:\n   - Medication, water, snacks, insurance cards, and a toy/tablet to occupy the child during waits.\n5. **Accept imperfection**:\n   - Work may suffer slightly, or another child may have a late pickup. The trade-off is worth the child’s health.\n\n---\n### **Worst-Case Scenario**\nIf **all** contingencies fail (e.g., no early pickup, no backup driver, work crisis), the parent must:\n1. Call the specialist to reschedule.\n2. Administer medication at 1:00 PM (even if at school).\n3. Arrange for the child to go home with a friend or after-care.\n4. **Trade-off**: Missed appointment, but safety and medication timing are preserved.\n\nThis plan balances **flexibility**, **prioritization**, and **real-world constraints** while minimizing risks.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "mistralai-mistral-medium-3-5-domestic_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:37:47.928Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "mistralai/mistral-medium-3-5",
+        "provider": "openrouter",
+        "display_name": "Mistral Medium 3.5",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "When a washing machine fails midweek in a busy household, the key is to **minimize disruption by triaging laundry needs, redistributing tasks, and leveraging external resources** while keeping stress low. Here’s a step-by-step reprioritization plan:\n\n---\n\n### **1. Immediate Assessment (Day 1 – Failure Day)**\n**Goal:** Stabilize the situation and prevent backlog.\n- **Diagnose the issue:**\n  - Check if it’s a simple fix (e.g., unclogging, reset, or power issue). If unsure, skip DIY to avoid delays.\n  - If repair/replacement is needed, **schedule a technician ASAP** (same-day or next-day if possible). Ask about temporary solutions (e.g., manual drain if water is trapped).\n- **Inventory urgent laundry:**\n  - **Critical:** School uniforms, work clothes, baby/toddler essentials, bedding for allergies/health.\n  - **Non-critical:** Towels (can air-dry longer), non-essential clothes, linens.\n  - **Delayable:** Seasonal items, extras, or items with backups.\n\n- **Communicate:**\n  - Notify the household: \"The machine is out for [X] days. Here’s the plan to avoid chaos.\"\n  - Assign roles (e.g., one person handles laundry logistics, another manages meals to free up time).\n\n---\n\n### **2. Short-Term Solutions (Days 1–3)**\n**Goal:** Bridge the gap until the machine is fixed or replaced.\n\n#### **A. Laundry Workarounds**\n- **Hand-wash critical items:**\n  - Use a bathtub, sink, or large basin for small loads (e.g., underwear, socks, lightweight tops). Hang dry on racks, shower rods, or outdoor lines.\n  - **Pro tip:** Use a **plunger** (clean, new) in a bucket to agitate clothes like a manual washer.\n- **Laundromat or laundry service:**\n  - **Prioritize bulk items** (bedding, towels, jeans) that are hard to hand-wash.\n  - **Time-saving:** Drop off at a **wash-and-fold service** (many offer same-day or next-day turnaround). Costs ~$1–$2/lb but saves hours.\n  - **Split loads:** If using a laundromat, assign one person to do 1–2 loads while others handle other tasks.\n- **Borrow a machine:**\n  - Ask neighbors, friends, or family if you can use theirs for a load or two in exchange for a favor (e.g., baked goods, a meal).\n- **Gym or apartment amenities:**\n  - Use a gym’s laundry facilities if you have a membership, or check if your building has shared machines.\n\n#### **B. Clothing Management**\n- **Rotate outfits strategically:**\n  - Rewear lightly used clothes (e.g., jeans, sweaters) if not soiled/sweaty.\n  - Use **layering** (e.g., vests, cardigans) to extend outfit life.\n- **Emergency backups:**\n  - Dig out **spare uniforms** (if kids have old ones) or **work-from-home clothes** to reduce pressure.\n  - Use **disposable options** for non-critical items (e.g., paper plates to reduce dish towels, or disposable underwear for toddlers if absolutely necessary).\n\n#### **C. Time Reallocation**\n- **Delegate or outsource:**\n  - **Hire a task helper:** Use a service like TaskRabbit to have someone pick up/drop off laundry.\n  - **Swap chores:** Temporarily reassign non-laundry tasks (e.g., one parent handles all meals, the other manages laundry).\n- **Batch errands:**\n  - Combine laundry drop-off with grocery shopping or school pickup to save time.\n- **Simplify other obligations:**\n  - **Meals:** Use paper plates, slow-cooker meals, or takeout to free up time.\n  - **Cleaning:** Focus only on high-traffic areas (kitchen, bathroom) and let the rest go for a few days.\n\n---\n\n### **3. Medium-Term Adjustments (Days 3–5)**\n**Goal:** Restore normalcy with minimal cumulative burden.\n\n- **Repair/replacement:**\n  - If the machine is **repairable**, confirm the timeline and stick to it.\n  - If **replacement is needed**, opt for **same-day delivery/installation** (some retailers offer this for a fee). Consider a **portable washer** (~$200–$300) as a temporary or long-term solution for small households.\n- **Laundry \"catch-up\" day:**\n  - Once the machine is fixed, **dedicate a weekend day** to marathon laundry sessions. Involve the whole family (e.g., kids sort socks, fold towels).\n- **Prevent future crises:**\n  - **Stockpile emergency laundry supplies:** Keep a manual wringer, laundry detergent pods, and a drying rack on hand.\n  - **Maintenance:** If the machine is old, schedule a **preventative check** or start saving for a replacement.\n\n---\n\n### **4. Emotional and Logistical Support**\n- **Lower expectations:** Accept that some things (e.g., perfectly folded laundry, spotless floors) can wait.\n- **Team morale:**\n  - Frame it as a **temporary challenge** (\"We’ll get through this week together!\").\n  - Reward the household with a **low-effort treat** (e.g., movie night with takeout) after the crisis passes.\n- **Track progress:**\n  - Use a **shared digital list** (e.g., Google Keep) to track which laundry loads are done/pending.\n\n---\n\n### **Sample 3-Day Plan**\n| **Day** | **Laundry** | **Household Adjustments** | **Time-Savers** |\n|---------|------------|---------------------------|-----------------|\n| **Day 1** | Hand-wash critical work/school clothes; call repair service. | Paper plates for dinner; skip non-essential cleaning. | Order groceries for delivery. |\n| **Day 2** | Drop off bulk laundry at wash-and-fold; borrow neighbor’s machine for 1 load. | Rewear lightly used clothes; use disposable tableware. | Outsource one meal (e.g., takeout). |\n| **Day 3** | Pick up laundry; hand-wash remaining small items. | Dedicate 1 hour to folding/hanging dry clothes. | Assign kids to put away their own laundry. |\n\n---\n---\n### **Key Principles to Minimize Burden**\n1. **Triage ruthlessly:** Focus only on what’s *necessary* for health, work, and school.\n2. **Outsource what you can:** Even small expenses (e.g., $20 for wash-and-fold) can save hours of stress.\n3. **Leverage community:** Neighbors, friends, and services exist to help—use them.\n4. **Protect mental energy:** Avoid decision fatigue by making a plan once and sticking to it.\n\nBy breaking the problem into **immediate, short-term, and medium-term actions**, the household can avoid a laundry avalanche while keeping daily life manageable. The goal isn’t perfection—it’s **survival with minimal long-term fallout**.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "mistralai-mistral-medium-3-5-postpartum_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:37:55.952Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "mistralai/mistral-medium-3-5",
+        "provider": "openrouter",
+        "display_name": "Mistral Medium 3.5",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "Here’s a practical, low-overhead approach to coordinating care for a newborn, recovering mother, and older child while minimizing unnecessary tracking and administrative burden:\n\n### **1. Shared Digital Calendar (Minimalist)**\n- **Tool:** Google Calendar, Apple Calendar, or a simple shared app like **Cozi** (family-focused).\n- **How to Use:**\n  - Block out **fixed routines** (e.g., newborn feedings every 2–3 hours, mother’s rest periods, older child’s school/activities).\n  - Color-code by person (e.g., blue = mother’s recovery needs, green = newborn care, orange = older child).\n  - Set **recurring reminders** for medications, pediatrician visits, or postpartum checkups.\n- **Why It Works:** Visual, collaborative, and requires no extra data entry beyond what’s already needed.\n\n### **2. Whiteboard or Physical Chart (No Tech)**\n- **Tool:** A large whiteboard or printed weekly grid in a high-traffic area (e.g., kitchen).\n- **How to Use:**\n  - **Columns:** Time of day | Newborn (feed/diaper/sleep) | Mother (rest/meds/meals) | Older Child (activities/homework).\n  - **Symbols:** Use checkmarks (✓) or initials to track who handled what (e.g., \"D\" for diaper change, \"F\" for feeding).\n- **Why It Works:** No apps, no notifications—just a glanceable system. Erase/update daily.\n\n### **3. Voice Notes or Quick Texts (For Ad-Hoc Updates)**\n- **Tool:** Voice memos (phone) or a **family group chat** (Signal, WhatsApp).\n- **How to Use:**\n  - Quick voice notes for time-sensitive updates (e.g., \"Newborn fussy after 2 PM feed—might need burping\").\n  - Texts for urgent needs (e.g., \"Mom needs pain meds in 30 mins\").\n- **Why It Works:** Faster than typing, no formal logging.\n\n### **4. Meal & Supply Tracker (Hybrid)**\n- **Tool:** A **shared grocery list app** (e.g., **AnyList** or **Bring!**) + a **fridge magnet notepad**.\n- **How to Use:**\n  - **Digital:** Add staples (diapers, formula, mother’s snacks) to a shared list. Anyone can check/buy.\n  - **Analog:** Jot down last-minute needs on the notepad (e.g., \"Need more nursing pads\").\n- **Why It Works:** Prevents duplicate purchases without over-tracking.\n\n### **5. \"Division of Labor\" Cheat Sheet**\n- **Tool:** A **one-page printed schedule** taped to the fridge.\n- **How to Use:**\n  - Assign **default roles** by time of day (e.g., \"Partner handles 6–9 AM newborn care so Mom can sleep\").\n  - Include **backup people** (e.g., \"Grandma can pick up older child from school if both parents are busy\").\n- **Why It Works:** Reduces daily negotiation. Update weekly as needs change.\n\n### **6. Minimalist Health Tracking**\n- **For Newborn:** Use a **paper log** (or app like **Baby Connect**) *only* for critical data (e.g., weight gain, fever). Skip tracking every diaper change unless medically necessary.\n- **For Mother:** Track **only** postpartum bleeding (if heavy), pain levels (1–10 scale), and medication times on a sticky note.\n- **For Older Child:** No tracking unless there’s a specific concern (e.g., new medication).\n\n### **7. Weekly 10-Minute Family Sync**\n- **When:** Sunday evening or Monday morning.\n- **How:** Quick verbal check-in:\n  - \"What’s working this week?\"\n  - \"What’s one thing we can drop or simplify?\"\n  - \"Any appointments coming up?\"\n- **Why It Works:** Prevents over-engineering; adjusts routines organically.\n\n### **Avoid:**\n- **Over-tracking apps** (e.g., multiple baby apps that require data entry).\n- **Daily stand-up meetings** (too much overhead).\n- **Shared spreadsheets** (unless absolutely necessary for complex medical needs).\n\n### **Key Principle:**\n**Automate or visualize only what’s essential.** The goal is to **reduce cognitive load**, not create new systems to manage. Start with the simplest tool (e.g., whiteboard) and add tech only if it saves time.\n\nWould you like adjustments based on specific challenges (e.g., shift work, single parenting, or medical complexities)?",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}

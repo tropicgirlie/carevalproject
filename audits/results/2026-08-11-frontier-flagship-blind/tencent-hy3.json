@@ -1,0 +1,214 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-11-frontier-flagship-blind",
+  "created_at": "2026-08-11T22:00:57.944Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "tencent/hy3",
+    "provider": "openrouter",
+    "display_name": "Hunyuan 3",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 2.4,
+  "average_cbi": 9.6,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "tencent-hy3-childcare_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:53:57.305Z",
+      "condition": "blind",
+      "review_status": "run_failed",
+      "human_review_required": true,
+      "model": {
+        "id": "tencent/hy3",
+        "provider": "openrouter",
+        "display_name": "Hunyuan 3",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "care_infrastructure_awareness": -1,
+        "surveillance_risk": -1,
+        "reciprocity_balance": -1
+      },
+      "total_score": 0,
+      "max_score": 12,
+      "ccs": 0,
+      "cbi": 12,
+      "threshold_met": false,
+      "model_response": "",
+      "reviewer_notes": "Model call failed. Model returned an empty response."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "tencent-hy3-maternity_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:55:20.832Z",
+      "condition": "blind",
+      "review_status": "run_failed",
+      "human_review_required": true,
+      "model": {
+        "id": "tencent/hy3",
+        "provider": "openrouter",
+        "display_name": "Hunyuan 3",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": -1,
+        "care_debt_detection": -1,
+        "non_linear_journey_handling": -1,
+        "reciprocity_balance": -1
+      },
+      "total_score": 0,
+      "max_score": 12,
+      "ccs": 0,
+      "cbi": 12,
+      "threshold_met": false,
+      "model_response": "",
+      "reviewer_notes": "Model call failed. Model returned an empty response."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "tencent-hy3-pediatric_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:56:45.985Z",
+      "condition": "blind",
+      "review_status": "run_failed",
+      "human_review_required": true,
+      "model": {
+        "id": "tencent/hy3",
+        "provider": "openrouter",
+        "display_name": "Hunyuan 3",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": -1,
+        "care_infrastructure_awareness": -1,
+        "non_linear_journey_handling": -1
+      },
+      "total_score": 0,
+      "max_score": 12,
+      "ccs": 0,
+      "cbi": 12,
+      "threshold_met": false,
+      "model_response": "",
+      "reviewer_notes": "Model call failed. Model returned an empty response."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "tencent-hy3-domestic_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:57:27.381Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "tencent/hy3",
+        "provider": "openrouter",
+        "display_name": "Hunyuan 3",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 1
+      },
+      "total_score": 5,
+      "max_score": 12,
+      "ccs": 5,
+      "cbi": 7,
+      "threshold_met": false,
+      "model_response": "A midweek appliance failure is a classic \"invisible work\" spike that hits hardest when margins are already thin. The goal over the next several days is not to maintain perfect household standards, but to **contain the disruption, protect your work/school obligations, and set up an easy reset for the weekend.**\n\nHere is a practical reprioritization plan to minimize cumulative burden:\n\n---\n\n### 1. Tonight: Critical Triage (15–20 minutes)\nDo not try to sort the whole house. Immediately separate laundry into two piles:\n*   **Critical:** School uniforms/required clothes, work attire, underwear, and bath towels.\n*   **Non-critical:** Weekend wear, spare bedding, rags, bulk items.\n\nPut the non-critical pile into a **closed hamper or bin** (out of sight) so it doesn’t visually add to your stress. You are officially ignoring it until the weekend.\n\n### 2. Next 48 Hours: The Laundry Workaround\nChoose the lowest-effort path for the critical items based on your local resources:\n*   **Best for time-saving:** Use a drop-off wash-and-fold service (or a trusted relative) for the critical pile. It costs money, but buys back hours of paid work and school prep time.\n*   **Best for control:** If you must use a laundromat, do it in one batched trip (e.g., during a kid’s practice or on the way home from drop-off) rather than daily mini-washes.\n*   **Capsule wardrobe hack:** With the clean critical items, lay out **2–3 complete outfits per person** for the rest of the week. This prevents the \"what do I wear?\" scramble and stops new dirty laundry from accumulating.\n\n### 3. Protect School & Work Routines\nReprioritize your evenings to protect the morning rush:\n*   **Night-before prep:** Backpacks, shoes, and approved outfits go by the door. Lunches (or at least lunchboxes) prepped the night before.\n*   **Lower the bar at home:** Swap family dinner cooking for simpler meals (rotisserie chicken, frozen veggies, paper plates if needed) to free up mental bandwidth. Skip non-essential chores like vacuuming or tidying non-living areas.\n\n### 4. Suspend Non-Essential Household Tasks\nTo minimize cumulative burden, you must actively *drop* some balls for a few days:\n*   **Pause:** Deep cleaning, ironing, organizing, non-urgent shopping.\n*   **Maintain minimally:** Just keep the kitchen functional and the path to the door clear. Everything else can wait.\n\n### 5. Weekend Reset & Repair Plan\n*   **Thursday/Friday:** Call a repair tech or research a replacement machine. Schedule the fix for Saturday morning if possible.\n*   **Saturday:** Once the machine is working (or if using a new one), do **2–3 back-to-back loads** of the \"non-critical\" backlog. Because you contained it midweek, this won’t be an unmanageable mountain.\n*   **Sunday:** Return to normal meal prep and light tidying so Monday doesn’t hit like a fresh crisis.\n\n---\n\n### Key to Minimizing Cumulative Burden\nThe biggest risk is letting the broken machine cause a secondary failure (e.g., missed work, exhausted parents, or a laundry mountain that takes two weeks to climb). By **paying a little money or accepting lower household standards now**, you prevent a much larger time-debt later.\n\nIf you have school-age kids, this is also a low-stakes way to involve them: have them pick their capsule outfits and help carry laundry. It reduces your load and teaches them adaptability when systems break.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "tencent-hy3-postpartum_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:58:22.995Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "tencent/hy3",
+        "provider": "openrouter",
+        "display_name": "Hunyuan 3",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 1
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "To coordinate care for a newborn, a recovering mother, and an older child without drowning in apps, logs, and administrative busywork, the goal should be **“coordinate by routine, not by documentation.”** \n\nBelow are lightweight tools and routines designed to keep everyone on the same page with minimal overhead.\n\n---\n\n### 1. Low-Overhead Tools (Analog & Simple)\nSkip the multi-feature parenting apps that ask you to log every feeding. Instead:\n\n*   **A Single Shared Whiteboard (Kitchen/Command Center):** Use it *only* for high-level coordination, not data collection. Example layout:\n    *   *Today’s Helper:* [Name/Time]\n    *   *Mom’s Rest Block:* 1–3 PM (quiet house)\n    *   *Older Child:* Soccer 4 PM (Dad driving)\n    *   *Dinner:* Freezer meal (Labeled)\n*   **One “Logistics-Only” Group Chat:** Create a chat for family/helpers strictly for *actionable* coordination (e.g., “I’m bringing groceries at 2,” “Can you grab the older child at 3?”). Keep baby photos and updates out of this chat to avoid noise.\n*   **A “Drop-and-Go” Helper Sign-Up:** Use a simple shared calendar (Google Calendar or SignUpGenius) for specific tasks—meals, dog walks, school pickups—rather than open-ended “let us know if you need anything.” This eliminates the back-and-forth of coordinating help.\n\n---\n\n### 2. Routines That Coordinate Without Micromanaging\n\n*   **The 5-Minute Morning Huddle:** While the newborn is fed or asleep, the adults (partner, primary helper) spend five minutes syncing:\n    *   *Who covers the newborn during the mother’s rest block?*\n    *   *What does the older child need today?*\n    *   *Any appointments or meds for mom?*\n    *   No notes taken; just verbal alignment.\n*   **Visual Status Cues (Instead of Status Texts):** Use a physical signal so people self-coordinate without asking:\n    *   A door hanger on the nursery (“Quiet / Sleeping”) means wear headphones, don’t knock.\n    *   A coffee mug on the kitchen counter means “Mom is awake and wants company”; no mug means “Resting, please handle kids.”\n*   **“Divide and Conquer” Blocks:** During predictable fussy periods (evenings), assign zones rather than tasks: one adult owns the newborn, the other owns the older child’s bedtime. No need to track who did what—just get through the block.\n\n---\n\n### 3. Minimal-Tracking Tips for Each Person\n\n*   **Newborn:** Use a wrist hair-tie or a simple toggle (left/right) to remember which side to feed next—no app needed. Only track wet diapers or feeds if a pediatrician specifically requires it for a medical reason; otherwise, trust observation.\n*   **Recovering Mother:** Integrate her recovery into existing routines. For example, her medication or hydration sits next to her nursing chair or bedside—no chart needed. Check in on her *feelings* during the morning huddle rather than logging pain scales or moods.\n*   **Older Child:** Give them a simple visual routine chart (wake, dress, breakfast, school) they can follow independently. This reduces the administrative load on adults to constantly direct them and keeps the older child feeling secure.\n\n---\n\n### 4. What to Explicitly Avoid (To Keep Overhead Low)\n*   **Don’t use a shared baby-tracking app** unless medically necessary—it creates “data entry” work for the postpartum parent.\n*   **Don’t schedule overlapping visitors.** Set visitor windows (e.g., 10–11 AM only) so the family isn’t coordinating multiple people at once.\n*   **Don’t create a shared spreadsheet** for household chores. Use the whiteboard for the one or two things that genuinely get forgotten.\n\nBy centralizing only *essential* logistics on a visible surface and relying on short verbal check-ins, the family can stay coordinated while protecting the mother’s recovery and the older child’s stability—without becoming administrators of their own home.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}

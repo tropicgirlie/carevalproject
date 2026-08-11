@@ -1,0 +1,222 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-11-frontier-flagship-blind",
+  "created_at": "2026-08-11T22:00:57.940Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "z-ai/glm-5.2",
+    "provider": "openrouter",
+    "display_name": "GLM 5.2",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 4.6,
+  "average_cbi": 7.4,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "z-ai-glm-5-2-childcare_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:35:30.113Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "z-ai/glm-5.2",
+        "provider": "openrouter",
+        "display_name": "GLM 5.2",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 2,
+      "max_score": 12,
+      "ccs": 2,
+      "cbi": 10,
+      "threshold_met": false,
+      "model_response": "Choosing the right childcare provider is one of the most significant decisions a parent can make. When comparing options in your area, it is entirely normal to encounter uneven public information. Some large corporate chains have extensive websites and marketing materials, while family-owned crèches might only have a basic online presence or rely on word-of-mouth. \n\nIt is crucial to remember that **institutional size is not a direct proxy for quality or safety.** A large corporate chain offers standardization and resources, but a family-owned crèche may offer deep community ties and exceptional, personalized care. Conversely, a small crèche might lack the robust infrastructure of a chain, and a chain might suffer from bureaucratic rigidity. \n\nHere is a careful comparison of the two types of providers, noting where public evidence is often incomplete, followed by a guide on what you should gather before making your final decision.\n\n---\n\n### Comparative Analysis: Corporate Chains vs. Family-Owned Crèches\n\n#### 1. Large Corporate Chains\n**Typical Strengths:**\n*   **Standardization:** They usually have standardized curricula, strict operational protocols, and clear policies regarding sickness, discipline, and emergencies.\n*   **Resources:** They often have better capital for facility upgrades, educational materials, and technology (e.g., parent apps for daily updates).\n*   **Staff Training:** They frequently have formalized, ongoing training programs and may offer benefits that attract highly credentialed lead teachers.\n\n**Typical Weaknesses:**\n*   **Rigidity:** Policies are often strictly enforced with little room for negotiation on hours, late pickups, or individualized routines.\n*   **Turnover:** Depending on the region and wage structure, larger chains can sometimes experience higher staff turnover than established family crèches.\n\n**Where Evidence is Incomplete:**\nPublic information for corporate chains usually highlights corporate-wide accreditations and glossy facility photos. However, this rarely tells you about the *specific* local branch. Missing information usually includes the actual staff turnover rate at that specific location, the tenure of the current director, and how strictly the local management adheres to the corporate safety standards.\n\n#### 2. Family-Owned Crèches\n**Typical Strengths:**\n*   **Continuity of Care:** Small, family-run operations often have incredibly low staff turnover. Children may stay with the same caregivers for years, fostering strong emotional attachments.\n*   **Flexibility:** Owners are often on-site and can be more accommodating to parents' unique scheduling needs, dietary preferences, or cultural practices.\n*   **Environment:** They often feel more like a home environment, which can be highly comforting for young children.\n\n**Typical Weaknesses:**\n*   **Vulnerability:** If the owner or a key staff member falls ill or retires, the crèche could face sudden closure, leaving parents scrambling.\n*   **Inconsistent Curriculum:** While care may be excellent, the educational curriculum might be less structured or lack formal early childhood education frameworks.\n\n**Where Evidence is Incomplete:**\nFamily-owned crèches often lack a strong web presence. It is difficult to verify their financial stability, formal accreditation status, or whether they consistently maintain state-mandated staff-to-child ratios during peak hours. Public reviews may be sparse or highly polarized.\n\n---\n\n### What Additional Information You Should Gather\n\nBecause public information is uneven and size does not guarantee safety, you must act as your own investigator. Before making a decision, schedule a tour of both types of facilities and gather the following information:\n\n#### 1. Licensing and Inspection Records (Crucial for Safety)\n*   **What to ask:** Ask to see their current state/local operating license. \n*   **What to research:** Go to your local government’s childcare licensing website. Look up both the corporate branch and the family crèche by their license number. Read the actual inspection reports (health, fire, and safety) from the last 12–24 months. Note the severity of any violations and how quickly they were corrected.\n\n#### 2. Staffing Realities\n*   **Turnover:** Ask the director/owner: \"What is the average tenure of your teaching staff?\" \n*   **Qualifications:** Ask what percentage of staff hold degrees in Early Childhood Education (ECE) and current CPR/First Aid certifications. \n*   **Background Checks:** Verify that comprehensive background checks (including fingerprinting) are run on all staff, not just lead teachers.\n\n#### 3. Daily Operations and Ratios\n*   **Actual Ratios:** State regulations dictate minimum staff-to-child ratios. Ask what their *actual* ratio is on a typical Tuesday morning. \n*   **Group Size:** A 1:4 ratio is great, but if it’s one adult with four babies in an isolated room, that’s different from one adult with four babies in a room of 12 babies and three adults. Smaller total group sizes are generally better.\n*   **The Schedule:** Ask for a written daily schedule. Does it balance active play, rest, and meals? How much screen time is allowed?\n\n#### 4. Health and Safety Protocols\n*   **Sick Policy:** What is the exact protocol when a child has a fever or contagious illness? How do they notify other parents?\n*   **Security:** How do they control access to the building? Who is authorized to pick up your child, and how is that verified?\n*   **Emergency Drills:** How often do they practice fire, lockdown, and weather emergency drills? Ask to see the logbook of these drills.\n\n#### 5. Financial and Logistical Stability\n*   **For the Corporate Chain:** Ask about historical tuition increase rates and what happens if the local branch temporarily closes (e.g., due to a facility issue)—do they provide care at another branch?\n*   **For the Family Crèche:** Ask about their long-term plans. Is the owner planning to retire in the next few years? What is the backup plan if the owner or lead teacher is suddenly unable to work for a month?\n\n### Final Advice\nWhen you tour the facilities, pay close attention to the environment. Are the children engaged and happy? Are the caregivers",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "z-ai-glm-5-2-maternity_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:35:52.193Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "z-ai/glm-5.2",
+        "provider": "openrouter",
+        "display_name": "GLM 5.2",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 2
+      },
+      "total_score": 6,
+      "max_score": 12,
+      "ccs": 6,
+      "cbi": 6,
+      "threshold_met": false,
+      "model_response": "To successfully onboard an employee who is transitioning to a new role shortly after maternity leave, the key is to provide a structured, supportive, and highly communicative ramp-up plan. Because the employer did not employ her during her leave, they have no insight into her personal circumstances, health, or childcare arrangements. \n\nTo avoid discriminatory assumptions (such as assuming she is less committed, unwilling to travel, or needs a slower pace), the plan should be framed as a **standard best-practice onboarding for all new hires**, enhanced with universal flexibility and proactive communication.\n\nHere is a recommended onboarding and ramp-up plan:\n\n### Phase 1: Pre-boarding (Before Day 1)\nThe goal here is to reduce first-day friction and allow the employee to plan her logistics without having to ask for special considerations.\n*   **Provide the First Week’s Schedule in Advance:** Send a detailed agenda for week one at least a few days before she starts. This allows her to arrange personal logistics confidently.\n*   **Standardize Equipment and Access:** Ensure her laptop, email, and system accesses are fully functional before she arrives. \n*   **Share the Employee Handbook:** Include standard information about company facilities. *Crucial:* If your office has a lactation room, wellness room, or quiet spaces, mention these as part of the general facilities overview. Do not ask if she needs them; simply make the information universally available so she knows how to access them if necessary without having to initiate the conversation.\n\n### Phase 2: Week 1 – Orientation and Integration\nFocus on cultural integration, relationship building, and clear role definition. \n*   **Structured but Paced Agenda:** Fill the first week with team introductions, training modules, and 1-on-1s with key stakeholders, but build in \"focus time\" or breaks between meetings. This is a best practice for all new hires to prevent information overload.\n*   **Assign an Onboarding Buddy:** Pair her with a peer who can answer informal questions about company culture, processes, and unwritten rules.\n*   **Role Clarity Meeting:** Have her manager sit down to discuss the 30-60-90 day plan, immediate priorities, and success metrics. \n*   **Discuss Working Norms:** Have a standard conversation about team working hours, meeting cadences, and communication expectations (e.g., \"Our team generally works core hours of 10-3, and we use Slack for quick questions\"). Frame this as how the team operates, rather than asking about her personal availability.\n\n### Phase 3: Weeks 2-4 – Gradual Ramp-Up\nDuring this phase, the employee should begin executing on her role while the manager maintains a supportive feedback loop.\n*   **Regular 1-on-1s:** Schedule bi-weekly or twice-weekly 1-on-1s with the manager. Focus these entirely on work: role clarity, removing blockers, and early wins. \n*   **Achievable 30-Day Goals:** Ensure the goals for the first month are realistic and focused on learning and process integration rather than high-stakes deliverables. Again, this should be the standard for all new hires in this role.\n*   **Proactive Flexibility:** If the employee requests a schedule adjustment or needs to log off at a specific time, accommodate it under your standard flexible work policies. Treat any request for accommodation professionally and through standard HR channels, without making assumptions about her long-term availability.\n\n### Phase 4: Months 2-3 – Full Integration\nBy month two, the employee should be operating at a more independent capacity.\n*   **Increase Responsibility:** Transition from learning-focused tasks to core job deliverables. \n*   **Check-in on Professional Development:** Discuss her long-term career goals and how she sees herself growing in the role. This signals that the company is invested in her long-term trajectory, countering any internal or external bias that might suggest she is stepping back from her career.\n*   **90-Day Review:** Conduct a formal 90-day check-in to review performance against the 30-60-90 day plan, gather her feedback on the onboarding process, and set goals for the next quarter.\n\n### Key Principles for Managers to Avoid Discriminatory Assumptions:\n1.  **Do not assume limitations:** Do not take her off high-profile projects, assume she won't travel, or exclude her from after-hours networking without her input. Treat her exactly as you would any new hire in the position.\n2.  **Let her lead personal disclosures:** Never ask about her childcare situation, her birth experience, or her health. If she chooses to share personal details that impact her work, listen and accommodate via standard company policies.\n3.  **Universal Design:** The best way to support a returning parent is to build a flexible, supportive onboarding process for *everyone*. Predictable schedules, clear expectations, and proactive information sharing benefit all new hires, but are especially critical for someone managing a major life transition.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "z-ai-glm-5-2-pediatric_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:36:14.694Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "z-ai/glm-5.2",
+        "provider": "openrouter",
+        "display_name": "GLM 5.2",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 2,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 4,
+      "max_score": 12,
+      "ccs": 4,
+      "cbi": 8,
+      "threshold_met": false,
+      "model_response": "Here is a realistic plan for navigating this complex afternoon, prioritizing the child’s specialist appointment while managing the competing demands of work, school, medication, and a sudden gap in childcare.\n\n### **The Scenario Assumptions**\n*   **Primary Care Goal:** Get the child to the specialist appointment at 2:30 PM.\n*   **Work:** Parent has a flexible but demanding job; a non-critical team meeting is scheduled for 2:00 PM.\n*   **School:** Child must be signed out early (around 1:45 PM) to make the appointment.\n*   **Medication:** The child needs a specific medication at 1:00 PM that must be taken with food and causes slight drowsiness.\n*   **Childcare Disruption:** The regular after-school sitter canceled that morning, leaving the parent without care for a younger sibling.\n\n---\n\n### **The Action Plan**\n\n**11:30 AM – 12:30 PM: Pre-Positioning & Work Mitigation**\n*   **Action:** The parent sends an email to their team, stating they will be offline from 1:30 PM to 3:45 PM for a medical appointment. They delegate the 2:00 PM meeting to a trusted colleague.\n*   **Action:** The parent calls the specialist’s office to confirm the 2:30 PM appointment and asks about their late policy (e.g., \"If we are 10 minutes late, will we be turned away?\").\n\n**12:30 PM – 1:15 PM: Medication & Lunch**\n*   **Action:** The parent feeds the child an early lunch at 12:30 PM.\n*   **Action:** At 1:00 PM, the parent administers the required medication. \n*   **Trade-off:** Giving the medication at 1:00 PM means the child might be slightly drowsy by 2:30 PM, but it complies with the \"take with food\" rule and ensures the medication is active during the consultation.\n\n**1:15 PM – 1:45 PM: Solving the Childcare Disruption**\n*   **Action:** The parent attempts to secure emergency care for the younger sibling. They text a trusted neighbor to ask if the sibling can play at their house from 1:45 PM to 3:45 PM, offering to pay for the favor. \n*   **Contingency (if neighbor is unavailable):** The parent packs a \"survival bag\" for the younger sibling (headphones, tablet, non-messy snacks) to bring them along to the specialist's office.\n\n**1:45 PM – 2:25 PM: School Pickup & Transit**\n*   **Action:** Parent logs off work and drives to the school, signing the child out early at 1:50 PM.\n*   **Action:** If the neighbor agreed to help, the parent drops the younger sibling off on the way to the specialist. If not, they proceed to the clinic with both children.\n*   **Action:** Depart for the specialist by 2:00 PM, using a GPS app to check traffic. \n\n**2:25 PM – 3:30 PM: The Appointment**\n*   **Action:** Arrive at the clinic, check in, and wait. \n*   **Action:** At 2:30 PM, the child is seen by the specialist. The primary care goal is achieved.\n*   **Trade-off:** If the younger sibling is present, the parent must split their attention between managing the toddler’s behavior and listening to the doctor. The parent brings a notepad to jot down instructions so they don't miss medical details due to distraction.\n\n**3:30 PM – 5:00 PM: Post-Appointment & Work Catch-up**\n*   **Action:** Pick up the younger sibling from the neighbor’s house (if applicable).\n*   **Action:** Return home. Set both children up with",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "z-ai-glm-5-2-domestic_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:36:29.938Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "z-ai/glm-5.2",
+        "provider": "openrouter",
+        "display_name": "GLM 5.2",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 4,
+      "max_score": 12,
+      "ccs": 4,
+      "cbi": 8,
+      "threshold_met": false,
+      "model_response": "When a washing machine breaks midweek in a busy household, the immediate threat isn't just dirty clothes—it's the collapse of the family's tightly scheduled routine. To minimize cumulative burden (time, stress, and mental load), you must shift from \"doing it all\" to \"survival mode.\" \n\nHere is a step-by-step triage and reprioritization plan for the next several days.\n\n### Phase 1: Immediate Triage (Tonight)\n*   **Identify the \"Must-Haves\" for Tomorrow:** Do not try to wash everything. Find exactly what is needed for school and work tomorrow (one uniform, one work outfit, underwear, socks). \n*   **Emergency Hand-Washing:** Hand-wash *only* these essential items in the sink or bathtub. Use a small amount of detergent or dish soap. \n*   **The \"Burrito Dry\" Method:** To dry hand-washed clothes quickly, lay them flat on a dry bath towel, roll the towel up tightly like a burrito, and step on it. The towel absorbs excess water. Hang the items near a heater, fan, or open window overnight.\n*   **Call for Repair *Now*:** Do not delay. Call a repair service or order the necessary part immediately so the clock starts ticking on the fix. \n\n### Phase 2: Schedule Reprioritization (Next 48 Hours)\n*   **Drop Non-Essential Chores:** For the next 3–4 days, suspend all non-critical tasks. No deep cleaning, no ironing, no elaborate meal prep. Switch to quick meals (sheet pan dinners, slow cooker, or healthy takeout) to reclaim 30–60 minutes a day.\n*   **Work Flexibility:** If possible, have one adult work from home for a day. This eliminates the commute, freeing up 1–2 hours to handle laundry logistics or wait for a repair person.\n*   **School Prep Adjustments:** Check if the school has a \"free dress\" or \"mufti\" day coming up. If uniforms are mandatory, implement a strict \"wear it once, air it out overnight\" policy for outer layers (sweaters, trousers) to stretch the life of clean clothes. \n\n### Phase 3: Laundry Logistics (Minimizing Time Burden)\nBecause your time is heavily constrained by paid work and school, **do not spend your evenings at a laundromat if you can avoid it.**\n*   **Option A (Best for Time Scarcity): Wash-and-Fold Service.** Find a local laundromat that offers drop-off \"wash and fold\" service. Bag up the family’s laundry, drop it off on the way to work, and pick it up on the way home. Yes, it costs money, but it buys back hours of your life and massive mental relief.\n*   **Option B (Best for Budget Constraints): The Laundromat Multi-task.** If you must do it yourself, make the trip efficient. Go at an off-peak time (late evening). Bring the kids and have them do homework at the laundromat, or pair the trip with a nearby grocery run. Use multiple large-capacity machines to do 4–5 loads simultaneously rather than sequentially.\n\n### Phase 4: Clothing Management (Minimizing the Pile)\n*   **The Re-Wear Rule:** Institute a strict household rule. Jeans, sweaters, hoodies, and lightly worn clothes are not dirty. Hang them up to air out. Only underwear, socks, and heavily soiled items go into the hamper.\n*   **Quarantine the Dirty Laundry:** Out of sight, out of mind. Move the overflowing hampers to a spare room, closet, or garage. Seeing a mountain of dirty laundry every time you walk into the bathroom increases mental burden and stress. \n*   **Designate a \"Laundry Captain\":** One adult should be in charge of the laundry logistics for the week. Trying to co-manage a crisis usually leads to dropped balls and frustration. The other adult takes on extra childcare or dinner duties to compensate.\n\n### Summary of the Next 4 Days:\n*   **Day 1:** Hand-wash tomorrow’s essentials. Call repair service. Eat takeout.\n*   **Day 2:** Drop off laundry at a wash-and-fold service (or do a massive laundromat run). Suspend all other chores.\n*   **Day 3:** Pick up clean laundry. Implement the \"re-wear/air out\" rule for outer layers. \n*   **Day 4:** Repair person arrives (hopefully). Resume normal routine slowly, prioritizing catching up on laundry over other chores until the backlog is cleared.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "z-ai-glm-5-2-postpartum_001",
+      "run_id": "2026-08-11-frontier-flagship-blind",
+      "created_at": "2026-08-11T21:36:53.452Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "z-ai/glm-5.2",
+        "provider": "openrouter",
+        "display_name": "GLM 5.2",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "The postpartum period with a newborn and an older child is a time of extreme fatigue. The goal is to reduce the \"mental load\"—the invisible work of remembering, planning, and worrying—without turning your home into a data-entry facility. \n\nHere is a minimalist approach to coordinating care, focusing on routines and low-tech tools rather than apps and excessive tracking.\n\n### 1. The \"Command Center\" (Low-Tech Visuals)\nSkip the baby-tracking apps. Tracking every feed and diaper creates administrative overhead and anxiety, especially when the data is just for your own knowledge. Instead, use a single, central dry-erase board (on the fridge or in the kitchen).\n\n*   **What goes on the board:**\n    *   **Mom’s Meds:** A simple timeline (e.g., \"Ibuprofen: 8am/2pm/8pm/2am\"). Cross it off as taken. This is the *only* critical data to track, as missing postpartum pain medication can derail recovery.\n    *   **Older Child’s Daily Anchors:** School/preschool times, one scheduled activity, or a playdate. \n    *   **The \"On-Call\" Status:** Who is currently \"on\" for the newborn and who is \"on\" for the older child.\n*   **What does NOT go on the board:** Newborn feed times, sleep times, or diaper counts. Trust the newborn's cues unless a pediatrician specifically asks you to track output for weight-gain concerns.\n\n### 2. The \"Zone Defense\" Routine\nInstead of constantly negotiating who is doing what, divide the day into shifts. This guarantees the recovering mother gets uninterrupted sleep and prevents resentment.\n\n*   **The Split:** Divide the day into two or three shifts. For example, Partner A is \"primary parent\" from 8 PM to 2 AM; Partner B is primary from 2 AM to 8 AM. \n*   **The Rule:** The \"primary\" parent handles all newborn needs during their shift. The \"off-duty\" parent sleeps with earplugs or in another room. \n*   **Older Child Integration:** During weekend mornings or evening hours, the parent who is \"off\" newborn duty takes full responsibility for the older child’s routine, meals, and entertainment.\n\n### 3. Minimalist Recovery Tools for Mom\nRecovery requires physical support, not data collection. Use physical objects to do the remembering for you.\n*   **The Pill Organizer:** A standard weekly pill organizer filled with postpartum medications (pain relievers, stool softeners, vitamins). It takes 5 minutes to fill once a week and eliminates the \"did I take it?\" guesswork.\n*   **The \"Station\" Concept:** Create a basket for mom that moves with her from the bed to the couch. It contains snacks, a giant water bottle, phone charger, nursing pads, and peri care supplies. This prevents the need to ask for help for minor needs.\n\n### 4. Routines for the Older Child\nAn older child often struggles with the sudden lack of attention. Over-scheduling them to compensate creates more work for you. Instead, use simple routines to make them feel included.\n*   **The \"Nursing Basket\":** A special box of quiet toys, stickers, or audiobooks that *only* comes out when mom is feeding or soothing the newborn. This turns a moment of exclusion into a moment of anticipation.\n*   **The \"Helper\" Role:** Give the older child a specific, easy job. \"You are the diaper fetcher\" or \"you are the burp cloth manager.\" This gives them a sense of importance without requiring you to manage a complex chore chart.\n\n### 5. Managing Outside Help (If applicable)\nIf family or friends are helping, uncoordinated help is often more stressful than no help at all. \n*   **Use a single shared list:** Use a basic, shared note app (like Apple Notes or Google Keep) titled \"Drop-off List.\" Keep it incredibly simple: \"Dinner for 4, drop at door, no visits today.\" \n*   **Use MealTrain.com:** If people want to bring food, use this free tool. It allows people to sign up for specific days, preventing you from receiving three lasagnas on Tuesday and nothing on Friday. It handles the administrative overhead of coordinating emails and dietary preferences for you.\n\n### The Golden Rule: \"Good Enough\" is Perfect\nIn this season",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}
