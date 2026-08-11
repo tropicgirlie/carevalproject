@@ -28,6 +28,7 @@ export interface FrontierModel {
   dimensions: DimensionAverages;
   promptScores: Record<string, number | null>; // null = truncated, excluded
   evalAwareLeaks: number; // responses whose reasoning references the evaluation
+  toldCcs?: number | null; // told-condition average, for the told→blind gap
   finding: string;
 }
 

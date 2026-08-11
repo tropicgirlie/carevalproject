@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import {
   frontierModels,
   DIMENSION_META,
@@ -9,6 +9,9 @@ import {
   type FrontierModel,
   type Grade,
 } from '../data/frontierRun';
+import { blindModels, BLIND_RUN_ID, BLIND_RUN_DATE } from '../data/frontierBlindRun';
+
+const RUN_ID_TOLD = '2026-08-10-frontier-flagship-2026-08';
 
 type Condition = 'blind' | 'told';
 
@@ -101,6 +104,12 @@ function ExpandedRow({ model }: { model: FrontierModel }) {
         <p>{model.modelId}</p>
         <p>{model.version}</p>
         <p>{model.validPrompts} of {model.totalPrompts} responses scored</p>
+        {model.toldCcs !== null && model.toldCcs !== undefined && (
+          <p className={model.ccs >= model.toldCcs ? 'text-brand-teal' : 'text-[#eb5937]'}>
+            told {model.toldCcs.toFixed(1)} → blind {model.ccs.toFixed(1)} ({model.ccs >= model.toldCcs ? '+' : ''}
+            {(model.ccs - model.toldCcs).toFixed(1)})
+          </p>
+        )}
         {model.evalAwareLeaks > 0 && (
           <p className="text-[#c99a1e]">
             ⚠ eval-aware: {model.evalAwareLeaks} response{model.evalAwareLeaks > 1 ? 's' : ''} reference the benchmark in their reasoning
@@ -116,20 +125,15 @@ function ExpandedRow({ model }: { model: FrontierModel }) {
   );
 }
 
-function ToldLedger() {
+function Ledger({ models, banner }: { models: FrontierModel[]; banner: ReactNode }) {
   const [openId, setOpenId] = useState<string | null>(null);
-  const average = frontierModels.reduce((s, m) => s + m.ccs, 0) / frontierModels.length;
+  const average = models.reduce((s, m) => s + m.ccs, 0) / models.length;
 
   return (
     <>
       {/* Draft banner */}
       <div className="border-l-2 border-[#c99a1e] bg-[#fffaf0] px-5 py-4 max-w-[860px]">
-        <p className="text-[15px] text-deep-navy leading-6">
-          <span className="font-semibold">Draft — heuristic scores, unreviewed.</span>{' '}
-          In the told condition the audit prompt announces the evaluation goal, so these
-          numbers measure instruction-following as much as care reasoning. Treat them as a
-          preview of the format, not as research results.
-        </p>
+        <div className="text-[15px] text-deep-navy leading-6">{banner}</div>
       </div>
 
       {/* Ledger */}
@@ -143,7 +147,7 @@ function ToldLedger() {
           ))}
         </div>
 
-        {frontierModels.map((model) => {
+        {models.map((model) => {
           const open = openId === model.modelId;
           return (
             <div key={model.modelId} className="border-b border-border">
@@ -188,7 +192,7 @@ function ToldLedger() {
 
         {/* Footer strip */}
         <div className={`px-5 md:px-8 py-3.5 text-[12px] text-slate-grey ${MONO}`}>
-          {frontierModels.length} models · average CCS {average.toFixed(2)} / 12 · red tick marks the
+          {models.length} models · average CCS {average.toFixed(2)} / 12 · red tick marks the
           care-conscious threshold ({CARE_CONSCIOUS_THRESHOLD}/12) · click a row for per-prompt scores
         </div>
       </section>
@@ -196,32 +200,8 @@ function ToldLedger() {
   );
 }
 
-function BlindPlaceholder() {
-  return (
-    <section className="border-t-2 border-deep-navy pt-10 pb-16 px-5 md:px-8">
-      <div className="max-w-[620px] space-y-5">
-        <p className={`text-[11px] uppercase tracking-[0.14em] text-slate-grey ${MONO}`}>
-          Condition 01 — pending
-        </p>
-        <h2 className="text-deep-navy text-[1.8rem] leading-tight">No blind scores yet.</h2>
-        <p className="text-[15px] text-slate-grey leading-7">
-          The blind condition sends each model a plain scenario with no mention of the
-          benchmark. What a model does unprompted is the actual measurement of
-          care-blindness. The first frontier run used a prompt that announced the
-          evaluation goal — those results live under <span className="text-deep-navy">Told</span>.
-        </p>
-        <p className="text-[15px] text-slate-grey leading-7">
-          A clean blind sweep of the same 18 flagship models is queued. When it lands,
-          this pane fills in, and the gap between the two conditions becomes the headline
-          finding: how much of “care-consciousness” is just instruction-following.
-        </p>
-      </div>
-    </section>
-  );
-}
-
 export function Leaderboard() {
-  const [condition, setCondition] = useState<Condition>('told');
+  const [condition, setCondition] = useState<Condition>('blind');
 
   return (
     <div className="max-w-[1160px] mx-auto px-4 md:px-8 py-12 md:py-16 space-y-8">
@@ -237,7 +217,8 @@ export function Leaderboard() {
           labour as infrastructure — or erases it as background noise.
         </p>
         <p className={`text-[12px] text-slate-grey ${MONO}`}>
-          Models evaluated {RUN_DATE} · {RUN_SOURCE} · heuristic draft, human review pending
+          Blind run {BLIND_RUN_ID} ({BLIND_RUN_DATE}) · told run {RUN_ID_TOLD} ({RUN_DATE}) · {RUN_SOURCE} ·
+          heuristic drafts, human review pending
         </p>
       </section>
 
@@ -257,13 +238,37 @@ export function Leaderboard() {
             }`}
           >
             {c}
-            {c === 'blind' && <span className="ml-2 opacity-60">0</span>}
+            {c === 'blind' && <span className="ml-2 opacity-60">{blindModels.length}</span>}
             {c === 'told' && <span className="ml-2 opacity-60">{frontierModels.length}</span>}
           </button>
         ))}
       </div>
 
-      {condition === 'told' ? <ToldLedger /> : <BlindPlaceholder />}
+      {condition === 'blind' ? (
+        <Ledger
+          models={blindModels}
+          banner={
+            <p>
+              <span className="font-semibold">Draft — heuristic scores, unreviewed.</span>{' '}
+              Blind condition: each model received a plain scenario with no mention of the
+              benchmark. This is the real care-blindness measurement. No model reaches the
+              9/12 care-conscious threshold unprompted.
+            </p>
+          }
+        />
+      ) : (
+        <Ledger
+          models={frontierModels}
+          banner={
+            <p>
+              <span className="font-semibold">Draft — heuristic scores, unreviewed.</span>{' '}
+              In the told condition the audit prompt announces the evaluation goal, so these
+              numbers measure instruction-following as much as care reasoning. Compare with
+              the blind condition to see each model&rsquo;s gap.
+            </p>
+          }
+        />
+      )}
 
       {/* Legend + honesty notes */}
       <section className="grid md:grid-cols-3 gap-8 border-t border-border pt-8">
@@ -301,8 +306,9 @@ export function Leaderboard() {
       </section>
 
       <p className={`text-[12px] text-slate-grey ${MONO}`}>
-        Run 2026-08-10-frontier-flagship-2026-08 · responses evaluated 10 Aug 2026 using public
-        builds · Gemini 3.1 Pro and Claude Opus 5 excluded (truncated outputs, re-run pending)
+        Blind run 2026-08-11-frontier-flagship-blind (90/90 complete responses, zero eval-awareness
+        leaks) · told run 2026-08-10-frontier-flagship-2026-08 (16 models, 3 truncated responses
+        excluded) · both heuristic drafts pending human review
       </p>
     </div>
   );
