@@ -163,8 +163,8 @@ export function Resources() {
         <h2 className="text-[1.8rem] leading-tight text-deep-navy">Implementation</h2>
         <div className="grid md:grid-cols-3 gap-3">
           {[
-            { title: 'Hugging Face workflow notes', desc: 'How to run CAREVAL evaluations using Hugging Face model pipelines', icon: FlaskConical },
-            { title: 'PyTorch runner notes', desc: 'Local evaluation setup with PyTorch model runners and scoring automation', icon: Code2 },
+            { title: 'OpenRouter audit runner', desc: 'Run any of 400+ models through the benchmark with one config file and an API key', icon: FlaskConical },
+            { title: 'GitHub Actions sweeps', desc: 'One-click model audits that commit results straight into the human review queue', icon: Code2 },
             { title: 'API examples', desc: 'Sample API calls for programmatic benchmark execution', icon: Code2 },
             { title: 'Evaluation pipeline overview', desc: 'End-to-end flow from prompt ingestion to score aggregation', icon: FileText },
             { title: 'Leaderboard calculation method', desc: 'How CCS, CBI, and model-level averages are computed from individual ratings', icon: FileText },

@@ -204,20 +204,20 @@ export function Home() {
       {/* KPI strip */}
       <section className="border-y border-[#2f4f4f]/20 py-6 md:py-7 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div>
-          <p className="momops-kicker mb-2">Responses Evaluated</p>
-          <p className="text-[2rem] leading-none text-deep-navy">50,000</p>
+          <p className="momops-kicker mb-2">Frontier Responses</p>
+          <p className="text-[2rem] leading-none text-deep-navy">180</p>
         </div>
         <div>
-          <p className="momops-kicker mb-2">Framework</p>
-          <p className="text-[2rem] leading-none text-deep-navy">MomOps × CAREVAL</p>
+          <p className="momops-kicker mb-2">Models Benchmarked</p>
+          <p className="text-[2rem] leading-none text-deep-navy">18</p>
         </div>
         <div>
-          <p className="momops-kicker mb-2">Annotation Mode</p>
-          <p className="text-[1.4rem] leading-none text-deep-navy">Human rubric + aggregation</p>
+          <p className="momops-kicker mb-2">Scoring</p>
+          <p className="text-[1.4rem] leading-none text-deep-navy">Heuristic draft + human rubric</p>
         </div>
         <div>
-          <p className="momops-kicker mb-2">Model Runners</p>
-          <p className="text-[2rem] leading-none text-deep-navy">PyTorch / HF</p>
+          <p className="momops-kicker mb-2">Run Via</p>
+          <p className="text-[1.4rem] leading-none text-deep-navy">OpenRouter API · GitHub Actions</p>
         </div>
       </section>
     </div>
