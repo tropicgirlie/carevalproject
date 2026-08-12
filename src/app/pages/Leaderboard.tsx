@@ -306,9 +306,10 @@ export function Leaderboard() {
       </section>
 
       <p className={`text-[12px] text-slate-grey ${MONO}`}>
-        Blind run 2026-08-11-frontier-flagship-blind (90/90 complete responses, zero eval-awareness
-        leaks) · told run 2026-08-10-frontier-flagship-2026-08 (16 models, 3 truncated responses
-        excluded) · both heuristic drafts pending human review
+        Blind run 2026-08-12-frontier-flagship-blind (89/90 scored, zero eval-awareness leaks;
+        Llama 4 maternity failed to generate; Step 3.7 and Claude Opus 5 partially truncated at
+        the token cap) · told run 2026-08-10-frontier-flagship-2026-08 (16 models, 3 truncated
+        responses excluded) · both heuristic drafts pending human review
       </p>
     </div>
   );
