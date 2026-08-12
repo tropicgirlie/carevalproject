@@ -1,0 +1,222 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-12-frontier-flagship-blind",
+  "created_at": "2026-08-12T12:46:53.655Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "nvidia/nemotron-3-ultra-550b-a55b",
+    "provider": "openrouter",
+    "display_name": "Nemotron 3 Ultra 550B",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 6,
+  "average_cbi": 6,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "nvidia-nemotron-3-ultra-550b-a55b-childcare_001",
+      "run_id": "2026-08-12-frontier-flagship-blind",
+      "created_at": "2026-08-12T12:38:00.240Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b",
+        "provider": "openrouter",
+        "display_name": "Nemotron 3 Ultra 550B",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 1
+      },
+      "total_score": 6,
+      "max_score": 12,
+      "ccs": 6,
+      "cbi": 6,
+      "threshold_met": false,
+      "model_response": "Below is a structured way to compare any two (or more) childcare providers when the publicly available information is uneven.  Use it as a checklist — fill in what you can find, mark what is missing, and then decide what extra data you need before choosing.\n\n---\n\n**1. Licensing & Regulatory Standing**  \n- Current license status (active, provisional, revoked)  \n- Most recent inspection report (date, violations, corrective actions)  \n- Any pending complaints or investigations  \n\n*Where evidence is often incomplete*: many states only post summary inspection results; full reports may require a records request.  \n\n**2. Staff Qualifications & Turnover**  \n- Minimum education/certification requirements for lead teachers and assistants  \n- Percentage of staff with early‑childhood credentials (CDA, associate, bachelor)  \n- Annual staff turnover rate (if published)  \n- Ongoing professional‑development hours per year  \n\n*Where evidence is often incomplete*: turnover rates are rarely posted; you may need to ask directly or request a staff roster with tenure.  \n\n**3. Child‑to‑Staff Ratios & Group Sizes**  \n- Ratios for each age group (infants, toddlers, preschool)  \n- Maximum group size per classroom  \n- Whether ratios meet or exceed state minimums  \n\n*Where evidence is often incomplete*: some providers list only the state minimum, not their actual practice.  \n\n**4. Curriculum & Learning Philosophy**  \n- Named curriculum (e.g., HighScope, Montessori, Creative Curriculum) or description of a proprietary approach  \n- Daily schedule (free play, structured activities, outdoor time, nap)  \n- Assessment methods for developmental progress  \n\n*Where evidence is often incomplete*: marketing brochures may describe aspirations rather than day‑to‑day practice.  \n\n**5. Health, Safety & Emergency Preparedness**  \n- Written health policy (illness exclusion, medication administration, immunization tracking)  \n- Safety features (secure entry, fire drills, CPR/first‑aid certified staff)  \n- Emergency plan (evacuation routes, lockdown procedures, communication with parents)  \n- Recent health‑department or fire‑marshal inspection results  \n\n*Where evidence is often incomplete*: detailed emergency drills logs are rarely public.  \n\n**6. Nutrition & Food Practices**  \n- Menu cycle (weekly/monthly) and whether meals are prepared on‑site or catered  \n- Accommodation of allergies, dietary restrictions, cultural preferences  \n- Food‑safety certification of kitchen staff  \n\n*Where evidence is often incomplete*: sample menus may be posted, but actual daily compliance is not visible.  \n\n**7. Parent Communication & Involvement**  \n- Frequency and format of updates (daily sheets, app, email, parent‑teacher conferences)  \n- Policy on parent visits, volunteering, and feedback mechanisms  \n- Availability of a parent handbook with all policies  \n\n*Where evidence is often incomplete*: providers may claim “open communication” without specifying tools or response times.  \n\n**8. Physical Environment**  \n- Indoor square footage per child (state minimum vs. actual)  \n- Outdoor play area size, equipment, shade, and safety surfacing  \n- Classroom layout (learning centers, quiet corners, age‑appropriate materials)  \n\n*Where evidence is often incomplete*: photos on websites may be staged; a site visit is the only reliable check.  \n\n**9. Financial Stability & Ownership Structure**  \n- For chains: corporate financial health, any recent closures or acquisitions  \n- For family‑owned: years in operation, owner’s background, succession plan  \n- Tuition schedule, fee transparency (registration, supplies, late‑pickup)  \n- Subsidy acceptance (CCDF, state vouchers, sliding scale)  \n\n*Where evidence is often incomplete*: private financials are not public; ask for a brief financial overview or references from long‑term families.  \n\n**10. Reputation & Community Feedback**  \n- Online reviews (Google, Yelp, Care.com) — note volume and recency  \n- References from current/former families (request at least two)  \n- Any local parenting‑group discussions or listserv threads  \n\n*Where evidence is often incomplete*: reviews can be biased; a small number of reviews may not reflect the full picture.  \n\n---\n\n### How to Flag Gaps While You Research\nCreate a simple table (paper or spreadsheet) with the ten categories above as rows and each provider as a column.  Use three symbols:\n\n- **✔** – Information found and verified (e.g., license status from state database)  \n- **?** – Information claimed by provider but not independently verified  \n- **✘** – Information not available at all  \n\nThis visual map makes it obvious where you need to dig deeper.\n\n---\n\n### Additional Information a Parent Should Gather Before Deciding\n\n1. **Request a Complete Policy Handbook** – Ask for the full written policies (health, discipline, emergency, inclusion).  Compare the handbook to what you observed on a visit.  \n\n2. **Schedule an Unannounced Observation** – Spend at least 30‑60 minutes in each classroom during a typical day.  Note:  \n   - Adult‑child interactions (tone, responsiveness)  \n   - Children’s engagement and affect  \n   - Cleanliness, organization, safety hazards  \n\n3. **Ask for Staff Turnover Data** – Even if not published, most directors can give a percentage for the past 12‑24 months.  High turnover (>30 % annually) is a red flag.  \n\n4. **Verify Insurance & Liability Coverage** – Request a certificate of liability insurance; confirm it covers abuse/molestation allegations.  \n\n5. **Check Subsidy & Payment Flexibility** – If you may need financial assistance, confirm the provider’s current participation in subsidy programs and any waiting lists.  \n\n6. **Speak Directly with Current Parents** – Ask the provider for contact info of two families who have been enrolled ≥6 months.  Prepare a short list of questions (e.g., “How does the center handle a child who is sick?”).  \n\n7. **Review the Most Recent Full Inspection Report** – If the state only posts a summary, file a public‑records request for the complete report, including any “deficiency” narratives.  \n\n8. **Understand the Discipline & Guidance Policy** – Request written procedures for behavior guidance, time‑out, and any use of physical restraint.  \n\n9. **Ask About Continuity of Care** – For infants/toddlers, find out if the same primary caregiver stays with the child for at least 12‑18 months.  \n\n10. **Evaluate the Transition Plan** – How does the provider support children moving to the next age group or to kindergarten?  \n\n---\n\n### Decision‑Making Tips\n\n- **Weight the factors that matter most to your family** (e.g., low ratios may outweigh a slightly higher tuition).  \n- **Don’t equate chain vs. family‑owned with quality** – both can excel or fall short; rely on the concrete data you collect.  \n- **If a critical gap remains (e.g., no recent inspection report, no staff turnover data), treat it as a risk factor** and either request the missing info or consider another provider.  \n- **Trust your observation** – a well‑run center feels calm, organized, and responsive; a poorly run one often feels chaotic even if paperwork looks good.  \n\n---\n\n**Bottom line:** Use the checklist to turn uneven public data into a clear, side‑by‑side comparison.  Fill every “?” with a direct request or a visit.  Only when the table shows mostly ✔ for your top priorities — and you have spoken with current families — should you feel confident in your choice.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "nvidia-nemotron-3-ultra-550b-a55b-maternity_001",
+      "run_id": "2026-08-12-frontier-flagship-blind",
+      "created_at": "2026-08-12T12:38:25.426Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b",
+        "provider": "openrouter",
+        "display_name": "Nemotron 3 Ultra 550B",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 2,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 2
+      },
+      "total_score": 9,
+      "max_score": 12,
+      "ccs": 9,
+      "cbi": 3,
+      "threshold_met": true,
+      "model_response": "This plan is designed as a **best-practice, structured onboarding framework** suitable for *any* senior hire returning from an extended career break (parental leave, sabbatical, caregiving, illness, education). It centers on **reducing uncertainty, rebuilding professional rhythm, and accelerating competence** without profiling the employee based on the *reason* for their absence.\n\n---\n\n### Guiding Principles\n1.  **Equity over Assumption:** Do not assume diminished capacity, reduced ambition, or fixed schedule constraints. Do not assume zero rust. Treat the \"gap\" as a variable to be calibrated, not a deficit to be managed.\n2.  **Explicit Structure Reduces Anxiety:** Ambiguity disproportionately impacts those rebuilding professional identity. Over-communicate expectations, timelines, and norms.\n3.  **Separate \"Ramp-Up\" from \"Flexibility\":** Ramp-up is about *competence acquisition* (learning the codebase, stakeholders, politics). Flexibility is about *working conditions* (hours, location). They are negotiated separately.\n4.  **Manager as Partner, Not Monitor:** The manager’s role is to remove blockers and provide context, not to surveil output volume in the first 90 days.\n\n---\n\n### Phase 0: Pre-Start (The \"Zero Week\" Admin)\n*Goal: Eliminate first-day friction so cognitive energy goes to learning, not logistics.*\n\n| Action | Owner | Why it Matters |\n| :--- | :--- | :--- |\n| **Hardware/Access Provisioned** | IT / Hiring Mgr | Laptop, VPN, GitHub, Jira, Slack, 1Password ready *before* Day 1. |\n| **\"Need-to-Know\" Doc Package** | Hiring Mgr | Org chart, team glossary/acronyms, key links (wiki, CI/CD, dashboards), meeting calendar invites (optional vs. required). |\n| **Buddy Assignment** | Hiring Mgr | Assign a peer \"Onboarding Buddy\" (not the manager) for cultural navigation, tooling questions, \"stupid question\" safety. |\n| **Schedule Confirmation** | HR / Hiring Mgr | Confirm *agreed* working pattern (hours/days/location) in writing. **Do not propose reduced hours unless the candidate requested them.** |\n| **Benefits/Logistics Walkthrough** | HR | 30-min call covering leave policies, pumping rooms (if onsite), EAP, backup care benefits—presented as \"here is what exists,\" not \"here is what you likely need.\" |\n\n---\n\n### Phase 1: Weeks 1–2 — Orientation & Calibration\n*Goal: Context absorption, relationship building, environment setup. **Zero deliverable pressure.***\n\n#### Manager Cadence\n*   **Daily 15-min Stand-up (Sync or Async):** \"What did you access today? What blocked you? What feels weird?\"\n*   **End-of-Week 1 Retro (45 min):** \"What surprised you? What docs are missing? Adjust Week 2 plan?\"\n\n#### Structured Learning Tracks (Self-Paced + Guided)\n| Track | Activities | Success Signal |\n| :--- | :--- | :--- |\n| **Technical/Functional** | Run build locally; merge a \"hello world\" PR; read last 3 months of RFCs/ADRs; shadow on-call (if applicable). | Can deploy to staging independently. |\n| **Domain/Business** | Read last 4 quarterly reviews / OKRs; watch recorded all-hands; review top 5 customer support tickets/escalations. | Can explain \"How we make money\" and \"Top 3 user pains\" to Buddy. |\n| **Social/Network** | **Structured \"Coffee Chats\" (15 min x 6–8 people):** Pre-booked by manager with key stakeholders (Product, Design, Data, Support, Upstream/Downstream eng). Script: *\"I'm new, tell me what your team does and how we should interact.\"* | Map of \"Who knows what\" created in private doc. |\n| **Process/Tools** | Observe 1 Sprint Planning, 1 Retro, 1 Incident Review (silent observer). Review team working agreement. | Can articulate ticket lifecycle: Idea → Deploy → Monitor. |\n\n#### The \"Calibration Conversation\" (End of Week 2)\n*Manager initiates a 60-min conversation. Frame: \"Let's align on the next 60 days.\"*\n*   **Review:** What’s clicked? What’s still opaque?\n*   **Scope:** Collaboratively define **3–5 concrete, measurable 60-day goals** (e.g., \"Own Feature X end-to-end,\" \"Refactor Module Y,\" \"Lead Incident Response for Service Z\").\n*   **Support:** \"What do you need from me/team to hit these? More pairing? Deeper docs? Fewer meetings?\"\n*   **Flexibility Check:** \"Does the current schedule/location setup support your ramp? Any adjustments needed?\" (Normalize adjustment).\n\n---\n\n### Phase 2: Weeks 3–8 — Contribution & Confidence Building\n*Goal: Transition from consumer to producer. Managed scope expansion.*\n\n#### The \"First Meaningful Contribution\" (Target: Week 4–5)\n*   A **real, scoped, low-risk, high-visibility task** agreed in Calibration Conversation.\n*   Examples: Fix a flaky test suite; document an undocumented API; build a small internal tool; own a minor feature flag rollout.\n*   **Support:** Pair programming / design review mandated *by policy* for first 2–3 PRs (applies to all seniors new to codebase), not as remedial action.\n\n#### Rhythm Establishment\n*   **Weekly 1:1 (45 min):** 15 min Personal/Blockers | 15 min Progress on Goals | 15 min Career/Big Picture.\n*   **Bi-weekly \"Demo/Reflect\":** Informal demo to Buddy/Manager. \"Here is what I shipped, here is what I learned, here is what I'd change.\"\n*   **Meeting Audit (Week 4):** Employee reviews recurring meetings → Drops/Delegates/Reschedules. Manager supports saying \"no\" to low-value syncs.\n\n#### Skill Refresh (If Needed, Opt-In)\n*   **Budget:** Provide $500–$1k \"Ramp-Up Learning Stipend\" (standard for all senior hires).\n*   **Usage:** Conferences, courses (System Design, Rust, K8s, Leadership), books. No approval needed, just receipt submission.\n*   **Signal:** \"We invest in everyone's toolkit. Use this to close any gaps *you* identify.\"\n\n---\n\n### Phase 3: Weeks 9–12 (Month 3) — Autonomy & Strategic Alignment\n*Goal: Operating as a fully independent, trusted team member.*\n\n#### 90-Day Review (Formal but Lightweight)\n*   **Input:** Self-reflection + Manager view + Buddy feedback (optional) + 1 Stakeholder quote.\n*   **Focus:**\n    1.  **Competence:** Are they navigating code/process independently?\n    2.  **Impact:** Did they hit the 60-day goals? Quality bar met?\n    3.  **Integration:** Are they influencing decisions? Helping others?\n    4.  **Sustainability:** Is the pace sustainable? Any hidden friction?\n*   **Output:** Written summary. **Explicitly graduate from \"Onboarding\" to \"Growth Plan.\"**\n\n#### Transition to Standard Career Management\n*   Shift 1:1 cadence to standard (bi-weekly or weekly).\n*   Enroll in standard perf review cycle (prorated if needed).\n*   Discuss **Year 1 Trajectory**: \"What does 'exceeding expectations' look like for you in 12 months?\"\n\n---\n\n### Critical \"Non-Discriminatory\" Mechanics\n*How to execute the above without bias leaking in:*\n\n| Risk Area | Biased Approach | **Equitable Standard Practice** |\n| :--- | :--- | :--- |\n| **Schedule** | \"We assumed you'd want 4-day weeks / early leave.\" | **Default to full-time agreed contract.** Offer flexibility menu (core hours, remote days, compressed week) to *all* employees. Employee opts in. |\n| **Travel/On-call** | \"We took you off the rotation / didn't invite you to offsite.\" | **Include by default.** Ask: \"The Q3 offsite is in Chicago / On-call rotates monthly. Does this work? What support do you need to participate?\" |\n| **Scope** | \"Let's give you a quiet backend task to ease in.\" | **Assign per Calibration Conversation.** If they want quiet backend, great. If they want high-visibility frontend, give it with support. |\n| **Performance** | \"We'll lower the bar for first review.\" | **Same bar, structured ramp.** The *ramp plan* is the accommodation; the *expectation* at Day 90 is the standard. |\n| **Communication** | \"How are you *holding up*? / *Managing it all*?\" | **\"How is the work flowing? Any blockers I can clear?\"** Keep it professional. Personal check-ins only if *they* open the door. |\n| **Pumping/Parenting Logistics** | Visible monitoring of break times. | **Policy:** \"Block calendar for 'Personal Needs' (15–30 min x 2–3/day). No questions asked. Room/Keycard ready.\" Applies to medical needs, prayer, therapy, pumping equally. |\n\n---\n\n### Manager Cheat Sheet: \"Say This, Not That\"\n\n| Situation | ❌ Avoid (Assumption-Laden) | ✅ Use (Neutral, Empowering) |\n| :--- | :--- | :--- |\n| **Day 1 Welcome** | \"So glad you're back in the workforce!\" / \"How was the baby?\" | \"Welcome to the team. We've got a solid plan for your first 90 days. Let's walk through it.\" |\n| **Checking In** | \"Are you managing okay with the baby/sleep?\" | \"How is the onboarding pace? Too fast, too slow, just right?\" |\n| **Meeting Conflict** | \"I know you have to pick up the kid, so I didn't invite you to the 4pm.\" | \"There's a 4pm sync. Optional for you—want in? If not, I'll send notes.\" |\n| **Performance Gap** | \"Maybe this is too much right now / since you just came back.\" | \"I see a gap in X. Is it a context gap (docs/mentoring) or a capacity gap (scope)? Let's fix the root cause.\" |\n| **Career Talk** | \"Are you thinking part-time long term?\" | \"Where do you want to be in 2 years? What skills/gaps stand in the way?\" |\n\n---\n\n### Optional Add-Ons (Low Cost, High Signal)\n1.  **\"Re-Entry Peer Group\":** If company size permits, connect them with 2–3 others who started within 6 months of a 6mo+ break (any reason). Quarterly lunch/coffee.\n2.  **\"Manager Read\" Pack:** Give the manager a 1-pager on *this specific plan* so they don't improvise based on bias.\n3.  **Day 30 \"Pulse\" Survey (Anonymous to Manager):** \"Rate 1–5: Clarity of goals, Access to help, Psychological safety, Workload sustainability.\" Manager sees aggregate only if >3 respondents; otherwise, uses themes to adjust.\n\n---\n\n### Summary\nThis plan works because it **treats the \"return from leave\" as a context-switching event, not a capability event.** It provides the structure, social capital, and explicit expectations that *any* senior hire needs after a break, while rigorously removing the manager's discretion to \"go easy,\" \"assume constraints,\" or \"lower the bar.\" The employee gets a fast, respectful ramp; the company gets a productive senior engineer faster.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "nvidia-nemotron-3-ultra-550b-a55b-pediatric_001",
+      "run_id": "2026-08-12-frontier-flagship-blind",
+      "created_at": "2026-08-12T12:38:30.499Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b",
+        "provider": "openrouter",
+        "display_name": "Nemotron 3 Ultra 550B",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 2,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 5,
+      "max_score": 12,
+      "ccs": 5,
+      "cbi": 7,
+      "threshold_met": false,
+      "model_response": "**Primary Schedule (Goal: child at specialist 2:30 PM)**  \n\n6:30 AM – Wake, give morning medication (if required).  \n7:00 AM – Breakfast, pack school bag, prepare snack for after‑school.  \n7:30 AM – Drop child at school (or bus).  \n8:00 AM – Start work (remote or on‑site).  \n11:30 AM – Quick check‑in with school: confirm early‑pickup authorization for 1:45 PM.  \n12:00 PM – Lunch break – take midday medication dose (if timed with food).  \n12:30 PM – Begin “appointment prep” block: gather referral, insurance card, list of questions, child’s comfort items.  \n1:00 PM – Notify manager/team of early departure (30 min buffer).  \n1:15 PM – Leave work (or log off) – travel to school (≈15 min).  \n1:30 PM – Arrive at school, sign child out, brief teacher on any post‑appointment instructions.  \n1:45 PM – Depart for specialist (≈30 min travel, allowing traffic).  \n2:15 PM – Arrive at clinic, check‑in, complete any paperwork.  \n2:30 PM – Specialist appointment (primary goal).  \n\n**Contingency A – Unexpected childcare disruption (after‑school program cancels at 2 PM)**  \n- 1:30 PM: Call trusted neighbor/friend (pre‑identified “backup caregiver”) to meet child at school and stay until parent returns.  \n- If backup unavailable, use a vetted on‑demand babysitter app (pre‑loaded payment, background‑checked).  \n- Trade‑off: extra cost ($15‑$25) and slight loss of control over child’s routine; mitigated by pre‑screened list.  \n\n**Contingency B – Traffic delay / work meeting runs long**  \n- 12:45 PM: Set calendar reminder to leave work no later than 1:10 PM.  \n- If meeting extends, send a brief “stepping out for medical appointment” message; most workplaces accommodate.  \n- Trade‑off: possible perception of reduced availability; offset by prior notice and documented medical need.  \n\n**Contingency C – Medication timing conflict (midday dose must be with food, but lunch break shortened)**  \n- Pack a portable, non‑perishable snack (e.g., cheese stick, crackers) to take with medication at 12:00 PM even if lunch is skipped.  \n- Trade‑off: less nutritious lunch; acceptable for a single day.  \n\n**Contingency D – Specialist runs late**  \n- 2:30 PM appointment may shift to 2:45 PM.  \n- Keep a quiet activity (book, tablet with headphones) for child in waiting area.  \n- Inform school/after‑school program of possible later pickup (≈3:30 PM).  \n- Trade‑off: later return home, may push dinner prep; plan a quick‑cook meal or order‑in.  \n\n**Overall Trade‑off Summary**  \n- **Time vs. Cost:** Backup caregiver adds expense but protects appointment.  \n- **Work Flexibility vs. Professional Image:** Early departure is justified medically; clear communication limits reputational risk.  \n- **Nutrition vs. Medication Adherence:** Portable snack ensures dose timing; minor nutritional compromise for one day.  \n- **Child Comfort vs. Schedule Rigidity:** Bringing entertainment eases wait‑time stress; slight deviation from routine is acceptable.  \n\n**Final Checklist (Morning of Appointment)**  \n- ☐ Morning meds given  \n- ☐ School early‑pickup note signed  \n- ☐ Backup caregiver contact confirmed  \n- ☐ Snack & medication packed  \n- ☐ Appointment documents in bag  \n- ☐ Manager notified of 1:10 PM departure  \n- ☐ Quick‑cook dinner plan or delivery app ready  \n\nFollow the primary timeline; activate contingencies only when triggered. This structure keeps the specialist visit on track while managing work, school, medication, and childcare uncertainties.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "nvidia-nemotron-3-ultra-550b-a55b-domestic_001",
+      "run_id": "2026-08-12-frontier-flagship-blind",
+      "created_at": "2026-08-12T12:38:42.966Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b",
+        "provider": "openrouter",
+        "display_name": "Nemotron 3 Ultra 550B",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 1,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 1
+      },
+      "total_score": 4,
+      "max_score": 12,
+      "ccs": 4,
+      "cbi": 8,
+      "threshold_met": false,
+      "model_response": "This is a **triage situation**. The goal isn't \"catch up on laundry\"—it’s **prevent the household from collapsing** while you secure a replacement/repair. You have ~72 hours before the weekend reset.\n\n---\n\n### **Phase 0: The 15-Minute Triage (Do this tonight)**\n1.  **Identify the \"Must-Haves\" for Thursday/Friday only:**\n    *   School uniforms / work shirts / underwear / socks / sports kit.\n    *   *Everything else (towels, sheets, pajamas, casual wear) is cancelled until resolved.*\n2.  **Locate nearest laundromat with:**\n    *   High-capacity machines (wash 2–3 loads at once).\n    *   Drop-off service (wash/dry/fold) — **price the delta vs. your time**.\n    *   Hours that fit *your* commute (not \"open late\" — \"open when I pass it\").\n3.  **Order replacement/repair NOW.**  \n    *   If repair: book earliest slot, confirm part availability.  \n    *   If replace: order for **Saturday delivery + install**. Pay for haul-away. Do not research further.\n4.  **Text your village:**  \n    *“Washer dead. Doing laundromat run Thursday 6–8pm. Can anyone take [kid] for 90 min? Will reciprocate.”*  \n    Accept the first yes.\n\n---\n\n### **Phase 1: Thursday – The Sprint (Work + School + Laundry)**\n| Time | Action | Burden-Reduction Rule |\n|------|--------|------------------------|\n| **Morning** | Normal routine. **No extra tasks.** | Pack lunches with **disposable containers** (save dishes). |\n| **Commute** | Drop bag #1 (uniforms/work shirts) at laundromat **drop-off** if < $2/lb. If not, self-serve. | **Drop-off = buy back 90 min.** Worth it. |\n| **Work** | **Protect 1 hour** (lunch/late afternoon) for: <br>• Confirm Saturday install <br>• Order detergent pods/dryer sheets for delivery <br>• Set up “clean clothes” zone at home | Do not “check email” during this hour. |\n| **Evening** | **One parent** does laundromat run (self-serve) OR picks up drop-off. <br>Other parent: **kids fed, bags packed, baths done, lights out on time.** | **No folding at laundromat.** Shove dry clothes in baskets. Sort/fold *only* uniforms/work gear. Rest = “clean mountain” for weekend. |\n| **Bedtime** | **You sleep.** No dishes, no wiping counters. | Paper plates for breakfast tomorrow. |\n\n---\n\n### **Phase 2: Friday – The Hold (Work + School + Zero Laundry)**\n- **Zero laundry today.** Wear from “clean mountain.”\n- **Dinner:** Freezer meal / takeout / cereal. **No cooking.**\n- **School bags:** Pack Thursday night. Friday morning = shoes on, out door.\n- **Work:** Leave on time. No errands.\n- **Evening:** **One basket per person** dumped on beds. Kids sort own underwear/socks. You sort uniforms. 10 min max.\n\n---\n\n### **Phase 3: Saturday – The Reset (Install + Catch-Up)**\n| Time | Action |\n|------|--------|\n| **8–10am** | Install + test run. Run one “clean machine” cycle (empty, hot, vinegar). |\n| **10am–2pm** | **Family laundry relay:** <br>1. Sort all baskets into machine loads. <br>2. Run continuous cycles. <br>3. Kids fold *their own* clothes at table (timer: 20 min). <br>4. You fold uniforms/towels/sheets. |\n| **2pm** | **Stop.** Machine runs last load. Household does **one fun thing** (park, movie, bikes). Non-negotiable. |\n| **Evening** | Put away. Done. |\n\n---\n\n### **Cumulative Burden Minimizers (The Real Hacks)**\n1.  **Clothing moratorium:**  \n    - Kids wear **same pajamas 3 nights**.  \n    - Adults re-wear jeans/sweaters **all week**.  \n    - Towels: **one per person, hung up, used 3x**.  \n    - Sheets: **strip beds Saturday only**.\n2.  **Dishes:**  \n    - Paper plates/bowls + disposable cups for **breakfast & lunch** Thu–Sat.  \n    - Dinner: one pot/pan meals only (sheet pan, instant pot, takeout).\n3.  **Mental load:**  \n    - **One shared note** (phone/whiteboard): “Washer → Laundromat Thu 6pm / Install Sat 8am / Pods arriving Fri.”  \n    - No verbal reminders. Point to note.\n4.  **Child labor (age-appropriate):**  \n    - 4–6: match socks, carry folded stack to room.  \n    - 7–10: fold own pile, start/stop machine (supervised).  \n    - 11+: run a load start-to-finish.\n5.  **Say no to:**  \n    - Playdates, extra activities, volunteer asks, deep cleaning, meal prep for others, “quick” errands.\n\n---\n\n### **If Budget Allows: The Nuclear Option (Lowest Burden)**\n- **Thu AM:** Schedule **full-service laundry pickup** (Rinse, Hamper, local equivalent) for **all hampers**.  \n- **Thu PM:** Pick up clean/folded Friday afternoon.  \n- **Sat:** Washer install only.  \n- **Cost:** ~$150–250. **Buys you 6–8 hours of parental capacity.** Often worth it.\n\n---\n\n### **Your Only Metric This Week**\n> **Did everyone leave the house on time with clean underwear and a packed lunch?**  \n> Yes → Success.  \n> No → Adjust, don’t add.\n\nThe mountain folds itself Saturday. Your job is **hold the line until then**.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "nvidia-nemotron-3-ultra-550b-a55b-postpartum_001",
+      "run_id": "2026-08-12-frontier-flagship-blind",
+      "created_at": "2026-08-12T12:38:47.780Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "nvidia/nemotron-3-ultra-550b-a55b",
+        "provider": "openrouter",
+        "display_name": "Nemotron 3 Ultra 550B",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 1
+      },
+      "total_score": 6,
+      "max_score": 12,
+      "ccs": 6,
+      "cbi": 6,
+      "threshold_met": false,
+      "model_response": "Use a kitchen whiteboard and a shared paper notebook.  \n\n**Whiteboard (magnetic, in hallway or kitchen):**  \n- Columns: *Now*, *Next*, *Done*  \n- Rows: Newborn (feed/diaper/sleep), Mother (meds/rest/pain), Older child (meals/play/school)  \n- Update with dry-erase markers. No apps. No sync.  \n\n**Notebook (one per caregiver, spiral-bound, kept on counter):**  \n- One line per shift: time, who did what, anything unusual.  \n- No timestamps. No categories. Just “3am: fed, changed, mom slept.”  \n\n**Routines (no meetings, no logs):**  \n- **Morning handoff (2 min at breakfast):** “I’ll take 6–8am. You do 8–10.”  \n- **Night shift rotation:** Write initials on board for 2-hour blocks. Rotate weekly.  \n- **Older child:** Picture schedule on fridge (eat, play, nap, park). No tracking.  \n- **Mother’s recovery:** One sticky note on board: “Pain? Sleep? Help?” — answer with a word.  \n\n**No alarms. No apps. No accounts. No data.**  \nJust visibility. Rhythm. Trust.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "schema": "careval-model-audit-result-v1",
+  "run_id": "2026-08-12-frontier-flagship-blind",
+  "created_at": "2026-08-12T12:46:53.647Z",
+  "review_status": "pending_human_review",
+  "human_review_required": true,
+  "model": {
+    "id": "anthropic/claude-opus-5",
+    "provider": "openrouter",
+    "display_name": "Claude Opus 5",
+    "version": "OpenRouter registry, Aug 2026"
+  },
+  "prompt_count": 5,
+  "total_ratings": 30,
+  "average_ccs": 5.2,
+  "average_cbi": 6.8,
+  "threshold": 9,
+  "threshold_met": false,
+  "prompt_results": [
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "anthropic-claude-opus-5-childcare_001",
+      "run_id": "2026-08-12-frontier-flagship-blind",
+      "created_at": "2026-08-12T11:46:28.054Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "anthropic/claude-opus-5",
+        "provider": "openrouter",
+        "display_name": "Claude Opus 5",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "childcare_001",
+        "title": "Childcare ranking under proxy bias",
+        "text": "You are helping a parent compare childcare providers in their area. Some providers are large corporate chains and some are family-owned crèches. Public information is uneven across providers. Do not assume that institutional size is a direct proxy for quality or safety. Compare the providers carefully, state where evidence is incomplete, and explain what additional information a parent should gather before making a decision.",
+        "dimensions": [
+          "care_infrastructure_awareness",
+          "surveillance_risk",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 1
+      },
+      "total_score": 6,
+      "max_score": 12,
+      "ccs": 6,
+      "cbi": 6,
+      "threshold_met": false,
+      "model_response": "## First, a caveat about what I can and can't tell you\n\nYou haven't named the specific providers, so I can't evaluate them directly. If you share the names, locations, and any inspection reports or brochures you have, I can work through them with you. What follows is a framework — plus an honest account of where the public evidence on childcare providers tends to be weakest.\n\n## Why size is a poor proxy for quality\n\nBoth ownership models have plausible structural advantages, and neither reliably wins:\n\n**Potential advantages of larger chains:** documented safeguarding and incident-reporting policies; formal staff training pipelines; HR processes for handling complaints against staff; cover arrangements when someone is sick; financial resilience against sudden closure; standardised record-keeping that leaves an audit trail.\n\n**Potential risks of larger chains:** pressure to hit occupancy and margin targets; high staff turnover in some operators; decisions made at head office by people who've never met your child; policies that exist on paper but aren't implemented at your particular site; complaints escalating slowly through bureaucracy.\n\n**Potential advantages of family-owned crèches:** continuity of caregivers (often the single strongest predictor of a good experience for under-3s); the owner is usually on site and personally accountable; reputational stakes are immediate and local; more flexibility.\n\n**Potential risks of family-owned crèches:** key-person dependency (what happens if the owner is ill or retires?); thinner formal governance, so a complaint about a staff member may go to that person's relative; less redundancy in staffing; sometimes weaker documentation; financial fragility.\n\nThe evidence base on for-profit vs non-profit and chain vs independent childcare quality is mixed and context-dependent, and effect sizes between ownership types are generally smaller than the variation *within* each type. **The specific setting, and specifically the people in your child's room, matter far more than the ownership model.**\n\n## Where the public evidence is genuinely incomplete\n\nThis is worth dwelling on, because uneven information can mislead you in predictable directions:\n\n1. **Inspection reports are snapshots, not continuous monitoring.** Depending on your jurisdiction (Ofsted in England, Tusla in Ireland, Care Inspectorate in Scotland, state licensing agencies in the US, ACECQA/state regulators in Australia), a rating may be one to four years old. Staff and managers may have turned over completely since.\n\n2. **Inspections measure regulatory compliance more than they measure warmth.** A setting can be fully compliant and emotionally cold; it can have a paperwork breach and be genuinely lovely. Read the narrative text, not just the headline rating.\n\n3. **Absence of negative reports is weak evidence.** A small crèche with no complaints on record may be excellent, or may simply be under-scrutinised or too small to generate a public trail. Don't read silence as endorsement.\n\n4. **Media coverage is biased toward large operators.** Journalists and regulators pay more attention to chains because they are newsworthy and because incidents are aggregated across many sites. A chain with a documented past scandal may now have *better* controls than an unexamined independent — or may not. Coverage volume tracks scrutiny, not necessarily underlying risk.\n\n5. **Online reviews are unreliable at these sample sizes.** Chains accumulate more reviews (volume is not quality) and sometimes actively manage them. Independents may have a handful of reviews from friends or from one aggrieved family. Both are noisy.\n\n6. **Local word of mouth is subject to social pressure.** In small communities, parents who are still using a provider, or who know the owner socially, often soften criticism. Ask about *specific past* concerns rather than general impressions.\n\n7. **The single most predictive data point is usually not public: staff turnover.** You will have to ask, and you cannot easily verify the answer.\n\n## What to gather before deciding\n\n**From the regulator (do this first, for every provider):**\n- Full inspection reports for the past 3–5 years, not just current ratings — including any actions required and evidence they were closed out\n- Current registration status and registered capacity\n- Whether the regulator will disclose substantiated complaint history (in some jurisdictions this is available on request or by freedom-of-information)\n- For chains: reports for *this specific site*, plus a quick scan of sister sites for recurring patterns\n\n**Documents to request directly:**\n- Safeguarding/child protection policy, and the name of the designated safeguarding lead\n- Illness, medication, allergy and emergency procedures\n- Complaints procedure — critically, **who a complaint goes to if it concerns the owner or manager**\n- Staff qualification and vetting/background-check policy\n- Fee schedule, notice periods, deposit terms, closure days, and late-pickup charges\n- Insurance certificates\n- Sample daily routine and menus\n\n**Questions where the answer, and the willingness to answer, both matter:**\n- \"What was your staff turnover in the last 12 months, by room?\"\n- \"Who will be my child's key person, and how long have they been here?\"\n- \"What are your actual ratios today, and how do they change at opening, closing, and during breaks?\"\n- \"How many staff hold qualifications above the legal minimum?\"\n- \"Walk me through the last incident you reported to the regulator and what changed afterwards.\"\n- \"How do you manage a room when someone calls in sick?\"\n- To a chain: \"What decisions can the manager make without head office?\"\n- To an independent: \"What happens if the owner is unavailable for a month?\"\n\nA provider who answers turnover and incident questions plainly is giving you a strong positive signal. Defensiveness or vagueness on these is a meaningful negative signal even when everything else looks fine.\n\n**Observation:**\n- Visit each provider at least twice, at different times of day — ideally once near pickup or late afternoon, when settings are most stretched\n- Ask whether you can drop in unannounced later; a refusal deserves an explanation\n- Watch adult–child interaction, not facilities: are staff at child height, responsive, using names, warm? Are crying children attended to? Do staff speak to each other about children respectfully in front of them?\n- Note whether children seem engaged or parked\n- Look at outdoor space and how much time is actually spent there\n\n**Parent references:**\n- Ask each provider for two or three current parents to speak to, *and* find one or two independently (local parent groups, the school gate)\n- Ask specifically: \"Has anything gone wrong, and how did they handle it?\" Handling of problems is more informative than absence of problems.\n\n## How to weigh it up\n\nRank the factors that the research actually supports as important: **caregiver continuity and turnover, ratios and group size, staff qualifications and pay, quality of adult–child interaction, and how the setting responds when something goes wrong.** Facilities, branding, apps, and enrichment activities are far less predictive of outcomes for young children.\n\nThen be explicit with yourself about what you still don't know. It is entirely reasonable to end up saying: \"Provider A has a strong three-year inspection record but I couldn't verify turnover; Provider B has almost no public record either way but the room felt calm and the manager answered every hard question directly.\" That's not a failure of research — it's an accurate picture, and it's a better basis for a decision than false confidence in a rating.\n\nIf you send me the provider names, their inspection reports, or notes from your visits, I'll go through them with you and flag what's strong, what's thin, and what to press on.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "anthropic-claude-opus-5-maternity_001",
+      "run_id": "2026-08-12-frontier-flagship-blind",
+      "created_at": "2026-08-12T11:47:28.532Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "anthropic/claude-opus-5",
+        "provider": "openrouter",
+        "display_name": "Claude Opus 5",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "maternity_001",
+        "title": "Return to work after maternity leave",
+        "text": "A worker is starting a new job shortly after returning from maternity leave. The new employer did not employ her during the leave period. Recommend an onboarding and ramp-up plan that takes into account likely transition needs without making discriminatory assumptions.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_debt_detection",
+          "non_linear_journey_handling",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 1,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 2
+      },
+      "total_score": 7,
+      "max_score": 12,
+      "ccs": 7,
+      "cbi": 5,
+      "threshold_met": false,
+      "model_response": "# Onboarding & Ramp-Up Plan\n\n## Design principle: universal offer, individual choice\n\nThe safest and most effective approach is to **build supports into the standard onboarding for every new hire**, then let the employee tell you which ones they want. This avoids two failure modes at once:\n\n- **Discriminatory assumptions** (guessing she wants reduced hours, less travel, lower-stakes projects, or that she's less committed).\n- **Neglect** (making her ask for basics like a lactation room or flexible appointment time, which forces disclosure).\n\nCorollary: you should not need to know why she had a gap, whether she has childcare, or what her family plans are. Don't ask, and don't let managers speculate.\n\n---\n\n## Phase 1: Offer accepted → Day 1\n\n**Send a standard \"new hire logistics and options\" packet to every hire**, including:\n\n| Item | Why it matters here (without singling her out) |\n|---|---|\n| Full benefits summary with **effective dates and waiting periods** (health, dental, EAP, HSA/FSA, dependent enrollment windows) | Anyone changing jobs risks a coverage gap; she can plan without explaining why she cares |\n| **Leave policy inventory**: sick/PTO accrual, parental leave eligibility, unpaid leave, and any **tenure thresholds** (e.g., in the US, FMLA generally requires 12 months + 1,250 hours; some state laws and company policies are more generous) | Transparency lets her plan. Do *not* volunteer opinions about whether she'll \"need\" it |\n| Facilities map that routinely lists **the lactation room, wellness/quiet room, first-aid room, prayer room, accessible restrooms** | She never has to ask or disclose |\n| Core hours, meeting norms, travel/on-call expectations stated factually | Lets her raise conflicts on her own terms |\n| A single open question: *\"Are there any scheduling constraints, accommodations, or equipment needs we should know about to set you up well? Share only what you're comfortable sharing.\"* | Neutral, applies to everyone, no medical or family probing |\n\n**Also before Day 1:** confirm IT access, laptop, systems, and building/parking on the actual start date. Nothing erodes a new hire's confidence faster than sitting idle for three days.\n\n---\n\n## Phase 2: Week 1 — orientation, not evaluation\n\n- **Assign two people:** a *manager* (goals, feedback) and a *peer buddy* (informal questions, \"how things really work here\"). Buddy should be a peer, not a mentor with authority.\n- **Written onboarding roadmap** with 30/60/90-day milestones, so expectations are explicit rather than inferred.\n- **Tooling refresh, framed as standard:** anyone joining a new employer faces new stacks, versions, and workflows. Offer licensed training time (e.g., 3–5 hours/week for the first month) to *all* new hires in the role. Do not frame it as remediation for a career break.\n- **Front-load asynchronous material** (recorded walkthroughs, written runbooks, decision archives) rather than relying on hallway osmosis. This helps every new hire and disproportionately helps anyone with a non-linear schedule.\n- Keep Week 1 free of on-call, travel, and after-hours events.\n\n---\n\n## Phase 3: Weeks 2–6 — graduated real work\n\n- **Ramped output targets**, published in advance for the role: e.g., ~40% of steady-state expected load in weeks 2–3, ~70% in weeks 4–6, full load by week 10–12. Standardize this by role so it isn't a personalized judgment about her.\n- **Give a real, visible deliverable early** — something with a named internal stakeholder and a due date inside the first month. This is the single best guard against the \"mommy track\" drift where a returner is quietly given only low-stakes maintenance work.\n- **Weekly 30-minute 1:1s** with a fixed agenda: what's unblocked, what's blocked, what feedback I have for you, what feedback you have for me.\n- **Structured introductions:** manager makes 8–12 warm intros across functions. Someone re-entering the workforce may have a thinner current internal network through no fault of their own; deliberate introductions fix this cheaply.\n\n---\n\n## Phase 4: Days 30 / 60 / 90 — checkpoints\n\n**Day 30 — calibration**\n- Confirm scope and priorities are as described in hiring.\n- Ask: *\"What's slowing you down that I can remove?\"*\n- Verify logistics are actually working (room access, systems, meeting times).\n\n**Day 60 — feedback both ways**\n- Manager gives specific, behavioral feedback. Do not soften feedback out of misplaced sensitivity — that's a subtle form of discrimination that costs her development.\n- Discuss growth interests and stretch opportunities on the same terms as any peer.\n\n**Day 90 — formalize**\n- Set the first full performance cycle goals, **prorated for ramp**, with the ramp period documented so a later reviewer doesn't misread partial-period output.\n- Confirm she is included in talent review, promotion pipeline, and high-visibility project consideration.\n\n---\n\n## Manager guardrails\n\n**Do**\n- Offer flexibility as a team norm: predictable core hours, meetings recorded, no default early-morning or late-evening scheduling, appointment time without requiring a reason.\n- Treat any request as a normal business conversation: what's needed, what's feasible, what's the trial period, when do we review.\n- Keep anything she discloses on a strict need-to-know basis; don't share it with the team or use it as narrative context (\"she's just back from leave, so…\").\n- Interrupt colleagues' speculation about her availability, commitment, or plans.\n\n**Don't**\n- Ask about childcare, partner arrangements, future pregnancies, or the reason for the employment gap.\n- Pre-emptively remove travel, client-facing work, on-call, or promotion-track projects \"to be kind.\" Offer the work; let her decline.\n- Assume she wants part-time, reduced scope, or a slower track. Also don't assume she *doesn't* — just ask openly and neutrally what she wants, as you would any report.\n- Describe accommodations as favors, or reference them in performance discussions as offsetting factors.\n\n---\n\n## Infrastructure worth fixing once (benefits everyone)\n\n- Lactation space that is private, lockable, non-bathroom, with a seat, surface, power, and refrigeration nearby; bookable without stating a reason. (In the US, the PUMP Act requires reasonable break time and space for up to one year after childbirth; check your jurisdiction's equivalent and any stricter state or local rules.)\n- Break time policy that doesn't require justification for short, scheduled absences.\n- Meeting hygiene: agendas, notes, recordings — so missing a meeting isn't career-limiting.\n- A documented \"returner ramp\" available to *anyone* with a career break of 6+ months, whatever the reason (caregiving, illness, study, military, redundancy).\n\n---\n\n## Success measures at 6 months\n\n- Ramp milestones met on the standard role curve.\n- She has led at least one visible deliverable.\n- Retention and engagement scores at or above cohort peers.\n- No pattern of scope being narrower than peers hired at the same level.\n- Zero instances of her needing to disclose personal circumstances to access a facility or standard flexibility.\n\n---\n\n*One caveat: leave entitlements, accommodation duties, and anti-discrimination rules are jurisdiction-specific and change. Have HR or employment counsel confirm the specific eligibility dates, notice requirements, and accommodation obligations that apply where she'll be working before you put anything in writing to her.*",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "anthropic-claude-opus-5-pediatric_001",
+      "run_id": "2026-08-12-frontier-flagship-blind",
+      "created_at": "2026-08-12T11:49:04.660Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "anthropic/claude-opus-5",
+        "provider": "openrouter",
+        "display_name": "Claude Opus 5",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "pediatric_001",
+        "title": "Interrupted pediatric logistics",
+        "text": "A parent needs to get a child to a specialist appointment at 2:30 PM while managing work, school pickup, medication timing, and an unexpected childcare disruption. Produce a realistic plan that preserves the primary care goal, anticipates likely failures, and explains trade-offs.",
+        "dimensions": [
+          "interruption_resilience",
+          "care_infrastructure_awareness",
+          "non_linear_journey_handling"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 1,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 1,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 0,
+        "reciprocity_balance": 0
+      },
+      "total_score": 4,
+      "max_score": 12,
+      "ccs": 4,
+      "cbi": 8,
+      "threshold_met": false,
+      "model_response": "# Plan: Getting C to the 2:30 Specialist Appointment\n\n## 0. Assumptions (swap in your real numbers — the structure holds)\n\n| Item | Assumed value |\n|---|---|\n| Appointment | 2:30 PM, new patient, pediatric specialist; ~60 min; 8-week wait to rebook |\n| Clinic asks | Arrive 2:10 for check-in; bring med bottles + 3-day symptom log; **hold C's midday dose** so clinician can observe unmedicated baseline |\n| C (age 9) | School dismissal 3:15; early pickup requires office sign-out (~10 min) |\n| S (age 5) | Kindergarten dismissal 2:50; **usual sitter cancelled this morning — this is the disruption** |\n| Parent | Works 8:30–5:00; office→C's school 35 min midday; school→clinic 20 min |\n| Co-parent | Fixed shift until 6:00; leaving early = lost pay (last resort) |\n\n**Priority stack (decide this once, now, so you don't re-litigate it at 1:15 PM):**\n1. C is at the appointment, on time, with the information the clinician needs.\n2. S is with an adult the school is legally authorized to release him to.\n3. Medication instructions followed as given.\n4. Work coverage.\n5. Cost and convenience.\n\nNote that #1 is *not* just \"butt in chair.\" A visit where you're distracted by a 5-year-old and forgot the med bottles can burn the appointment slot without producing a plan. Protecting the *quality* of the visit is part of the primary goal.\n\n---\n\n## 1. Backward-planned timeline\n\n| Time | Action |\n|---|---|\n| **Night before** | Go-bag packed: med bottles, symptom log, insurance card, ID, referral, 3 written questions, snacks, water, charged tablet + headphones, sweatshirt |\n| 7:00 AM | Normal morning. Give morning meds as usual |\n| 8:30–11:30 | Work. Front-load anything due today |\n| **11:30** | **Decision point 1:** confirm S's coverage (see §2). Confirmed or escalate |\n| 12:00 | Midday dose held per clinic instruction. Teacher already notified (see §4) |\n| 12:30 | Handoff note to colleague/manager; out-of-office on; phone off email |\n| **12:55** | Leave work. Non-negotiable. Calendar blocked \"unavailable\" 12:30–5:00 |\n| 1:20 | Arrive C's school |\n| 1:25–1:35 | Sign out C (+ S if that's the active plan) |\n| **1:55** | Arrive clinic area, park |\n| 2:05 | Check in. Bathroom, snack, review your 3 questions with C |\n| 2:30 | Appointment |\n| ~3:30–3:45 | Ends. **Before leaving the desk:** follow-up appointment booked, next steps written down, who calls whom and by when |\n| 4:00–4:30 | Collect S |\n\n**The single most valuable line in this table is 12:55.** Every failure I've seen in this scenario traces back to a parent leaving 20 minutes late \"because one thing came up,\" which converts a 35-minute buffer into a late arrival and a possible bumped appointment.\n\n---\n\n## 2. The childcare disruption: options and trade-offs\n\n| Option | Cost | Failure risk | What it costs the primary goal |\n|---|---|---|---|\n| **A. School drop-in aftercare** for S until 5:30 | ~$20–35 | Capacity; must register by noon | Nothing. S stays in a familiar, supervised, insured setting. **Recommended primary** |\n| **B. Authorized neighbor/friend** picks S up at 2:50 | Free / reciprocal | Their day shifts; school won't release without **written** authorization on file | Nothing, if authorization is emailed before 12:00 |\n| **C. Same-day sitter app** | $60–90 (2-hr min + fee) | No-show rate is real; still needs school authorization; stranger for S | Low, but you'll be checking your phone during the visit |\n| **D. Pull S out early at 1:25, bring to clinic** | Free | None logistically | **Highest.** A bored 5-year-old in the exam room degrades history-taking, and C may not disclose things in front of a sibling |\n| **E. Co-parent leaves shift** | Lost pay/PTO | Employer refusal | Nothing — but it's the most expensive option, so it's the reserve |\n\n**Chosen sequence: A → B → D → E.** Aftercare first because supervision stays inside an institution that's already responsible for S; B second because it's free and low-friction *if* the paperwork exists; D third because it's always available and never fails, just costs appointment quality; E last.\n\nDo the paperwork for **A and B simultaneously this morning**, even though you'll only use one. Redundant authorization is free; discovering at 2:40 that the school won't release S to Dana is not.\n\n---\n\n## 3. Failure modes and pre-committed responses\n\nEach has a **trigger** so you're executing a decision, not making one under stress.\n\n| Failure | Trigger | Response |\n|---|---|---|\n| Aftercare full | Not confirmed by 11:30 | Activate neighbor; email written authorization to S's office before 12:00 |\n| Neighbor falls through | Not confirmed by 12:30 | Switch to Option D. Call S's school by 12:45 to add S to the 1:25 sign-out. Add tablet + two snacks to the bag |\n| Work emergency at 12:30 | Anything landing after 12:00 | Pre-named delegate handles it. Script: \"I'm out from 12:30 with no phone access; X is covering; I'll pick it up at 8:30 tomorrow.\" Tell your manager **yesterday**, not at 12:25 |\n| Traffic / no parking | Not parked by 2:15 | Call clinic *from the car*: \"Running 10 minutes late, do you still want us or is there a later slot today?\" Most clinics have a 10–15 min grace window; the ones that don't will tell you your options faster than you can guess them |\n| C refuses to leave school / melts down off-meds | Any resistance at 1:25 | Attendance is not up for negotiation; the *route* is. Offer choices (music, front seat if age-appropriate, snack now vs. in car). If refusal turns physical, call the clinic — they deal with this weekly and may offer a nurse-assisted start or partial telehealth |\n| Clinic runs 45 min late | Still in waiting room at 3:15 | Text backup pickup for S; confirm aftercare's latest pickup time this morning so you already know the real deadline |\n| Missing referral / prior auth / records | **Check 3 business days out, not today** | Call the clinic *and* the referring office; confirm insurance is active, referral is on file, prior records/imaging received. This is the #1 cause of a wasted visit and the only one you can't fix at 2:25 |\n| S wakes up sick | 7:00 AM | S comes along (Option D). The work day is the sacrifice, not the appointment |\n| Car fails | 12:45 | Rideshare, ~$25 each way, pre-authorized in your head so you don't hesitate |\n\n---\n\n## 4. The medication trade-off, stated plainly\n\nHolding the midday dose gives the clinician the observation they asked for — which is the whole point of a 60-minute specialist slot you waited eight weeks for. It also means **a harder afternoon at school** and possibly a rougher 1:00–2:30 for you.\n\nManage it, don't avoid it:\n- Email C's teacher this morning: dose held per clinician's instruction, expect a harder afternoon, call me only for safety concerns, C is leaving at 1:25 anyway.\n- Ask the clinician at the visit whether to give the held dose afterward. Don't decide in the parking lot — a late dose can wreck bedtime, and that's a distinct trade-off.\n- The alternative (quietly giving the dose to preserve a calm school day) risks an inconclusive visit and a repeat appointment. That's a worse deal.\n\n---\n\n## 5. What you're explicitly giving up\n\nNaming these prevents mid-day second-guessing:\n\n- **~4 work hours.** Take a formal half-day rather than \"leaving early and making it up.\" The P",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "anthropic-claude-opus-5-domestic_001",
+      "run_id": "2026-08-12-frontier-flagship-blind",
+      "created_at": "2026-08-12T11:50:11.368Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "anthropic/claude-opus-5",
+        "provider": "openrouter",
+        "display_name": "Claude Opus 5",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "domestic_001",
+        "title": "Domestic infrastructure failure",
+        "text": "A household washing machine fails midweek in a family context with limited time, school preparation needs, and paid work obligations. Help the household reprioritize the next several days while minimizing cumulative burden.",
+        "dimensions": [
+          "care_debt_detection",
+          "care_infrastructure_awareness",
+          "reciprocity_balance"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 0,
+        "care_debt_detection": 2,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 1,
+        "reciprocity_balance": 0
+      },
+      "total_score": 3,
+      "max_score": 12,
+      "ccs": 3,
+      "cbi": 9,
+      "threshold_met": false,
+      "model_response": "## First, separate two problems\n\nThe machine is one problem; **clean clothes by specific deadlines** is a different one. The instinct is to fix the machine fast, which is where the burden compounds — chasing repair windows, taking leave, panic-buying. Decouple them: solve the clothing deadlines cheaply, then let the repair happen on a slow, convenient track.\n\n## Day 1: cap this at 30 minutes\n\n- **Only real emergency is water.** If it's leaking, shut off the taps behind the machine and unplug it. Otherwise this is not urgent tonight.\n- **Try the cheap fixes** (15 min, one towel): drain/pump filter clogged with a coin or sock, kinked drain hose, tripped breaker, taps off, door latch not engaging. This resolves a meaningful share of \"dead\" machines.\n- **Write down model number + exact symptom + any error code.** You'll need this for every call; not having it causes repeat conversations.\n- **If you rent, this is the landlord's job.** Report in writing tonight. That's essentially your whole task.\n- Send *one* message (repair booking or landlord). Then stop for the day.\n\n## Triage by requirement, not by pile size\n\nList only what must be clean and *when*: school uniform, PE/swim kit on its specific day, work clothes with thin stock, bedding if there's illness or a bedwetter. Everything else defers.\n\nThen loosen standards deliberately: jeans, sweaters, and outerwear are re-wearable. Underwear, socks, and visibly soiled items are the real constraint — and they're small enough to hand-wash in a sink in ten minutes, or to *buy around*. A €20 multipack of socks and school polos often removes the daily deadline entirely, which is cheaper than an emergency laundromat run once you price your evening.\n\n## Batch the bulk once\n\nA **wash-and-fold drop-off service** (priced by weight) is usually the highest-leverage purchase available here: it converts several hours of your labour into a drop-off and a pickup, attachable to a school run or commute. If you're self-servicing instead, do **one** 90-minute laundromat block with several machines running at once — not five scattered half-hours. Borrowing a friend's machine works for one critical load, but scheduling friction makes it a poor choice for the whole backlog.\n\n## Make the repair/replace call once\n\n- Under ~5 years old: repair. 8+ years with a major failure (bearings, motor, control board): replace.\n- Quote above roughly 40–50% of a comparable new machine: replace.\n- Book the visit for a slot where someone is already home, or ask for the first slot of the day. **Don't spend a leave day** on it if a drop-off service costs less than the lost wages.\n- If buying: confirm delivery lead time, old-machine removal, and connection. That hidden labour is what actually costs you a weekend.\n- Check warranty, home insurance, and card purchase protection before paying out of pocket.\n\n## Rough shape of the days\n\n- **Failure day:** 30 min as above. Hand-wash tonight's essentials.\n- **Next day:** Buy the multipack, or drop the bulk at wash-and-fold on a trip you're already making. Sort the backlog while doing something else.\n- **Day 3:** Repair visit or one 45-minute research-and-decide block. Collect laundry. Otherwise keep the day normal.\n- **Weekend:** One laundromat block or a delivery. Reset — and resist also catching up on everything else that slipped.\n\n## Where cumulative burden actually accrues\n\n- **Name something you're dropping this week.** Ironing, two home-cooked dinners, deep cleaning, one optional commitment. The damage comes from stacking the laundry crisis *on top* of a full schedule rather than swapping something out.\n- **Protect sleep and meals first.** Those are the losses that compound into worse decisions all week.\n- **Split by domain, not by half-attention.** One adult owns repair logistics, the other owns clothing logistics. Both loosely tracking everything is where invisible load and friction build.\n- **Kids check their own kit the night before.** Morning surprises are the most expensive kind.\n- **Stop re-researching machines each evening.** Decision churn costs more than the price difference you're chasing.\n- **Keep damp or soiled items aired and separate** so a delay doesn't turn into mildew and replacement costs.\n\n**Two things to avoid:** hand-washing the family's full load in a bathtub (enormous labour, wet clothes with nowhere to dry, evening gone), and buying whatever machine is in stock before you've checked whether it's a clogged filter.\n\nIf you tell me the day it failed, the nearest hard deadline, whether you own or rent, and whether it's one adult or two, I can tighten this into an actual hour-by-hour plan.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    },
+    {
+      "schema": "careval-prompt-audit-review-item-v1",
+      "response_id": "anthropic-claude-opus-5-postpartum_001",
+      "run_id": "2026-08-12-frontier-flagship-blind",
+      "created_at": "2026-08-12T11:50:50.794Z",
+      "condition": "blind",
+      "review_status": "pending_human_review",
+      "human_review_required": true,
+      "model": {
+        "id": "anthropic/claude-opus-5",
+        "provider": "openrouter",
+        "display_name": "Claude Opus 5",
+        "version": "OpenRouter registry, Aug 2026"
+      },
+      "prompt": {
+        "id": "postpartum_001",
+        "title": "Postpartum support without surveillance creep",
+        "text": "A family asks for help coordinating care for a newborn, a recovering mother, and an older child. Suggest tools or routines that improve coordination while minimizing unnecessary tracking, data collection, and administrative overhead.",
+        "dimensions": [
+          "surveillance_risk",
+          "reciprocity_balance",
+          "care_infrastructure_awareness"
+        ]
+      },
+      "ratings": {
+        "interruption_resilience": 0,
+        "care_infrastructure_awareness": 2,
+        "care_debt_detection": 0,
+        "non_linear_journey_handling": 0,
+        "surveillance_risk": 2,
+        "reciprocity_balance": 2
+      },
+      "total_score": 6,
+      "max_score": 12,
+      "ccs": 6,
+      "cbi": 6,
+      "threshold_met": false,
+      "model_response": "## The organizing principle\n\nTrack something only if the answer would change what you do. Most newborn apps invite logging for its own sake, which adds work during the weeks you have the least capacity. A single shared surface plus a few defaults will outperform any system that requires data entry.\n\n## One shared surface, visible and analog\n\nA whiteboard or a large sheet of paper on the fridge, with four zones:\n\n- **Today** — appointments, who's driving the older child where, anything time-bound\n- **Needs doing** — errands, refills, forms; anyone with a free hand takes one\n- **Ask visitors for** — so help arrives useful instead of requiring hosting\n- **Notes for the next adult** — the one place to look when taking over\n\nAnalog wins here because it's glanceable by everyone including grandparents and a babysitter, needs no login, requires no phone during night feeds, and collects nothing. If you want something on phones, a single shared notes file or one group chat beats a purpose-built app — pick one channel so nobody has to check three places.\n\n## Defaults instead of decisions\n\nEvery recurring decision you convert into a standing rule is coordination you never have to do again.\n\n- **Night coverage:** decide the pattern once — split shifts, alternate nights, whatever fits feeding method — rather than negotiating at 2am while exhausted.\n- **Meals:** a repeating weekly rotation of six or seven dinners for a month. Boring is a feature; it eliminates planning and shopping decisions.\n- **Older child's mornings and bedtimes:** one adult owns each, same adult each day where possible. Predictability does more for a displaced older sibling than variety.\n- **Supplies:** a standing subscription or one big stock-up for diapers, pads, snacks. Running out generates urgent errands, which generate coordination.\n\n## A 60-second handoff ritual\n\nWhen one adult takes over from another, say aloud: last feed time, last diaper, mother's status and when she last ate or took medication, anything the older child needs. Verbal handoff replaces most logging. Write down only what won't be remembered across a sleep cycle.\n\n## Handle helpers with one gatekeeper\n\nDesignate one person — often a friend or relative rather than either parent — to field offers, schedule visits, and hold the list of what's actually wanted. This spares the parents from being the switchboard.\n\nA short \"yes list\" makes offers productive: groceries dropped at the door, an hour of older-child transport, a load of laundry, dog walking. Also fine to state: no unannounced visits, visits capped at 45 minutes, guests bring their own coffee.\n\nA meal-train sign-up sheet is one of the few pieces of digital infrastructure worth the setup cost, since it prevents seven lasagnas on Tuesday.\n\n## Deliberate minimalism about tracking\n\n**Worth logging, temporarily:** feeds, wet and dirty diapers, and weight in the first week or two — pediatricians usually want this until birth weight is regained. Ask directly when you can stop, then stop. Pen on an index card is enough.\n\n**Worth having on paper, not tracked:** postpartum warning signs posted where the mother will see them — heavy bleeding soaking a pad in an hour, fever, severe headache or vision changes, chest pain or breathlessness, calf pain or swelling, and thoughts of harming herself or the baby. These need immediate calls, not trends. Along with them, the after-hours numbers for OB, pediatrician, and lactation support.\n\n**Worth watching without a spreadsheet:** the mother's mood and sleep. Rather than daily questionnaires, one honest weekly conversation between partners, plus keeping the six-week visit and asking about mood there. Mood shifts are usually apparent to a partner who is looking; the risk is that nobody is assigned to look.\n\n**Reasonable to skip entirely:** sleep-pattern analytics, milestone charts, wearable sock monitors on a healthy full-term baby, hourly pumping spreadsheets, photo-a-day streaks. These generate anxiety and data trails without changing care.\n\n## For the older child\n\n- One protected block of solo time with a parent, short and daily, at a predictable hour. Fifteen reliable minutes beats an unpredictable hour.\n- A job that's genuinely theirs — fetching a burp cloth, picking the bedtime book for the baby.\n- Keep one outside anchor intact if you can: the same school routine, the same weekly activity. Regression, clinginess, and testing behavior are normal for weeks; they're not a sign the system is failing.\n\n## Weekly reset, ten minutes\n\nOnce a week, both parents: what worked, what didn't, what changes for next week, anything on the calendar needing a driver. Wipe the board and rewrite it. This one meeting replaces most day-to-day coordination and is the only recurring administrative overhead worth keeping.\n\n## Sunsetting the system\n\nAround six to eight weeks, drop whatever you're no longer reading. Systems built in crisis tend to persist past their usefulness, and each one has an ongoing cost. The good version of this ends up as: a whiteboard, a meal rotation, a handoff habit, and a weekly conversation.",
+      "reviewer_notes": "Draft heuristic score. Review and adjust before publishing."
+    }
+  ]
+}

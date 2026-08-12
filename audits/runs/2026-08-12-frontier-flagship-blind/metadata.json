@@ -1,0 +1,12 @@
+{
+  "schema": "careval-audit-run-metadata-v1",
+  "run_id": "2026-08-12-frontier-flagship-blind",
+  "started_at": "2026-08-12T11:42:57.892Z",
+  "completed_at": "2026-08-12T12:46:53.646Z",
+  "condition": "blind",
+  "model_count": 18,
+  "prompt_count": 5,
+  "response_count": 90,
+  "scoring_mode": "heuristic-draft",
+  "human_review_required": true
+}
