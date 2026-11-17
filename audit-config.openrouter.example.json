@@ -110,16 +110,16 @@
       "version": "OpenRouter registry, Aug 2026"
     },
     {
-      "id": "inclusionai/ring-2.6-1t",
+      "id": "inclusionai/ling-2.6-1t",
       "provider": "openrouter",
-      "displayName": "Ring 2.6 1T",
-      "version": "OpenRouter registry, Aug 2026"
+      "displayName": "Ling 2.6 1T",
+      "version": "OpenRouter registry, Nov 2026 (swapped from ring-2.6-1t: free tier retired)"
     },
     {
-      "id": "amazon/nova-premier-v1",
+      "id": "amazon/nova-pro-v1",
       "provider": "openrouter",
-      "displayName": "Nova Premier",
-      "version": "OpenRouter registry, Aug 2026"
+      "displayName": "Nova Pro 1.0",
+      "version": "OpenRouter registry, Nov 2026 (swapped from nova-premier-v1: Bedrock EOL)"
     }
   ],
   "scoring": {

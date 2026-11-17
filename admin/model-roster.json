@@ -19,7 +19,7 @@
     { "id": "nvidia/nemotron-3-ultra-550b-a55b", "provider": "openrouter", "display_name": "Nemotron 3 Ultra 550B", "version": "OpenRouter registry, Aug 2026" },
     { "id": "cohere/command-a", "provider": "openrouter", "display_name": "Command A", "version": "OpenRouter registry, Aug 2026" },
     { "id": "tencent/hy3", "provider": "openrouter", "display_name": "Hunyuan 3", "version": "OpenRouter registry, Aug 2026" },
-    { "id": "inclusionai/ring-2.6-1t", "provider": "openrouter", "display_name": "Ring 2.6 1T", "version": "OpenRouter registry, Aug 2026" },
-    { "id": "amazon/nova-premier-v1", "provider": "openrouter", "display_name": "Nova Premier", "version": "OpenRouter registry, Aug 2026" }
+    { "id": "inclusionai/ling-2.6-1t", "provider": "openrouter", "display_name": "Ling 2.6 1T", "version": "OpenRouter registry, Nov 2026" },
+    { "id": "amazon/nova-pro-v1", "provider": "openrouter", "display_name": "Nova Pro 1.0", "version": "OpenRouter registry, Nov 2026" }
   ]
 }
