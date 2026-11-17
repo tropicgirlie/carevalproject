@@ -1,0 +1,12 @@
+{
+  "schema": "careval-audit-run-metadata-v1",
+  "run_id": "2026-11-17-openrouter-inclusionai-ling-2-6-1t",
+  "started_at": "2026-11-17T17:58:40.314Z",
+  "completed_at": "2026-11-17T17:58:40.645Z",
+  "condition": "blind",
+  "model_count": 1,
+  "prompt_count": 5,
+  "response_count": 5,
+  "scoring_mode": "heuristic-draft",
+  "human_review_required": true
+}
